@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Press kit: Quickspan Calendar for Android</title>
+<meta name="description" content="Facts, descriptions in English and Spanish, the icon, the feature graphic and store screenshots of Quickspan, a private calendar for Android phones, tablets and foldables.">
+<meta name="theme-color" content="#141C28">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quickspan">
+<meta property="og:title" content="Quickspan press kit">
+<meta property="og:description" content="Facts, descriptions, icon and screenshots of Quickspan, a private calendar for Android phones, tablets and foldables.">
+<meta property="og:image" content="https://quickspan.app/og.png">
+<meta property="og:url" content="https://quickspan.app/press/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://quickspan.app/press/">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:200 800;src:url(../fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:200 800;src:url(../fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --ink:#1E2A3A;--ink-2:#141C28;--ink-3:#2A3A50;--sun:#FFC93C;--coral:#FF5E3A;--sea:#3FA7C4;--leaf:#3E9B6A;--violet:#7A5AF8;
+  --bg:#FBF8F2;--surface:#FFFFFF;--surface-2:#F3EEE4;--fg:#1E2A3A;--muted:#55606F;--line:rgba(30,42,58,.12);--link:#2B45C8;
+  --radius:22px;--shadow:0 1px 2px rgba(20,28,40,.06),0 12px 40px -12px rgba(20,28,40,.25);
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#10151D;--surface:#171E29;--surface-2:#1C2533;--fg:#EEF1F5;--muted:#A9B3C1;--line:rgba(255,255,255,.1);--link:#B8C4FF;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 48px -16px rgba(0,0,0,.7);
+}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);font-feature-settings:"ss01"}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--link)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+q{quotes:"“" "”"}
+:lang(es) q{quotes:"«" "»"}
+
+/* Top bar */
+.top{position:sticky;top:0;z-index:10;background:rgba(20,28,40,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;gap:1.25rem;height:64px}
+.brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;letter-spacing:-.01em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.top nav{display:flex;gap:1.25rem;margin-left:auto;align-items:center}
+.top nav a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.95rem;font-weight:600}
+.top nav a:hover{color:#fff}
+.top .nav-links{display:none}
+@media(min-width:820px){.top .nav-links{display:flex;gap:1.5rem}}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.4rem;line-height:1.1;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-sun{background:var(--sun);color:var(--ink);box-shadow:0 8px 24px -8px rgba(255,201,60,.6)}
+.btn-sun:hover{transform:translateY(-1px);background:#ffd45f}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.28)}
+.btn-ghost:hover{border-color:#fff}
+.btn-soon{background:rgba(255,255,255,.08);color:#fff;border:1.5px dashed rgba(255,255,255,.35);cursor:default}
+.top .btn{padding:.55rem 1rem;font-size:.9rem}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--ink-2);color:#fff;padding:4.5rem 0 0}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(closest-side,rgba(255,201,60,.22),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:60vw;height:60vw;max-width:800px;max-height:800px;background:radial-gradient(closest-side,rgba(255,94,58,.16),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:3rem}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:700;letter-spacing:.02em;color:var(--sun);background:rgba(255,201,60,.1);border:1px solid rgba(255,201,60,.3);padding:.35rem .8rem;border-radius:999px}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--sun);display:block}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:1.1rem 0 1.2rem}
+.hero h1 em{font-style:normal;color:var(--sun)}
+.hero .lede{font-size:clamp(1.1rem,1.6vw,1.25rem);color:rgba(255,255,255,.78);max-width:34rem;margin:0 0 2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.trust{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin:1.8rem 0 0;padding:0;list-style:none;font-size:.92rem;color:rgba(255,255,255,.75);font-weight:600}
+.trust li{display:flex;align-items:center;gap:.45rem}
+.trust svg{width:18px;height:18px;color:var(--sun);flex:none}
+.stage{position:relative;margin:0 auto -1px;width:100%;max-width:640px}
+/* Device frames, drawn after current flagship hardware (no logos).
+   Padding and margin percentages are of the width, so bezels and camera holes stay in proportion. */
+.device{--rim:#2b2f36;--rim-hi:#5b616b;--bz:2.4%;position:relative;padding:var(--bz);background:#07090c;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 0 1.5px var(--rim),0 0 0 2.5px var(--rim-hi),0 0 0 3.5px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.18),0 24px 48px -18px rgba(10,14,22,.55),0 40px 80px -40px rgba(10,14,22,.5)}
+.device img{display:block;width:100%;height:auto;background:#fff}
+.device::before,.device::after{content:"";position:absolute}
+/* Phone, Pixel 9 Pro style: rounded corners, thin even bezel, centred hole, power above volume on the right */
+.device.phone{--bz:2.6%;--rim:#3a3d42;--rim-hi:#8b9097;border-radius:13.5% / 6.1%}
+.device.phone img{border-radius:11% / 5%}
+.device.phone::after{top:0;left:50%;width:3.4%;aspect-ratio:1;margin:calc(var(--bz) + 2.7%) 0 0 -1.7%;border-radius:50%;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+.device.phone::before{right:-5px;top:19%;width:2.5px;height:27%;border-radius:0 2px 2px 0;background:linear-gradient(var(--rim-hi) 0 26%,transparent 26% 36%,var(--rim-hi) 36% 100%)}
+/* Phone, Galaxy S Ultra style: squarer corners, thinner bezel, titanium rim, volume above power */
+.device.phone.ultra{--bz:2%;--rim:#6f7277;--rim-hi:#b9bcc1;border-radius:7% / 3.2%}
+.device.phone.ultra img{border-radius:5.4% / 2.5%}
+.device.phone.ultra::after{width:2.8%;margin:calc(var(--bz) + 2.4%) 0 0 -1.4%}
+.device.phone.ultra::before{top:17%;height:30%;background:linear-gradient(var(--rim-hi) 0 52%,transparent 52% 64%,var(--rim-hi) 64% 86%,transparent 86%)}
+/* Tablet, Pixel Tablet style: wide even bezel, soft corners, camera centred in the top bezel, porcelain rim */
+.device.tablet{--bz:3.6%;--rim:#d9d3c8;--rim-hi:#f3efe7;border-radius:5.2% / 8.3%}
+.device.tablet img{border-radius:1.6% / 2.6%}
+.device.tablet::after{top:0;left:50%;width:.9%;aspect-ratio:1;margin:calc(var(--bz) / 2 - .45%) 0 0 -.45%;border-radius:50%;background:#1a2230;box-shadow:inset 0 0 0 1.5px #344155}
+/* Tablet, Galaxy Tab S style: slim bezel, tighter corners, graphite rim */
+.device.tablet.slim{--bz:1.9%;--rim:#3d4148;--rim-hi:#7d838c;border-radius:3.2% / 5.1%}
+.device.tablet.slim img{border-radius:1.4% / 2.2%}
+.device.tablet.slim::after{width:.7%;margin:calc(var(--bz) / 2 - .35%) 0 0 -.35%}
+.stage .tablet{transform:perspective(2200px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
+/* Phones sit in a .pw wrapper so the frame's percentage padding is of the phone's own width */
+.stage .pw{position:absolute;width:24%;right:5%;bottom:-14%;transform:perspective(2200px) rotateY(-6deg)}
+.hero-shot{padding-bottom:3rem}
+@media(min-width:960px){
+  .hero{padding-top:5.5rem}
+  .hero .wrap{grid-template-columns:1fr 1.08fr;align-items:center}
+  .stage{margin-right:-4rem;max-width:none}
+}
+
+/* Sections */
+section{padding:5.5rem 0}
+.kicker{font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin:0 0 .8rem}
+h2{font-size:clamp(2rem,4.2vw,3rem);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 1rem;max-width:22ch}
+h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;font-weight:800}
+.intro{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0}
+.head{margin-bottom:3rem}
+
+/* How quick add works */
+.how{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:900px){.how{grid-template-columns:1fr 1.1fr;gap:4rem}}
+.steps{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.1rem;counter-reset:s}
+.steps li{display:grid;grid-template-columns:2.4rem 1fr;gap:.9rem;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:12px;background:var(--surface-2);font-weight:800;color:var(--fg)}
+.steps p{margin:0;color:var(--muted)}
+.examples{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0 0;padding:0;list-style:none}
+.examples li{font-size:.9rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+
+.demo{background:var(--surface);border-radius:28px;padding:1.5rem;box-shadow:var(--shadow);border:1px solid var(--line)}
+.demo-week{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:1.2rem}
+.demo-day{background:var(--surface-2);border-radius:12px;height:170px;position:relative;padding:.5rem}
+.demo-day b{display:block;font-size:.75rem;color:var(--muted);font-weight:700;text-align:center}
+.demo-day b span{display:block;font-size:1.05rem;color:var(--fg)}
+.ev{position:absolute;left:5px;right:5px;border-radius:7px;font-size:.7rem;font-weight:700;padding:.25rem .35rem;line-height:1.2;overflow:hidden;border-left:3px solid}
+.ev.w{background:rgba(63,167,196,.18);border-color:var(--sea);color:var(--fg)}
+.ev.f{background:rgba(62,155,106,.18);border-color:var(--leaf);color:var(--fg)}
+.ev.p{background:rgba(122,90,248,.16);border-color:var(--violet);color:var(--fg)}
+.ev.new{background:var(--coral);border-color:#c8401f;color:#fff;box-shadow:0 8px 20px -6px rgba(255,94,58,.7)}
+.demo-bar{display:flex;align-items:center;gap:.6rem;border:2px solid var(--link);border-radius:18px;padding:.75rem 1rem;font-weight:600;font-size:1.02rem;background:var(--surface);min-height:3.3rem}
+.typed{white-space:nowrap;overflow:hidden;flex:1;min-width:0}
+.tok{border-radius:6px;padding:0 .12em;margin:0 -.12em}
+.tok.d{background:rgba(122,90,248,.2)}
+.tok.t{background:rgba(63,167,196,.25)}
+.send{width:26px;height:26px;color:var(--link);flex:none}
+.chips{display:flex;gap:.5rem;margin:.9rem 0 .4rem;flex-wrap:wrap}
+.chip{font-size:.85rem;font-weight:700;padding:.3rem .7rem;border-radius:9px}
+.chip.d{background:rgba(122,90,248,.18)}
+.chip.t{background:rgba(63,167,196,.22)}
+.sum{font-size:.85rem;color:var(--muted);font-weight:600}
+@media(prefers-reduced-motion:no-preference){
+  .typed{animation:type 10s steps(26,end) infinite}
+  .tok.d{animation:hl-d 10s infinite}
+  .tok.t{animation:hl-t 10s infinite}
+  .chip.d{animation:pop1 10s infinite}
+  .chip.t{animation:pop2 10s infinite}
+  .sum{animation:sum 10s infinite}
+  .send{animation:send 10s infinite}
+  .ev.new{animation:drop 10s cubic-bezier(.2,.9,.3,1.3) infinite}
+}
+@keyframes type{0%,3%{clip-path:inset(0 100% 0 0)}33%,94%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 0 0 0);opacity:0}}
+@keyframes hl-d{0%,36%{background:transparent}39%,94%{background:rgba(122,90,248,.2)}100%{background:transparent}}
+@keyframes hl-t{0%,40%{background:transparent}43%,94%{background:rgba(63,167,196,.25)}100%{background:transparent}}
+@keyframes pop1{0%,37%{opacity:0;transform:translateY(6px)}41%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes pop2{0%,41%{opacity:0;transform:translateY(6px)}45%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes sum{0%,48%{opacity:0}53%,94%{opacity:1}100%{opacity:0}}
+@keyframes send{0%,58%{transform:none}61%{transform:scale(1.35) translateX(3px)}64%,100%{transform:none}}
+@keyframes drop{0%,62%{opacity:0;transform:translateY(-30px) scale(.9)}67%,94%{opacity:1;transform:none}100%{opacity:0}}
+
+/* Screens bento */
+.screens{background:var(--surface-2)}
+.bento{display:grid;gap:1.25rem}
+@media(min-width:900px){.bento{grid-template-columns:repeat(6,1fr)}.b-tab{grid-column:span 4}.b-phone{grid-column:span 2}.b-fold{grid-column:span 3}.b-dark{grid-column:span 3}}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+.card p{color:var(--muted);margin:0 0 1.2rem}
+.card .device{margin-top:auto}
+.b-phone .pw{width:72%;max-width:240px;margin:auto auto -3.5rem;align-self:center}
+.b-dark{background:var(--ink);color:#fff;border-color:transparent}
+.b-dark p{color:rgba(255,255,255,.72)}
+
+/* Foldable illustration */
+.fold{display:flex;justify-content:center;perspective:1200px;padding:1rem 0 .5rem}
+.leaf{position:relative;width:38%;max-width:200px;aspect-ratio:9/15;background:#07090c;padding:5px;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 0 1.5px #6f7277,0 0 0 2.5px #b9bcc1,0 0 0 3.5px rgba(0,0,0,.3),0 24px 48px -18px rgba(10,14,22,.55)}
+.leaf .scr{height:100%;border-radius:7px;background:#FBFAFD;padding:10px;position:relative;overflow:hidden}
+.leaf.l{transform:rotateY(18deg);transform-origin:right center;border-radius:12px 2px 2px 12px}
+.leaf.l .scr{border-radius:7px 0 0 7px}
+.leaf.r{transform:rotateY(-18deg);transform-origin:left center;border-radius:2px 12px 12px 2px}
+.leaf.r .scr{border-radius:0 7px 7px 0}
+/* Galaxy Z Fold style: under-display camera shows as a faint dot on the right half */
+.leaf.r::after{content:"";position:absolute;top:14px;right:26%;width:6px;height:6px;border-radius:50%;background:rgba(30,42,58,.18)}
+.hinge{width:6px;background:linear-gradient(90deg,#3a3d42,#b9bcc1 50%,#3a3d42);border-radius:3px;margin:6px -1px}
+@media(prefers-reduced-motion:no-preference){.leaf.l{animation:openl 6s ease-in-out infinite alternate}.leaf.r{animation:openr 6s ease-in-out infinite alternate}}
+@keyframes openl{from{transform:rotateY(28deg)}to{transform:rotateY(8deg)}}
+@keyframes openr{from{transform:rotateY(-28deg)}to{transform:rotateY(-8deg)}}
+.mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;height:100%;position:relative}
+.mini-grid i{background:#EEEAF3;border-radius:4px}
+.mini-grid .e{position:absolute;border-radius:4px;border-left:3px solid}
+.mini-today b{display:block;font-size:.75rem;color:#1E2A3A;margin-bottom:6px}
+.mini-today span{display:block;height:28px;border-radius:6px;background:#EEEAF3;margin-bottom:6px;border-left:3px solid var(--violet)}
+.mini-today span:nth-child(3){border-color:var(--sea)}
+.mini-today span:nth-child(4){border-color:var(--leaf);width:80%}
+.caption{text-align:center;font-size:.8rem;color:var(--muted);margin:.6rem 0 0}
+
+/* Features grid */
+.grid{display:grid;gap:1.25rem}
+@media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+.feat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+.feat p{color:var(--muted);margin:0}
+.ico{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;margin-bottom:1rem}
+.ico svg{width:24px;height:24px}
+.ico.y{background:rgba(255,201,60,.22);color:#9a6b00}.ico.c{background:rgba(255,94,58,.16);color:#c23a17}.ico.s{background:rgba(63,167,196,.18);color:#1d6f87}.ico.v{background:rgba(122,90,248,.16);color:#5a3fd0}.ico.g{background:rgba(62,155,106,.18);color:#24724a}
+@media(prefers-color-scheme:dark){.ico.y{color:var(--sun)}.ico.c{color:#ff8a6d}.ico.s{color:#7fd0e6}.ico.v{color:#b3a2ff}.ico.g{color:#7dd3a5}}
+kbd{font:700 .8rem/1 Manrope,system-ui,sans-serif;padding:.28rem .45rem;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);border-bottom-width:3px;white-space:nowrap}
+.keys{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+
+/* Privacy */
+.privacy{background:var(--ink-2);color:#fff;position:relative;overflow:hidden}
+.privacy::before{content:"";position:absolute;right:-10%;top:-30%;width:600px;height:600px;background:radial-gradient(closest-side,rgba(63,167,196,.18),transparent 70%)}
+.privacy .wrap{position:relative}
+.privacy .intro{color:rgba(255,255,255,.75)}
+.stats{display:grid;gap:1rem;margin:3rem 0 2rem}
+@media(min-width:760px){.stats{grid-template-columns:repeat(3,1fr)}}
+.stat{border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.5rem;background:rgba(255,255,255,.03)}
+.stat strong{display:block;font-size:3.4rem;line-height:1;font-weight:800;letter-spacing:-.04em;color:var(--sun)}
+.stat span{display:block;font-weight:800;margin:.5rem 0 .3rem;font-size:1.05rem}
+.stat p{margin:0;color:rgba(255,255,255,.68);font-size:.95rem}
+.privacy a{color:var(--sun)}
+.note{color:rgba(255,255,255,.68);max-width:46rem;font-size:.95rem}
+
+/* FAQ */
+.faq{max-width:48rem}
+details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+summary{cursor:pointer;font-weight:800;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--coral);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:.7rem 0 0}
+
+/* Final CTA */
+.final{padding:0 0 5.5rem}
+.final .box{background:linear-gradient(135deg,var(--sun),#FFB13C);color:var(--ink);border-radius:32px;padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden}
+.final img{width:88px;height:88px;border-radius:22px;margin:0 auto 1.2rem;box-shadow:0 12px 30px -10px rgba(30,42,58,.5)}
+.final h2{margin:0 auto .8rem;max-width:none}
+.final p{margin:0 auto 1.8rem;max-width:32rem;font-weight:600}
+.final .btn{background:var(--ink);color:#fff}
+.final .btn-soon{background:rgba(30,42,58,.1);color:var(--ink);border-color:rgba(30,42,58,.4)}
+
+footer{border-top:1px solid var(--line);padding:2.5rem 0 3rem;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+footer p{margin:0}
+footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+footer .small{font-size:.8rem;width:100%}
+@media(max-width:520px){.ev{font-size:.6rem;padding:.2rem .25rem}.demo{padding:1rem}.demo-week{gap:4px}}
+@media(prefers-color-scheme:dark){.privacy,.hero{background:#0B1018}.b-dark{background:#0B1018}}
+.press-hero{background:var(--ink);color:#fff;padding:4.5rem 0 3.5rem}
+.press-hero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);line-height:1.04;letter-spacing:-.035em;font-weight:800;margin:.8rem 0 1rem}
+.press-hero p{color:rgba(255,255,255,.78);max-width:40rem;font-size:1.12rem;margin:0}
+.press section{padding:3.5rem 0;border-bottom:1px solid var(--line)}
+.press section:last-of-type{border-bottom:0}
+.facts{display:grid;gap:0;margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.facts div{display:grid;grid-template-columns:10rem 1fr;gap:1rem;padding:.85rem 1.2rem;border-top:1px solid var(--line)}
+.facts div:first-child{border-top:0}
+.facts dt{font-weight:800}
+.facts dd{margin:0;color:var(--muted)}
+.copy{display:grid;gap:1.25rem}
+@media(min-width:900px){.copy{grid-template-columns:1fr 1fr}}
+.copy .card h3{margin-bottom:.6rem}
+.copy .card p{margin:0 0 .8rem;color:var(--fg)}
+.copy .tag{font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--coral)}
+.gallery{display:grid;gap:1.25rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:900px){.gallery{grid-template-columns:1fr 1fr 2.3fr}}
+.gallery figure{margin:0}
+.gallery img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:var(--shadow)}
+.gallery .wide{grid-column:1/-1}
+@media(min-width:900px){.gallery .wide{grid-column:auto}}
+.gallery figcaption{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+.dl{list-style:none;padding:0;margin:0;display:grid;gap:.75rem}
+@media(min-width:720px){.dl{grid-template-columns:1fr 1fr}}
+.dl a{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;color:var(--fg);font-weight:700}
+.dl a:hover{border-color:var(--coral)}
+.dl span{font-weight:500;color:var(--muted);font-size:.9rem;white-space:nowrap}
+.press ul.plain{padding-left:1.2rem;color:var(--muted)}
+.press ul.plain li{margin:.35rem 0}
+@media(max-width:560px){.facts div{grid-template-columns:1fr;gap:.2rem}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../icon.svg" alt="" width="34" height="34">Quickspan</a>
+    <nav>
+      <span class="nav-links"><a href="#facts">Facts</a><a href="#copy">Descriptions</a><a href="#images">Images</a><a href="#contact">Contact</a></span>
+      <a href="../">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main class="press">
+<div class="press-hero">
+  <div class="wrap">
+    <p class="kicker">Press kit</p>
+    <h1>Quickspan, a calendar you type into.</h1>
+    <p>Everything you need to write about Quickspan: the facts, ready-to-use descriptions in English and Spanish, the icon and the store screenshots. You can use all of it in coverage of the app.</p>
+  </div>
+</div>
+
+<section id="facts">
+  <div class="wrap">
+    <h2>Facts</h2>
+    <dl class="facts">
+      <div><dt>Name</dt><dd>Quickspan (store name: Quickspan: Calendar &amp; Planner)</dd></div>
+      <div><dt>Developer</dt><dd>Manuel Lorenzo, an independent Android developer in Spain</dd></div>
+      <div><dt>Platform</dt><dd>Android 8.0 or later: phones, tablets and foldables</dd></div>
+      <div><dt>Availability</dt><dd>Coming soon to Google Play, worldwide</dd></div>
+      <div><dt>Price</dt><dd>Free. No ads and no in-app purchases</dd></div>
+      <div><dt>Languages</dt><dd>English and Spanish, for both the app and typed entry</dd></div>
+      <div><dt>Privacy</dt><dd>No account, no analytics, no tracking, and no internet permission</dd></div>
+      <div><dt>Website</dt><dd><a href="https://quickspan.app/">quickspan.app</a></dd></div>
+      <div><dt>Contact</dt><dd><a href="mailto:support@quickspan.app">support@quickspan.app</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="copy">
+  <div class="wrap">
+    <h2>Descriptions</h2>
+    <p class="intro">Copy them as they are or shorten them.</p>
+    <div class="copy">
+      <article class="card">
+        <span class="tag">English · one line</span>
+        <p>Quickspan is a private Android calendar you type into, built for phones, tablets and foldables.</p>
+        <span class="tag">English · short</span>
+        <p>Quickspan is a free calendar and planner for Android. Type “Gym every Mon and Thu at 7pm” and it's on your calendar, in English or Spanish, parsed on the device. The layout follows the screen: a 3-day week on phones, 7 days with a Today panel on tablets, and the week on one side of a foldable's hinge. No account, no ads and no internet permission.</p>
+        <span class="tag">English · long</span>
+        <p>Quickspan is a calendar for Android that adapts to the screen you're holding and lets you add events by typing them the way you'd say them. As you type “Lunch with Sam tomorrow at 1pm at Cafe Roma”, the date, time, repeat and place light up, and a line shows what will be saved. Leave out the time and it uses your first free hour.</p>
+        <p>On tablets it shows a 7-day week with a Today panel and a details pane, with keyboard shortcuts, right-click menus, several windows and print to PDF. On foldables, book posture puts the week on one side of the hinge and today on the other, and tabletop posture puts the grid above the fold and the controls below. It can also show the phone's existing Google or Exchange calendars, which keep syncing through the phone's own accounts.</p>
+        <p>The app has no account, no ads, no analytics and no internet permission, so it can't send your events anywhere.</p>
+      </article>
+      <article class="card" lang="es">
+        <span class="tag">Español · una línea</span>
+        <p>Quickspan es un calendario privado para Android en el que escribes tus planes, pensado para móviles, tablets y plegables.</p>
+        <span class="tag">Español · breve</span>
+        <p>Quickspan es un calendario y agenda gratuito para Android. Escribe «Gimnasio cada lunes y jueves a las 19:00» y ya está en tu calendario, en español o en inglés, y todo se procesa en el móvil. La pantalla se adapta: semana de 3 días en el móvil, 7 días con un panel de «Hoy» en la tablet y la semana a un lado de la bisagra en un plegable. Sin cuenta, sin anuncios y sin permiso de internet.</p>
+        <span class="tag">Español · larga</span>
+        <p>Quickspan es un calendario para Android que se adapta a la pantalla que tienes en la mano y te deja añadir eventos escribiéndolos como los dirías. Al escribir «Comida con Ana el viernes a las 14:00», la fecha, la hora, la repetición y el lugar se resaltan, y una línea te enseña cómo quedará el evento. Si no pones hora, usa tu primera hora libre.</p>
+        <p>En la tablet muestra la semana de 7 días con un panel de «Hoy» y los detalles del evento, con atajos de teclado, menú con el botón derecho, varias ventanas e impresión a PDF. En un plegable medio abierto pone la semana a un lado de la bisagra y el día de hoy al otro, y en modo mesa, la semana arriba y los controles abajo. También puede mostrar los calendarios de Google o Exchange del móvil, que siguen sincronizándose con sus cuentas.</p>
+        <p>No tiene cuenta, ni anuncios, ni estadísticas, ni permiso de internet, así que no puede enviar tus eventos a ningún sitio.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="images">
+  <div class="wrap">
+    <h2>Images</h2>
+    <div class="gallery">
+      <figure><img src="phone-quickadd.webp" width="480" height="853" loading="lazy" alt="Store screenshot: typing Gym every Mon and Thu at 7pm on a phone"><figcaption>Quick add on a phone</figcaption></figure>
+      <figure><img src="phone-week.webp" width="480" height="853" loading="lazy" alt="Store screenshot: a 3-day week on a phone"><figcaption>3-day week on a phone</figcaption></figure>
+      <figure class="wide"><img src="tablet-week.webp" width="1100" height="619" loading="lazy" alt="Store screenshot: a 7-day week with a Today panel on a tablet"><figcaption>7-day week on a tablet</figcaption>
+        <img src="tablet-agenda.webp" width="1100" height="619" loading="lazy" alt="Store screenshot: agenda and event details side by side on a tablet" style="margin-top:1.25rem"><figcaption>Agenda and details on a tablet</figcaption></figure>
+    </div>
+    <h3 style="margin-top:2.5rem">Downloads</h3>
+    <ul class="dl">
+      <li><a href="quickspan-screenshots-en.zip" download>Store screenshots, English <span>12 PNG · ZIP</span></a></li>
+      <li><a href="quickspan-screenshots-es.zip" download>Capturas de la tienda, español <span>12 PNG · ZIP</span></a></li>
+      <li><a href="quickspan-icon-512.png" download>App icon <span>512 × 512 PNG</span></a></li>
+      <li><a href="quickspan-icon.svg" download>App icon <span>SVG</span></a></li>
+      <li><a href="quickspan-feature-graphic-en.png" download>Feature graphic, English <span>1024 × 500 PNG</span></a></li>
+      <li><a href="quickspan-feature-graphic-es.png" download>Feature graphic, español <span>1024 × 500 PNG</span></a></li>
+    </ul>
+    <ul class="plain">
+      <li>Please don't change the icon's colours or shape, or add effects to it.</li>
+      <li>The device frames on the screenshots are drawings, not photos of a specific phone.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>For interviews, questions, a test build or more images, write to <a href="mailto:support@quickspan.app">support@quickspan.app</a>. Replies in English or Spanish.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Quickspan Calendar, made by Manuel Lorenzo.</p>
+    <nav><a href="../">Home</a><a href="../en/">Privacy policy</a><a href="mailto:support@quickspan.app">support@quickspan.app</a></nav>
+    <p class="small">Google Play is a trademark of Google LLC.</p>
+  </div>
+</footer>
+</body>
+</html>
