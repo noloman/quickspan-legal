@@ -85,15 +85,29 @@ q{quotes:"“" "”"}
 .trust li{display:flex;align-items:center;gap:.45rem}
 .trust svg{width:18px;height:18px;color:var(--sun);flex:none}
 .stage{position:relative;margin:0 auto -1px;width:100%;max-width:640px}
-/* Device frames */
-.device{position:relative;background:linear-gradient(150deg,#3a414d 0%,#14181f 45%,#0b0e13 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),0 0 0 1px rgba(0,0,0,.55),0 2px 4px rgba(0,0,0,.18),0 24px 48px -18px rgba(10,14,22,.55),0 40px 80px -40px rgba(10,14,22,.5)}
+/* Device frames, drawn after current flagship hardware (no logos).
+   Padding and margin percentages are of the width, so bezels and camera holes stay in proportion. */
+.device{--rim:#2b2f36;--rim-hi:#5b616b;--bz:2.4%;position:relative;padding:var(--bz);background:#07090c;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 0 1.5px var(--rim),0 0 0 2.5px var(--rim-hi),0 0 0 3.5px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.18),0 24px 48px -18px rgba(10,14,22,.55),0 40px 80px -40px rgba(10,14,22,.5)}
 .device img{display:block;width:100%;height:auto;background:#fff}
-.device.tablet{--bz:2.1%;padding:var(--bz);border-radius:4.2% / 6.6%}
-.device.tablet img{border-radius:2.4% / 3.8%}
-.device.tablet::before{content:"";position:absolute;top:1.64%;left:50%;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#1d2533;box-shadow:inset 0 0 0 1.5px #39465a}
-.device.phone{--bz:3.4%;padding:var(--bz);border-radius:14% / 6.6%}
+.device::before,.device::after{content:"";position:absolute}
+/* Phone, Pixel 9 Pro style: rounded corners, thin even bezel, centred hole, power above volume on the right */
+.device.phone{--bz:2.6%;--rim:#3a3d42;--rim-hi:#8b9097;border-radius:13.5% / 6.1%}
 .device.phone img{border-radius:11% / 5%}
-.device.phone::before{content:"";position:absolute;right:-2px;top:21%;width:3px;height:14%;border-radius:0 3px 3px 0;background:linear-gradient(90deg,#11151b,#3a414d)}
+.device.phone::after{top:0;left:50%;width:3.4%;aspect-ratio:1;margin:calc(var(--bz) + 2.7%) 0 0 -1.7%;border-radius:50%;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+.device.phone::before{right:-5px;top:19%;width:2.5px;height:27%;border-radius:0 2px 2px 0;background:linear-gradient(var(--rim-hi) 0 26%,transparent 26% 36%,var(--rim-hi) 36% 100%)}
+/* Phone, Galaxy S Ultra style: squarer corners, thinner bezel, titanium rim, volume above power */
+.device.phone.ultra{--bz:2%;--rim:#6f7277;--rim-hi:#b9bcc1;border-radius:7% / 3.2%}
+.device.phone.ultra img{border-radius:5.4% / 2.5%}
+.device.phone.ultra::after{width:2.8%;margin:calc(var(--bz) + 2.4%) 0 0 -1.4%}
+.device.phone.ultra::before{top:17%;height:30%;background:linear-gradient(var(--rim-hi) 0 52%,transparent 52% 64%,var(--rim-hi) 64% 86%,transparent 86%)}
+/* Tablet, Pixel Tablet style: wide even bezel, soft corners, camera centred in the top bezel, porcelain rim */
+.device.tablet{--bz:3.6%;--rim:#d9d3c8;--rim-hi:#f3efe7;border-radius:5.2% / 8.3%}
+.device.tablet img{border-radius:1.6% / 2.6%}
+.device.tablet::after{top:0;left:50%;width:.9%;aspect-ratio:1;margin:calc(var(--bz) / 2 - .45%) 0 0 -.45%;border-radius:50%;background:#1a2230;box-shadow:inset 0 0 0 1.5px #344155}
+/* Tablet, Galaxy Tab S style: slim bezel, tighter corners, graphite rim */
+.device.tablet.slim{--bz:1.9%;--rim:#3d4148;--rim-hi:#7d838c;border-radius:3.2% / 5.1%}
+.device.tablet.slim img{border-radius:1.4% / 2.2%}
+.device.tablet.slim::after{width:.7%;margin:calc(var(--bz) / 2 - .35%) 0 0 -.35%}
 .stage .tablet{transform:perspective(2200px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
 .stage .phone{position:absolute;width:24%;right:5%;bottom:-14%;transform:perspective(2200px) rotateY(-6deg)}
 .hero-shot{padding-bottom:3rem}
@@ -174,11 +188,15 @@ h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;fon
 
 /* Foldable illustration */
 .fold{display:flex;justify-content:center;perspective:1200px;padding:1rem 0 .5rem}
-.leaf{width:44%;max-width:230px;aspect-ratio:3/4;background:linear-gradient(150deg,#3a414d 0%,#14181f 45%,#0b0e13 100%);padding:7px;border-radius:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),0 0 0 1px rgba(0,0,0,.55),0 24px 48px -18px rgba(10,14,22,.55)}
-.leaf .scr{height:100%;border-radius:10px;background:#FBFAFD;padding:10px;position:relative;overflow:hidden}
-.leaf.l{transform:rotateY(18deg);transform-origin:right center;border-radius:16px 4px 4px 16px}
-.leaf.r{transform:rotateY(-18deg);transform-origin:left center;border-radius:4px 16px 16px 4px}
-.hinge{width:8px;background:linear-gradient(90deg,#0b0e13,#4a5361 50%,#0b0e13);border-radius:4px;margin:10px -1px}
+.leaf{position:relative;width:38%;max-width:200px;aspect-ratio:9/15;background:#07090c;padding:5px;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 0 1.5px #6f7277,0 0 0 2.5px #b9bcc1,0 0 0 3.5px rgba(0,0,0,.3),0 24px 48px -18px rgba(10,14,22,.55)}
+.leaf .scr{height:100%;border-radius:7px;background:#FBFAFD;padding:10px;position:relative;overflow:hidden}
+.leaf.l{transform:rotateY(18deg);transform-origin:right center;border-radius:12px 2px 2px 12px}
+.leaf.l .scr{border-radius:7px 0 0 7px}
+.leaf.r{transform:rotateY(-18deg);transform-origin:left center;border-radius:2px 12px 12px 2px}
+.leaf.r .scr{border-radius:0 7px 7px 0}
+/* Galaxy Z Fold style: under-display camera shows as a faint dot on the right half */
+.leaf.r::after{content:"";position:absolute;top:14px;right:26%;width:6px;height:6px;border-radius:50%;background:rgba(30,42,58,.18)}
+.hinge{width:6px;background:linear-gradient(90deg,#3a3d42,#b9bcc1 50%,#3a3d42);border-radius:3px;margin:6px -1px}
 @media(prefers-reduced-motion:no-preference){.leaf.l{animation:openl 6s ease-in-out infinite alternate}.leaf.r{animation:openr 6s ease-in-out infinite alternate}}
 @keyframes openl{from{transform:rotateY(28deg)}to{transform:rotateY(8deg)}}
 @keyframes openr{from{transform:rotateY(-28deg)}to{transform:rotateY(-8deg)}}
@@ -325,12 +343,12 @@ footer .small{font-size:.8rem;width:100%}
       <article class="card b-tab">
         <h3>En tablet, la semana entera</h3>
         <p>Siete días con un panel de «Hoy» al lado, y los detalles del evento junto a la cuadrícula cuando lo eliges. Arrastra la separación para cambiar el tamaño de los paneles.</p>
-        <div class="device tablet"><img src="../img/es-tablet-agenda.webp" width="1280" height="800" loading="lazy" alt="La agenda en una tablet: eventos agrupados por día a la izquierda y los detalles del evento elegido a la derecha"></div>
+        <div class="device tablet slim"><img src="../img/es-tablet-agenda.webp" width="1280" height="800" loading="lazy" alt="La agenda en una tablet: eventos agrupados por día a la izquierda y los detalles del evento elegido a la derecha"></div>
       </article>
       <article class="card b-phone">
         <h3>En el móvil, tres días</h3>
         <p>Una semana que se lee bien en una pantalla estrecha, con la barra para añadir al alcance del pulgar.</p>
-        <div class="device phone"><img src="../img/es-phone-week.webp" width="540" height="1200" loading="lazy" alt="La vista de semana en un móvil, con tres días"></div>
+        <div class="device phone ultra"><img src="../img/es-phone-week.webp" width="540" height="1200" loading="lazy" alt="La vista de semana en un móvil, con tres días"></div>
       </article>
       <article class="card b-fold">
         <h3>Plegables, como debe ser</h3>
@@ -345,7 +363,7 @@ footer .small{font-size:.8rem;width:100%}
       <article class="card b-dark">
         <h3>Teclado, ratón y modo oscuro</h3>
         <p>Atajos para todo, menú con el botón derecho, Ctrl+rueda para ampliar las horas y una segunda ventana junto a la primera. Los eventos se arrastran de una a otra.</p>
-        <div class="device tablet"><img src="../img/es-tablet-week-dark.webp" width="1280" height="800" loading="lazy" alt="La vista de semana en una tablet en modo oscuro"></div>
+        <div class="device tablet slim"><img src="../img/es-tablet-week-dark.webp" width="1280" height="800" loading="lazy" alt="La vista de semana en una tablet en modo oscuro"></div>
       </article>
     </div>
   </div>
