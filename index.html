@@ -109,7 +109,8 @@ q{quotes:"“" "”"}
 .device.tablet.slim img{border-radius:1.4% / 2.2%}
 .device.tablet.slim::after{width:.7%;margin:calc(var(--bz) / 2 - .35%) 0 0 -.35%}
 .stage .tablet{transform:perspective(2200px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
-.stage .phone{position:absolute;width:24%;right:5%;bottom:-14%;transform:perspective(2200px) rotateY(-6deg)}
+/* Phones sit in a .pw wrapper so the frame's percentage padding is of the phone's own width */
+.stage .pw{position:absolute;width:24%;right:5%;bottom:-14%;transform:perspective(2200px) rotateY(-6deg)}
 .hero-shot{padding-bottom:3rem}
 @media(min-width:960px){
   .hero{padding-top:5.5rem}
@@ -182,7 +183,7 @@ h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;fon
 .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;overflow:hidden;position:relative;box-shadow:var(--shadow)}
 .card p{color:var(--muted);margin:0 0 1.2rem}
 .card .device{margin-top:auto}
-.b-phone .device{width:72%;max-width:240px;margin:auto auto -3.5rem;align-self:center}
+.b-phone .pw{width:72%;max-width:240px;margin:auto auto -3.5rem;align-self:center}
 .b-dark{background:var(--ink);color:#fff;border-color:transparent}
 .b-dark p{color:rgba(255,255,255,.72)}
 
@@ -290,7 +291,7 @@ footer .small{font-size:.8rem;width:100%}
     <div class="hero-shot">
       <div class="stage">
         <div class="device tablet hero-tab"><img src="img/en-tablet-week.webp" width="1280" height="800" alt="Quickspan on a tablet: a seven-day week of events with this month and today's events in a panel beside it"></div>
-        <div class="device phone hero-phone"><img src="img/en-phone-quickadd.webp" width="540" height="1200" alt="Typing “Gym every Mon and Thu at 7pm” on a phone, with the repeat and the time highlighted"></div>
+        <div class="pw"><div class="device phone hero-phone"><img src="img/en-phone-quickadd.webp" width="540" height="1200" alt="Typing “Gym every Mon and Thu at 7pm” on a phone, with the repeat and the time highlighted"></div></div>
       </div>
     </div>
   </div>
@@ -348,7 +349,7 @@ footer .small{font-size:.8rem;width:100%}
       <article class="card b-phone">
         <h3>Phones get three days</h3>
         <p>A readable week on a narrow screen, with the quick-add bar under your thumb.</p>
-        <div class="device phone ultra"><img src="img/en-phone-week.webp" width="540" height="1200" loading="lazy" alt="The week view on a phone showing three days"></div>
+        <div class="pw"><div class="device phone ultra"><img src="img/en-phone-week.webp" width="540" height="1200" loading="lazy" alt="The week view on a phone showing three days"></div></div>
       </article>
       <article class="card b-fold">
         <h3>Foldables, done properly</h3>

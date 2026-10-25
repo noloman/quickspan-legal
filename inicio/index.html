@@ -109,7 +109,8 @@ q{quotes:"“" "”"}
 .device.tablet.slim img{border-radius:1.4% / 2.2%}
 .device.tablet.slim::after{width:.7%;margin:calc(var(--bz) / 2 - .35%) 0 0 -.35%}
 .stage .tablet{transform:perspective(2200px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
-.stage .phone{position:absolute;width:24%;right:5%;bottom:-14%;transform:perspective(2200px) rotateY(-6deg)}
+/* Phones sit in a .pw wrapper so the frame's percentage padding is of the phone's own width */
+.stage .pw{position:absolute;width:24%;right:5%;bottom:-14%;transform:perspective(2200px) rotateY(-6deg)}
 .hero-shot{padding-bottom:3rem}
 @media(min-width:960px){
   .hero{padding-top:5.5rem}
@@ -182,7 +183,7 @@ h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;fon
 .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;overflow:hidden;position:relative;box-shadow:var(--shadow)}
 .card p{color:var(--muted);margin:0 0 1.2rem}
 .card .device{margin-top:auto}
-.b-phone .device{width:72%;max-width:240px;margin:auto auto -3.5rem;align-self:center}
+.b-phone .pw{width:72%;max-width:240px;margin:auto auto -3.5rem;align-self:center}
 .b-dark{background:var(--ink);color:#fff;border-color:transparent}
 .b-dark p{color:rgba(255,255,255,.72)}
 
@@ -290,7 +291,7 @@ footer .small{font-size:.8rem;width:100%}
     <div class="hero-shot">
       <div class="stage">
         <div class="device tablet hero-tab"><img src="../img/es-tablet-week.webp" width="1280" height="800" alt="Quickspan en una tablet: una semana de siete días con eventos y, al lado, el mes y los eventos de hoy"></div>
-        <div class="device phone hero-phone"><img src="../img/es-phone-quickadd.webp" width="540" height="1200" alt="Escribiendo «Gimnasio cada lunes y jueves a las 19:00» en un móvil, con la repetición y la hora resaltadas"></div>
+        <div class="pw"><div class="device phone hero-phone"><img src="../img/es-phone-quickadd.webp" width="540" height="1200" alt="Escribiendo «Gimnasio cada lunes y jueves a las 19:00» en un móvil, con la repetición y la hora resaltadas"></div></div>
       </div>
     </div>
   </div>
@@ -348,7 +349,7 @@ footer .small{font-size:.8rem;width:100%}
       <article class="card b-phone">
         <h3>En el móvil, tres días</h3>
         <p>Una semana que se lee bien en una pantalla estrecha, con la barra para añadir al alcance del pulgar.</p>
-        <div class="device phone ultra"><img src="../img/es-phone-week.webp" width="540" height="1200" loading="lazy" alt="La vista de semana en un móvil, con tres días"></div>
+        <div class="pw"><div class="device phone ultra"><img src="../img/es-phone-week.webp" width="540" height="1200" loading="lazy" alt="La vista de semana en un móvil, con tres días"></div></div>
       </article>
       <article class="card b-fold">
         <h3>Plegables, como debe ser</h3>
