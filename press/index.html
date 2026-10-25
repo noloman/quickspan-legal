@@ -177,27 +177,9 @@ h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;fon
 .b-dark{background:var(--ink);color:#fff;border-color:transparent}
 .b-dark p{color:rgba(255,255,255,.72)}
 
-/* Foldable illustration */
-.fold{display:flex;justify-content:center;perspective:1200px;padding:1rem 0 .5rem}
-.leaf{position:relative;width:38%;max-width:200px;aspect-ratio:9/15;background:#07090c;padding:5px;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 0 1.5px #6f7277,0 0 0 2.5px #b9bcc1,0 0 0 3.5px rgba(0,0,0,.3),0 24px 48px -18px rgba(10,14,22,.55)}
-.leaf .scr{height:100%;border-radius:7px;background:#FBFAFD;padding:10px;position:relative;overflow:hidden}
-.leaf.l{transform:rotateY(18deg);transform-origin:right center;border-radius:12px 2px 2px 12px}
-.leaf.l .scr{border-radius:7px 0 0 7px}
-.leaf.r{transform:rotateY(-18deg);transform-origin:left center;border-radius:2px 12px 12px 2px}
-.leaf.r .scr{border-radius:0 7px 7px 0}
-/* Galaxy Z Fold style: under-display camera shows as a faint dot on the right half */
-.leaf.r::after{content:"";position:absolute;top:14px;right:26%;width:6px;height:6px;border-radius:50%;background:rgba(30,42,58,.18)}
-.hinge{width:6px;background:linear-gradient(90deg,#3a3d42,#b9bcc1 50%,#3a3d42);border-radius:3px;margin:6px -1px}
-@media(prefers-reduced-motion:no-preference){.leaf.l{animation:openl 6s ease-in-out infinite alternate}.leaf.r{animation:openr 6s ease-in-out infinite alternate}}
-@keyframes openl{from{transform:rotateY(28deg)}to{transform:rotateY(8deg)}}
-@keyframes openr{from{transform:rotateY(-28deg)}to{transform:rotateY(-8deg)}}
-.mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;height:100%;position:relative}
-.mini-grid i{background:#EEEAF3;border-radius:4px}
-.mini-grid .e{position:absolute;border-radius:4px;border-left:3px solid}
-.mini-today b{display:block;font-size:.75rem;color:#1E2A3A;margin-bottom:6px}
-.mini-today span{display:block;height:28px;border-radius:6px;background:#EEEAF3;margin-bottom:6px;border-left:3px solid var(--violet)}
-.mini-today span:nth-child(3){border-color:var(--sea)}
-.mini-today span:nth-child(4){border-color:var(--leaf);width:80%}
+/* Foldable: real book-posture capture in a slim tablet frame, with a faint hinge line down the middle */
+.device.fold::after{display:none}
+.device.fold::before{content:"";position:absolute;top:var(--bz);bottom:var(--bz);left:50%;width:2.2%;margin-left:-1.1%;background:linear-gradient(90deg,transparent,rgba(0,0,0,.16) 45%,rgba(255,255,255,.2) 55%,transparent);pointer-events:none;z-index:1}
 .caption{text-align:center;font-size:.8rem;color:var(--muted);margin:.6rem 0 0}
 
 /* Features grid */
@@ -364,10 +346,10 @@ footer .small{font-size:.8rem;width:100%}
     <video class="clip" src="quickspan-clip-en.mp4" controls preload="none" playsinline width="1080" height="1920" poster="phone-quickadd.webp"></video>
     <h3 style="margin-top:2.5rem">Downloads</h3>
     <ul class="dl">
-      <li><a href="quickspan-clip-en.mp4" download>Clip, English <span>18 s · 1080 × 1920 MP4</span></a></li>
-      <li><a href="quickspan-clip-es.mp4" download>Vídeo, español <span>18 s · 1080 × 1920 MP4</span></a></li>
-      <li><a href="quickspan-screenshots-en.zip" download>Screenshots, English <span>16 PNG · ZIP</span></a></li>
-      <li><a href="quickspan-screenshots-es.zip" download>Capturas, español <span>16 PNG · ZIP</span></a></li>
+      <li><a href="quickspan-clip-en.mp4" download>Clip, English <span>21 s · 1080 × 1920 MP4</span></a></li>
+      <li><a href="quickspan-clip-es.mp4" download>Vídeo, español <span>21 s · 1080 × 1920 MP4</span></a></li>
+      <li><a href="quickspan-screenshots-en.zip" download>Screenshots, English <span>21 PNG · ZIP</span></a></li>
+      <li><a href="quickspan-screenshots-es.zip" download>Capturas, español <span>21 PNG · ZIP</span></a></li>
       <li><a href="quickspan-icon-512.png" download>App icon <span>512 × 512 PNG</span></a></li>
       <li><a href="quickspan-icon.svg" download>App icon <span>SVG</span></a></li>
       <li><a href="quickspan-feature-graphic-en.png" download>Feature graphic, English <span>1024 × 500 PNG</span></a></li>
