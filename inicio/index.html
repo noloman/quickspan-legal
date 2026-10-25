@@ -4,101 +4,150 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Quickspan: calendario. Lo escribes y ya está en tu calendario</title>
-<meta name="description" content="Un calendario para Android que se adapta a la pantalla que tienes en la mano. Añade eventos escribiendo, en español o en inglés. Sin cuenta, sin anuncios, sin permiso de internet.">
-<meta property="og:title" content="Quickspan: calendario">
-<meta property="og:description" content="Escribe «Comida el viernes a las 14:00» y ya está en tu calendario. Para móviles, tablets y plegables. Sin cuenta, sin anuncios, sin permiso de internet.">
+<meta name="description" content="Un calendario para Android que se adapta a la pantalla que tienes en la mano. Añade eventos escribiendo, en español o en inglés. Sin cuenta, sin anuncios y sin permiso de internet.">
+<meta name="theme-color" content="#1E2A3A">
+<meta property="og:title" content="Quickspan Calendar">
+<meta property="og:description" content="Escribe «Comida el viernes 13:00» y ya está en tu calendario. Para móviles, tablets y plegables. Sin cuenta, sin anuncios y sin permiso de internet.">
 <meta property="og:image" content="https://quickspan.app/og-es.png">
 <meta property="og:url" content="https://quickspan.app/inicio/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="en" href="https://quickspan.app/">
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
-<style>:root{--ink:#1E2A3A;--sun:#FFC93C;--coral:#FF5E3A;--fg:#1b1b1f;--muted:#4a4f57;--bg:#fff;--card:#f5f3ee;--link:#2B45C8}
-@media(prefers-color-scheme:dark){:root{--fg:#e4e1e6;--muted:#b9bcc3;--bg:#131316;--card:#1d1f24;--link:#b8c4ff}}
+<style>:root{--ink:#1E2A3A;--ink2:#121a26;--sun:#FFC93C;--coral:#FF5E3A;--fg:#1b1b1f;--muted:#4a4f57;--bg:#fbfaf7;--card:#fff;--line:rgba(30,42,58,.1);--link:#2B45C8;--shadow:0 1px 2px rgba(16,24,40,.06),0 12px 32px rgba(16,24,40,.12)}
+@media(prefers-color-scheme:dark){:root{--fg:#e9e7ec;--muted:#b4b8c0;--bg:#111318;--card:#1a1d24;--line:rgba(255,255,255,.08);--link:#b8c4ff;--shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.45)}}
 *{box-sizing:border-box}
-body{margin:0;font:18px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
-a{color:var(--link)}
-.wrap{max-width:68rem;margin:0 auto;padding:0 1rem}
-.hero{background:var(--ink);color:#fff;padding:1rem 0 3.5rem}
-.hero nav{text-align:right;font-size:.95rem}
-.hero nav a{color:#fff;opacity:.85}
-.mark{display:block;border-radius:22px;margin:1.5rem 0 1.25rem}
-h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.12;letter-spacing:-.02em;margin:0 0 1rem;max-width:20ch}
+html{scroll-behavior:smooth}
+body{margin:0;font:18px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-underline-offset:.18em}
+img{max-width:100%}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.25rem}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(60rem 30rem at 85% -10%,rgba(255,201,60,.22),transparent 60%),radial-gradient(40rem 24rem at -10% 110%,rgba(255,94,58,.18),transparent 60%),linear-gradient(160deg,var(--ink),var(--ink2));padding:1rem 0 4rem}
+.hero nav{display:flex;justify-content:space-between;align-items:center;font-size:.95rem}
+.hero nav .brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-weight:700;letter-spacing:-.01em}
+.hero nav .brand img{border-radius:9px}
+.hero nav a.lang{color:#fff;opacity:.8;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:.25rem .8rem;border-radius:999px}
+.hero nav a.lang:hover,.hero nav a.lang:focus-visible{opacity:1;border-color:#fff}
+.hero-grid{display:grid;gap:2.5rem;align-items:center;padding-top:2.5rem}
+@media(min-width:900px){.hero-grid{grid-template-columns:1fr 1.15fr;padding-top:3.5rem}}
+.mark{display:block;border-radius:22px;margin:0 0 1.5rem;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+h1{font-size:clamp(2.2rem,4.6vw,3.3rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 1.1rem}
 h1 q{color:var(--sun);quotes:"“" "”"}
 :lang(es) h1 q,:lang(es) q{quotes:"«" "»"}
-.lede{font-size:1.2rem;max-width:40rem;opacity:.9;margin:0 0 1.75rem}
-.play{display:inline-block;background:var(--sun);color:var(--ink);font-weight:700;text-decoration:none;padding:.8rem 1.4rem;border-radius:999px}
-.play:hover,.play:focus-visible{background:#fff}
-.play.soon{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);font-weight:600}
-h2{font-size:1.6rem;line-height:1.2;margin:0 0 .75rem}
-.feature{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center;padding:3rem 0;border-bottom:1px solid rgba(127,127,127,.2)}
+.lede{font-size:1.18rem;max-width:36rem;color:rgba(255,255,255,.86);margin:0 0 1.75rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center}
+.play{display:inline-flex;align-items:center;gap:.5rem;background:var(--sun);color:var(--ink);font-weight:700;text-decoration:none;padding:.85rem 1.5rem;border-radius:999px;box-shadow:0 8px 24px rgba(255,201,60,.25);transition:transform .15s ease,background .15s ease}
+.play:hover,.play:focus-visible{background:#fff;transform:translateY(-1px)}
+.play.soon{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.35);font-weight:600;box-shadow:none}
+.play.soon::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--sun);box-shadow:0 0 0 4px rgba(255,201,60,.25)}
+.cta .secondary{color:#fff;opacity:.85;font-weight:600;text-decoration:none}
+.cta .secondary:hover,.cta .secondary:focus-visible{opacity:1;text-decoration:underline}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1.75rem 0 0}
+.badges li{font-size:.85rem;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:.3rem .75rem;border-radius:999px}
+.badges li::before{content:"✓";color:var(--sun);margin-right:.4rem}
+.shot{margin:0;position:relative}
+.shot img{display:block;width:100%;height:auto;border-radius:16px;border:8px solid #0b1018;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
+@media(min-width:900px){.shot img{transform:perspective(1600px) rotateY(-8deg) rotateX(2deg);transform-origin:left center}}
+
+/* Sections */
+main{padding-bottom:1rem}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin:0 0 .5rem}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 .9rem}
+h3{font-size:1.1rem;margin:.9rem 0 .35rem}
+.feature{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;padding:4.5rem 0;border-bottom:1px solid var(--line)}
 .feature p{color:var(--muted);margin:0 0 .9rem}
-.feature img{width:100%;height:auto;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.15);background:var(--card)}
-.feature img.phone{max-width:300px;justify-self:center}
-@media(min-width:760px){.feature{grid-template-columns:1fr 1.25fr;gap:3rem}.feature:nth-of-type(even)>div{order:2}}
-.private,.limits{padding:3rem 0 1rem}
-.private{background:var(--card);border-radius:18px;padding:2rem 1.5rem;margin-top:3rem}
-.private ul,.limits ul{padding-left:1.2rem}
-.private li,.limits li{margin:.4rem 0}
-.limits{color:var(--muted)}
-footer{padding:2rem 1rem 3rem;color:var(--muted);font-size:.95rem}
+.feature img{width:100%;height:auto;border-radius:16px;box-shadow:var(--shadow);background:var(--card)}
+@media(min-width:820px){.feature{grid-template-columns:1fr 1.15fr;gap:4rem}.feature.flip>div{order:2}}
+.phone-frame{justify-self:center;width:min(300px,80%);margin:0;padding:10px;border-radius:38px;background:#0b1018;box-shadow:var(--shadow)}
+.phone-frame img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:28px;box-shadow:none}
+.cards{display:grid;gap:1rem;margin-top:1.5rem}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem 1.3rem;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.card p{margin:0;color:var(--muted);font-size:.97rem}
+.icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,201,60,.18);color:var(--ink)}
+@media(prefers-color-scheme:dark){.icon{color:var(--sun);background:rgba(255,201,60,.12)}}
+.icon svg{width:24px;height:24px}
+.stack{padding:4.5rem 0;border-bottom:1px solid var(--line)}
+.stack>div:first-child{max-width:44rem}
+.stack>div:first-child p{color:var(--muted);margin:0}
+.private{margin:4.5rem 0 0;padding:3rem 1.5rem;border-radius:24px;background:linear-gradient(160deg,var(--ink),var(--ink2));color:#fff}
+@media(min-width:760px){.private{padding:3.5rem 3rem}}
+.private .eyebrow{color:var(--sun)}
+.private .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+.private .card p{color:rgba(255,255,255,.8)}
+.private .icon{background:rgba(255,201,60,.15);color:var(--sun)}
+.private a{color:var(--sun)}
+.limits{padding:4rem 0 1rem;color:var(--muted)}
+.limits ul{padding-left:1.2rem}
+.limits li{margin:.4rem 0}
+footer{border-top:1px solid var(--line);margin-top:2rem;padding:2rem 1.25rem 3rem;color:var(--muted);font-size:.95rem}
+footer .row{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;align-items:center}
 footer .small{font-size:.8rem}
-@media(min-width:760px){.feature.solo{grid-template-columns:1fr}.feature.solo>div{max-width:44rem}}</style>
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.play{transition:none}.shot img{transform:none}}</style>
 </head>
 <body>
 <header class="hero">
   <div class="wrap">
-    <nav><a href="../" lang="en" hreflang="en">English</a></nav>
-    <img class="mark" src="../icon.svg" alt="" width="96" height="96">
-    <h1>Escribe <q>Comida el viernes 13:00</q>.<br>Ya está en tu calendario.</h1>
-    <p class="lede">Quickspan es un calendario para Android que se adapta a la pantalla que tienes en la mano: móvil, tablet, plegable o una ventana junto a otras apps. Sin cuenta, sin anuncios y sin permiso de internet.</p>
-    <span class="play soon">Muy pronto en Google Play</span>
+    <nav><a class="brand" href="./"><img src="../icon.svg" alt="" width="32" height="32">Quickspan</a><a class="lang" href="../" lang="en" hreflang="en">English</a></nav>
+    <div class="hero-grid">
+      <div>
+        <h1>Escribe <q>Comida el viernes 13:00</q>.<br>Ya está en tu calendario.</h1>
+        <p class="lede">Quickspan es un calendario para Android que se adapta a la pantalla que tienes en la mano: móvil, tablet, plegable o una ventana junto a otras apps.</p>
+        <div class="cta"><span class="play soon">Muy pronto en Google Play</span> <a class="secondary" href="#quick-add">Mira cómo funciona ↓</a></div>
+        <ul class="badges"><li>Gratis</li><li>Sin cuenta</li><li>Sin anuncios</li><li>Sin rastreo</li><li>Español e inglés</li></ul>
+      </div>
+      <figure class="shot"><img src="../img/es-tablet-week.webp" width="1280" height="800" alt="Quickspan en una tablet: una semana de siete días con eventos y, a la derecha, el mes y los eventos de hoy"></figure>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="feature">
+  <section class="feature" id="quick-add">
     <div>
-      <h2>Aprovecha toda la pantalla</h2>
-      <p>En una tablet ves la semana entera con un panel de «Hoy» al lado, y los detalles de un evento junto a la cuadrícula cuando lo eliges. En el móvil, la semana muestra tres días. Las ventanas anchas tienen un menú lateral con nombres, y puedes arrastrar la separación entre paneles.</p>
-      <p>El teclado y el ratón funcionan en todas partes: atajos para cada acción, menú con el botón derecho, Ctrl+rueda para ampliar las horas y Ctrl+P para imprimir la semana o guardarla en PDF.</p>
-    </div>
-    <img src="../img/es-tablet-week.webp" width="1280" height="800" loading="lazy" alt="Quickspan en una tablet: una semana de siete días con eventos y, a la derecha, el mes y los eventos de hoy">
-  </section>
-
-  <section class="feature solo">
-    <div>
-      <h2>Pensado para plegables</h2>
-      <p>Medio abierto como un libro, la semana queda a un lado de la bisagra y el día de hoy o el evento elegido al otro. Apoyado en la mesa, la semana va arriba y los controles abajo. Nada se dibuja sobre el pliegue, y al plegar o desplegar sigues donde estabas.</p>
-      <p>En la pantalla exterior de un plegable tipo concha se convierte en un día sencillo. En tablets y plegables puede abrir una segunda ventana a su lado, y puedes arrastrar eventos de una a otra.</p>
-    </div>
-  </section>
-
-  <section class="feature">
-    <div>
+      <p class="eyebrow">Añadido rápido</p>
       <h2>Añade eventos escribiendo</h2>
-      <p>Escribe <q>Gimnasio cada lunes y jueves a las 19:00</q> o <q>Café con Ana esta tarde</q>. Lo que ha entendido se resalta mientras escribes, y una línea te muestra qué se va a guardar antes de pulsar Intro. Si no pones hora, busca tu primera hora libre.</p>
-      <p>Entiende español de verdad, no traducido, y también inglés. Todo se procesa en tu móvil.</p>
+      <p>Escribe <q>Gimnasio cada lunes y jueves a las 19:00</q> o <q>Café con Ana esta tarde</q>. Lo que ha entendido se resalta mientras escribes, y una línea te muestra qué se va a guardar antes de pulsar Intro.</p><p>Si no pones hora, busca tu primera hora libre. Entiende español de verdad, no traducido, y también inglés. Todo se procesa en tu móvil.</p>
     </div>
-    <img class="phone" src="../img/es-phone-quickadd.webp" width="540" height="1200" loading="lazy" alt="Escribiendo «Gimnasio cada lunes y jueves a las 19:00» en un móvil: la repetición y la hora aparecen resaltadas, con un resumen encima del campo de texto">
+    <figure class="phone-frame"><img src="../img/es-phone-quickadd.webp" width="540" height="1200" loading="lazy" alt="Escribiendo «Gimnasio cada lunes y jueves a las 19:00» en un móvil: la repetición y la hora aparecen resaltadas, con un resumen encima del campo de texto"></figure>
   </section>
 
-  <section class="feature">
-    <div>
-      <h2>Tus calendarios, en tu móvil</h2>
-      <p>Activa los calendarios del teléfono y Quickspan muestra los que ya tienes, como Google o Exchange, junto a los suyos. Puedes añadir, editar, mover y borrar eventos en ellos, y la cuenta del móvil los sincroniza como siempre.</p>
-      <p>Quickspan solo pide acceso al calendario cuando lo activas, y funciona sin él.</p>
+  <section class="stack">
+    <div><p class="eyebrow">Cualquier pantalla</p><h2>Aprovecha toda la pantalla</h2><p>Una sola app que cambia de forma según el espacio que le das.</p></div>
+    <div class="cards">
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M9 21h6"/></svg></span><h3>Tablets</h3><p>La semana entera con un panel de «Hoy» al lado, y los detalles de un evento junto a la cuadrícula cuando lo eliges.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h3>Móviles</h3><p>Una semana de tres días, vistas de día y de mes, y una agenda, con el añadido rápido siempre a mano.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></span><h3>Teclado y ratón</h3><p>Atajos para cada acción, menú con el botón derecho, Ctrl+rueda para ampliar las horas y Ctrl+P para imprimir la semana.</p></div>
     </div>
-    <img class="phone" src="../img/es-phone-month.webp" width="540" height="1200" loading="lazy" alt="La vista de mes en un móvil, con puntos de color para los eventos de cada calendario">
+  </section>
+
+  <section class="stack">
+    <div><p class="eyebrow">Plegables</p><h2>Pensado para plegables</h2><p>Nada se dibuja sobre el pliegue, y al plegar o desplegar sigues donde estabas.</p></div>
+    <div class="cards">
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.5-5-2-8-1.5v14c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-14c-3-.5-6 0-8 1.5Z"/><path d="M12 6v14"/></svg></span><h3>Medio abierto como un libro</h3><p>La semana queda a un lado de la bisagra y el día de hoy o el evento elegido al otro.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h16"/><path d="M5 14 8 5h8l3 9"/><path d="M7 14v5M17 14v5"/></svg></span><h3>Apoyado en la mesa</h3><p>La semana va arriba del pliegue y los controles abajo, al alcance de la mano.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="8.5" height="16" rx="1.5"/><rect x="13" y="4" width="8.5" height="16" rx="1.5"/><path d="m8 12 8 0M13.5 9.5 16 12l-2.5 2.5"/></svg></span><h3>Dos ventanas</h3><p>Abre una segunda ventana junto a la primera y arrastra eventos de una a otra.</p></div>
+    </div>
+  </section>
+
+  <section class="feature flip">
+    <div>
+      <p class="eyebrow">Tus calendarios</p>
+      <h2>Tus calendarios, en tu móvil</h2>
+      <p>Activa los calendarios del teléfono y Quickspan muestra los que ya tienes, como Google o Exchange, junto a los suyos. Añade, edita, mueve y borra eventos en ellos, y la cuenta del móvil los sincroniza como siempre.</p><p>Quickspan solo pide acceso al calendario cuando lo activas, y funciona sin él.</p>
+    </div>
+    <figure class="phone-frame"><img src="../img/es-phone-month.webp" width="540" height="1200" loading="lazy" alt="La vista de mes en un móvil, con puntos de color para los eventos de cada calendario"></figure>
   </section>
 
   <section class="private" id="privacidad">
+    <p class="eyebrow">Privacidad</p>
     <h2>Privado desde el diseño</h2>
-    <ul>
-      <li><strong>Sin permiso de internet.</strong> La app no puede enviar tus eventos a ningún sitio. Lo puedes comprobar en la lista de permisos de su ficha en Google Play.</li>
-      <li><strong>Sin cuenta, sin anuncios, sin estadísticas.</strong> No hay que registrarse y nada te rastrea.</li>
-      <li><strong>Los calendarios del móvil siguen con sus cuentas.</strong> Si muestras un calendario de Google o Exchange, se sigue sincronizando a través de tu móvil, no de nosotros.</li>
-    </ul>
-    <p><a href="../es/">Lee la política de privacidad</a></p>
+    <div class="cards">
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5.2-2.8M19 13a10 10 0 0 0-2.4-1.6M2 8.8a15 15 0 0 1 4.5-2.6M22 8.8A15 15 0 0 0 11 5"/><path d="M12 20h.01"/></svg></span><h3>Sin permiso de internet</h3><p>La app no puede enviar tus eventos a ningún sitio. Lo puedes comprobar en la lista de permisos de su ficha en Google Play.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg></span><h3>Sin cuenta, sin anuncios, sin estadísticas</h3><p>No hay que registrarse y nada te rastrea.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-14 5.3M4 12A8 8 0 0 1 18 6.7"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><h3>Tus calendarios siguen con sus cuentas</h3><p>Un calendario de Google o Exchange se sigue sincronizando a través de tu móvil, no de nosotros.</p></div>
+    </div>
+    <p style="margin:1.5rem 0 0"><a href="../es/">Lee la política de privacidad →</a></p>
   </section>
 
   <section class="limits">
@@ -112,10 +161,14 @@ footer .small{font-size:.8rem}
   </section>
 </main>
 
-<footer class="wrap">
-  <p>Quickspan es gratis y lo hace Manuel Lorenzo. Android 8 o posterior.</p>
-  <p><a href="../es/">Política de privacidad</a> · <a href="mailto:support@quickspan.app">support@quickspan.app</a> · <a href="../" lang="en" hreflang="en">English</a></p>
-  <p class="small">Google Play es una marca de Google LLC.</p>
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <p>Quickspan es gratis y lo hace Manuel Lorenzo. Android 8 o posterior.</p>
+      <p><a href="../es/">Política de privacidad</a> · <a href="mailto:support@quickspan.app">support@quickspan.app</a> · <a href="../" lang="en" hreflang="en">English</a></p>
+    </div>
+    <p class="small">Google Play es una marca de Google LLC.</p>
+  </div>
 </footer>
 </body>
 </html>

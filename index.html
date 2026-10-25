@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Quickspan Calendar: type it, it's on your calendar</title>
 <meta name="description" content="A calendar for Android that fits the screen you're holding. Add events by typing, in English or Spanish. No account, no ads, no internet permission.">
+<meta name="theme-color" content="#1E2A3A">
 <meta property="og:title" content="Quickspan Calendar">
 <meta property="og:description" content="Type “Lunch Friday 1pm” and it's on your calendar. Built for phones, tablets and foldables. No account, no ads, no internet permission.">
 <meta property="og:image" content="https://quickspan.app/og.png">
@@ -12,93 +13,141 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="es" href="https://quickspan.app/inicio/">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<style>:root{--ink:#1E2A3A;--sun:#FFC93C;--coral:#FF5E3A;--fg:#1b1b1f;--muted:#4a4f57;--bg:#fff;--card:#f5f3ee;--link:#2B45C8}
-@media(prefers-color-scheme:dark){:root{--fg:#e4e1e6;--muted:#b9bcc3;--bg:#131316;--card:#1d1f24;--link:#b8c4ff}}
+<style>:root{--ink:#1E2A3A;--ink2:#121a26;--sun:#FFC93C;--coral:#FF5E3A;--fg:#1b1b1f;--muted:#4a4f57;--bg:#fbfaf7;--card:#fff;--line:rgba(30,42,58,.1);--link:#2B45C8;--shadow:0 1px 2px rgba(16,24,40,.06),0 12px 32px rgba(16,24,40,.12)}
+@media(prefers-color-scheme:dark){:root{--fg:#e9e7ec;--muted:#b4b8c0;--bg:#111318;--card:#1a1d24;--line:rgba(255,255,255,.08);--link:#b8c4ff;--shadow:0 1px 2px rgba(0,0,0,.4),0 12px 32px rgba(0,0,0,.45)}}
 *{box-sizing:border-box}
-body{margin:0;font:18px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg)}
-a{color:var(--link)}
-.wrap{max-width:68rem;margin:0 auto;padding:0 1rem}
-.hero{background:var(--ink);color:#fff;padding:1rem 0 3.5rem}
-.hero nav{text-align:right;font-size:.95rem}
-.hero nav a{color:#fff;opacity:.85}
-.mark{display:block;border-radius:22px;margin:1.5rem 0 1.25rem}
-h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.12;letter-spacing:-.02em;margin:0 0 1rem;max-width:20ch}
+html{scroll-behavior:smooth}
+body{margin:0;font:18px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--link);text-underline-offset:.18em}
+img{max-width:100%}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.25rem}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(60rem 30rem at 85% -10%,rgba(255,201,60,.22),transparent 60%),radial-gradient(40rem 24rem at -10% 110%,rgba(255,94,58,.18),transparent 60%),linear-gradient(160deg,var(--ink),var(--ink2));padding:1rem 0 4rem}
+.hero nav{display:flex;justify-content:space-between;align-items:center;font-size:.95rem}
+.hero nav .brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-weight:700;letter-spacing:-.01em}
+.hero nav .brand img{border-radius:9px}
+.hero nav a.lang{color:#fff;opacity:.8;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:.25rem .8rem;border-radius:999px}
+.hero nav a.lang:hover,.hero nav a.lang:focus-visible{opacity:1;border-color:#fff}
+.hero-grid{display:grid;gap:2.5rem;align-items:center;padding-top:2.5rem}
+@media(min-width:900px){.hero-grid{grid-template-columns:1fr 1.15fr;padding-top:3.5rem}}
+.mark{display:block;border-radius:22px;margin:0 0 1.5rem;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+h1{font-size:clamp(2.2rem,4.6vw,3.3rem);line-height:1.08;letter-spacing:-.03em;margin:0 0 1.1rem}
 h1 q{color:var(--sun);quotes:"“" "”"}
 :lang(es) h1 q,:lang(es) q{quotes:"«" "»"}
-.lede{font-size:1.2rem;max-width:40rem;opacity:.9;margin:0 0 1.75rem}
-.play{display:inline-block;background:var(--sun);color:var(--ink);font-weight:700;text-decoration:none;padding:.8rem 1.4rem;border-radius:999px}
-.play:hover,.play:focus-visible{background:#fff}
-.play.soon{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);font-weight:600}
-h2{font-size:1.6rem;line-height:1.2;margin:0 0 .75rem}
-.feature{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center;padding:3rem 0;border-bottom:1px solid rgba(127,127,127,.2)}
+.lede{font-size:1.18rem;max-width:36rem;color:rgba(255,255,255,.86);margin:0 0 1.75rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center}
+.play{display:inline-flex;align-items:center;gap:.5rem;background:var(--sun);color:var(--ink);font-weight:700;text-decoration:none;padding:.85rem 1.5rem;border-radius:999px;box-shadow:0 8px 24px rgba(255,201,60,.25);transition:transform .15s ease,background .15s ease}
+.play:hover,.play:focus-visible{background:#fff;transform:translateY(-1px)}
+.play.soon{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.35);font-weight:600;box-shadow:none}
+.play.soon::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:var(--sun);box-shadow:0 0 0 4px rgba(255,201,60,.25)}
+.cta .secondary{color:#fff;opacity:.85;font-weight:600;text-decoration:none}
+.cta .secondary:hover,.cta .secondary:focus-visible{opacity:1;text-decoration:underline}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:1.75rem 0 0}
+.badges li{font-size:.85rem;font-weight:600;color:rgba(255,255,255,.9);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:.3rem .75rem;border-radius:999px}
+.badges li::before{content:"✓";color:var(--sun);margin-right:.4rem}
+.shot{margin:0;position:relative}
+.shot img{display:block;width:100%;height:auto;border-radius:16px;border:8px solid #0b1018;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
+@media(min-width:900px){.shot img{transform:perspective(1600px) rotateY(-8deg) rotateX(2deg);transform-origin:left center}}
+
+/* Sections */
+main{padding-bottom:1rem}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin:0 0 .5rem}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.15;letter-spacing:-.02em;margin:0 0 .9rem}
+h3{font-size:1.1rem;margin:.9rem 0 .35rem}
+.feature{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;padding:4.5rem 0;border-bottom:1px solid var(--line)}
 .feature p{color:var(--muted);margin:0 0 .9rem}
-.feature img{width:100%;height:auto;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.15);background:var(--card)}
-.feature img.phone{max-width:300px;justify-self:center}
-@media(min-width:760px){.feature{grid-template-columns:1fr 1.25fr;gap:3rem}.feature:nth-of-type(even)>div{order:2}}
-.private,.limits{padding:3rem 0 1rem}
-.private{background:var(--card);border-radius:18px;padding:2rem 1.5rem;margin-top:3rem}
-.private ul,.limits ul{padding-left:1.2rem}
-.private li,.limits li{margin:.4rem 0}
-.limits{color:var(--muted)}
-footer{padding:2rem 1rem 3rem;color:var(--muted);font-size:.95rem}
+.feature img{width:100%;height:auto;border-radius:16px;box-shadow:var(--shadow);background:var(--card)}
+@media(min-width:820px){.feature{grid-template-columns:1fr 1.15fr;gap:4rem}.feature.flip>div{order:2}}
+.phone-frame{justify-self:center;width:min(300px,80%);margin:0;padding:10px;border-radius:38px;background:#0b1018;box-shadow:var(--shadow)}
+.phone-frame img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:28px;box-shadow:none}
+.cards{display:grid;gap:1rem;margin-top:1.5rem}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.4rem 1.3rem;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.card p{margin:0;color:var(--muted);font-size:.97rem}
+.icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(255,201,60,.18);color:var(--ink)}
+@media(prefers-color-scheme:dark){.icon{color:var(--sun);background:rgba(255,201,60,.12)}}
+.icon svg{width:24px;height:24px}
+.stack{padding:4.5rem 0;border-bottom:1px solid var(--line)}
+.stack>div:first-child{max-width:44rem}
+.stack>div:first-child p{color:var(--muted);margin:0}
+.private{margin:4.5rem 0 0;padding:3rem 1.5rem;border-radius:24px;background:linear-gradient(160deg,var(--ink),var(--ink2));color:#fff}
+@media(min-width:760px){.private{padding:3.5rem 3rem}}
+.private .eyebrow{color:var(--sun)}
+.private .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+.private .card p{color:rgba(255,255,255,.8)}
+.private .icon{background:rgba(255,201,60,.15);color:var(--sun)}
+.private a{color:var(--sun)}
+.limits{padding:4rem 0 1rem;color:var(--muted)}
+.limits ul{padding-left:1.2rem}
+.limits li{margin:.4rem 0}
+footer{border-top:1px solid var(--line);margin-top:2rem;padding:2rem 1.25rem 3rem;color:var(--muted);font-size:.95rem}
+footer .row{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between;align-items:center}
 footer .small{font-size:.8rem}
-@media(min-width:760px){.feature.solo{grid-template-columns:1fr}.feature.solo>div{max-width:44rem}}</style>
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.play{transition:none}.shot img{transform:none}}</style>
 </head>
 <body>
 <header class="hero">
   <div class="wrap">
-    <nav><a href="inicio/" lang="es" hreflang="es">Español</a></nav>
-    <img class="mark" src="icon.svg" alt="" width="96" height="96">
-    <h1>Type <q>Lunch Friday 1pm</q>.<br>It's on your calendar.</h1>
-    <p class="lede">Quickspan is a calendar for Android that fits the screen you're holding: phone, tablet, foldable or a window beside other apps. No account, no ads, and no internet permission.</p>
-    <span class="play soon">Coming soon to Google Play</span>
+    <nav><a class="brand" href="./"><img src="icon.svg" alt="" width="32" height="32">Quickspan</a><a class="lang" href="inicio/" lang="es" hreflang="es">Español</a></nav>
+    <div class="hero-grid">
+      <div>
+        <h1>Type <q>Lunch Friday 1pm</q>.<br>It's on your calendar.</h1>
+        <p class="lede">Quickspan is a calendar for Android that fits the screen you're holding: phone, tablet, foldable or a window beside other apps.</p>
+        <div class="cta"><span class="play soon">Coming soon to Google Play</span> <a class="secondary" href="#quick-add">See how it works ↓</a></div>
+        <ul class="badges"><li>Free</li><li>No account</li><li>No ads</li><li>No tracking</li><li>English &amp; Spanish</li></ul>
+      </div>
+      <figure class="shot"><img src="img/en-tablet-week.webp" width="1280" height="800" alt="Quickspan on a tablet: a seven-day week of events, with this month and today's events in a panel on the right"></figure>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="feature">
+  <section class="feature" id="quick-add">
     <div>
-      <h2>Uses the whole screen</h2>
-      <p>On a tablet you get the full week with a Today panel beside it, and an event's details next to the grid when you pick one. On a phone the week shows three days. Wide windows get a labelled drawer, and you can drag the divider between panes.</p>
-      <p>Keyboard and mouse work everywhere: shortcuts for every action, right-click menus, Ctrl+scroll to zoom the hours, and Ctrl+P to print the week or save it as a PDF.</p>
-    </div>
-    <img src="img/en-tablet-week.webp" width="1280" height="800" loading="lazy" alt="Quickspan on a tablet: a seven-day week of events, with this month and today's events in a panel on the right">
-  </section>
-
-  <section class="feature solo">
-    <div>
-      <h2>Made for foldables</h2>
-      <p>Half open like a book, the week sits on one side of the hinge and today or the event you picked on the other. Flat on a table, the grid is above the fold and the controls below. Nothing is drawn across the crease, and folding or unfolding keeps your place.</p>
-      <p>On a flip phone's cover screen it becomes one simple day. On tablets and foldables it can open a second window beside itself, and you can drag events between them.</p>
-    </div>
-  </section>
-
-  <section class="feature">
-    <div>
+      <p class="eyebrow">Quick add</p>
       <h2>Add events by typing</h2>
-      <p>Write <q>Gym every Mon and Thu at 7pm</q> or <q>Lunch with Sam tomorrow at 1pm at Cafe Roma</q>. The words it understood light up as you type, and a line shows exactly what will be saved before you press Enter. Leave out the time and it finds your first free hour.</p>
-      <p>It understands English and Spanish, and it all runs on your phone.</p>
+      <p>Write <q>Gym every Mon and Thu at 7pm</q> or <q>Lunch with Sam tomorrow at 1pm at Cafe Roma</q>. The words it understood light up as you type, and a line shows exactly what will be saved before you press Enter.</p><p>Leave out the time and it finds your first free hour. It understands English and Spanish, and it all runs on your phone.</p>
     </div>
-    <img class="phone" src="img/en-phone-quickadd.webp" width="540" height="1200" loading="lazy" alt="Typing “Gym every Mon and Thu at 7pm” on a phone: the repeat and the time are highlighted, with a summary above the text field">
+    <figure class="phone-frame"><img src="img/en-phone-quickadd.webp" width="540" height="1200" loading="lazy" alt="Typing “Gym every Mon and Thu at 7pm” on a phone: the repeat and the time are highlighted, with a summary above the text field"></figure>
   </section>
 
-  <section class="feature">
-    <div>
-      <h2>Your calendars, your phone</h2>
-      <p>Turn on Phone calendars and Quickspan shows the calendars already on your phone, such as Google or Exchange, next to its own. You can add, edit, move and delete events in them, and your phone's account syncs the changes as it always has.</p>
-      <p>Quickspan asks for calendar access only when you turn this on, and works without it.</p>
+  <section class="stack">
+    <div><p class="eyebrow">Every screen</p><h2>Uses the whole screen</h2><p>One app that changes shape with the space you give it.</p></div>
+    <div class="cards">
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M9 21h6"/></svg></span><h3>Tablets</h3><p>The full week with a Today panel beside it, and an event's details next to the grid when you pick one.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h3>Phones</h3><p>A three-day week, day and month views, and an agenda, with quick add always at hand.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></span><h3>Keyboard and mouse</h3><p>Shortcuts for every action, right-click menus, Ctrl+scroll to zoom the hours and Ctrl+P to print the week.</p></div>
     </div>
-    <img class="phone" src="img/en-phone-month.webp" width="540" height="1200" loading="lazy" alt="The month view on a phone, with coloured dots for each calendar's events">
+  </section>
+
+  <section class="stack">
+    <div><p class="eyebrow">Foldables</p><h2>Made for foldables</h2><p>Nothing is drawn across the crease, and folding or unfolding keeps your place.</p></div>
+    <div class="cards">
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6c-2-1.5-5-2-8-1.5v14c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-14c-3-.5-6 0-8 1.5Z"/><path d="M12 6v14"/></svg></span><h3>Half open like a book</h3><p>The week sits on one side of the hinge, and today or the event you picked on the other.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h16"/><path d="M5 14 8 5h8l3 9"/><path d="M7 14v5M17 14v5"/></svg></span><h3>Flat on a table</h3><p>The grid stays above the fold and the controls sit below it, within reach.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="8.5" height="16" rx="1.5"/><rect x="13" y="4" width="8.5" height="16" rx="1.5"/><path d="m8 12 8 0M13.5 9.5 16 12l-2.5 2.5"/></svg></span><h3>Two windows</h3><p>Open a second window beside the first and drag events from one to the other.</p></div>
+    </div>
+  </section>
+
+  <section class="feature flip">
+    <div>
+      <p class="eyebrow">Your calendars</p>
+      <h2>Your calendars, your phone</h2>
+      <p>Turn on Phone calendars and Quickspan shows the calendars already on your phone, such as Google or Exchange, next to its own. Add, edit, move and delete events in them, and your phone's account syncs the changes as it always has.</p><p>Quickspan asks for calendar access only when you turn this on, and works without it.</p>
+    </div>
+    <figure class="phone-frame"><img src="img/en-phone-month.webp" width="540" height="1200" loading="lazy" alt="The month view on a phone, with coloured dots for each calendar's events"></figure>
   </section>
 
   <section class="private" id="privacy">
+    <p class="eyebrow">Privacy</p>
     <h2>Private by design</h2>
-    <ul>
-      <li><strong>No internet permission.</strong> The app can't send your events anywhere. You can see this in the permission list on its Play page.</li>
-      <li><strong>No account, no ads, no analytics.</strong> There is nothing to sign up for and nothing tracking you.</li>
-      <li><strong>Your phone's calendars stay with their accounts.</strong> If you show a Google or Exchange calendar, it keeps syncing through your phone, not through us.</li>
-    </ul>
-    <p><a href="en/">Read the privacy policy</a></p>
+    <div class="cards">
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l20 20"/><path d="M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5.2-2.8M19 13a10 10 0 0 0-2.4-1.6M2 8.8a15 15 0 0 1 4.5-2.6M22 8.8A15 15 0 0 0 11 5"/><path d="M12 20h.01"/></svg></span><h3>No internet permission</h3><p>The app can't send your events anywhere. You can check it in the permission list on its Play page.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m5.6 5.6 12.8 12.8"/></svg></span><h3>No account, no ads, no analytics</h3><p>There is nothing to sign up for and nothing tracking you.</p></div>
+      <div class="card"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-14 5.3M4 12A8 8 0 0 1 18 6.7"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></span><h3>Your calendars stay with their accounts</h3><p>A Google or Exchange calendar keeps syncing through your phone, not through us.</p></div>
+    </div>
+    <p style="margin:1.5rem 0 0"><a href="en/">Read the privacy policy →</a></p>
   </section>
 
   <section class="limits">
@@ -112,10 +161,14 @@ footer .small{font-size:.8rem}
   </section>
 </main>
 
-<footer class="wrap">
-  <p>Quickspan Calendar is free and made by Manuel Lorenzo. Android 8 and newer.</p>
-  <p><a href="en/">Privacy policy</a> · <a href="mailto:support@quickspan.app">support@quickspan.app</a> · <a href="inicio/" lang="es" hreflang="es">Español</a></p>
-  <p class="small">Google Play is a trademark of Google LLC.</p>
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <p>Quickspan Calendar is free and made by Manuel Lorenzo. Android 8 and newer.</p>
+      <p><a href="en/">Privacy policy</a> · <a href="mailto:support@quickspan.app">support@quickspan.app</a> · <a href="inicio/" lang="es" hreflang="es">Español</a></p>
+    </div>
+    <p class="small">Google Play is a trademark of Google LLC.</p>
+  </div>
 </footer>
 </body>
 </html>
