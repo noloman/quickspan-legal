@@ -220,6 +220,16 @@ any time in Android’s settings (Settings &gt; Apps &gt; Quickspan &gt;
 Permissions); the app then keeps working with the events stored in the
 app itself, and it does not ask again unless you switch the feature
 on.</p>
+<p><strong>Reminders (optional).</strong> If you set a reminder on an
+event, the app schedules a notification on your device and shows it at
+the time you chose. On Android 13 and newer it asks for permission to
+show notifications (<code>POST_NOTIFICATIONS</code>) the first time you
+choose a reminder; if you refuse, events work as before and no reminder
+is shown. The app also listens for the phone finishing its start-up
+(<code>RECEIVE_BOOT_COMPLETED</code>) only to schedule your reminders
+again after a restart, because Android clears them. Reminders are
+scheduled and shown on your device only; nothing about them is sent to
+us or to anyone else.</p>
 <p><strong>Text you type in quick add.</strong> When you type something
 like “Lunch with Sam tomorrow at 1pm” the app works out the date, time,
 place and title on your device, with rules and a small language model
@@ -227,6 +237,12 @@ that is part of the app. The text is not sent anywhere and is not stored
 except as the event you choose to save.</p>
 <p><strong>Settings.</strong> Choices such as which calendars are
 visible are kept on your device.</p>
+<p><strong>Quickspan Pro (optional).</strong> Pro is an optional
+one-time purchase. Google Play processes the payment under Google’s own
+privacy policy; the app receives only whether Pro is owned and never
+sees your payment details. Whether you own Pro is remembered on your
+device. If you restore a purchase on a new phone, the app asks the Play
+Store app on that phone, with no account of ours.</p>
 <h2 id="what-the-app-does-not-do">What the app does not do</h2>
 <ul>
 <li>It does not require or create an account.</li>

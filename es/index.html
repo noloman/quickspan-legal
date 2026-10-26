@@ -231,8 +231,25 @@ dispositivo la fecha, la hora, el lugar y el título, con reglas y con un
 pequeño modelo de lenguaje que forma parte de la app. El texto no se
 envía a ningún sitio y solo se guarda como el evento que decides
 crear.</p>
+<p><strong>Recordatorios (opcional).</strong> Si añades un recordatorio
+a un evento, la app programa una notificación en tu dispositivo y la
+muestra a la hora que elegiste. En Android 13 y posteriores, la app pide
+permiso para mostrar notificaciones (<code>POST_NOTIFICATIONS</code>) la
+primera vez que eliges un recordatorio; si lo rechazas, los eventos
+funcionan igual y no se muestra ningún recordatorio. La app también
+escucha que el teléfono termine de arrancar
+(<code>RECEIVE_BOOT_COMPLETED</code>) solo para volver a programar tus
+recordatorios tras un reinicio, porque Android los borra. Los
+recordatorios se programan y se muestran únicamente en tu dispositivo;
+nada sobre ellos se envía a nosotros ni a nadie más.</p>
 <p><strong>Ajustes.</strong> Tus preferencias, como qué calendarios se
 ven, se guardan en tu dispositivo.</p>
+<p><strong>Quickspan Pro (opcional).</strong> Pro es una compra única
+opcional. Google Play procesa el pago según la política de privacidad de
+Google; la app solo sabe si tienes Pro y nunca ve tus datos de pago. Si
+tienes Pro se recuerda en tu dispositivo. Al restaurar la compra en un
+teléfono nuevo, la app lo consulta a la app de Play Store de ese
+teléfono, sin ninguna cuenta nuestra.</p>
 <h2 id="qué-no-hace-la-app">Qué no hace la app</h2>
 <ul>
 <li>No necesita ni crea ninguna cuenta.</li>
