@@ -79,6 +79,8 @@ q{quotes:"“" "”"}
 @media(min-width:820px){.top .top-play{display:none}}
 .top nav .btn-sun,.top nav .btn-sun:hover{color:var(--ink);box-shadow:none}
 @media(max-width:360px){.btn{padding:.8rem 1rem;font-size:.9rem}.top .btn{padding:.5rem .8rem}.final .box{padding-inline:.75rem}}
+/* Under 360 px the logo, the Play button and the language link don't fit beside the wordmark, so it is hidden visually (screen readers still read it) */
+@media(max-width:359px){.top .wordmark{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 
 /* Hero */
 .hero{position:relative;overflow:hidden;background:var(--ink-2);color:#fff;padding:4.5rem 0 0}
@@ -259,7 +261,7 @@ footer .small{font-size:.8rem;width:100%}
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="../icon.svg" alt="" width="34" height="34">Quickspan</a>
+    <a class="brand" href="#top"><img src="../icon.svg" alt="" width="34" height="34"><span class="wordmark">Quickspan</span></a>
     <nav aria-label="Secciones">
       <span class="nav-links"><a href="#quick-add">Añadir rápido</a><a href="#screens">Pantallas</a><a href="#privacy">Privacidad</a><a href="#faq">Preguntas</a></span>
       <a class="btn btn-sun top-play" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-es-top&amp;hl=es"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.7 1 1.2.7L21 12.7c.5-.3.5-1.1 0-1.4L5.2 2.1c-.5-.3-1.2.1-1.2.7z"/></svg> Google Play</a><a href="../" lang="en" hreflang="en" aria-label="English">EN</a>

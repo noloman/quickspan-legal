@@ -68,6 +68,8 @@ q{quotes:"“" "”"}
 @media(min-width:820px){.top .top-play{display:none}}
 .top nav .btn-sun,.top nav .btn-sun:hover{color:var(--ink);box-shadow:none}
 @media(max-width:360px){.btn{padding:.8rem 1rem;font-size:.9rem}.top .btn{padding:.5rem .8rem}.final .box{padding-inline:.75rem}}
+/* Under 360 px the logo, the Play button and the language link don't fit beside the wordmark, so it is hidden visually (screen readers still read it) */
+@media(max-width:359px){.top .wordmark{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
 
 /* Hero */
 .hero{position:relative;overflow:hidden;background:var(--ink-2);color:#fff;padding:4.5rem 0 0}
