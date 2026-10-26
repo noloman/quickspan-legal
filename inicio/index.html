@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Quickspan: calendario y agenda Android para tablet y plegable</title>
-<meta name="description" content="Quickspan es un calendario y agenda privado para Android. Escribe «Comida el viernes 14:00» y ya está en tu calendario. Para tablets, plegables y móviles.">
+<title>Quickspan: el calendario Android privado en el que solo escribes</title>
+<meta name="description" content="Quickspan es el calendario privado en el que solo escribes. Escribe «Comida el viernes 14:00» y ya está en tu calendario. Para móviles, tablets y plegables Android.">
 <meta name="theme-color" content="#141C28">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Quickspan">
 <meta property="og:locale" content="es_ES">
 <meta property="og:locale:alternate" content="en_US">
-<meta property="og:title" content="Quickspan: calendario y agenda para Android">
+<meta property="og:title" content="Quickspan: el calendario privado en el que solo escribes">
 <meta property="og:description" content="El calendario privado en el que solo tienes que escribir. Escribe «Comida el viernes a las 14:00» y ya está en tu calendario. Sin cuenta, sin anuncios, sin rastreo. Para móviles, tablets y plegables.">
 <meta property="og:image" content="https://quickspan.app/og-es.png">
 <meta property="og:image:width" content="1200">
@@ -34,19 +34,24 @@
 
 :root{
   --ink:#1E2A3A;--ink-2:#141C28;--ink-3:#2A3A50;--sun:#FFC93C;--coral:#FF5E3A;--sea:#3FA7C4;--leaf:#3E9B6A;--violet:#7A5AF8;
-  --bg:#FBF8F2;--surface:#FFFFFF;--surface-2:#F3EEE4;--fg:#1E2A3A;--muted:#55606F;--line:rgba(30,42,58,.12);--link:#2B45C8;
+  --bg:#FBF8F2;--surface:#FFFFFF;--surface-2:#F3EEE4;--fg:#1E2A3A;--muted:#55606F;--line:rgba(30,42,58,.12);--link:#2B45C8;--kicker:#B3321A;--focus:var(--ink);
   --radius:22px;--shadow:0 1px 2px rgba(20,28,40,.06),0 12px 40px -12px rgba(20,28,40,.25);
 }
 @media(prefers-color-scheme:dark){:root{
-  --bg:#10151D;--surface:#171E29;--surface-2:#1C2533;--fg:#EEF1F5;--muted:#A9B3C1;--line:rgba(255,255,255,.1);--link:#B8C4FF;
+  --bg:#10151D;--surface:#171E29;--surface-2:#1C2533;--fg:#EEF1F5;--muted:#A9B3C1;--line:rgba(255,255,255,.1);--link:#B8C4FF;--kicker:#FF8A6D;--focus:var(--sun);
   --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 48px -16px rgba(0,0,0,.7);
 }}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+html,body{overflow-x:clip}
 body{margin:0;font:17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);font-feature-settings:"ss01"}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--link)}
-a:focus-visible,summary:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+/* The focus ring takes the ink on light surfaces and the sun on dark ones, so it stays at 3:1 or better everywhere */
+.top,.hero,.privacy,.b-dark{--focus:var(--sun)}
+.final .box{--focus:var(--ink)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
 .wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 q{quotes:"“" "”"}
@@ -62,23 +67,25 @@ q{quotes:"“" "”"}
 .top nav a:hover{color:#fff}
 .top .nav-links{display:none}
 @media(min-width:820px){.top .nav-links{display:flex;gap:1.5rem}}
-.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:800;text-decoration:none;border-radius:999px;padding:.85rem 1.4rem;line-height:1.1;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:800;white-space:nowrap;text-decoration:none;border-radius:999px;padding:.85rem 1.4rem;line-height:1.1;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}
 .btn svg{width:20px;height:20px;flex:none}
 .btn-sun{background:var(--sun);color:var(--ink);box-shadow:0 8px 24px -8px rgba(255,201,60,.6)}
 .btn-sun:hover{transform:translateY(-1px);background:#ffd45f}
 .btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.28)}
 .btn-ghost:hover{border-color:#fff}
 .btn-soon{background:rgba(255,255,255,.08);color:#fff;border:1.5px dashed rgba(255,255,255,.35);cursor:default}
-.top .btn{padding:.55rem 1rem;font-size:.9rem}
+.top .btn{padding:.55rem 1rem;font-size:.9rem;min-height:44px}
+/* Phones hide the section links, so the bar carries the Play button instead */
+@media(min-width:820px){.top .top-play{display:none}}
+.top nav .btn-sun,.top nav .btn-sun:hover{color:var(--ink);box-shadow:none}
+@media(max-width:360px){.btn{padding:.8rem 1rem;font-size:.9rem}.top .btn{padding:.5rem .8rem}.final .box{padding-inline:.75rem}}
 
 /* Hero */
 .hero{position:relative;overflow:hidden;background:var(--ink-2);color:#fff;padding:4.5rem 0 0}
 .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(closest-side,rgba(255,201,60,.22),transparent 70%);pointer-events:none}
 .hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:60vw;height:60vw;max-width:800px;max-height:800px;background:radial-gradient(closest-side,rgba(255,94,58,.16),transparent 70%);pointer-events:none}
 .hero .wrap{position:relative;z-index:1;display:grid;gap:3rem}
-.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;font-weight:700;letter-spacing:.02em;color:var(--sun);background:rgba(255,201,60,.1);border:1px solid rgba(255,201,60,.3);padding:.35rem .8rem;border-radius:999px}
-.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--sun);display:block}
-.hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:1.1rem 0 1.2rem}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:0 0 1.2rem}
 .hero h1 em{font-style:normal;color:var(--sun)}
 .hero .lede{font-size:clamp(1.1rem,1.6vw,1.25rem);color:rgba(255,255,255,.78);max-width:34rem;margin:0 0 2rem}
 .cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
@@ -115,13 +122,16 @@ q{quotes:"“" "”"}
 .hero-shot{padding-bottom:3rem}
 @media(min-width:960px){
   .hero{padding-top:5.5rem}
-  .hero .wrap{grid-template-columns:1fr 1.08fr;align-items:center}
+  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:center}
   .stage{margin-right:-4rem;max-width:none}
 }
 
 /* Sections */
 section{padding:5.5rem 0}
-.kicker{font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin:0 0 .8rem}
+.kicker{font-size:.95rem;font-weight:800;color:var(--kicker);margin:0 0 .6rem}
+.privacy{--kicker:#FF8A6D}
+h1,h2{text-wrap:balance;overflow-wrap:break-word;min-width:0}
+p{text-wrap:pretty}
 h2{font-size:clamp(2rem,4.2vw,3rem);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 1rem;max-width:22ch}
 h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;font-weight:800}
 .intro{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0}
@@ -129,7 +139,7 @@ h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;fon
 
 /* How quick add works */
 .how{display:grid;gap:2.5rem;align-items:center}
-@media(min-width:900px){.how{grid-template-columns:1fr 1.1fr;gap:4rem}}
+@media(min-width:900px){.how{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:4rem}}
 .steps{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.1rem;counter-reset:s}
 .steps li{display:grid;grid-template-columns:2.4rem 1fr;gap:.9rem;align-items:start;counter-increment:s}
 .steps li::before{content:counter(s);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:12px;background:var(--surface-2);font-weight:800;color:var(--fg)}
@@ -146,7 +156,7 @@ h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;fon
 .ev.w{background:rgba(63,167,196,.18);border-color:var(--sea);color:var(--fg)}
 .ev.f{background:rgba(62,155,106,.18);border-color:var(--leaf);color:var(--fg)}
 .ev.p{background:rgba(122,90,248,.16);border-color:var(--violet);color:var(--fg)}
-.ev.new{background:var(--coral);border-color:#c8401f;color:#fff;box-shadow:0 8px 20px -6px rgba(255,94,58,.7)}
+.ev.new{background:#C8401F;border-color:#9E2F14;color:#fff;box-shadow:0 8px 20px -6px rgba(255,94,58,.7)}
 .demo-bar{display:flex;align-items:center;gap:.6rem;border:2px solid var(--link);border-radius:18px;padding:.75rem 1rem;font-weight:600;font-size:1.02rem;background:var(--surface);min-height:3.3rem}
 .typed{white-space:nowrap;overflow:hidden;flex:1;min-width:0}
 .tok{border-radius:6px;padding:0 .12em;margin:0 -.12em}
@@ -180,7 +190,7 @@ h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;fon
 /* Screens bento */
 .screens{background:var(--surface-2)}
 .bento{display:grid;gap:1.25rem}
-@media(min-width:900px){.bento{grid-template-columns:repeat(6,1fr)}.b-tab{grid-column:span 4}.b-phone{grid-column:span 2}.b-fold{grid-column:span 3}.b-dark{grid-column:span 3}}
+@media(min-width:900px){.bento{grid-template-columns:repeat(6,minmax(0,1fr))}.b-tab{grid-column:span 4}.b-phone{grid-column:span 2}.b-fold{grid-column:span 3}.b-dark{grid-column:span 3}}
 .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;overflow:hidden;position:relative;box-shadow:var(--shadow)}
 .card p{color:var(--muted);margin:0 0 1.2rem}
 .card .device{margin-top:auto}
@@ -250,9 +260,9 @@ footer .small{font-size:.8rem;width:100%}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top"><img src="../icon.svg" alt="" width="34" height="34">Quickspan</a>
-    <nav>
+    <nav aria-label="Secciones">
       <span class="nav-links"><a href="#quick-add">Añadir rápido</a><a href="#screens">Pantallas</a><a href="#privacy">Privacidad</a><a href="#faq">Preguntas</a></span>
-      <a href="../" lang="en" hreflang="en">EN</a>
+      <a class="btn btn-sun top-play" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-es-top&amp;hl=es"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.7 1 1.2.7L21 12.7c.5-.3.5-1.1 0-1.4L5.2 2.1c-.5-.3-1.2.1-1.2.7z"/></svg> Google Play</a><a href="../" lang="en" hreflang="en" aria-label="English">EN</a>
     </nav>
   </div>
 </header>
@@ -261,7 +271,6 @@ footer .small{font-size:.8rem;width:100%}
 <div class="hero">
   <div class="wrap">
     <div>
-      <span class="eyebrow"><i></i>Calendario privado para Android</span>
       <h1>Escríbelo.<br><em>Ya está en tu calendario.</em></h1>
       <p class="lede">Quickspan es el calendario privado en el que solo tienes que escribir. <q>Comida con Ana el viernes 14:00</q> se convierte en un evento, procesado en tu móvil, y se adapta a la pantalla que tienes en la mano: móvil, tablet o plegable.</p>
       <div class="cta"><a class="btn btn-sun" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-es&amp;hl=es"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.7 1 1.2.7L21 12.7c.5-.3.5-1.1 0-1.4L5.2 2.1c-.5-.3-1.2.1-1.2.7z"/></svg> Descárgalo en Google Play</a><a class="btn btn-ghost" href="#quick-add">Mira cómo funciona</a></div>
@@ -377,7 +386,7 @@ footer .small{font-size:.8rem;width:100%}
       <div class="stat"><strong>0</strong><span>cuentas</span><p>No hay que registrarse. Ábrela y empieza a escribir.</p></div>
       <div class="stat"><strong>0</strong><span>anuncios o rastreadores</span><p>La app no tiene anuncios, ni estadísticas, ni ID de publicidad. La sección de seguridad de datos de Google Play dice «No se recogen datos».</p></div>
     </div>
-    <p class="note">Si decides mostrar un calendario de Google o Exchange, se sigue sincronizando a través de la cuenta de tu móvil, como siempre.  <a href="../es/">Lee la política de privacidad</a></p>
+    <p class="note">Si decides mostrar un calendario de Google o Exchange, se sigue sincronizando a través de la cuenta de tu móvil, como siempre. <a href="../es/">Lee la política de privacidad</a>.</p>
   </div>
 </section>
 
@@ -413,7 +422,7 @@ footer .small{font-size:.8rem;width:100%}
 <footer>
   <div class="wrap">
     <p>Quickspan, hecho por Manuel Lorenzo.</p>
-    <nav><a href="../es/">Política de privacidad</a><a href="../press/">Prensa</a><a href="mailto:support@quickspan.app">support@quickspan.app</a><a href="../" lang="en" hreflang="en">English</a></nav>
+    <nav aria-label="Más"><a href="../es/">Política de privacidad</a><a href="../press/">Prensa</a><a href="mailto:support@quickspan.app">support@quickspan.app</a><a href="../" lang="en" hreflang="en">English</a></nav>
     <p class="small">Google Play es una marca de Google LLC.</p>
   </div>
 </footer>
