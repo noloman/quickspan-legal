@@ -28,8 +28,9 @@
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:200 800;src:url(../fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:200 800;src:url(../fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+<link rel="preload" href="../img/es-tablet-week.webp" as="image" type="image/webp" fetchpriority="high">
+<style>@font-face{font-family:Manrope;font-style:normal;font-display:optional;font-weight:200 800;src:url(../fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-style:normal;font-display:optional;font-weight:200 800;src:url(../fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 
 :root{
   --ink:#1E2A3A;--ink-2:#141C28;--ink-3:#2A3A50;--sun:#FFC93C;--coral:#FF5E3A;--sea:#3FA7C4;--leaf:#3E9B6A;--violet:#7A5AF8;
@@ -272,7 +273,7 @@ footer .small{font-size:.8rem;width:100%}
     </div>
     <div class="hero-shot">
       <div class="stage">
-        <div class="device tablet hero-tab"><img src="../img/es-tablet-week.webp" width="1280" height="800" alt="Quickspan en una tablet: una semana de siete días con eventos y, al lado, el mes y los eventos de hoy"></div>
+        <div class="device tablet hero-tab"><img src="../img/es-tablet-week.webp" fetchpriority="high" decoding="async" width="1280" height="800" alt="Quickspan en una tablet: una semana de siete días con eventos y, al lado, el mes y los eventos de hoy"></div>
         <div class="pw"><div class="device phone hero-phone"><img src="../img/es-phone-quickadd.webp" width="540" height="1200" alt="Escribiendo «Gimnasio cada lunes y jueves a las 19:00» en un móvil, con la repetición y la hora resaltadas"></div></div>
       </div>
     </div>
@@ -326,23 +327,23 @@ footer .small{font-size:.8rem;width:100%}
       <article class="card b-tab">
         <h3>En tablet, la semana entera</h3>
         <p>Siete días con un panel de «Hoy» al lado, y los detalles del evento junto a la cuadrícula cuando lo eliges. Arrastra la separación para cambiar el tamaño de los paneles.</p>
-        <div class="device tablet slim"><img src="../img/es-tablet-agenda.webp" width="1280" height="800" loading="lazy" alt="La agenda en una tablet: eventos agrupados por día a la izquierda y los detalles del evento elegido a la derecha"></div>
+        <div class="device tablet slim"><img src="../img/es-tablet-agenda.webp" width="1280" height="800" loading="lazy" decoding="async" alt="La agenda en una tablet: eventos agrupados por día a la izquierda y los detalles del evento elegido a la derecha"></div>
       </article>
       <article class="card b-phone">
         <h3>En el móvil, tres días</h3>
         <p>Una semana que se lee bien en una pantalla estrecha, con la barra para añadir al alcance del pulgar.</p>
-        <div class="pw"><div class="device phone ultra"><img src="../img/es-phone-week.webp" width="540" height="1200" loading="lazy" alt="La vista de semana en un móvil, con tres días"></div></div>
+        <div class="pw"><div class="device phone ultra"><img src="../img/es-phone-week.webp" width="540" height="1200" loading="lazy" decoding="async" alt="La vista de semana en un móvil, con tres días"></div></div>
       </article>
       <article class="card b-fold">
         <h3>Plegables, como debe ser</h3>
         <p>Medio abierto como un libro, la semana queda a un lado de la bisagra y el día de hoy al otro. Apoyado en la mesa, la semana arriba y los controles abajo. Pliega o despliega y sigues donde estabas.</p>
-        <div class="device tablet slim fold"><img src="../img/es-fold-book.webp" width="1400" height="1357" loading="lazy" alt="Un plegable medio abierto como un libro: la semana a la izquierda, el mes y los eventos de hoy a la derecha"></div>
+        <div class="device tablet slim fold"><img src="../img/es-fold-book.webp" width="1400" height="1357" loading="lazy" decoding="async" alt="Un plegable medio abierto como un libro: la semana a la izquierda, el mes y los eventos de hoy a la derecha"></div>
         <p class="caption">Postura de libro en un Pixel 10 Pro Fold (emulador)</p>
       </article>
       <article class="card b-dark">
         <h3>Teclado, ratón y modo oscuro</h3>
         <p>Atajos para todo, menú con el botón derecho, Ctrl+rueda para ampliar las horas y una segunda ventana junto a la primera. Los eventos se arrastran de una a otra.</p>
-        <div class="device tablet slim"><img src="../img/es-tablet-week-dark.webp" width="1280" height="800" loading="lazy" alt="La vista de semana en una tablet en modo oscuro"></div>
+        <div class="device tablet slim"><img src="../img/es-tablet-week-dark.webp" width="1280" height="800" loading="lazy" decoding="async" alt="La vista de semana en una tablet en modo oscuro"></div>
       </article>
     </div>
   </div>

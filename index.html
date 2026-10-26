@@ -28,8 +28,9 @@
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<style>@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:200 800;src:url(fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:Manrope;font-style:normal;font-display:swap;font-weight:200 800;src:url(fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+<link rel="preload" href="img/en-tablet-week.webp" as="image" type="image/webp" fetchpriority="high">
+<style>@font-face{font-family:Manrope;font-style:normal;font-display:optional;font-weight:200 800;src:url(fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-style:normal;font-display:optional;font-weight:200 800;src:url(fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 
 :root{
   --ink:#1E2A3A;--ink-2:#141C28;--ink-3:#2A3A50;--sun:#FFC93C;--coral:#FF5E3A;--sea:#3FA7C4;--leaf:#3E9B6A;--violet:#7A5AF8;
@@ -272,7 +273,7 @@ footer .small{font-size:.8rem;width:100%}
     </div>
     <div class="hero-shot">
       <div class="stage">
-        <div class="device tablet hero-tab"><img src="img/en-tablet-week.webp" width="1280" height="800" alt="Quickspan on a tablet: a seven-day week of events with this month and today's events in a panel beside it"></div>
+        <div class="device tablet hero-tab"><img src="img/en-tablet-week.webp" fetchpriority="high" decoding="async" width="1280" height="800" alt="Quickspan on a tablet: a seven-day week of events with this month and today's events in a panel beside it"></div>
         <div class="pw"><div class="device phone hero-phone"><img src="img/en-phone-quickadd.webp" width="540" height="1200" alt="Typing “Gym every Mon and Thu at 7pm” on a phone, with the repeat and the time highlighted"></div></div>
       </div>
     </div>
@@ -326,23 +327,23 @@ footer .small{font-size:.8rem;width:100%}
       <article class="card b-tab">
         <h3>Tablets get the whole week</h3>
         <p>Seven days with a Today panel beside them, and the event's details next to the grid when you pick one. Drag the divider to resize the panes.</p>
-        <div class="device tablet slim"><img src="img/en-tablet-agenda.webp" width="1280" height="800" loading="lazy" alt="The agenda on a tablet: events grouped by day on the left, the selected event's details on the right"></div>
+        <div class="device tablet slim"><img src="img/en-tablet-agenda.webp" width="1280" height="800" loading="lazy" decoding="async" alt="The agenda on a tablet: events grouped by day on the left, the selected event's details on the right"></div>
       </article>
       <article class="card b-phone">
         <h3>Phones get three days</h3>
         <p>A readable week on a narrow screen, with the quick-add bar under your thumb.</p>
-        <div class="pw"><div class="device phone ultra"><img src="img/en-phone-week.webp" width="540" height="1200" loading="lazy" alt="The week view on a phone showing three days"></div></div>
+        <div class="pw"><div class="device phone ultra"><img src="img/en-phone-week.webp" width="540" height="1200" loading="lazy" decoding="async" alt="The week view on a phone showing three days"></div></div>
       </article>
       <article class="card b-fold">
         <h3>Foldables, done properly</h3>
         <p>Half open like a book, the week sits on one side of the hinge and today on the other. Flat on a table, the grid goes above the fold and the controls below. Fold or unfold and you keep your place.</p>
-        <div class="device tablet slim fold"><img src="img/en-fold-book.webp" width="1400" height="1357" loading="lazy" alt="A foldable half open like a book: the week on the left, the month and today’s events on the right"></div>
+        <div class="device tablet slim fold"><img src="img/en-fold-book.webp" width="1400" height="1357" loading="lazy" decoding="async" alt="A foldable half open like a book: the week on the left, the month and today’s events on the right"></div>
         <p class="caption">Book posture on a Pixel 10 Pro Fold (emulator)</p>
       </article>
       <article class="card b-dark">
         <h3>Keyboard, mouse and dark mode</h3>
         <p>Shortcuts for everything, right-click menus, Ctrl+scroll to zoom the hours, and a second window beside the first. Events drag between them.</p>
-        <div class="device tablet slim"><img src="img/en-tablet-week-dark.webp" width="1280" height="800" loading="lazy" alt="The week view on a tablet in dark mode"></div>
+        <div class="device tablet slim"><img src="img/en-tablet-week-dark.webp" width="1280" height="800" loading="lazy" decoding="async" alt="The week view on a tablet in dark mode"></div>
       </article>
     </div>
   </div>
