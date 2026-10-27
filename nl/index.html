@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quickspan: agenda en planner voor Android-tablets en vouwtelefoons</title>
+<meta name="description" content="Quickspan is een privé-agenda en planner voor Android. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Gemaakt voor tablets, vouwtelefoons en telefoons.">
+<meta name="theme-color" content="#141C28">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Quickspan">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Quickspan: agenda en planner voor Android-tablets en vouwtelefoons">
+<meta property="og:description" content="Quickspan is een privé-agenda en planner voor Android. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Gemaakt voor tablets, vouwtelefoons en telefoons.">
+<meta property="og:image" content="https://quickspan.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://quickspan.app/nl/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://quickspan.app/nl/">
+<link rel="alternate" hreflang="en" href="https://quickspan.app/">
+<link rel="alternate" hreflang="es" href="https://quickspan.app/inicio/">
+<link rel="alternate" hreflang="nl" href="https://quickspan.app/nl/">
+<link rel="alternate" hreflang="fr" href="https://quickspan.app/fr/">
+<link rel="alternate" hreflang="de" href="https://quickspan.app/de/">
+<link rel="alternate" hreflang="it" href="https://quickspan.app/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://quickspan.app/pt/">
+<link rel="alternate" hreflang="pl" href="https://quickspan.app/pl/">
+<link rel="alternate" hreflang="tr" href="https://quickspan.app/tr/">
+<link rel="alternate" hreflang="id" href="https://quickspan.app/id/">
+<link rel="alternate" hreflang="ja" href="https://quickspan.app/ja/">
+<link rel="alternate" hreflang="ko" href="https://quickspan.app/ko/">
+<link rel="alternate" hreflang="ru" href="https://quickspan.app/ru/">
+<link rel="alternate" hreflang="sv" href="https://quickspan.app/sv/">
+<link rel="alternate" hreflang="cs" href="https://quickspan.app/cs/">
+<link rel="alternate" hreflang="uk" href="https://quickspan.app/uk/">
+<link rel="alternate" hreflang="vi" href="https://quickspan.app/vi/">
+<link rel="alternate" hreflang="hi" href="https://quickspan.app/hi/">
+<link rel="alternate" hreflang="th" href="https://quickspan.app/th/">
+<link rel="alternate" hreflang="pt-PT" href="https://quickspan.app/pt-pt/">
+<link rel="alternate" hreflang="ar" href="https://quickspan.app/ar/">
+<link rel="alternate" hreflang="he" href="https://quickspan.app/he/">
+<link rel="alternate" hreflang="zh-Hans" href="https://quickspan.app/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/zh-hant/">
+<link rel="alternate" hreflang="x-default" href="https://quickspan.app/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Quickspan","alternateName":"Quickspan Calendar","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","applicationSubCategory":"Calendar","inLanguage":["en","es","nl","fr","de","it","pt","pl","tr","id","ja","ko","ru","sv","cs","uk","vi","hi","th","pt","ar","he","zh","zh"],"url":"https://quickspan.app/nl/","image":"https://quickspan.app/apple-touch-icon.png","description":"Quickspan is een privé-agenda en planner voor Android. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Gemaakt voor tablets, vouwtelefoons en telefoons.","author":{"@type":"Person","name":"Quickspan"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"WebSite","name":"Quickspan","url":"https://quickspan.app/","inLanguage":"nl"}]}</script>
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../img/en-tablet-week.webp" as="image" type="image/webp" fetchpriority="high">
+<style>@font-face{font-family:Manrope;font-style:normal;font-display:optional;font-weight:200 800;src:url(../fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-style:normal;font-display:optional;font-weight:200 800;src:url(../fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{
+  --ink:#1E2A3A;--ink-2:#141C28;--ink-3:#2A3A50;--sun:#FFC93C;--coral:#FF5E3A;--sea:#3FA7C4;--leaf:#3E9B6A;--violet:#7A5AF8;
+  --bg:#FBF8F2;--surface:#FFFFFF;--surface-2:#F3EEE4;--fg:#1E2A3A;--muted:#55606F;--line:rgba(30,42,58,.12);--link:#2B45C8;--kicker:#B3321A;--focus:var(--ink);
+  --radius:22px;--shadow:0 1px 2px rgba(20,28,40,.06),0 12px 40px -12px rgba(20,28,40,.25);
+}
+@media(prefers-color-scheme:dark){:root{
+  --bg:#10151D;--surface:#171E29;--surface-2:#1C2533;--fg:#EEF1F5;--muted:#A9B3C1;--line:rgba(255,255,255,.1);--link:#B8C4FF;--kicker:#FF8A6D;--focus:var(--sun);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 48px -16px rgba(0,0,0,.7);
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+html,body{overflow-x:clip}
+body{margin:0;font:17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);font-feature-settings:"ss01"}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--link)}
+/* The focus ring takes the ink on light surfaces and the sun on dark ones, so it stays at 3:1 or better everywhere */
+.top,.hero,.privacy,.b-dark{--focus:var(--sun)}
+.final .box{--focus:var(--ink)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+q{quotes:"“" "”"}
+:lang(es) q{quotes:"«" "»"}
+
+/* Top bar */
+.top{position:sticky;top:0;z-index:10;background:rgba(20,28,40,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.top .wrap{display:flex;align-items:center;gap:1.25rem;height:64px}
+.brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;letter-spacing:-.01em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.top nav{display:flex;gap:1.25rem;margin-left:auto;align-items:center}
+.top nav a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.95rem;font-weight:600}
+.top nav a:hover{color:#fff}
+.top .nav-links{display:none}
+@media(min-width:820px){.top .nav-links{display:flex;gap:1.5rem}}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:800;white-space:nowrap;text-decoration:none;border-radius:999px;padding:.85rem 1.4rem;line-height:1.1;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-sun{background:var(--sun);color:var(--ink);box-shadow:0 8px 24px -8px rgba(255,201,60,.6)}
+.btn-sun:hover{transform:translateY(-1px);background:#ffd45f}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.28)}
+.btn-ghost:hover{border-color:#fff}
+.btn-soon{background:rgba(255,255,255,.08);color:#fff;border:1.5px dashed rgba(255,255,255,.35);cursor:default}
+.top .btn{padding:.55rem 1rem;font-size:.9rem;min-height:44px}
+/* Phones hide the section links, so the bar carries the Play button instead */
+@media(min-width:820px){.top .top-play{display:none}}
+.top nav .btn-sun,.top nav .btn-sun:hover{color:var(--ink);box-shadow:none}
+@media(max-width:360px){.btn{padding:.8rem 1rem;font-size:.9rem}.top .btn{padding:.5rem .8rem}.final .box{padding-inline:.75rem}}
+/* Under 360 px the logo, the Play button and the language link don't fit beside the wordmark, so it is hidden visually (screen readers still read it) */
+@media(max-width:359px){.top .wordmark{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--ink-2);color:#fff;padding:4.5rem 0 0}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(closest-side,rgba(255,201,60,.22),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:60vw;height:60vw;max-width:800px;max-height:800px;background:radial-gradient(closest-side,rgba(255,94,58,.16),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;gap:3rem}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:0 0 1.2rem}
+.hero h1 em{font-style:normal;color:var(--sun)}
+.hero .lede{font-size:clamp(1.1rem,1.6vw,1.25rem);color:rgba(255,255,255,.78);max-width:34rem;margin:0 0 2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
+.trust{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin:1.8rem 0 0;padding:0;list-style:none;font-size:.92rem;color:rgba(255,255,255,.75);font-weight:600}
+.trust li{display:flex;align-items:center;gap:.45rem}
+.trust svg{width:18px;height:18px;color:var(--sun);flex:none}
+.stage{position:relative;margin:0 auto -1px;width:100%;max-width:640px}
+/* Device frames, drawn after current flagship hardware (no logos).
+   Padding and margin percentages are of the width, so bezels and camera holes stay in proportion. */
+.device{--rim:#2b2f36;--rim-hi:#5b616b;--bz:2.4%;position:relative;padding:var(--bz);background:#07090c;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 0 1.5px var(--rim),0 0 0 2.5px var(--rim-hi),0 0 0 3.5px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.18),0 24px 48px -18px rgba(10,14,22,.55),0 40px 80px -40px rgba(10,14,22,.5)}
+.device img{display:block;width:100%;height:auto;background:#fff}
+.device::before,.device::after{content:"";position:absolute}
+/* Phone, Pixel 9 Pro style: rounded corners, thin even bezel, centred hole, power above volume on the right */
+.device.phone{--bz:2.6%;--rim:#3a3d42;--rim-hi:#8b9097;border-radius:13.5% / 6.1%}
+.device.phone img{border-radius:11% / 5%}
+.device.phone::after{top:0;left:50%;width:3.4%;aspect-ratio:1;margin:calc(var(--bz) + 2.7%) 0 0 -1.7%;border-radius:50%;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
+.device.phone::before{right:-5px;top:19%;width:2.5px;height:27%;border-radius:0 2px 2px 0;background:linear-gradient(var(--rim-hi) 0 26%,transparent 26% 36%,var(--rim-hi) 36% 100%)}
+/* Phone, Galaxy S Ultra style: squarer corners, thinner bezel, titanium rim, volume above power */
+.device.phone.ultra{--bz:2%;--rim:#6f7277;--rim-hi:#b9bcc1;border-radius:7% / 3.2%}
+.device.phone.ultra img{border-radius:5.4% / 2.5%}
+.device.phone.ultra::after{width:2.8%;margin:calc(var(--bz) + 2.4%) 0 0 -1.4%}
+.device.phone.ultra::before{top:17%;height:30%;background:linear-gradient(var(--rim-hi) 0 52%,transparent 52% 64%,var(--rim-hi) 64% 86%,transparent 86%)}
+/* Tablet, Pixel Tablet style: wide even bezel, soft corners, camera centred in the top bezel, porcelain rim */
+.device.tablet{--bz:3.6%;--rim:#d9d3c8;--rim-hi:#f3efe7;border-radius:5.2% / 8.3%}
+.device.tablet img{border-radius:1.6% / 2.6%}
+.device.tablet::after{top:0;left:50%;width:.9%;aspect-ratio:1;margin:calc(var(--bz) / 2 - .45%) 0 0 -.45%;border-radius:50%;background:#1a2230;box-shadow:inset 0 0 0 1.5px #344155}
+/* Tablet, Galaxy Tab S style: slim bezel, tighter corners, graphite rim */
+.device.tablet.slim{--bz:1.9%;--rim:#3d4148;--rim-hi:#7d838c;border-radius:3.2% / 5.1%}
+.device.tablet.slim img{border-radius:1.4% / 2.2%}
+.device.tablet.slim::after{width:.7%;margin:calc(var(--bz) / 2 - .35%) 0 0 -.35%}
+.stage .tablet{transform:perspective(2200px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
+/* Phones sit in a .pw wrapper so the frame's percentage padding is of the phone's own width */
+.stage .pw{position:absolute;width:24%;right:5%;bottom:-14%;transform:perspective(2200px) rotateY(-6deg)}
+.hero-shot{padding-bottom:3rem}
+@media(min-width:960px){
+  .hero{padding-top:5.5rem}
+  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:center}
+  .stage{margin-right:-4rem;max-width:none}
+}
+
+/* Sections */
+section{padding:5.5rem 0}
+.kicker{font-size:.95rem;font-weight:800;color:var(--kicker);margin:0 0 .6rem}
+.privacy{--kicker:#FF8A6D}
+h1,h2{text-wrap:balance;overflow-wrap:break-word;min-width:0}
+p{text-wrap:pretty}
+h2{font-size:clamp(2rem,4.2vw,3rem);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 1rem;max-width:22ch}
+h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;font-weight:800}
+.intro{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0}
+.head{margin-bottom:3rem}
+
+/* How quick add works */
+.how{display:grid;gap:2.5rem;align-items:center}
+@media(min-width:900px){.how{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:4rem}}
+.steps{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.1rem;counter-reset:s}
+.steps li{display:grid;grid-template-columns:2.4rem 1fr;gap:.9rem;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:12px;background:var(--surface-2);font-weight:800;color:var(--fg)}
+.steps p{margin:0;color:var(--muted)}
+.examples{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0 0;padding:0;list-style:none}
+.examples li{font-size:.9rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+
+.demo{background:var(--surface);border-radius:28px;padding:1.5rem;box-shadow:var(--shadow);border:1px solid var(--line)}
+.demo-week{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:1.2rem}
+.demo-day{background:var(--surface-2);border-radius:12px;height:170px;position:relative;padding:.5rem}
+.demo-day b{display:block;font-size:.75rem;color:var(--muted);font-weight:700;text-align:center}
+.demo-day b span{display:block;font-size:1.05rem;color:var(--fg)}
+.ev{position:absolute;left:5px;right:5px;border-radius:7px;font-size:.7rem;font-weight:700;padding:.25rem .35rem;line-height:1.2;overflow:hidden;border-left:3px solid}
+.ev.w{background:rgba(63,167,196,.18);border-color:var(--sea);color:var(--fg)}
+.ev.f{background:rgba(62,155,106,.18);border-color:var(--leaf);color:var(--fg)}
+.ev.p{background:rgba(122,90,248,.16);border-color:var(--violet);color:var(--fg)}
+.ev.new{background:#C8401F;border-color:#9E2F14;color:#fff;box-shadow:0 8px 20px -6px rgba(255,94,58,.7)}
+.demo-bar{display:flex;align-items:center;gap:.6rem;border:2px solid var(--link);border-radius:18px;padding:.75rem 1rem;font-weight:600;font-size:1.02rem;background:var(--surface);min-height:3.3rem}
+.typed{white-space:nowrap;overflow:hidden;flex:1;min-width:0}
+.tok{border-radius:6px;padding:0 .12em;margin:0 -.12em}
+.tok.d{background:rgba(122,90,248,.2)}
+.tok.t{background:rgba(63,167,196,.25)}
+.send{width:26px;height:26px;color:var(--link);flex:none}
+.chips{display:flex;gap:.5rem;margin:.9rem 0 .4rem;flex-wrap:wrap}
+.chip{font-size:.85rem;font-weight:700;padding:.3rem .7rem;border-radius:9px}
+.chip.d{background:rgba(122,90,248,.18)}
+.chip.t{background:rgba(63,167,196,.22)}
+.sum{font-size:.85rem;color:var(--muted);font-weight:600}
+@media(prefers-reduced-motion:no-preference){
+  .typed{animation:type 10s steps(26,end) infinite}
+  .tok.d{animation:hl-d 10s infinite}
+  .tok.t{animation:hl-t 10s infinite}
+  .chip.d{animation:pop1 10s infinite}
+  .chip.t{animation:pop2 10s infinite}
+  .sum{animation:sum 10s infinite}
+  .send{animation:send 10s infinite}
+  .ev.new{animation:drop 10s cubic-bezier(.2,.9,.3,1.3) infinite}
+}
+@keyframes type{0%,3%{clip-path:inset(0 100% 0 0)}33%,94%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 0 0 0);opacity:0}}
+@keyframes hl-d{0%,36%{background:transparent}39%,94%{background:rgba(122,90,248,.2)}100%{background:transparent}}
+@keyframes hl-t{0%,40%{background:transparent}43%,94%{background:rgba(63,167,196,.25)}100%{background:transparent}}
+@keyframes pop1{0%,37%{opacity:0;transform:translateY(6px)}41%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes pop2{0%,41%{opacity:0;transform:translateY(6px)}45%,94%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes sum{0%,48%{opacity:0}53%,94%{opacity:1}100%{opacity:0}}
+@keyframes send{0%,58%{transform:none}61%{transform:scale(1.35) translateX(3px)}64%,100%{transform:none}}
+@keyframes drop{0%,62%{opacity:0;transform:translateY(-30px) scale(.9)}67%,94%{opacity:1;transform:none}100%{opacity:0}}
+
+/* Screens bento */
+.screens{background:var(--surface-2)}
+.bento{display:grid;gap:1.25rem}
+@media(min-width:900px){.bento{grid-template-columns:repeat(6,minmax(0,1fr))}.b-tab{grid-column:span 4}.b-phone{grid-column:span 2}.b-fold{grid-column:span 3}.b-dark{grid-column:span 3}}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;overflow:hidden;position:relative;box-shadow:var(--shadow)}
+.card p{color:var(--muted);margin:0 0 1.2rem}
+.card .device{margin-top:auto}
+.b-phone .pw{width:72%;max-width:240px;margin:auto auto -3.5rem;align-self:center}
+.b-dark{background:var(--ink);color:#fff;border-color:transparent}
+.b-dark p{color:rgba(255,255,255,.72)}
+
+/* Foldable: real book-posture capture in a slim tablet frame, with a faint hinge line down the middle */
+.device.fold::after{display:none}
+.device.fold::before{content:"";position:absolute;top:var(--bz);bottom:var(--bz);left:50%;width:2.2%;margin-left:-1.1%;background:linear-gradient(90deg,transparent,rgba(0,0,0,.16) 45%,rgba(255,255,255,.2) 55%,transparent);pointer-events:none;z-index:1}
+.caption{text-align:center;font-size:.8rem;color:var(--muted);margin:.6rem 0 0}
+
+/* Features grid */
+.grid{display:grid;gap:1.25rem}
+@media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+.feat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
+.feat p{color:var(--muted);margin:0}
+.ico{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;margin-bottom:1rem}
+.ico svg{width:24px;height:24px}
+.ico.y{background:rgba(255,201,60,.22);color:#9a6b00}.ico.c{background:rgba(255,94,58,.16);color:#c23a17}.ico.s{background:rgba(63,167,196,.18);color:#1d6f87}.ico.v{background:rgba(122,90,248,.16);color:#5a3fd0}.ico.g{background:rgba(62,155,106,.18);color:#24724a}
+@media(prefers-color-scheme:dark){.ico.y{color:var(--sun)}.ico.c{color:#ff8a6d}.ico.s{color:#7fd0e6}.ico.v{color:#b3a2ff}.ico.g{color:#7dd3a5}}
+kbd{font:700 .8rem/1 Manrope,system-ui,sans-serif;padding:.28rem .45rem;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);border-bottom-width:3px;white-space:nowrap}
+.keys{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+
+/* Privacy */
+.privacy{background:var(--ink-2);color:#fff;position:relative;overflow:hidden}
+.privacy::before{content:"";position:absolute;right:-10%;top:-30%;width:600px;height:600px;background:radial-gradient(closest-side,rgba(63,167,196,.18),transparent 70%)}
+.privacy .wrap{position:relative}
+.privacy .intro{color:rgba(255,255,255,.75)}
+.stats{display:grid;gap:1rem;margin:3rem 0 2rem}
+@media(min-width:760px){.stats{grid-template-columns:repeat(3,1fr)}}
+.stat{border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.5rem;background:rgba(255,255,255,.03)}
+.stat strong{display:block;font-size:3.4rem;line-height:1;font-weight:800;letter-spacing:-.04em;color:var(--sun)}
+.stat span{display:block;font-weight:800;margin:.5rem 0 .3rem;font-size:1.05rem}
+.stat p{margin:0;color:rgba(255,255,255,.68);font-size:.95rem}
+.privacy a{color:var(--sun)}
+.note{color:rgba(255,255,255,.68);max-width:46rem;font-size:.95rem}
+
+/* FAQ */
+.faq{max-width:48rem}
+details{border-bottom:1px solid var(--line);padding:1.1rem 0}
+summary{cursor:pointer;font-weight:800;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--coral);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin:.7rem 0 0}
+
+/* Final CTA */
+.final{padding:0 0 5.5rem}
+.final .box{background:linear-gradient(135deg,var(--sun),#FFB13C);color:var(--ink);border-radius:32px;padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden}
+.final img{width:88px;height:88px;border-radius:22px;margin:0 auto 1.2rem;box-shadow:0 12px 30px -10px rgba(30,42,58,.5)}
+.final h2{margin:0 auto .8rem;max-width:none}
+.final p{margin:0 auto 1.8rem;max-width:32rem;font-weight:600}
+.final .btn{background:var(--ink);color:#fff}
+.final .btn-soon{background:rgba(30,42,58,.1);color:var(--ink);border-color:rgba(30,42,58,.4)}
+
+footer{border-top:1px solid var(--line);padding:2.5rem 0 3rem;color:var(--muted);font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+footer p{margin:0}
+footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+footer .small{font-size:.8rem;width:100%}
+@media(max-width:520px){.ev{font-size:.6rem;padding:.2rem .25rem}.demo{padding:1rem}.demo-week{gap:4px}}
+@media(prefers-color-scheme:dark){.privacy,.hero{background:#0B1018}.b-dark{background:#0B1018}}
+/* Right-to-left pages (Arabic, Hebrew) and scripts that need more line height */
+@media(min-width:960px){[dir=rtl] .stage{margin-right:0;margin-left:-4rem}}
+[lang=th] h1,[lang=th] h2,[lang=hi] h1,[lang=hi] h2{line-height:1.35}
+[lang=ja] h1,[lang=ko] h1,[lang^=zh] h1{line-height:1.25}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="../icon.svg" alt="" width="34" height="34">Quickspan</a>
+    <nav>
+      <span class="nav-links"><a href="#quick-add">Snel invoeren</a><a href="#screens">Schermen</a><a href="#privacy">Privacy</a><a href="#faq">Veelgestelde vragen</a></span>
+      <a href="../">EN</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><i></i>Gratis agenda voor Android</span>
+      <h1>Typ het.<br><em>Het staat in je agenda.</em></h1>
+      <p class="lede">Quickspan is een agenda en planner voor Android die <q>Lunch with Sam Friday 1pm</q> omzet in een afspraak en past bij het scherm dat je vasthoudt: telefoon, tablet of vouwtelefoon.</p>
+      <div class="cta"><a class="btn btn-sun" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.7 1 1.2.7L21 12.7c.5-.3.5-1.1 0-1.4L5.2 2.1c-.5-.3-1.2.1-1.2.7z"/></svg> Download op Google Play</a><a class="btn btn-ghost" href="#quick-add">Zo werkt het</a></div>
+      <ul class="trust">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Geen account</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Geen advertenties</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Geen tracking</li>
+      </ul>
+    </div>
+    <div class="hero-shot">
+      <div class="stage">
+        <div class="device tablet hero-tab"><img src="../img/en-tablet-week.webp" width="1280" height="800" fetchpriority="high" decoding="async" alt="Quickspan op een tablet: een week van zeven dagen met afspraken, met de maand en de afspraken van vandaag in een paneel ernaast"></div>
+        <div class="pw"><div class="device phone hero-phone"><img src="../img/en-phone-quickadd.webp" width="540" height="1200" alt="“Gym every Mon and Thu at 7pm” typen op een telefoon, met de herhaling en de tijd gemarkeerd"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="quick-add">
+  <div class="wrap how">
+    <div>
+      <p class="kicker">Snel invoeren</p>
+      <h2>Schrijf het zoals je het zou zeggen.</h2>
+      <p class="intro">Geen keuzewielen, geen formulieren. Quickspan herkent datums, tijden, herhalingen en plaatsen terwijl je typt, rechtstreeks op je telefoon.</p>
+      <ol class="steps">
+        <li><div><h3>Typ een regel</h3><p>Alles van <q>Dentist Thursday 4pm</q> tot <q>Gym every Mon and Thu at 7pm</q>.</p></div></li>
+        <li><div><h3>Zie wat er begrepen is</h3><p>De herkende woorden lichten op en een regel laat precies zien wat er wordt opgeslagen.</p></div></li>
+        <li><div><h3>Druk op Enter</h3><p>Het staat in je agenda, met ongedaan maken. Geen tijd opgegeven? Dan zoekt het je eerste vrije uur.</p></div></li>
+      </ol>
+      <ul class="examples" aria-label="Meer dingen die je kunt typen">
+        <li>Lunch with Sam tomorrow at 1pm at Cafe Roma</li>
+        <li>Dinner tonight</li>
+        <li>Standup every weekday at 9:30</li>
+        <li>Comida con Ana el viernes 14:00</li>
+      </ul>
+      <p class="caption" style="text-align:left">Typen begrijpt op dit moment 12 talen. De rest van de app is in jouw taal.</p>
+    </div>
+    <div class="pw" style="width:72%;max-width:260px;margin:0 auto"><div class="device phone ultra"><img src="../img/en-phone-quickadd.webp" width="540" height="1200" loading="lazy" decoding="async" alt="“Gym every Mon and Thu at 7pm” typen op een telefoon, met de herhaling en de tijd gemarkeerd"></div></div>
+  </div>
+</section>
+
+<section class="screens" id="screens">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Elk scherm</p>
+      <h2>Een agenda die past bij het scherm in je hand.</h2>
+      <p class="intro">De meeste agenda's rekken een telefoonindeling op. Quickspan past zijn indeling aan de beschikbare ruimte aan.</p>
+    </div>
+    <div class="bento">
+      <article class="card b-tab">
+        <h3>Tablets krijgen de hele week</h3>
+        <p>Zeven dagen met een paneel voor vandaag ernaast, en de details van een afspraak naast het raster als je er een kiest.</p>
+        <div class="device tablet slim"><img src="../img/en-tablet-agenda.webp" width="1280" height="800" loading="lazy" decoding="async" alt="De agenda op een tablet: afspraken per dag links, de details van de gekozen afspraak rechts"></div>
+      </article>
+      <article class="card b-phone">
+        <h3>Telefoons krijgen drie dagen</h3>
+        <p>Een leesbare week op een smal scherm, met de invoerbalk onder je duim.</p>
+        <div class="pw"><div class="device phone ultra"><img src="../img/en-phone-week.webp" width="540" height="1200" loading="lazy" decoding="async" alt="De weekweergave op een telefoon met drie dagen"></div></div>
+      </article>
+      <article class="card b-fold">
+        <h3>Vouwtelefoons, zoals het hoort</h3>
+        <p>Half open als een boek staat de week aan de ene kant van het scharnier en vandaag aan de andere. Vouw open of dicht en je behoudt je plek.</p>
+        <div class="device tablet slim fold"><img src="../img/en-fold-book.webp" width="1400" height="1357" loading="lazy" decoding="async" alt="Een vouwtelefoon half open als een boek: de week links, de maand en de afspraken van vandaag rechts"></div>
+      </article>
+      <article class="card b-dark">
+        <h3>Toetsenbord, muis en donkere modus</h3>
+        <p>Sneltoetsen voor alles, rechtsklikmenu's en een tweede venster naast het eerste. Afspraken sleep je ertussen.</p>
+        <div class="device tablet slim"><img src="../img/en-tablet-week-dark.webp" width="1280" height="800" loading="lazy" decoding="async" alt="De weekweergave op een tablet in donkere modus"></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="privacy" id="privacy">
+  <div class="wrap">
+    <p class="kicker">Privé door ontwerp</p>
+    <h2>Je agenda blijft van jou.</h2>
+    <p class="intro">Quickspan heeft geen account en geen advertenties, en bewaart je afspraken op je telefoon. Je hoeft je nergens voor aan te melden en niets af te staan.</p>
+    <div class="stats">
+      <div class="stat"><strong>0</strong><span>verzamelde afspraken</span><p>Je afspraken blijven op je telefoon. Er wordt niets over verstuurd naar ons.</p></div>
+      <div class="stat"><strong>0</strong><span>accounts</span><p>Nergens voor aanmelden. Open de app en begin met typen.</p></div>
+      <div class="stat"><strong>0</strong><span>advertenties of trackers</span><p>De app heeft geen advertenties, geen analyse en geen advertentie-ID.</p></div>
+    </div>
+    <p class="note">Als je ervoor kiest een Google- of Exchange-agenda te tonen, blijft die agenda synchroniseren via het account op je telefoon, zoals altijd. <a href="../en/">Lees het privacybeleid (Engels en Spaans)</a></p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Vragen</p>
+      <h2>Goed om te weten.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Is het echt gratis?</summary><p>Ja. Geen advertenties en geen abonnement.</p></details>
+      <details><summary>Synchroniseert het tussen mijn apparaten?</summary><p>Niet zelf. Bewaar je afspraken in een Google- of Exchange-agenda op je telefoon en zet Telefoonagenda's aan in Quickspan: je account synchroniseert ze.</p></details>
+      <details><summary>Welke talen spreekt het?</summary><p>De app is er in meer dan 20 talen. Typen begrijpt op dit moment 12 talen, en datums en tijden volgen de instellingen van je telefoon.</p></details>
+      <details><summary>Waarom vraagt het toegang tot de agenda?</summary><p>Alleen om de agenda's te tonen en te bewerken die al op je telefoon staan, en alleen als je dat aanzet.</p></details>
+      <details><summary>Op welke telefoons en tablets werkt het?</summary><p>Android 8 en nieuwer: telefoons, tablets, vouwtelefoons en flip-telefoons.</p></details>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap">
+    <div class="box">
+      <img src="../icon.svg" alt="" width="88" height="88">
+      <h2>Typ je volgende plan eens.</h2>
+      <p>Gratis op Google Play. Geen account, geen advertenties, geen tracking.</p>
+      <a class="btn btn-sun" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.7 1 1.2.7L21 12.7c.5-.3.5-1.1 0-1.4L5.2 2.1c-.5-.3-1.2.1-1.2.7z"/></svg> Download op Google Play</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Quickspan Calendar, gemaakt door Quickspan.</p>
+    <nav><a href="../en/">Privacybeleid (English)</a><a href="../press/">Pers</a><a href="mailto:support@quickspan.app">support@quickspan.app</a><a href="../">English</a><a href="../inicio/" lang="es" hreflang="es">Español</a><a href="../fr/" lang="fr" hreflang="fr">Français</a><a href="../de/" lang="de" hreflang="de">Deutsch</a><a href="../it/" lang="it" hreflang="it">Italiano</a><a href="../pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../pl/" lang="pl" hreflang="pl">Polski</a><a href="../tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../id/" lang="id" hreflang="id">Indonesia</a><a href="../ja/" lang="ja" hreflang="ja">日本語</a><a href="../ko/" lang="ko" hreflang="ko">한국어</a><a href="../ru/" lang="ru" hreflang="ru">Русский</a><a href="../sv/" lang="sv" hreflang="sv">Svenska</a><a href="../cs/" lang="cs" hreflang="cs">Čeština</a><a href="../uk/" lang="uk" hreflang="uk">Українська</a><a href="../vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../th/" lang="th" hreflang="th">ไทย</a><a href="../pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../ar/" lang="ar" hreflang="ar">العربية</a><a href="../he/" lang="he" hreflang="he">עברית</a><a href="../zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
+    <p class="small">Google Play is een handelsmerk van Google LLC.</p>
+  </div>
+</footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "02f57a3dc3004200ae5a1e93ce20fa7c"}'></script>
+</body>
+</html>

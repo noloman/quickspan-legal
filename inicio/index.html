@@ -22,8 +22,30 @@
 <link rel="canonical" href="https://quickspan.app/inicio/">
 <link rel="alternate" hreflang="en" href="https://quickspan.app/">
 <link rel="alternate" hreflang="es" href="https://quickspan.app/inicio/">
+<link rel="alternate" hreflang="nl" href="https://quickspan.app/nl/">
+<link rel="alternate" hreflang="fr" href="https://quickspan.app/fr/">
+<link rel="alternate" hreflang="de" href="https://quickspan.app/de/">
+<link rel="alternate" hreflang="it" href="https://quickspan.app/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://quickspan.app/pt/">
+<link rel="alternate" hreflang="pl" href="https://quickspan.app/pl/">
+<link rel="alternate" hreflang="tr" href="https://quickspan.app/tr/">
+<link rel="alternate" hreflang="id" href="https://quickspan.app/id/">
+<link rel="alternate" hreflang="ja" href="https://quickspan.app/ja/">
+<link rel="alternate" hreflang="ko" href="https://quickspan.app/ko/">
+<link rel="alternate" hreflang="ru" href="https://quickspan.app/ru/">
+<link rel="alternate" hreflang="sv" href="https://quickspan.app/sv/">
+<link rel="alternate" hreflang="cs" href="https://quickspan.app/cs/">
+<link rel="alternate" hreflang="uk" href="https://quickspan.app/uk/">
+<link rel="alternate" hreflang="vi" href="https://quickspan.app/vi/">
+<link rel="alternate" hreflang="hi" href="https://quickspan.app/hi/">
+<link rel="alternate" hreflang="th" href="https://quickspan.app/th/">
+<link rel="alternate" hreflang="pt-PT" href="https://quickspan.app/pt-pt/">
+<link rel="alternate" hreflang="ar" href="https://quickspan.app/ar/">
+<link rel="alternate" hreflang="he" href="https://quickspan.app/he/">
+<link rel="alternate" hreflang="zh-Hans" href="https://quickspan.app/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Quickspan","alternateName":"Quickspan Calendar","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","applicationSubCategory":"Calendar","inLanguage":["en","es"],"url":"https://quickspan.app/inicio/","image":"https://quickspan.app/apple-touch-icon.png","screenshot":"https://quickspan.app/img/es-tablet-week.webp","description":"Calendario y agenda para Android: escribe tus eventos como los dirías, en español o en inglés. Para móviles, tablets y plegables. Sin cuenta, sin anuncios, sin rastreo.","author":{"@type":"Person","name":"Manuel Lorenzo"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"installUrl":"https://play.google.com/store/apps/details?id=app.quickspan","downloadUrl":"https://play.google.com/store/apps/details?id=app.quickspan"},{"@type":"WebSite","name":"Quickspan","url":"https://quickspan.app/","inLanguage":"es"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Quickspan","alternateName":"Quickspan Calendar","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","applicationSubCategory":"Calendar","inLanguage":["en","es","nl","fr","de","it","pt","pl","tr","id","ja","ko","ru"],"url":"https://quickspan.app/inicio/","image":"https://quickspan.app/apple-touch-icon.png","screenshot":"https://quickspan.app/img/es-tablet-week.webp","description":"Calendario y agenda para Android: escribe tus eventos como los dirías, en español o en inglés. Para móviles, tablets y plegables. Sin cuenta, sin anuncios, sin rastreo.","author":{"@type":"Person","name":"Quickspan"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"installUrl":"https://play.google.com/store/apps/details?id=app.quickspan","downloadUrl":"https://play.google.com/store/apps/details?id=app.quickspan"},{"@type":"WebSite","name":"Quickspan","url":"https://quickspan.app/","inLanguage":"es"}]}</script>
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -256,14 +278,18 @@ footer p{margin:0}
 footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
 footer .small{font-size:.8rem;width:100%}
 @media(max-width:520px){.ev{font-size:.6rem;padding:.2rem .25rem}.demo{padding:1rem}.demo-week{gap:4px}}
-@media(prefers-color-scheme:dark){.privacy,.hero{background:#0B1018}.b-dark{background:#0B1018}}</style>
+@media(prefers-color-scheme:dark){.privacy,.hero{background:#0B1018}.b-dark{background:#0B1018}}
+/* Right-to-left pages (Arabic, Hebrew) and scripts that need more line height */
+@media(min-width:960px){[dir=rtl] .stage{margin-right:0;margin-left:-4rem}}
+[lang=th] h1,[lang=th] h2,[lang=hi] h1,[lang=hi] h2{line-height:1.35}
+[lang=ja] h1,[lang=ko] h1,[lang^=zh] h1{line-height:1.25}</style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top"><img src="../icon.svg" alt="" width="34" height="34"><span class="wordmark">Quickspan</span></a>
     <nav aria-label="Secciones">
-      <span class="nav-links"><a href="#quick-add">Añadir rápido</a><a href="#screens">Pantallas</a><a href="#privacy">Privacidad</a><a href="#faq">Preguntas</a></span>
+      <span class="nav-links"><a href="#quick-add">Añadir rápido</a><a href="#screens">Pantallas</a><a href="#pro">Pro</a><a href="#privacy">Privacidad</a><a href="#faq">Preguntas</a></span>
       <a class="btn btn-sun top-play" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-es-top&amp;hl=es"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.7 1 1.2.7L21 12.7c.5-.3.5-1.1 0-1.4L5.2 2.1c-.5-.3-1.2.1-1.2.7z"/></svg> Google Play</a><a href="../" lang="en" hreflang="en" aria-label="English">EN</a>
     </nav>
   </div>
@@ -296,7 +322,7 @@ footer .small{font-size:.8rem;width:100%}
     <div>
       <p class="kicker">Añadir rápido</p>
       <h2>Escríbelo como lo dirías.</h2>
-      <p class="intro">Sin selectores ni formularios. Quickspan entiende fechas, horas, repeticiones y lugares mientras escribes, en español o en inglés, en tu propio móvil.</p>
+      <p class="intro">Sin selectores ni formularios. Quickspan entiende fechas, horas, repeticiones y lugares mientras escribes, en español, en inglés o en neerlandés, en tu propio móvil.</p>
       <ol class="steps">
         <li><div><h3>Escribe una línea</h3><p>Desde <q>Dentista el jueves a las 16:00</q> hasta <q>Gimnasio cada lunes y jueves a las 19:00</q>.</p></div></li>
         <li><div><h3>Mira qué ha entendido</h3><p>Lo que reconoce se resalta, y una línea te dice exactamente qué se va a guardar.</p></div></li>
@@ -367,7 +393,7 @@ footer .small{font-size:.8rem;width:100%}
       <h2>Detalles que suman.</h2>
     </div>
     <div class="grid">
-      <div class="feat"><div class="ico s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div><h3>Los calendarios de tu móvil</h3><p>Muestra tus calendarios de Google, Exchange y otros junto a los de Quickspan, y añade, edita, mueve o borra sus eventos. La cuenta del móvil los sincroniza como siempre.</p></div>
+      <div class="feat"><div class="ico s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div><h3>Tus calendarios, sin otra cuenta</h3><p>Funciona con los calendarios que ya usas: Google, Outlook, Samsung e iCloud. Añade, edita, mueve o borra sus eventos junto a los de Quickspan. Las cuentas de tu móvil se encargan de sincronizar, así que Quickspan no pide inicio de sesión. iCloud funciona con la app gratuita DAVx5.</p></div>
       <div class="feat"><div class="ico c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></svg></div><h3>Arrastrar y soltar</h3><p>Mueve un evento a otro día u hora, estira su borde para cambiar la duración o arrastra sobre un hueco para crear uno nuevo. También varios a la vez.</p></div>
       <div class="feat"><div class="ico v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 0 0-15-6.7L3 13"/></svg></div><h3>Deshacer y rehacer</h3><p>¿Has movido o borrado algo sin querer? Deshazlo desde el aviso que aparece o con <kbd>Ctrl</kbd> <kbd>Z</kbd>.</p></div>
       <div class="feat"><div class="ico y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></div><h3>Eventos que se repiten</h3><p>Cada día, entre semana, cada semana, mes o año, con fecha de fin. Cambia solo una vez cuando cambian los planes.</p></div>
@@ -375,6 +401,27 @@ footer .small{font-size:.8rem;width:100%}
       <div class="feat"><div class="ico s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8h.01M11 12h1v5h1"/></svg></div><h3>Accesible</h3><p>TalkBack lee cada evento en una frase, todas las acciones de menú funcionan sin ratón y admite texto grande.</p></div>
     </div>
     <div class="keys" aria-label="Algunos atajos de teclado"><kbd>Ctrl N</kbd><kbd>Ctrl T</kbd><kbd>D</kbd><kbd>W</kbd><kbd>M</kbd><kbd>Ctrl Z</kbd><kbd>Ctrl Y</kbd><kbd>Ctrl P</kbd><kbd>Ctrl Shift N</kbd><kbd>F11</kbd></div>
+  </div>
+</section>
+
+<section id="pro">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Quickspan Pro</p>
+      <h2>Todo sigue siendo gratis. Pro añade extras, una vez.</h2>
+      <p class="intro">Quickspan Pro es una compra opcional de 4,99 €, sin suscripción. Lo que ves en esta página sigue siendo gratis. Pro añade los extras de abajo, y la compra se hace a través de Google Play.</p>
+    </div>
+    <div class="grid">
+      <div class="feat"><h3>Temas y negro puro</h3><p>Seis colores de acento y un modo oscuro en negro puro para pantallas OLED.</p></div>
+      <div class="feat"><h3>Iconos alternativos</h3><p>Elige otro icono de inicio desde Ajustes.</p></div>
+      <div class="feat"><h3>Pack de widgets</h3><p>Widgets de agenda y de mes para tu pantalla de inicio, junto al widget gratuito «Lo siguiente».</p></div>
+      <div class="feat"><h3>Vista de año</h3><p>Todo el año en una pantalla.</p></div>
+      <div class="feat"><h3>Encontrar un hueco</h3><p>Pide el siguiente hueco libre de tu día.</p></div>
+      <div class="feat"><h3>Segunda zona horaria y aviso de viaje</h3><p>Una segunda columna de zona horaria en la semana y un aviso cuando tu móvil cambia de zona.</p></div>
+      <div class="feat"><h3>Plantillas de entrada rápida</h3><p>Guarda una frase como «Gimnasio 1h, cada lunes y jueves» y reutilízala con un toque.</p></div>
+      <div class="feat"><h3>Importar .ics</h3><p>Abre un archivo .ics en uno de tus calendarios, con vista previa antes.</p></div>
+    </div>
+    <p class="caption">Pro no añade anuncios ni cuenta. Exportar tu propio calendario a .ics es gratis.</p>
   </div>
 </section>
 
@@ -399,12 +446,13 @@ footer .small{font-size:.8rem;width:100%}
       <h2>Conviene saber.</h2>
     </div>
     <div class="faq">
-      <details><summary>¿De verdad es gratis?</summary><p>Sí. Sin anuncios, sin suscripción y sin compras. Todo lo que hace hoy seguirá siendo gratis.</p></details>
-      <details><summary>¿Se sincroniza entre mis dispositivos?</summary><p>Por sí mismo no. Si quieres los mismos eventos en varios dispositivos, guárdalos en un calendario de Google o Exchange del móvil y activa los calendarios del teléfono en Quickspan: tu cuenta los sincroniza.</p></details>
-      <details><summary>¿Qué idiomas entiende?</summary><p>Español e inglés. El resto de la app también está en los dos idiomas, y las fechas y horas siguen la configuración de tu móvil.</p></details>
+      <details><summary>¿De verdad es gratis?</summary><p>Sí. Sin anuncios ni suscripción, y todo lo que ves en esta página es gratis. Quickspan Pro es una compra opcional única de 4,99 € que añade los extras de la sección Quickspan Pro.</p></details>
+      <details><summary>¿Se sincroniza entre mis dispositivos?</summary><p>Por sí mismo no. Guarda tus eventos en un calendario de Google, Outlook o Samsung del móvil (iCloud funciona con la app gratuita DAVx5) y activa los calendarios del teléfono en Quickspan: tu cuenta los sincroniza con tus otros dispositivos.</p></details>
+      <details><summary>¿Qué idiomas entiende?</summary><p>Al escribir o dictar, en 12 idiomas: español, inglés, neerlandés, alemán, francés, italiano, portugués, ruso, polaco, turco, indonesio y coreano. La app está en 23 idiomas: español, inglés, neerlandés, francés, alemán, italiano, portugués de Brasil, polaco, turco, indonesio, japonés, coreano y ruso. Las fechas y horas siguen la configuración de tu móvil.</p></details>
+      <details><summary>¿Maneja zonas horarias?</summary><p>Sí. Escribe «a las 15 hora de Londres» o fija un evento a una zona en el editor, y Quickspan muestra la zona junto a su hora. Los eventos de los calendarios del móvil conservan su propia zona, y la app sigue a tu móvil cuando cambia de zona.</p></details>
       <details><summary>¿Por qué pide acceso al calendario?</summary><p>Solo para mostrar y editar los calendarios que ya tienes en el móvil, y solo cuando lo activas. Sin ese permiso, Quickspan funciona con sus propios calendarios.</p></details>
       <details><summary>¿En qué móviles y tablets funciona?</summary><p>Android 8 o posterior: móviles, tablets, plegables y plegables tipo concha, también en ventanas tipo escritorio en tablets.</p></details>
-      <details><summary>¿Qué no hace todavía?</summary><p>No tiene zonas horarias (las horas son las de tu móvil), y solo entiende español e inglés. Cuéntanos qué echas en falta en <a href="mailto:support@quickspan.app">support@quickspan.app</a>.</p></details>
+      <details><summary>¿Qué no hace todavía?</summary><p>Al escribir solo entiende español, inglés y neerlandés. Cuéntanos qué echas en falta en <a href="mailto:support@quickspan.app">support@quickspan.app</a>.</p></details>
     </div>
   </div>
 </section>
@@ -423,8 +471,8 @@ footer .small{font-size:.8rem;width:100%}
 
 <footer>
   <div class="wrap">
-    <p>Quickspan, hecho por Manuel Lorenzo.</p>
-    <nav aria-label="Más"><a href="../es/">Política de privacidad</a><a href="../press/">Prensa</a><a href="mailto:support@quickspan.app">support@quickspan.app</a><a href="../" lang="en" hreflang="en">English</a></nav>
+    <p>Quickspan, hecho por Quickspan.</p>
+    <nav aria-label="Más"><a href="../es/">Política de privacidad</a><a href="../press/">Prensa</a><a href="mailto:support@quickspan.app">support@quickspan.app</a><a href="../" lang="en" hreflang="en">English</a><a href="../nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../fr/" lang="fr" hreflang="fr">Français</a><a href="../de/" lang="de" hreflang="de">Deutsch</a><a href="../it/" lang="it" hreflang="it">Italiano</a><a href="../pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../pl/" lang="pl" hreflang="pl">Polski</a><a href="../tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../id/" lang="id" hreflang="id">Indonesia</a><a href="../ja/" lang="ja" hreflang="ja">日本語</a><a href="../ko/" lang="ko" hreflang="ko">한국어</a><a href="../ru/" lang="ru" hreflang="ru">Русский</a><a href="../sv/" lang="sv" hreflang="sv">Svenska</a><a href="../cs/" lang="cs" hreflang="cs">Čeština</a><a href="../uk/" lang="uk" hreflang="uk">Українська</a><a href="../vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../th/" lang="th" hreflang="th">ไทย</a><a href="../pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../ar/" lang="ar" hreflang="ar">العربية</a><a href="../he/" lang="he" hreflang="he">עברית</a><a href="../zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
     <p class="small">Google Play es una marca de Google LLC.</p>
   </div>
 </footer>

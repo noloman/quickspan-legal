@@ -233,7 +233,11 @@ footer p{margin:0}
 footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
 footer .small{font-size:.8rem;width:100%}
 @media(max-width:520px){.ev{font-size:.6rem;padding:.2rem .25rem}.demo{padding:1rem}.demo-week{gap:4px}}
-@media(prefers-color-scheme:dark){.privacy,.hero{background:#0B1018}.b-dark{background:#0B1018}} .nf{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem 1.25rem}.nf img{width:88px;height:88px;border-radius:22px;margin:0 auto 1.5rem}.nf p{color:rgba(255,255,255,.75);margin:.4rem 0}.nf .cta{justify-content:center;margin-top:1.8rem}.nf h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 1rem}</style>
+@media(prefers-color-scheme:dark){.privacy,.hero{background:#0B1018}.b-dark{background:#0B1018}}
+/* Right-to-left pages (Arabic, Hebrew) and scripts that need more line height */
+@media(min-width:960px){[dir=rtl] .stage{margin-right:0;margin-left:-4rem}}
+[lang=th] h1,[lang=th] h2,[lang=hi] h1,[lang=hi] h2{line-height:1.35}
+[lang=ja] h1,[lang=ko] h1,[lang^=zh] h1{line-height:1.25} .nf{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem 1.25rem}.nf img{width:88px;height:88px;border-radius:22px;margin:0 auto 1.5rem}.nf p{color:rgba(255,255,255,.75);margin:.4rem 0}.nf .cta{justify-content:center;margin-top:1.8rem}.nf h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 1rem}</style>
 </head>
 <body>
 <main class="hero nf">

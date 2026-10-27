@@ -246,6 +246,10 @@ footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
 footer .small{font-size:.8rem;width:100%}
 @media(max-width:520px){.ev{font-size:.6rem;padding:.2rem .25rem}.demo{padding:1rem}.demo-week{gap:4px}}
 @media(prefers-color-scheme:dark){.privacy,.hero{background:#0B1018}.b-dark{background:#0B1018}}
+/* Right-to-left pages (Arabic, Hebrew) and scripts that need more line height */
+@media(min-width:960px){[dir=rtl] .stage{margin-right:0;margin-left:-4rem}}
+[lang=th] h1,[lang=th] h2,[lang=hi] h1,[lang=hi] h2{line-height:1.35}
+[lang=ja] h1,[lang=ko] h1,[lang^=zh] h1{line-height:1.25}
 .press-hero{background:var(--ink);color:#fff;padding:4.5rem 0 3.5rem}
 .press-hero h1{font-size:clamp(2.4rem,5.5vw,3.8rem);line-height:1.04;letter-spacing:-.035em;font-weight:800;margin:.8rem 0 1rem}
 .press-hero p{color:rgba(255,255,255,.78);max-width:40rem;font-size:1.12rem;margin:0}
@@ -304,11 +308,11 @@ footer .small{font-size:.8rem;width:100%}
     <h2>Facts</h2>
     <dl class="facts">
       <div><dt>Name</dt><dd>Quickspan (store name: Quickspan: Calendar &amp; Planner)</dd></div>
-      <div><dt>Developer</dt><dd>Manuel Lorenzo, an independent Android developer in the Netherlands</dd></div>
+      <div><dt>Developer</dt><dd>Quickspan, an independent Android developer in the Netherlands</dd></div>
       <div><dt>Platform</dt><dd>Android 8.0 or later: phones, tablets and foldables</dd></div>
       <div><dt>Availability</dt><dd><a href="https://play.google.com/store/apps/details?id=app.quickspan&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dpress">Google Play</a>, worldwide</dd></div>
-      <div><dt>Price</dt><dd>Free. No ads and no in-app purchases</dd></div>
-      <div><dt>Languages</dt><dd>English and Spanish, for both the app and typed entry</dd></div>
+      <div><dt>Price</dt><dd>Free, with no ads. Optional one-time Quickspan Pro purchase, €4.99 (no subscription)</dd></div>
+      <div><dt>Languages</dt><dd>The app in 23 languages; typing and voice entry in 12 (English, Spanish, Dutch, Portuguese, French, German, Russian, Indonesian, Turkish, Italian, Polish, Korean). The translations are machine written and have not been read by native speakers yet</dd></div>
       <div><dt>Privacy</dt><dd>The app has no account, no analytics, no tracking and collects no data. The website counts visits with cookieless Cloudflare Web Analytics</dd></div>
       <div><dt>Website</dt><dd><a href="https://quickspan.app/">quickspan.app</a></dd></div>
       <div><dt>Contact</dt><dd><a href="mailto:support@quickspan.app">support@quickspan.app</a></dd></div>
@@ -316,6 +320,7 @@ footer .small{font-size:.8rem;width:100%}
   </div>
 </section>
 
+<section id="whatsnew"><div class="wrap"><h2>What's new in 0.2</h2><p>Typing and voice in 12 languages, reminders, a Join button for calls, a fresh look and a one-time Pro. <a href="https://quickspan.app/blog/0-2/">Read the release post</a>.</p></div></section>
 <section id="copy">
   <div class="wrap">
     <h2>Descriptions</h2>
@@ -325,7 +330,7 @@ footer .small{font-size:.8rem;width:100%}
         <span class="tag">English · one line</span>
         <p>Quickspan is a private Android calendar you type into, built for phones, tablets and foldables.</p>
         <span class="tag">English · short</span>
-        <p>Quickspan is a free calendar and planner for Android. Type “Gym every Mon and Thu at 7pm” and it's on your calendar, in English or Spanish, parsed on the device. The layout follows the screen: a 3-day week on phones, 7 days with a Today panel on tablets, and the week on one side of a foldable's hinge. No account, no ads and no tracking.</p>
+        <p>Quickspan is a free calendar and planner for Android. Type “Gym every Mon and Thu at 7pm” and it's on your calendar, in 12 languages, or say it, worked out on the phone (voice needs Android 12 or newer with on-device speech recognition). The layout follows the screen: a 3-day week on phones, 7 days with a Today panel on tablets, and the week on one side of a foldable's hinge. No account, no ads and no tracking.</p>
         <span class="tag">English · long</span>
         <p>Quickspan is a calendar for Android that adapts to the screen you're holding and lets you add events by typing them the way you'd say them. As you type “Lunch with Sam tomorrow at 1pm at Cafe Roma”, the date, time, repeat and place light up, and a line shows what will be saved. Leave out the time and it uses your first free hour.</p>
         <p>On tablets it shows a 7-day week with a Today panel and a details pane, with keyboard shortcuts, right-click menus, several windows and print to PDF. On foldables, book posture puts the week on one side of the hinge and today on the other, and tabletop posture puts the grid above the fold and the controls below. It can also show the phone's existing Google or Exchange calendars, which keep syncing through the phone's own accounts.</p>
@@ -385,7 +390,7 @@ footer .small{font-size:.8rem;width:100%}
 
 <footer>
   <div class="wrap">
-    <p>Quickspan Calendar, made by Manuel Lorenzo.</p>
+    <p>Quickspan Calendar, made by Quickspan.</p>
     <nav aria-label="More"><a href="../">Home</a><a href="../en/">Privacy policy</a><a href="mailto:support@quickspan.app">support@quickspan.app</a></nav>
     <p class="small">Google Play is a trademark of Google LLC.</p>
   </div>

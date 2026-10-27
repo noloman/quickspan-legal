@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Accessibility statement: Quickspan</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>body{font:18px/1.6 system-ui,sans-serif;max-width:42rem;margin:2rem auto;padding:0 1rem;color:#1b1b1f;background:#fff}
+  @media(prefers-color-scheme:dark){body{color:#e4e1e6;background:#131316}a{color:#b8c4ff}}
+  h1{font-size:1.6rem}h2{font-size:1.25rem;margin-top:2rem}</style><meta name=viewport content='width=device-width,initial-scale=1'><meta name=description content='How accessible Quickspan is, how we checked, what still needs work, and how to tell us about a problem.'><link rel=canonical href='https://quickspan.app/accessibility/'><link rel=alternate hreflang=en href='https://quickspan.app/accessibility/'><link rel=alternate hreflang=es href='https://quickspan.app/accesibilidad/'><link rel=icon href='../icon.svg' type='image/svg+xml'>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Accessibility statement: Quickspan</h1>
+</header>
+<p>Last updated: <strong>27 October 2026</strong>. App version:
+<strong>0.2.0</strong>.</p>
+<p>We want Quickspan to work for as many people as possible, including
+people who use a screen reader, a keyboard or a switch, people who need
+large text or strong contrast, and people who cannot drag or pinch. We
+aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2, level
+AA. WCAG was written for websites, but its rules apply to apps, and we
+use them as our checklist.</p>
+<p><strong>We do not claim that Quickspan conforms to WCAG 2.2 AA, and
+we do not call it fully accessible.</strong> We have had no outside
+audit. This page says how we checked, what we built for, and what does
+not work well yet.</p>
+<h2 id="how-we-checked">How we checked</h2>
+<ul>
+<li><strong>Reading the code.</strong> We audited the app against WCAG
+2.2 AA and Android’s accessibility guidance by reading the code.</li>
+<li><strong>Automated tests.</strong> Unit tests compute colour contrast
+with the exact WCAG formula. UI tests run on emulators with Google’s
+Accessibility Test Framework, which flags missing labels, small touch
+targets and similar problems; a guard test fails if a UI test class does
+not turn those checks on. Other UI tests check TalkBack actions, focus
+and keyboard behaviour.</li>
+<li><strong>Screenshots.</strong> For the week, day, month and agenda
+screens we keep screenshots at 150 and 200 percent text and in Arabic
+with a right-to-left layout. They catch changes; they are not a pass or
+fail test.</li>
+<li><strong>What we have not done.</strong> Nobody who uses TalkBack,
+Switch Access, Voice Access or a hardware keyboard every day has tested
+Quickspan for us. We have not tested with TalkBack, Switch Access or a
+hardware keyboard on a physical phone or tablet, or at 200 percent text
+on a physical device. Where this page says “built to”, it means the code
+is written for it and an automated check covers part of it, not that a
+person has confirmed it.</li>
+</ul>
+<h2 id="what-we-built-for">What we built for</h2>
+<ul>
+<li><strong>Screen readers (TalkBack).</strong> Controls are built with
+names, roles and states. In the week grid, the all-day bars, the month,
+the agenda and the Today list, an event is read as one sentence: title,
+day, start and end time, length and calendar name, and “ended” once it
+is over. Menu items that turn a calendar or setting on or off say
+whether it is on, and the Settings screen and the accent colour picker
+are built with roles and states. Day headings and section titles are
+marked as headings, and the main areas announce themselves (Calendar,
+Agenda, Today, Event details). The 24 hour labels in the grid are hidden
+from TalkBack so they do not add 24 stops before the first event. Some
+changes are announced without moving your focus: what quick add
+understood as you type, the new date range, the number of agenda search
+results, and the undo message after you move or delete an event.</li>
+<li><strong>Voice quick add.</strong> The microphone button appears only
+where Android has an on-device speech recogniser (Android 12 or newer),
+and the speech is not sent to a server. TalkBack is told when Quickspan
+is listening, when the microphone permission was refused and when
+nothing was heard. We have not tried it with TalkBack on a device.</li>
+<li><strong>No dragging needed.</strong> Anything you can do by dragging
+has another way. A timed event has actions in the TalkBack actions menu
+(and in the Menu key or right-click menu) to move 15 minutes or an hour
+earlier or later, move to the previous or next day, change its length,
+delete, or add it to a selection. All-day events can move to the
+previous or next day. The hour grid can be zoomed in and out with
+TalkBack actions. Automated tests cover the move actions and the all-day
+moves.</li>
+<li><strong>Keyboard.</strong> Arrow keys move between events. Opening
+an event moves focus into its details, and Esc closes them and returns
+focus to the event you came from (an automated test checks this).
+Shortcuts include Ctrl+N for a new event, Ctrl+1 and Ctrl+2 for the
+Calendar and Agenda screens, D, W and M for day, week and month,
+Ctrl+Left and Ctrl+Right for the previous and next days, Ctrl+T for
+today, Ctrl+Z and Ctrl+Y for undo and redo, and Ctrl+plus, minus and 0
+to zoom the hours; in the editor Ctrl+Enter saves and Esc cancels. The
+single-letter shortcuts only work while focus is in the calendar, so
+they do not fire while you type. The list is also given to Android’s
+keyboard shortcut helper (Meta + /), which a test checks. The Pro
+purchase screen and the Pro tool windows put focus on their title when
+they open and close with Esc.</li>
+<li><strong>Switch Access.</strong> We have not tested it. Switch Access
+moves through the same focus and actions that TalkBack and a keyboard
+use, so the same things should be reachable, but we cannot confirm
+it.</li>
+<li><strong>Text size.</strong> Text is set in scalable units, so it
+follows the font size you set in Android. The hour rows, the date badges
+in the month and the cells of the year view grow with it, fewer days are
+shown side by side at large sizes, the quick-add field grows to three
+lines, and the Calendars and Accounts dialogs and the print and schedule
+windows scroll. We aim for 200 percent without clipped text; some places
+still do not manage it (see below).</li>
+<li><strong>Colour and contrast.</strong> A unit test checks every text
+colour pair in every theme (light, dark and pure black) against 4.5 to
+1, and outlines, accents and the focus colour against 3 to 1. Another
+test checks the colour of every quick-add chip in every theme against
+4.5 to 1, and a third measures event titles and times on the blocks,
+month chips and the focus ring for the built-in calendar colours and
+typical phone-calendar colours. Event edges and dots take the colour of
+their calendar and the app lightens or darkens them toward 3 to 1
+against the background. A few gaps remain (see below).</li>
+<li><strong>Light and dark.</strong> Quickspan follows the system light
+or dark setting. With the optional Pro purchase there are also colour
+themes and a pure black mode, which the same contrast test covers.</li>
+<li><strong>Animation.</strong> The app reads Android’s animation
+setting while it is open. With “Remove animations” on, transitions snap
+or fade briefly, and the pulsing time dot and the Pro slideshow stop;
+swipes and drags that follow your finger keep their normal movement. We
+have not checked this on a device.</li>
+<li><strong>Languages and right to left.</strong> The app is translated
+into 23 languages and scripts, including Arabic and Hebrew, and the text
+a screen reader speaks is translated too. The layout is built to mirror
+for right-to-left languages and arrows are mirrored. No translation has
+been reviewed by a native speaker yet, and nobody has looked at the
+mirrored layout on a device, so treat both as unconfirmed.</li>
+<li><strong>Touch targets.</strong> Automated checks flag touch targets
+under 48 dp, and event blocks have a minimum height of 48 dp.</li>
+</ul>
+<h2 id="what-does-not-work-well-yet-known-limitations">What does not
+work well yet (known limitations)</h2>
+<p>We would rather tell you than have you find out.</p>
+<ul>
+<li><strong>Large text.</strong> We have not tested 200 percent on a
+device. Known places that still cut text or clip: the home-screen
+widgets (the month widget’s day cells and the agenda widget’s titles
+have fixed sizes or one line), event titles that are limited to one line
+in the all-day bars and in the month, and the date and time buttons in
+the event editor.</li>
+<li><strong>Time picker.</strong> The clock-dial time picker has no
+keyboard entry field. It now scrolls at large text, but you cannot type
+a time into it. Typing the time in quick add works.</li>
+<li><strong>Colour contrast.</strong> Some of the built-in calendar
+colours (an orange in light mode; purple, red and brown in dark mode)
+are just under 3 to 1 against the plain background as stored; the app
+adjusts event edges, but we have no test that proves it for every
+colour. Our event contrast test lists known gaps: the grey time text on
+selected and hovered event blocks, event titles on the faded chips of
+neighbouring months (drawn at 80 percent opacity), and the drag handle
+bar on a selected block. The pale theme swatches are not covered by a
+contrast test. The widgets use translucent backgrounds and a locked
+widget is faded, and we have not measured their contrast.</li>
+<li><strong>Colour as the only cue.</strong> Which calendar an event
+belongs to is shown mostly by colour. TalkBack reads the calendar name,
+but people who cannot tell colours apart do not get a second visual cue
+yet.</li>
+<li><strong>Keyboard focus.</strong> In the week grid a focused event
+gets a 2 dp outline in the text colour, but we have not measured how
+visible it is on every calendar colour, and if an event is also part of
+a selection, the selection outline is shown instead. Quickspan’s larger
+windows (Settings, Send feedback, Pro) take focus when they open and
+close with Esc, but most smaller dialogs are Android’s standard alert
+dialogs and we have not checked where focus goes in them.</li>
+<li><strong>Zoom.</strong> Zooming the hours works with pinch, Ctrl and
+plus or minus, and TalkBack actions; there is no on-screen button
+yet.</li>
+<li><strong>Moving content.</strong> A small dot that marks the current
+time pulses slowly, and the Pro purchase screen has a slideshow that
+moves on by itself every few seconds. Both stop when “Remove animations”
+is on; neither has a pause button. The microphone button also pulses
+while it listens, and stops pulsing in the same way.</li>
+<li><strong>Small targets and unnamed controls found by our own
+tests.</strong> Event blocks in narrow columns (events side by side, or
+a folded phone) can be narrower than 48 dp, and one tall narrow control
+in the agenda in book posture was flagged by our automated check as
+having no spoken name; we have not identified it yet. The widgets’ day
+cells and agenda rows are smaller than 48 dp, and the widgets have no UI
+tests at all.</li>
+<li><strong>Not tested by people.</strong> No people with disabilities
+have tested Quickspan, we have had no third-party audit, and we have not
+tested with Voice Access. If you can help, please write to us.</li>
+<li><strong>Calendars from your phone.</strong> Calendars from your
+Google, Exchange or other accounts are shown by Quickspan, but their
+names and colours come from those accounts.</li>
+</ul>
+<h2 id="tell-us-about-a-problem">Tell us about a problem</h2>
+<p>If something does not work for you, or you need Quickspan in another
+way, write to <strong>support@quickspan.app</strong>. In the app, “Send
+feedback” (in the menu and in Settings) opens your email app with a
+message you can edit before you send it. Please tell us what you were
+trying to do, which screen, your Android version and device, and which
+tools you use (for example TalkBack, a keyboard, font size). You do not
+need to know the technical words.</p>
+<p>We read every message. We aim to answer within <strong>5 working
+days</strong> and to say whether and when we will fix it. If you are not
+happy with our answer, you can complain to the accessibility body of
+your country. In the EU, each country has one; we can help you find
+yours.</p>
+<h2 id="about-this-page">About this page</h2>
+<p>Written by the Quickspan developer, <strong>Manuel Lorenzo</strong>.
+It describes version 0.2.0 and is updated at each release that changes
+accessibility. The standards we aim for are WCAG 2.2 level AA and
+Google’s Android accessibility guidance. Details for developers:
+<code>docs/accessibility.md</code> in our repository.</p>
+</body>
+</html>

@@ -2,19 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.12.1" />
+  <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Privacy policy: Quickspan Calendar</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     html {
       color: #1a1a1a;
-      color: light-dark(#1a1a1a, #fdfdfd);
       background-color: #fdfdfd;
-      background-color: light-dark(#fdfdfd, #1a1a1a);
-      color-scheme: light dark;
     }
     body {
       margin: 0 auto;
@@ -39,16 +33,12 @@
     }
     @media print {
       html {
-        color-scheme: light only;
+        background-color: white;
       }
-      html, body, pre, code {
+      body {
         background-color: transparent;
-      }
-      body, a, a:visited, blockquote {
         color: black;
-      }
-      pre, code {
-        padding: 0;
+        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -61,14 +51,13 @@
     p {
       margin: 1em 0;
     }
-    a, a:visited {
-      color: inherit;
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
     }
     img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -91,14 +80,10 @@
     blockquote {
       margin: 1em 0 1em 1.7em;
       padding-left: 1em;
-      border-left: 2px solid;
-      border-color: #e6e6e6;
-      border-color: light-dark(#e6e6e6, #4c4c4c);
+      border-left: 2px solid #e6e6e6;
       color: #606060;
-      color: light-dark(#606060, #b6b6b6);
     }
     code {
-      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -118,8 +103,8 @@
      overflow: visible;
     }
     hr {
+      background-color: #1a1a1a;
       border: none;
-      border-top: 1px solid currentColor;
       height: 1px;
       margin: 1em 0;
     }
@@ -136,11 +121,11 @@
     }
     tbody {
       margin-top: 0.5em;
-      border-top: 1px solid currentColor;
-      border-bottom: 1px solid currentColor;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
     }
     th {
-      border-top: 1px solid currentColor;
+      border-top: 1px solid #1a1a1a;
       padding: 0.25em 0.5em 0.25em 0.5em;
     }
     td {
@@ -162,13 +147,10 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
+    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: 1.5em;}
-    div.column{flex: auto;}
-    @media screen {
-    div.columns{gap: min(4vw, 1.5em);}
-    div.column{overflow-x: auto;}
-    }
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -179,6 +161,7 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <style>body{font:18px/1.6 system-ui,sans-serif;max-width:42rem;margin:2rem auto;padding:0 1rem;color:#1b1b1f;background:#fff}
   @media(prefers-color-scheme:dark){body{color:#e4e1e6;background:#131316}a{color:#b8c4ff}}
@@ -190,14 +173,14 @@
 </header>
 <h1 id="privacy-policy-for-quickspan-calendar">Privacy policy for
 Quickspan Calendar</h1>
-<p><strong>Last updated:</strong> 2026-10-26</p>
+<p><strong>Last updated:</strong> 2026-10-27</p>
 <p>Quickspan Calendar (“the app”) is a calendar app for Android phones,
 tablets and foldables. This policy explains what the app does with your
 information. The short version: <strong>everything stays on your device.
 The app has no accounts, no servers, no analytics, no advertising and no
 tracking.</strong></p>
 <h2 id="who-is-responsible">Who is responsible</h2>
-<p>Manuel Lorenzo<br />
+<p>Quickspan<br />
 support@quickspan.app</p>
 <h2 id="what-the-app-uses">What the app uses</h2>
 <p><strong>Events you create in the app.</strong> Events, calendars and
@@ -220,6 +203,18 @@ any time in Android’s settings (Settings &gt; Apps &gt; Quickspan &gt;
 Permissions); the app then keeps working with the events stored in the
 app itself, and it does not ask again unless you switch the feature
 on.</p>
+<p><strong>Microphone (optional).</strong> If your phone has an
+on-device speech recogniser installed, the quick-add bar shows a
+microphone button. The first time you tap it, the app explains what it
+is for and then asks Android for permission to record audio
+(<code>RECORD_AUDIO</code>). The app uses Android’s on-device recogniser
+only (<code>createOnDeviceSpeechRecognizer</code>): the audio is turned
+into text on your phone, is not saved, and is not sent to us or to
+anyone else. The text then goes through the same parser as typed text
+and you can edit it before adding the event. You can refuse the
+permission or withdraw it at any time in Android’s settings; typing
+keeps working, and on phones without an on-device recogniser the button
+is not shown. Listening stops when you leave the app.</p>
 <p><strong>Reminders (optional).</strong> If you set a reminder on an
 event, the app schedules a notification on your device and shows it at
 the time you chose. On Android 13 and newer it asks for permission to
@@ -285,6 +280,17 @@ the change in your phone’s calendar app. That sync is governed by the
 provider’s own privacy policy (for Google accounts, Google’s). This app
 does not control it and does not receive your account’s password or
 sign-in details.</p>
+<h2 id="quickspan-pro-a-one-time-purchase">Quickspan Pro (a one-time
+purchase)</h2>
+<p>Quickspan Pro is an optional one-time purchase made through Google
+Play. The payment is handled entirely by Google Play, under Google’s
+terms and privacy policy: we never see your card or payment details, and
+the app does not ask for the internet permission to sell it. The app
+only asks Google Play on your phone whether Pro is unlocked and keeps
+that yes or no on your phone. Google tells the developer about purchases
+(an order number and amount) in the Play Console, which we use to see
+how many people bought Pro and to answer support requests. Pro does not
+add accounts, ads, analytics or tracking.</p>
 <h2 id="device-backups">Device backups</h2>
 <p>Android can include an app’s data in the device backup it makes to
 your own Google account if you have backup switched on. That backup is
