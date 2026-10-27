@@ -301,6 +301,23 @@ body::before { display: none; }
 [dir="rtl"] .float { left: auto; right: 0; }
 /* the serif italic highlight only exists for Latin scripts */
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(:lang(ja), :lang(ko), :lang(zh), :lang(th), :lang(ar), :lang(he), :lang(hi), :lang(ru), :lang(uk)) .hl { font: 700 1em/1.2 var(--font); letter-spacing: 0; font-style: normal; } }
+/* long-form pages: privacy policy, accessibility statement, blog */
+.doc { padding-block: clamp(40px, 7vw, 88px); }
+.doc .wrap { max-width: 46rem; }
+.doc h1 { font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 20px; text-wrap: balance; }
+.doc h2 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 2.4rem 0 .6rem; }
+.doc h3 { font-size: 1.15rem; margin: 1.8rem 0 .4rem; }
+.doc p, .doc li { line-height: 1.65; }
+.doc li { margin: .35rem 0; }
+.doc a { color: var(--fg); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.doc a:hover { text-decoration-thickness: 2px; }
+.doc table { border-collapse: collapse; width: 100%; font-size: .95rem; display: block; overflow-x: auto; }
+.doc th, .doc td { border: 1px solid var(--line); padding: 8px 12px; text-align: start; vertical-align: top; }
+.doc blockquote { margin: 1rem 0; padding: .2rem 1.1rem; border-inline-start: 3px solid var(--sun); color: var(--muted); }
+.doc code { font-size: .92em; background: var(--bg-2); padding: .1em .35em; border-radius: 6px; }
+.doc .d { color: var(--muted); font-size: .95rem; }
+.doc hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+.doc p { margin: 0 0 1rem; }
 </style>
 </head>
 <body>
