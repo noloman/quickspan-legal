@@ -291,7 +291,16 @@ section { scroll-margin-top: 80px; }
 .langs-foot { display: flex; flex-wrap: wrap; gap: 8px 16px; }
 .hero .phone { overflow: hidden; }
 .hero .phone img { width: 100%; aspect-ratio: 540 / 595; object-fit: cover; object-position: top; }
-body::before { display: none; }</style>
+body::before { display: none; }
+/* translated pages: the demo is a still picture of the finished state */
+.bar--static { margin: 0; }
+.bar .line { flex: 1; min-width: 0; font: 450 1.05rem/1.3 var(--font); padding: 11px 0; overflow-wrap: anywhere; }
+.bar--static .send { cursor: default; }
+.bar--static .send:hover { transform: none; }
+.price small { margin-inline-start: 4px; margin-left: 0; }
+[dir="rtl"] .float { left: auto; right: 0; }
+/* the serif italic highlight only exists for Latin scripts */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(:lang(ja), :lang(ko), :lang(zh), :lang(th), :lang(ar), :lang(he), :lang(hi), :lang(ru), :lang(uk)) .hl { font: 700 1em/1.2 var(--font); letter-spacing: 0; font-style: normal; } }</style>
 </head>
 <body>
 <header class="nav">

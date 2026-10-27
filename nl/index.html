@@ -3,18 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Quickspan: agenda en planner voor Android-tablets en vouwtelefoons</title>
-<meta name="description" content="Quickspan is een privé-agenda en planner voor Android. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Gemaakt voor tablets, vouwtelefoons en telefoons.">
-<meta name="theme-color" content="#141C28">
+<title>Quickspan: de privé Android-agenda waar je gewoon in typt</title>
+<meta name="description" content="Quickspan is de privéagenda waar je gewoon in typt. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Voor Android-telefoons, tablets en vouwtelefoons.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Quickspan">
 <meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="Quickspan: agenda en planner voor Android-tablets en vouwtelefoons">
-<meta property="og:description" content="Quickspan is een privé-agenda en planner voor Android. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Gemaakt voor tablets, vouwtelefoons en telefoons.">
+<meta property="og:title" content="Quickspan: de privéagenda waar je in typt">
+<meta property="og:description" content="De privéagenda waar je gewoon in typt. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Geen account, geen advertenties, geen tracking. Voor telefoons, tablets en vouwtelefoons.">
 <meta property="og:image" content="https://quickspan.app/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Quickspan-icoon met de regel: Typ “Lunch vrijdag 13:00”, het staat in je agenda">
 <meta property="og:url" content="https://quickspan.app/nl/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://quickspan.app/nl/">
@@ -43,382 +45,464 @@
 <link rel="alternate" hreflang="zh-Hans" href="https://quickspan.app/zh-hans/">
 <link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Quickspan","alternateName":"Quickspan Calendar","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","applicationSubCategory":"Calendar","inLanguage":["en","es","nl","fr","de","it","pt","pl","tr","id","ja","ko","ru","sv","cs","uk","vi","hi","th","pt","ar","he","zh","zh"],"url":"https://quickspan.app/nl/","image":"https://quickspan.app/apple-touch-icon.png","description":"Quickspan is een privé-agenda en planner voor Android. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Gemaakt voor tablets, vouwtelefoons en telefoons.","author":{"@type":"Person","name":"Manuel Lorenzo"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"WebSite","name":"Quickspan","url":"https://quickspan.app/","inLanguage":"nl"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Quickspan","alternateName":"Quickspan Calendar","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","applicationSubCategory":"Calendar","inLanguage":["en","es","nl","fr","de","it","pt","pl","tr","id","ja","ko","ru","sv","cs","uk","vi","hi","th","pt","ar","he","zh","zh"],"url":"https://quickspan.app/nl/","image":"https://quickspan.app/apple-touch-icon.png","description":"Quickspan is de privéagenda waar je gewoon in typt. Typ “Lunch vrijdag 13:00” en het staat in je agenda. Voor Android-telefoons, tablets en vouwtelefoons.","author":{"@type":"Person","name":"Manuel Lorenzo"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"}},{"@type":"WebSite","name":"Quickspan","url":"https://quickspan.app/","inLanguage":"nl"}]}</script>
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../img/en-tablet-week.webp" as="image" type="image/webp" fetchpriority="high">
-<style>@font-face{font-family:Manrope;font-style:normal;font-display:optional;font-weight:200 800;src:url(../fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:Manrope;font-style:normal;font-display:optional;font-weight:200 800;src:url(../fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-
-:root{
-  --ink:#1E2A3A;--ink-2:#141C28;--ink-3:#2A3A50;--sun:#FFC93C;--coral:#FF5E3A;--sea:#3FA7C4;--leaf:#3E9B6A;--violet:#7A5AF8;
-  --bg:#FBF8F2;--surface:#FFFFFF;--surface-2:#F3EEE4;--fg:#1E2A3A;--muted:#55606F;--line:rgba(30,42,58,.12);--link:#2B45C8;--kicker:#B3321A;--focus:var(--ink);
-  --radius:22px;--shadow:0 1px 2px rgba(20,28,40,.06),0 12px 40px -12px rgba(20,28,40,.25);
+<link rel="preload" href="../fonts/google-sans-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../img/en-phone-quickadd.webp" as="image" type="image/webp" fetchpriority="high">
+<style>@font-face{font-family:'Google Sans Flex';font-style:normal;font-weight:400 800;font-display:swap;src:url(../fonts/google-sans-flex-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Google Sans Flex';font-style:normal;font-weight:400 800;font-display:swap;src:url(../fonts/google-sans-flex-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/instrument-serif-italic-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/instrument-serif-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* quickspan.app home v2 (27 Oct 2026). Product-led and calm: white with sun accents in light, night with one warm glow in dark. One family (Google Sans Flex), the real 0.2.0 screens, a working quick-add demo. */
+:root {
+  --bg: #FFFFFF; --bg-2: #F6F7F9; --surface: #FFFFFF; --raised: #FFFFFF;
+  --fg: #1E2A3A; --muted: #5A6575; --line: #E3E7ED; --line-2: #CDD3DC;
+  --sun: #FFC93C; --sun-soft: #FFF3CF; --sun-hl: #FFC93C; --coral: #FF5E3A; --coral-soft: #FFE1D8; --on-accent: #1E2A3A;
+  --sea-soft: #D9EEF5; --leaf-soft: #DCF1E4; --violet-soft: #E9E4FB;
+  --primary-bg: #1E2A3A; --primary-fg: #FFFFFF;
+  --band: #1E2A3A; --band-fg: #F3F5F8; --band-muted: #AEB8C5; --band-line: rgba(255, 255, 255, 0.12);
+  --glow: rgba(255, 201, 60, 0.22); --shadow: rgba(16, 24, 40, 0.16); --bezel: #10151C;
+  --nav-bg: rgba(255, 255, 255, 0.82); --focus: #2B45C8; --link: #2B45C8; --dots: #C9CFD8; --icon-sheet: #FFFFFF; --icon-ink: #1E2A3A;
+  --font: "Google Sans Flex", "Google Sans", ui-sans-serif, system-ui, sans-serif;
+  --serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --r-sm: 12px; --r-md: 20px; --r-lg: 28px; --r-pill: 999px;
+  --gutter: max(16px, env(safe-area-inset-left, 0px)); --gutter-r: max(16px, env(safe-area-inset-right, 0px));
 }
-@media(prefers-color-scheme:dark){:root{
-  --bg:#10151D;--surface:#171E29;--surface-2:#1C2533;--fg:#EEF1F5;--muted:#A9B3C1;--line:rgba(255,255,255,.1);--link:#B8C4FF;--kicker:#FF8A6D;--focus:var(--sun);
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 16px 48px -16px rgba(0,0,0,.7);
-}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-html,body{overflow-x:clip}
-body{margin:0;font:17px/1.6 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--fg);background:var(--bg);font-feature-settings:"ss01"}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--link)}
-/* The focus ring takes the ink on light surfaces and the sun on dark ones, so it stays at 3:1 or better everywhere */
-.top,.hero,.privacy,.b-dark{--focus:var(--sun)}
-.final .box{--focus:var(--ink)}
-a:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
-.wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-q{quotes:"“" "”"}
-:lang(es) q{quotes:"«" "»"}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0B0E13; --bg-2: #10141B; --surface: #141922; --raised: #1A202A;
+  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16);
+  --sun-soft: #1C1A12; --sun-hl: transparent; --coral-soft: #3A1E16;
+  --sea-soft: #12303A; --leaf-soft: #15301F; --violet-soft: #251F42;
+  --primary-bg: #FFC93C; --primary-fg: #1E2A3A;
+  --band: #141922; --band-fg: #F3F5F8; --band-muted: #9AA4B2; --band-line: rgba(255, 255, 255, 0.08);
+  --glow: rgba(255, 201, 60, 0.16); --shadow: rgba(0, 0, 0, 0.6); --bezel: #1F2530;
+  --nav-bg: rgba(11, 14, 19, 0.78); --focus: #FFC93C; --link: #FFD56A;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0B0E13; --bg-2: #10141B; --surface: #141922; --raised: #1A202A;
+  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16);
+  --sun-soft: #1C1A12; --sun-hl: transparent; --coral-soft: #3A1E16;
+  --sea-soft: #12303A; --leaf-soft: #15301F; --violet-soft: #251F42;
+  --primary-bg: #FFC93C; --primary-fg: #1E2A3A;
+  --band: #141922; --band-fg: #F3F5F8; --band-muted: #9AA4B2; --band-line: rgba(255, 255, 255, 0.08);
+  --glow: rgba(255, 201, 60, 0.16); --shadow: rgba(0, 0, 0, 0.6); --bezel: #1F2530;
+  --nav-bg: rgba(11, 14, 19, 0.78); --focus: #FFC93C; --link: #FFD56A;
+  color-scheme: dark }
 
-/* Top bar */
-.top{position:sticky;top:0;z-index:10;background:rgba(20,28,40,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
-.top .wrap{display:flex;align-items:center;gap:1.25rem;height:64px}
-.brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;letter-spacing:-.01em}
-.brand img{width:34px;height:34px;border-radius:9px}
-.top nav{display:flex;gap:1.25rem;margin-left:auto;align-items:center}
-.top nav a{color:rgba(255,255,255,.78);text-decoration:none;font-size:.95rem;font-weight:600}
-.top nav a:hover{color:#fff}
-.top .nav-links{display:none}
-@media(min-width:820px){.top .nav-links{display:flex;gap:1.5rem}}
-.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:800;white-space:nowrap;text-decoration:none;border-radius:999px;padding:.85rem 1.4rem;line-height:1.1;transition:transform .15s ease,background .15s ease,box-shadow .15s ease}
-.btn svg{width:20px;height:20px;flex:none}
-.btn-sun{background:var(--sun);color:var(--ink);box-shadow:0 8px 24px -8px rgba(255,201,60,.6)}
-.btn-sun:hover{transform:translateY(-1px);background:#ffd45f}
-.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.28)}
-.btn-ghost:hover{border-color:#fff}
-.btn-soon{background:rgba(255,255,255,.08);color:#fff;border:1.5px dashed rgba(255,255,255,.35);cursor:default}
-.top .btn{padding:.55rem 1rem;font-size:.9rem;min-height:44px}
-/* Phones hide the section links, so the bar carries the Play button instead */
-@media(min-width:820px){.top .top-play{display:none}}
-.top nav .btn-sun,.top nav .btn-sun:hover{color:var(--ink);box-shadow:none}
-@media(max-width:360px){.btn{padding:.8rem 1rem;font-size:.9rem}.top .btn{padding:.5rem .8rem}.final .box{padding-inline:.75rem}}
-/* Under 360 px the logo, the Play button and the language link don't fit beside the wordmark, so it is hidden visually (screen readers still read it) */
-@media(max-width:359px){.top .wordmark{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1.0625rem/1.55 var(--font); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 1200px; margin-inline: auto; padding-left: var(--gutter); padding-right: var(--gutter-r); }
+@media (min-width: 760px) { :root { --gutter: max(32px, env(safe-area-inset-left, 0px)); --gutter-r: max(32px, env(safe-area-inset-right, 0px)); } }
+h1, h2, h3 { margin: 0; letter-spacing: -0.04em; line-height: 1.03; text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
+h1 { font-size: clamp(2.6rem, 5.8vw, 4.6rem); font-weight: 700; }
+h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 680; }
+h3 { font-size: 1.2rem; font-weight: 650; letter-spacing: -0.015em; line-height: 1.25; }
+p { margin: 0; }
+a { color: var(--link); text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+.lede { color: var(--muted); font-size: clamp(1.08rem, 1.6vw, 1.25rem); max-width: 40ch; }
+.center { text-align: center; display: grid; justify-items: center; gap: 16px; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: var(--r-pill); white-space: nowrap; text-decoration: none; font: 600 1rem/1 var(--font); border: 0; cursor: pointer; transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 16px; height: 16px; flex: none; }
+.btn--primary { background: var(--primary-bg); color: var(--primary-fg); }
+.btn--coral { background: var(--coral); color: var(--on-accent); }
+.btn--ghost { color: var(--fg); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line-2); }
+.btn--ghost:hover { box-shadow: inset 0 0 0 1px var(--fg); }
+.btn--sm { min-height: 42px; padding: 0 18px; font-size: 0.95rem; }
+@media (max-width: 360px) { .btn { padding: 0 16px; } }
+
+/* Nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; gap: 28px; padding-block: 12px; }
+.mark { display: flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; }
+.mark svg { width: 30px; height: 30px; border-radius: 8px; flex: none; }
+.nav ul { display: flex; gap: 26px; list-style: none; margin: 0 0 0 auto; padding: 0; font-size: 0.95rem; }
+.nav ul a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
+.nav ul a:hover { color: var(--fg); }
+@media (max-width: 860px) { .nav ul { display: none; } .nav .btn { margin-left: auto; } }
 
 /* Hero */
-.hero{position:relative;overflow:hidden;background:var(--ink-2);color:#fff;padding:4.5rem 0 0}
-.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(closest-side,rgba(255,201,60,.22),transparent 70%);pointer-events:none}
-.hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:60vw;height:60vw;max-width:800px;max-height:800px;background:radial-gradient(closest-side,rgba(255,94,58,.16),transparent 70%);pointer-events:none}
-.hero .wrap{position:relative;z-index:1;display:grid;gap:3rem}
-.hero h1{font-size:clamp(2.6rem,6.4vw,4.6rem);line-height:1.02;letter-spacing:-.035em;font-weight:800;margin:0 0 1.2rem}
-.hero h1 em{font-style:normal;color:var(--sun)}
-.hero .lede{font-size:clamp(1.1rem,1.6vw,1.25rem);color:rgba(255,255,255,.78);max-width:34rem;margin:0 0 2rem}
-.cta{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
-.trust{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin:1.8rem 0 0;padding:0;list-style:none;font-size:.92rem;color:rgba(255,255,255,.75);font-weight:600}
-.trust li{display:flex;align-items:center;gap:.45rem}
-.trust svg{width:18px;height:18px;color:var(--sun);flex:none}
-.stage{position:relative;margin:0 auto -1px;width:100%;max-width:640px}
-/* Device frames, drawn after current flagship hardware (no logos).
-   Padding and margin percentages are of the width, so bezels and camera holes stay in proportion. */
-.device{--rim:#2b2f36;--rim-hi:#5b616b;--bz:2.4%;position:relative;padding:var(--bz);background:#07090c;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06),0 0 0 1.5px var(--rim),0 0 0 2.5px var(--rim-hi),0 0 0 3.5px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.18),0 24px 48px -18px rgba(10,14,22,.55),0 40px 80px -40px rgba(10,14,22,.5)}
-.device img{display:block;width:100%;height:auto;background:#fff}
-.device::before,.device::after{content:"";position:absolute}
-/* Phone, Pixel 9 Pro style: rounded corners, thin even bezel, centred hole, power above volume on the right */
-.device.phone{--bz:2.6%;--rim:#3a3d42;--rim-hi:#8b9097;border-radius:13.5% / 6.1%}
-.device.phone img{border-radius:11% / 5%}
-.device.phone::after{top:0;left:50%;width:3.4%;aspect-ratio:1;margin:calc(var(--bz) + 2.7%) 0 0 -1.7%;border-radius:50%;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.07)}
-.device.phone::before{right:-5px;top:19%;width:2.5px;height:27%;border-radius:0 2px 2px 0;background:linear-gradient(var(--rim-hi) 0 26%,transparent 26% 36%,var(--rim-hi) 36% 100%)}
-/* Phone, Galaxy S Ultra style: squarer corners, thinner bezel, titanium rim, volume above power */
-.device.phone.ultra{--bz:2%;--rim:#6f7277;--rim-hi:#b9bcc1;border-radius:7% / 3.2%}
-.device.phone.ultra img{border-radius:5.4% / 2.5%}
-.device.phone.ultra::after{width:2.8%;margin:calc(var(--bz) + 2.4%) 0 0 -1.4%}
-.device.phone.ultra::before{top:17%;height:30%;background:linear-gradient(var(--rim-hi) 0 52%,transparent 52% 64%,var(--rim-hi) 64% 86%,transparent 86%)}
-/* Tablet, Pixel Tablet style: wide even bezel, soft corners, camera centred in the top bezel, porcelain rim */
-.device.tablet{--bz:3.6%;--rim:#d9d3c8;--rim-hi:#f3efe7;border-radius:5.2% / 8.3%}
-.device.tablet img{border-radius:1.6% / 2.6%}
-.device.tablet::after{top:0;left:50%;width:.9%;aspect-ratio:1;margin:calc(var(--bz) / 2 - .45%) 0 0 -.45%;border-radius:50%;background:#1a2230;box-shadow:inset 0 0 0 1.5px #344155}
-/* Tablet, Galaxy Tab S style: slim bezel, tighter corners, graphite rim */
-.device.tablet.slim{--bz:1.9%;--rim:#3d4148;--rim-hi:#7d838c;border-radius:3.2% / 5.1%}
-.device.tablet.slim img{border-radius:1.4% / 2.2%}
-.device.tablet.slim::after{width:.7%;margin:calc(var(--bz) / 2 - .35%) 0 0 -.35%}
-.stage .tablet{transform:perspective(2200px) rotateY(-6deg) rotateX(2deg);transform-origin:left center}
-/* Phones sit in a .pw wrapper so the frame's percentage padding is of the phone's own width */
-.stage .pw{position:absolute;width:24%;right:5%;bottom:-14%;transform:perspective(2200px) rotateY(-6deg)}
-.hero-shot{padding-bottom:3rem}
-@media(min-width:960px){
-  .hero{padding-top:5.5rem}
-  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:center}
-  .stage{margin-right:-4rem;max-width:none}
-}
+.hero { position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; right: -10%; top: -20%; width: 900px; height: 700px; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; padding-block: clamp(36px, 6vw, 72px) 0; }
+.hero-text { display: grid; gap: 24px; padding-bottom: clamp(28px, 6vw, 80px); }
+.badge { justify-self: start; display: inline-flex; gap: 8px; align-items: center; padding: 6px 14px; border-radius: var(--r-pill); border: 1px solid var(--line-2); background: var(--surface); color: var(--muted); font-size: 0.9rem; }
+.badge b { color: var(--fg); font-weight: 650; }
+.badge b { white-space: nowrap; }
+@media (max-width: 480px) { .badge span { display: none; } }
+.hl { background: linear-gradient(transparent 58%, var(--sun-hl) 58%, var(--sun-hl) 92%, transparent 92%); padding: 0 .04em; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hl { font: italic 400 1.1em/1 var(--serif); letter-spacing: -0.02em; color: var(--sun); } }
+:root[data-theme="dark"] .hl { font: italic 400 1.1em/1 var(--serif); letter-spacing: -0.02em; color: var(--sun); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.facts { display: flex; gap: 8px 22px; flex-wrap: wrap; color: var(--muted); font-size: 0.95rem; list-style: none; margin: 0; padding: 0; }
+.facts li { display: inline-flex; align-items: center; gap: 8px; }
+.facts svg { width: 16px; height: 16px; flex: none; }
+.visual { position: relative; align-self: end; display: grid; justify-items: center; background: var(--sun-soft); border-radius: var(--r-lg) var(--r-lg) 0 0; padding: 44px 20px 0; border: 1px solid var(--line); border-bottom: 0; }
+.phone { width: min(310px, 82%); background: var(--bezel); padding: 9px 9px 0; border-radius: 42px 42px 0 0; box-shadow: 0 30px 70px -24px var(--shadow); }
+.phone img { border-radius: 34px 34px 0 0; }
+.float { position: absolute; left: 0; top: 44%; background: var(--raised); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; box-shadow: 0 20px 44px -18px var(--shadow); display: grid; gap: 8px; font-size: 0.9rem; max-width: 230px; animation: rise .8s cubic-bezier(.22, 1, .36, 1) .5s both; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { display: inline-flex; align-items: center; border-radius: 8px; padding: 5px 9px; font-weight: 600; font-size: 0.85rem; background: var(--sun-soft); color: var(--fg); }
+.chip.time { background: var(--coral-soft); }
+.chip.in { animation: chip .35s cubic-bezier(.34, 1.56, .64, 1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes chip { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+@media (max-width: 880px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } .float { left: 8px; top: 28%; } }
 
 /* Sections */
-section{padding:5.5rem 0}
-.kicker{font-size:.95rem;font-weight:800;color:var(--kicker);margin:0 0 .6rem}
-.privacy{--kicker:#FF8A6D}
-h1,h2{text-wrap:balance;overflow-wrap:break-word;min-width:0}
-p{text-wrap:pretty}
-h2{font-size:clamp(2rem,4.2vw,3rem);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0 0 1rem;max-width:22ch}
-h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.01em;margin:0 0 .45rem;font-weight:800}
-.intro{font-size:1.15rem;color:var(--muted);max-width:40rem;margin:0}
-.head{margin-bottom:3rem}
+section { scroll-margin-top: 80px; }
+.sec { padding-block: clamp(72px, 10vw, 128px) 0; }
+.sec .wrap { display: grid; gap: 44px; }
 
-/* How quick add works */
-.how{display:grid;gap:2.5rem;align-items:center}
-@media(min-width:900px){.how{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:4rem}}
-.steps{list-style:none;margin:2rem 0 0;padding:0;display:grid;gap:1.1rem;counter-reset:s}
-.steps li{display:grid;grid-template-columns:2.4rem 1fr;gap:.9rem;align-items:start;counter-increment:s}
-.steps li::before{content:counter(s);display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:12px;background:var(--surface-2);font-weight:800;color:var(--fg)}
-.steps p{margin:0;color:var(--muted)}
-.examples{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.8rem 0 0;padding:0;list-style:none}
-.examples li{font-size:.9rem;font-weight:600;padding:.4rem .8rem;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+/* Quick add demo */
+.demo { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; box-shadow: 0 24px 60px -40px var(--shadow); min-width: 0; }
+.try { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+.week { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.col { background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; padding: 10px 6px; display: grid; gap: 6px; align-content: start; min-height: 150px; min-width: 0; }
+.col-head { display: grid; justify-items: center; font-size: 0.85rem; color: var(--muted); padding-bottom: 4px; }
+.col-head b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: var(--fg); font-weight: 650; font-variant-numeric: tabular-nums; }
+.col.today .col-head b { background: var(--sun); color: var(--on-accent); }
+.ev { border-radius: 10px; padding: 6px 8px; font-size: 0.82rem; line-height: 1.25; min-width: 0; }
+.ev span { display: block; color: var(--muted); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.ev b { display: block; font-weight: 600; overflow-wrap: anywhere; }
+.ev.sea { background: var(--sea-soft); } .ev.leaf { background: var(--leaf-soft); } .ev.violet { background: var(--violet-soft); }
+.ev.new { background: var(--coral); color: var(--on-accent); } .ev.new span { color: var(--on-accent); }
+.ev.pop { animation: pop .55s cubic-bezier(.34, 1.56, .64, 1) both; }
+@keyframes pop { from { opacity: 0; transform: translateY(-20px) scale(.8); } to { opacity: 1; transform: none; } }
+@media (max-width: 560px) { .week { grid-template-columns: repeat(3, minmax(0, 1fr)); } .col[data-d="1"], .col[data-d="2"] { display: none; } }
+.bar { display: flex; align-items: center; gap: 8px; background: var(--bg); border-radius: var(--r-pill); padding: 5px 5px 5px 20px; box-shadow: inset 0 0 0 1.5px var(--line-2); transition: box-shadow .2s ease; }
+.bar:focus-within { box-shadow: inset 0 0 0 2px var(--focus); }
+.bar label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.bar input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--fg); font: 450 1.05rem/1.3 var(--font); padding: 11px 0; }
+.bar input::placeholder { color: var(--muted); }
+.bar input:focus-visible { outline: none; }
+.send { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--coral); color: var(--on-accent); cursor: pointer; transition: transform .2s ease; }
+.send:hover { transform: scale(1.06); }
+.send svg { width: 18px; height: 18px; }
+.read { font-size: 0.9rem; color: var(--muted); min-height: 1.4em; }
+.read b { color: var(--fg); font-weight: 600; }
+.how { display: grid; gap: 22px; align-content: center; padding: 8px 4px; }
+.how ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; counter-reset: step; }
+.how li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 14px; counter-increment: step; }
+.how li::before { content: counter(step); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--sun-soft); border: 1px solid var(--line); font-weight: 700; }
+.how p { color: var(--muted); }
+.langs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.langs li { padding: 8px 16px; border-radius: var(--r-pill); border: 1px solid var(--line-2); font-size: 0.95rem; }
+.langs li.voice { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+@media (max-width: 900px) { .demo { grid-template-columns: minmax(0, 1fr); } }
 
-.demo{background:var(--surface);border-radius:28px;padding:1.5rem;box-shadow:var(--shadow);border:1px solid var(--line)}
-.demo-week{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:1.2rem}
-.demo-day{background:var(--surface-2);border-radius:12px;height:170px;position:relative;padding:.5rem}
-.demo-day b{display:block;font-size:.75rem;color:var(--muted);font-weight:700;text-align:center}
-.demo-day b span{display:block;font-size:1.05rem;color:var(--fg)}
-.ev{position:absolute;left:5px;right:5px;border-radius:7px;font-size:.7rem;font-weight:700;padding:.25rem .35rem;line-height:1.2;overflow:hidden;border-left:3px solid}
-.ev.w{background:rgba(63,167,196,.18);border-color:var(--sea);color:var(--fg)}
-.ev.f{background:rgba(62,155,106,.18);border-color:var(--leaf);color:var(--fg)}
-.ev.p{background:rgba(122,90,248,.16);border-color:var(--violet);color:var(--fg)}
-.ev.new{background:#C8401F;border-color:#9E2F14;color:#fff;box-shadow:0 8px 20px -6px rgba(255,94,58,.7)}
-.demo-bar{display:flex;align-items:center;gap:.6rem;border:2px solid var(--link);border-radius:18px;padding:.75rem 1rem;font-weight:600;font-size:1.02rem;background:var(--surface);min-height:3.3rem}
-.typed{white-space:nowrap;overflow:hidden;flex:1;min-width:0}
-.tok{border-radius:6px;padding:0 .12em;margin:0 -.12em}
-.tok.d{background:rgba(122,90,248,.2)}
-.tok.t{background:rgba(63,167,196,.25)}
-.send{width:26px;height:26px;color:var(--link);flex:none}
-.chips{display:flex;gap:.5rem;margin:.9rem 0 .4rem;flex-wrap:wrap}
-.chip{font-size:.85rem;font-weight:700;padding:.3rem .7rem;border-radius:9px}
-.chip.d{background:rgba(122,90,248,.18)}
-.chip.t{background:rgba(63,167,196,.22)}
-.sum{font-size:.85rem;color:var(--muted);font-weight:600}
-@media(prefers-reduced-motion:no-preference){
-  .typed{animation:type 10s steps(26,end) infinite}
-  .tok.d{animation:hl-d 10s infinite}
-  .tok.t{animation:hl-t 10s infinite}
-  .chip.d{animation:pop1 10s infinite}
-  .chip.t{animation:pop2 10s infinite}
-  .sum{animation:sum 10s infinite}
-  .send{animation:send 10s infinite}
-  .ev.new{animation:drop 10s cubic-bezier(.2,.9,.3,1.3) infinite}
-}
-@keyframes type{0%,3%{clip-path:inset(0 100% 0 0)}33%,94%{clip-path:inset(0 0 0 0)}100%{clip-path:inset(0 0 0 0);opacity:0}}
-@keyframes hl-d{0%,36%{background:transparent}39%,94%{background:rgba(122,90,248,.2)}100%{background:transparent}}
-@keyframes hl-t{0%,40%{background:transparent}43%,94%{background:rgba(63,167,196,.25)}100%{background:transparent}}
-@keyframes pop1{0%,37%{opacity:0;transform:translateY(6px)}41%,94%{opacity:1;transform:none}100%{opacity:0}}
-@keyframes pop2{0%,41%{opacity:0;transform:translateY(6px)}45%,94%{opacity:1;transform:none}100%{opacity:0}}
-@keyframes sum{0%,48%{opacity:0}53%,94%{opacity:1}100%{opacity:0}}
-@keyframes send{0%,58%{transform:none}61%{transform:scale(1.35) translateX(3px)}64%,100%{transform:none}}
-@keyframes drop{0%,62%{opacity:0;transform:translateY(-30px) scale(.9)}67%,94%{opacity:1;transform:none}100%{opacity:0}}
+/* Screens */
+.seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: var(--r-pill); background: var(--bg-2); border: 1px solid var(--line); flex-wrap: wrap; justify-content: center; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label { padding: 9px 18px; border-radius: var(--r-pill); font-weight: 600; font-size: 0.95rem; cursor: pointer; color: var(--muted); transition: background-color .2s ease, color .2s ease; }
+.seg label:hover { color: var(--fg); }
+.seg input:checked + label { background: var(--surface); color: var(--fg); box-shadow: 0 1px 3px var(--shadow); }
+.seg input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+.screens { display: grid; justify-items: center; gap: 32px; position: relative; }
+.screens::before { content: ""; position: absolute; inset: 30% 5% -5% 5%; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+.pane { display: none; position: relative; width: 100%; justify-items: center; gap: 18px; }
+.pane > p { color: var(--muted); text-align: center; max-width: 52ch; }
+.screens:has(#s-tablet:checked) .pane--tablet, .screens:has(#s-phone:checked) .pane--phone, .screens:has(#s-fold:checked) .pane--fold { display: grid; }
+.device { background: var(--bezel); padding: 10px; border-radius: 26px; box-shadow: 0 40px 80px -36px var(--shadow); width: min(1000px, 100%); }
+.device img { border-radius: 17px; }
+.device--phone { width: min(320px, 80%); border-radius: 40px; }
+.device--phone img { border-radius: 31px; }
+.device--fold { width: min(620px, 100%); }
+.only-dark { display: none !important; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .only-dark { display: block !important; } :root:not([data-theme="light"]) .only-light { display: none !important; } }
+:root[data-theme="dark"] .only-dark { display: block !important; }
+:root[data-theme="dark"] .only-light { display: none !important; }
 
-/* Screens bento */
-.screens{background:var(--surface-2)}
-.bento{display:grid;gap:1.25rem}
-@media(min-width:900px){.bento{grid-template-columns:repeat(6,minmax(0,1fr))}.b-tab{grid-column:span 4}.b-phone{grid-column:span 2}.b-fold{grid-column:span 3}.b-dark{grid-column:span 3}}
-.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;overflow:hidden;position:relative;box-shadow:var(--shadow)}
-.card p{color:var(--muted);margin:0 0 1.2rem}
-.card .device{margin-top:auto}
-.b-phone .pw{width:72%;max-width:240px;margin:auto auto -3.5rem;align-self:center}
-.b-dark{background:var(--ink);color:#fff;border-color:transparent}
-.b-dark p{color:rgba(255,255,255,.72)}
+/* Features */
+.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; list-style: none; margin: 0; padding: 0; }
+.features li { display: grid; gap: 10px; align-content: start; }
+.features .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--bg-2); border: 1px solid var(--line); }
+.features .ico svg { width: 22px; height: 22px; }
+.features p { color: var(--muted); }
+@media (max-width: 900px) { .features { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .features { grid-template-columns: minmax(0, 1fr); } }
 
-/* Foldable: real book-posture capture in a slim tablet frame, with a faint hinge line down the middle */
-.device.fold::after{display:none}
-.device.fold::before{content:"";position:absolute;top:var(--bz);bottom:var(--bz);left:50%;width:2.2%;margin-left:-1.1%;background:linear-gradient(90deg,transparent,rgba(0,0,0,.16) 45%,rgba(255,255,255,.2) 55%,transparent);pointer-events:none;z-index:1}
-.caption{text-align:center;font-size:.8rem;color:var(--muted);margin:.6rem 0 0}
-
-/* Features grid */
-.grid{display:grid;gap:1.25rem}
-@media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
-.feat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem}
-.feat p{color:var(--muted);margin:0}
-.ico{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;margin-bottom:1rem}
-.ico svg{width:24px;height:24px}
-.ico.y{background:rgba(255,201,60,.22);color:#9a6b00}.ico.c{background:rgba(255,94,58,.16);color:#c23a17}.ico.s{background:rgba(63,167,196,.18);color:#1d6f87}.ico.v{background:rgba(122,90,248,.16);color:#5a3fd0}.ico.g{background:rgba(62,155,106,.18);color:#24724a}
-@media(prefers-color-scheme:dark){.ico.y{color:var(--sun)}.ico.c{color:#ff8a6d}.ico.s{color:#7fd0e6}.ico.v{color:#b3a2ff}.ico.g{color:#7dd3a5}}
-kbd{font:700 .8rem/1 Manrope,system-ui,sans-serif;padding:.28rem .45rem;border-radius:7px;background:var(--surface-2);border:1px solid var(--line);border-bottom-width:3px;white-space:nowrap}
-.keys{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+/* Pro */
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 920px; margin-inline: auto; width: 100%; }
+.plan { display: grid; gap: 18px; align-content: start; padding: 28px; }
+.plan--pro { border-color: var(--sun); box-shadow: 0 0 0 1px var(--sun), 0 30px 70px -36px var(--glow); position: relative; }
+.plan-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.price { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.price small { font-size: 1rem; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 4px; }
+.plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.plan li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; align-items: start; }
+.plan li svg { width: 18px; height: 18px; margin-top: 3px; }
+.plan .btn { justify-self: start; }
+.note { color: var(--muted); text-align: center; font-size: 0.95rem; }
+@media (max-width: 760px) { .plans { grid-template-columns: minmax(0, 1fr); } }
 
 /* Privacy */
-.privacy{background:var(--ink-2);color:#fff;position:relative;overflow:hidden}
-.privacy::before{content:"";position:absolute;right:-10%;top:-30%;width:600px;height:600px;background:radial-gradient(closest-side,rgba(63,167,196,.18),transparent 70%)}
-.privacy .wrap{position:relative}
-.privacy .intro{color:rgba(255,255,255,.75)}
-.stats{display:grid;gap:1rem;margin:3rem 0 2rem}
-@media(min-width:760px){.stats{grid-template-columns:repeat(3,1fr)}}
-.stat{border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:1.5rem;background:rgba(255,255,255,.03)}
-.stat strong{display:block;font-size:3.4rem;line-height:1;font-weight:800;letter-spacing:-.04em;color:var(--sun)}
-.stat span{display:block;font-weight:800;margin:.5rem 0 .3rem;font-size:1.05rem}
-.stat p{margin:0;color:rgba(255,255,255,.68);font-size:.95rem}
-.privacy a{color:var(--sun)}
-.note{color:rgba(255,255,255,.68);max-width:46rem;font-size:.95rem}
+.band { background: var(--band); color: var(--band-fg); border-radius: var(--r-lg); padding: clamp(32px, 6vw, 72px); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; border: 1px solid var(--band-line); position: relative; overflow: hidden; }
+.band::before { content: ""; position: absolute; left: -10%; bottom: -60%; width: 700px; height: 500px; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+.band > * { position: relative; }
+.band h2 { color: var(--band-fg); }
+.band p { color: var(--band-muted); margin-top: 16px; max-width: 46ch; }
+.band a { color: var(--band-fg); }
+.band :focus-visible { outline-color: var(--sun); }
+.band ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.band li { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-top: 1px solid var(--band-line); font-size: 1.1rem; }
+.band li:first-child { border-top: 0; }
+.band li span:last-child { color: var(--sun); font-weight: 650; }
+@media (max-width: 880px) { .band { grid-template-columns: minmax(0, 1fr); } }
 
 /* FAQ */
-.faq{max-width:48rem}
-details{border-bottom:1px solid var(--line);padding:1.1rem 0}
-summary{cursor:pointer;font-weight:800;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--coral);transition:transform .2s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--muted);margin:.7rem 0 0}
+.faq { display: grid; max-width: 760px; width: 100%; margin-inline: auto; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; font-weight: 600; font-size: 1.1rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; flex: none; width: 10px; height: 10px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: translateY(-3px) rotate(45deg); transition: transform .25s ease; }
+.faq details[open] summary::after { transform: translateY(2px) rotate(225deg); }
+.faq details p { padding: 0 0 22px; color: var(--muted); max-width: 62ch; }
 
-/* Final CTA */
-.final{padding:0 0 5.5rem}
-.final .box{background:linear-gradient(135deg,var(--sun),#FFB13C);color:var(--ink);border-radius:32px;padding:3rem 1.5rem;text-align:center;position:relative;overflow:hidden}
-.final img{width:88px;height:88px;border-radius:22px;margin:0 auto 1.2rem;box-shadow:0 12px 30px -10px rgba(30,42,58,.5)}
-.final h2{margin:0 auto .8rem;max-width:none}
-.final p{margin:0 auto 1.8rem;max-width:32rem;font-weight:600}
-.final .btn{background:var(--ink);color:#fff}
-.final .btn-soon{background:rgba(30,42,58,.1);color:var(--ink);border-color:rgba(30,42,58,.4)}
+/* Final CTA and footer */
+.cta { padding-block: clamp(80px, 12vw, 140px) clamp(48px, 8vw, 96px); }
+.cta .wrap { display: grid; justify-items: center; gap: 22px; text-align: center; }
+.cta svg.big { width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 20px 40px -18px var(--shadow); }
+.foot { border-top: 1px solid var(--line); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; padding-block: 28px 40px; color: var(--muted); font-size: 0.925rem; }
+.foot ul { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; margin: 0; padding: 0; }
+.foot a { color: var(--muted); text-decoration: none; }
+.foot a:hover { color: var(--fg); text-decoration: underline; }
 
-footer{border-top:1px solid var(--line);padding:2.5rem 0 3rem;color:var(--muted);font-size:.92rem}
-footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
-footer p{margin:0}
-footer nav{display:flex;gap:1.25rem;flex-wrap:wrap}
-footer .small{font-size:.8rem;width:100%}
-@media(max-width:520px){.ev{font-size:.6rem;padding:.2rem .25rem}.demo{padding:1rem}.demo-week{gap:4px}}
-@media(prefers-color-scheme:dark){.privacy,.hero{background:#0B1018}.b-dark{background:#0B1018}}
-/* Right-to-left pages (Arabic, Hebrew) and scripts that need more line height */
-@media(min-width:960px){[dir=rtl] .stage{margin-right:0;margin-left:-4rem}}
-[lang=th] h1,[lang=th] h2,[lang=hi] h1,[lang=hi] h2{line-height:1.35}
-[lang=ja] h1,[lang=ko] h1,[lang^=zh] h1{line-height:1.25}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .float, .chip.in, .ev.pop { animation: none; }
+  .btn, .send, .nav ul a, .faq summary::after, .seg label, .bar { transition: none; }
+  .btn:hover, .send:hover { transform: none; }
+}
+
+.btn-soon { background: var(--bg-2); color: var(--muted); box-shadow: inset 0 0 0 1px var(--line-2); cursor: default; }
+.btn-soon:hover, .btn-soon:active { transform: none; }
+.langs-foot { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.hero .phone { overflow: hidden; }
+.hero .phone img { width: 100%; aspect-ratio: 540 / 595; object-fit: cover; object-position: top; }
+body::before { display: none; }
+/* translated pages: the demo is a still picture of the finished state */
+.bar--static { margin: 0; }
+.bar .line { flex: 1; min-width: 0; font: 450 1.05rem/1.3 var(--font); padding: 11px 0; overflow-wrap: anywhere; }
+.bar--static .send { cursor: default; }
+.bar--static .send:hover { transform: none; }
+.price small { margin-inline-start: 4px; margin-left: 0; }
+[dir="rtl"] .float { left: auto; right: 0; }
+/* the serif italic highlight only exists for Latin scripts */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(:lang(ja), :lang(ko), :lang(zh), :lang(th), :lang(ar), :lang(he), :lang(hi), :lang(ru), :lang(uk)) .hl { font: 700 1em/1.2 var(--font); letter-spacing: 0; font-style: normal; } }
 </style>
 </head>
 <body>
-<header class="top">
+<header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="../icon.svg" alt="" width="34" height="34">Quickspan</a>
-    <nav>
-      <span class="nav-links"><a href="#quick-add">Snel invoeren</a><a href="#screens">Schermen</a><a href="#privacy">Privacy</a><a href="#faq">Veelgestelde vragen</a></span>
-      <a href="../">EN</a>
-    </nav>
+    <a class="mark" href="#top" aria-label="Quickspan, startpagina"><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M41.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z M66.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/><path d="M36.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M46.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M56.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M66.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z" style="fill:var(--dots)"/></svg> Quickspan</a>
+    <ul>
+      <li><a href="#quick-add">Snel toevoegen</a></li>
+      <li><a href="#screens">Schermen</a></li>
+      <li><a href="#pro">Pro</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#faq">Veelgestelde vragen</a></li>
+    </ul>
+    <a class="btn btn--primary btn--sm" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-nl-top">Download de app</a>
   </div>
 </header>
 
 <main id="top">
-<div class="hero">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow"><i></i>Gratis agenda voor Android</span>
-      <h1>Typ het.<br><em>Het staat in je agenda.</em></h1>
-      <p class="lede">Quickspan is een agenda en planner voor Android die <q>Lunch with Sam Friday 1pm</q> omzet in een afspraak en past bij het scherm dat je vasthoudt: telefoon, tablet of vouwtelefoon.</p>
-      <div class="cta"><a class="btn btn-sun" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.7 1 1.2.7L21 12.7c.5-.3.5-1.1 0-1.4L5.2 2.1c-.5-.3-1.2.1-1.2.7z"/></svg> Download op Google Play</a><a class="btn btn-ghost" href="#quick-add">Zo werkt het</a></div>
-      <ul class="trust">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Geen account</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Geen advertenties</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Geen tracking</li>
-      </ul>
-    </div>
-    <div class="hero-shot">
-      <div class="stage">
-        <div class="device tablet hero-tab"><img src="../img/en-tablet-week.webp" width="1280" height="800" fetchpriority="high" decoding="async" alt="Quickspan op een tablet: een week van zeven dagen met afspraken, met de maand en de afspraken van vandaag in een paneel ernaast"></div>
-        <div class="pw"><div class="device phone hero-phone"><img src="../img/en-phone-quickadd.webp" width="540" height="1200" alt="“Gym every Mon and Thu at 7pm” typen op een telefoon, met de herhaling en de tijd gemarkeerd"></div></div>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="badge"><b>Nieuw in 0.2.0</b><span>Spraak, herinneringen en 12 typetalen</span></span>
+        <h1>De privéagenda waar je gewoon <span class="hl">in typt.</span></h1>
+        <p class="lede">Schrijf het zoals je het zou zeggen en het staat in je week. Gewoon op je telefoon.</p>
+        <div class="actions">
+          <a class="btn btn--coral" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-nl"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .8.9 1.3 1.6.9l13-8.2c.6-.4.6-1.4 0-1.8l-13-8.2C6.9 2.5 6 3 6 3.8z" style="fill:currentColor"/></svg> Download op Google Play</a>
+          <a class="btn btn--ghost" href="#quick-add">Bekijk hoe het werkt</a>
+        </div>
+        <ul class="facts"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Geen account</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Geen advertenties of tracking</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Gratis, Pro eenmalig</li></ul>
+      </div>
+      <div class="visual">
+        <div class="phone"><img src="../img/en-phone-quickadd.webp" width="540" height="595" alt="Quickspan op een telefoon: de regel Sportschool elke ma en do om 19:00, herkend als Elke ma, do om 19:00."></div>
+        <div class="float" aria-hidden="true"><span>Sportschool elke ma en do om 19:00</span><div class="chips"><span class="chip">Elke ma, do</span><span class="chip time">19:00</span></div></div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<section id="quick-add">
-  <div class="wrap how">
-    <div>
-      <p class="kicker">Snel invoeren</p>
-      <h2>Schrijf het zoals je het zou zeggen.</h2>
-      <p class="intro">Geen keuzewielen, geen formulieren. Quickspan herkent datums, tijden, herhalingen en plaatsen terwijl je typt, rechtstreeks op je telefoon.</p>
-      <ol class="steps">
-        <li><div><h3>Typ een regel</h3><p>Alles van <q>Dentist Thursday 4pm</q> tot <q>Gym every Mon and Thu at 7pm</q>.</p></div></li>
-        <li><div><h3>Zie wat er begrepen is</h3><p>De herkende woorden lichten op en een regel laat precies zien wat er wordt opgeslagen.</p></div></li>
-        <li><div><h3>Druk op Enter</h3><p>Het staat in je agenda, met ongedaan maken. Geen tijd opgegeven? Dan zoekt het je eerste vrije uur.</p></div></li>
-      </ol>
-      <ul class="examples" aria-label="Meer dingen die je kunt typen">
-        <li>Lunch with Sam tomorrow at 1pm at Cafe Roma</li>
-        <li>Dinner tonight</li>
-        <li>Standup every weekday at 9:30</li>
-        <li>Comida con Ana el viernes 14:00</li>
+  <section class="sec" id="quick-add">
+    <div class="wrap">
+      <div class="center">
+        <h2>Schrijf het zoals je het zou zeggen.</h2>
+        <p class="lede">Geen keuzelijsten en geen formulieren. Probeer het: typ een plan en druk op Enter.</p>
+      </div>
+      <div class="demo">
+        <div class="card try" aria-label="Snel toevoegen in een voorbeeldweek">
+          <div class="week">
+            <div class="col today" data-d="1"><div class="col-head">di<b>27</b></div><div class="ev sea"><span>09:30</span><b>Stand-up</b></div><div class="ev violet"><span>12:30</span><b>Lunch</b></div></div>
+            <div class="col" data-d="2"><div class="col-head">wo<b>28</b></div><div class="ev sea"><span>09:00</span><b>Focus</b></div><div class="ev leaf"><span>16:00</span><b>Tandarts</b></div></div>
+            <div class="col" data-d="3"><div class="col-head">do<b>29</b></div><div class="ev sea"><span>15:00</span><b>1:1 Priya</b></div><div class="ev violet"><span>19:00</span><b>Sportschool</b></div></div>
+            <div class="col" data-d="4"><div class="col-head">vr<b>30</b></div><div class="ev new" id="seed"><span>13:00</span><b>Lunch met Sam</b></div></div>
+            <div class="col" data-d="5"><div class="col-head">za<b>31</b></div></div>
+          </div>
+          <div class="chips" id="chips" aria-hidden="true"><span class="chip">vr 30 okt</span><span class="chip time">13:00</span></div>
+          <p class="bar bar--static"><span class="line">Lunch met Sam vrijdag 13:00</span><span class="send" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z" style="fill:currentColor"/></svg></span></p>
+          <p class="read"><b>Lunch met Sam</b> toegevoegd op <b>vr 30 okt</b> om <b>13:00</b>.</p>
+        </div>
+        <div class="how">
+          <ol>
+            <li><div><h3>Typ een regel</h3><p>Alles van “Tandarts donderdag 16:00” tot “Sportschool elke ma en do om 19:00”.</p></div></li>
+            <li><div><h3>Zie wat er begrepen is</h3><p>Data, tijden, herhalingen en plaatsen lichten op als chips terwijl je typt.</p></div></li>
+            <li><div><h3>Druk op Enter</h3><p>Het staat in je agenda, met ongedaan maken. Geen tijd opgegeven? Dan zoekt het je eerste vrije uur.</p></div></li>
+          </ol>
+        </div>
+      </div>
+      <ul class="langs" aria-label="Talen die snel toevoegen begrijpt">
+        <li lang="en">English</li><li lang="es">Español</li><li lang="nl">Nederlands</li><li lang="de">Deutsch</li><li lang="fr">Français</li><li lang="it">Italiano</li><li lang="pt">Português</li><li lang="ru">Русский</li><li lang="pl">Polski</li><li lang="tr">Türkçe</li><li lang="id">Bahasa Indonesia</li><li lang="ko">한국어</li><li class="voice">Of zeg het gewoon</li>
       </ul>
-      <p class="caption" style="text-align:left">Typen begrijpt op dit moment 12 talen. De rest van de app is in jouw taal.</p>
+      <p class="note">Dit is een voorbeeld. De app begrijpt alle 12 talen, getypt of gesproken, op je telefoon.</p>
     </div>
-    <div class="pw" style="width:72%;max-width:260px;margin:0 auto"><div class="device phone ultra"><img src="../img/en-phone-quickadd.webp" width="540" height="1200" loading="lazy" decoding="async" alt="“Gym every Mon and Thu at 7pm” typen op een telefoon, met de herhaling en de tijd gemarkeerd"></div></div>
-  </div>
-</section>
+  </section>
 
-<section class="screens" id="screens">
-  <div class="wrap">
-    <div class="head">
-      <p class="kicker">Elk scherm</p>
-      <h2>Een agenda die past bij het scherm in je hand.</h2>
-      <p class="intro">De meeste agenda's rekken een telefoonindeling op. Quickspan past zijn indeling aan de beschikbare ruimte aan.</p>
+  <section class="sec" id="screens">
+    <div class="wrap">
+      <div class="center">
+        <h2>Past bij het scherm in je hand.</h2>
+        <p class="lede">De meeste agenda's rekken een telefoonindeling uit. Quickspan past zijn indeling aan op de ruimte die er is.</p>
+      </div>
+      <div class="screens">
+        <div class="seg" role="radiogroup" aria-label="Kies een scherm">
+          <input type="radio" name="screen" id="s-tablet" checked><label for="s-tablet">Tablet</label>
+          <input type="radio" name="screen" id="s-phone"><label for="s-phone">Telefoon</label>
+          <input type="radio" name="screen" id="s-fold"><label for="s-fold">Vouwtelefoon</label>
+        </div>
+        <div class="pane pane--tablet">
+          <div class="device">
+            <img class="only-light" src="../img/en-tablet-week.webp" width="1280" height="800" alt="Quickspan op een tablet: de week van 25 tot 31 oktober met een maand en een paneel Vandaag ernaast.">
+            <img class="only-dark" src="../img/en-tablet-week-dark.webp" width="1280" height="800" alt="Quickspan op een tablet in donkere modus: de week met een maand en een paneel Vandaag ernaast.">
+          </div>
+          <p>De hele week met Vandaag ernaast, en de details naast het raster als je een afspraak kiest.</p>
+        </div>
+        <div class="pane pane--phone">
+          <div class="device device--phone"><img src="../img/en-phone-week.webp" width="540" height="1200" alt="Quickspan op een telefoon: drie dagen van de week met de balk voor snel toevoegen onderaan."></div>
+          <p>Drie goed leesbare dagen, met de balk voor snel toevoegen onder je duim.</p>
+        </div>
+        <div class="pane pane--fold">
+          <div class="device device--fold"><img src="../img/en-fold-book.webp" width="1400" height="1357" alt="Quickspan op een Pixel 10 Pro Fold: de week aan de ene kant van het scharnier, vandaag aan de andere."></div>
+          <p>Half open als een boek: de week aan de ene kant van het scharnier en vandaag aan de andere.</p>
+        </div>
+      </div>
     </div>
-    <div class="bento">
-      <article class="card b-tab">
-        <h3>Tablets krijgen de hele week</h3>
-        <p>Zeven dagen met een paneel voor vandaag ernaast, en de details van een afspraak naast het raster als je er een kiest.</p>
-        <div class="device tablet slim"><img src="../img/en-tablet-agenda.webp" width="1280" height="800" loading="lazy" decoding="async" alt="De agenda op een tablet: afspraken per dag links, de details van de gekozen afspraak rechts"></div>
-      </article>
-      <article class="card b-phone">
-        <h3>Telefoons krijgen drie dagen</h3>
-        <p>Een leesbare week op een smal scherm, met de invoerbalk onder je duim.</p>
-        <div class="pw"><div class="device phone ultra"><img src="../img/en-phone-week.webp" width="540" height="1200" loading="lazy" decoding="async" alt="De weekweergave op een telefoon met drie dagen"></div></div>
-      </article>
-      <article class="card b-fold">
-        <h3>Vouwtelefoons, zoals het hoort</h3>
-        <p>Half open als een boek staat de week aan de ene kant van het scharnier en vandaag aan de andere. Vouw open of dicht en je behoudt je plek.</p>
-        <div class="device tablet slim fold"><img src="../img/en-fold-book.webp" width="1400" height="1357" loading="lazy" decoding="async" alt="Een vouwtelefoon half open als een boek: de week links, de maand en de afspraken van vandaag rechts"></div>
-      </article>
-      <article class="card b-dark">
-        <h3>Toetsenbord, muis en donkere modus</h3>
-        <p>Sneltoetsen voor alles, rechtsklikmenu's en een tweede venster naast het eerste. Afspraken sleep je ertussen.</p>
-        <div class="device tablet slim"><img src="../img/en-tablet-week-dark.webp" width="1280" height="800" loading="lazy" decoding="async" alt="De weekweergave op een tablet in donkere modus"></div>
-      </article>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="privacy" id="privacy">
-  <div class="wrap">
-    <p class="kicker">Privé door ontwerp</p>
-    <h2>Je agenda blijft van jou.</h2>
-    <p class="intro">Quickspan heeft geen account en geen advertenties, en bewaart je afspraken op je telefoon. Je hoeft je nergens voor aan te melden en niets af te staan.</p>
-    <div class="stats">
-      <div class="stat"><strong>0</strong><span>verzamelde afspraken</span><p>Je afspraken blijven op je telefoon. Er wordt niets over verstuurd naar ons.</p></div>
-      <div class="stat"><strong>0</strong><span>accounts</span><p>Nergens voor aanmelden. Open de app en begin met typen.</p></div>
-      <div class="stat"><strong>0</strong><span>advertenties of trackers</span><p>De app heeft geen advertenties, geen analyse en geen advertentie-ID.</p></div>
+  <section class="sec">
+    <div class="wrap">
+      <div class="center"><h2>Kleine dingen die optellen.</h2></div>
+      <ul class="features">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Je agenda's, geen nieuw account</h3><p>Afspraken uit Google, Outlook, Samsung en iCloud staan naast die van Quickspan zelf. Je telefoon doet de synchronisatie.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Slepen en neerzetten</h3><p>Verplaats een afspraak naar een andere dag, sleep de rand om de duur te wijzigen, of veeg over een lege plek om er een te maken.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20a2 2 0 0 0 4 0" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Herinneringen</h3><p>Een seintje vóór elke afspraak, en een knop Deelnemen als er een Meet-, Zoom- of Teams-link is.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l3 3-3 3M4 11V9a4 4 0 0 1 4-4h12M7 22l-3-3 3-3M20 13v2a4 4 0 0 1-4 4H4" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Terugkerende afspraken</h3><p>Dagelijks, op werkdagen, wekelijks, maandelijks of jaarlijks. Wijzig maar één keer als plannen verschuiven.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v10H3zM7 11h.01M11 11h.01M15 11h.01M8 14h8" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Toetsenbord en muis</h3><p>Sneltoetsen voor alles, menu's met rechtsklik en afspraken die je tussen vensters sleept.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a1.5 1.5 0 1 0 0 .01M5 8l7 1.5L19 8M12 9.5V14M12 14l-3 6M12 14l3 6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Gebouwd voor toegankelijkheid</h3><p>Gemaakt om met TalkBack te werken: elke afspraak wordt als één zin voorgelezen en alles wat je kunt slepen heeft ook een menu-actie. <a href="../accessibility/">Wat werkt en wat nog niet (Engels)</a>.</p></li>
+      </ul>
     </div>
-    <p class="note">Als je ervoor kiest een Google- of Exchange-agenda te tonen, blijft die agenda synchroniseren via het account op je telefoon, zoals altijd. <a href="../en/">Lees het privacybeleid (Engels en Spaans)</a></p>
-  </div>
-</section>
+  </section>
 
-<section id="faq">
-  <div class="wrap">
-    <div class="head">
-      <p class="kicker">Vragen</p>
-      <h2>Goed om te weten.</h2>
+  <section class="sec" id="pro">
+    <div class="wrap">
+      <div class="center">
+        <h2>Gratis te gebruiken. Pro, eenmalig.</h2>
+        <p class="lede">Alles hierboven is gratis. Pro is één optionele aankoop, zonder abonnement.</p>
+      </div>
+      <div class="plans">
+        <div class="card plan">
+          <div class="plan-head"><h3>Quickspan</h3><span class="price">€0</span></div>
+          <ul>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Snel toevoegen, getypt en gesproken</span></li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>De agenda's van je telefoon, gesynchroniseerd</span></li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Herinneringen en terugkerende afspraken</span></li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Print de week of bewaar hem als PDF</span></li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>De widget Eerstvolgende</span></li>
+          </ul>
+          <a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-nl-free">Gratis downloaden</a>
+        </div>
+        <div class="card plan plan--pro">
+          <div class="plan-head"><h3>Quickspan Pro</h3><span class="price">€4.99<small>eenmalig</small></span></div>
+          <ul>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Thema's en een zuiver zwarte donkere modus</span></li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Widgets voor agenda en maand</span></li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Jaaroverzicht en een vrij moment zoeken</span></li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Een tweede tijdzone</span></li>
+            <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Sjablonen, .ics-import en alternatieve iconen</span></li>
+          </ul>
+          <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-nl-pro">Download op Google Play</a>
+        </div>
+      </div>
+      <p class="note">Pro koop je in de app via Google Play. Geen advertenties en geen account, in beide versies.</p>
     </div>
-    <div class="faq">
-      <details><summary>Is het echt gratis?</summary><p>Ja. Geen advertenties en geen abonnement.</p></details>
-      <details><summary>Synchroniseert het tussen mijn apparaten?</summary><p>Niet zelf. Bewaar je afspraken in een Google- of Exchange-agenda op je telefoon en zet Telefoonagenda's aan in Quickspan: je account synchroniseert ze.</p></details>
-      <details><summary>Welke talen spreekt het?</summary><p>De app is er in meer dan 20 talen. Typen begrijpt op dit moment 12 talen, en datums en tijden volgen de instellingen van je telefoon.</p></details>
-      <details><summary>Waarom vraagt het toegang tot de agenda?</summary><p>Alleen om de agenda's te tonen en te bewerken die al op je telefoon staan, en alleen als je dat aanzet.</p></details>
-      <details><summary>Op welke telefoons en tablets werkt het?</summary><p>Android 8 en nieuwer: telefoons, tablets, vouwtelefoons en flip-telefoons.</p></details>
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="final">
-  <div class="wrap">
-    <div class="box">
-      <img src="../icon.svg" alt="" width="88" height="88">
-      <h2>Typ je volgende plan eens.</h2>
-      <p>Gratis op Google Play. Geen account, geen advertenties, geen tracking.</p>
-      <a class="btn btn-sun" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.8v18.4c0 .6.7 1 1.2.7L21 12.7c.5-.3.5-1.1 0-1.4L5.2 2.1c-.5-.3-1.2.1-1.2.7z"/></svg> Download op Google Play</a>
+  <section class="sec" id="privacy">
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>Je afspraken blijven op je telefoon.</h2>
+          <p>Quickspan bewaart je afspraken in een database op je telefoon. Een Google- of Exchange-agenda die je zichtbaar maakt, blijft synchroniseren via het eigen account van je telefoon, zoals altijd. Lees het <a href="../en/">privacybeleid (Engels en Spaans)</a>.</p>
+        </div>
+        <ul>
+          <li><span>Account om je voor aan te melden</span><span>Geen</span></li>
+          <li><span>Advertenties en advertentie-ID</span><span>Geen</span></li>
+          <li><span>Analyse en trackers</span><span>Geen</span></li>
+          <li><span>Verzamelde gegevens, volgens Play</span><span>Geen</span></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
+
+  <section class="sec" id="faq">
+    <div class="wrap">
+      <div class="center"><h2>Vragen</h2></div>
+      <div class="faq">
+      <details><summary>Is het echt gratis?</summary><p>Ja. Geen advertenties en geen abonnement, en alles op deze pagina is gratis te gebruiken. Quickspan Pro is een optionele eenmalige aankoop van €4,99 die de extra's toevoegt die onder Quickspan Pro staan.</p></details>
+      <details><summary>Synchroniseert het tussen mijn apparaten?</summary><p>Niet zelf. Bewaar je afspraken in een Google-, Outlook- of Samsung-agenda op je telefoon (iCloud werkt via de gratis app DAVx5) en zet Telefoonagenda's aan in Quickspan: je account synchroniseert ze naar je andere apparaten.</p></details>
+      <details><summary>Welke talen begrijpt snel toevoegen?</summary><p>Snel toevoegen, getypt en gesproken, begrijpt 12 talen: Engels, Spaans, Nederlands, Duits, Frans, Italiaans, Portugees, Russisch, Pools, Turks, Indonesisch en Koreaans. De app zelf is in 23 talen beschikbaar. Spraak vereist Android 12 of nieuwer met spraakherkenning op het apparaat. Data en tijden volgen de instellingen van je telefoon.</p></details>
+      <details><summary>Kan het met tijdzones omgaan?</summary><p>Ja. Typ “15:00 Londense tijd” of koppel een afspraak in de editor aan een zone, en Quickspan toont de zone naast de tijd. Afspraken uit de agenda's van je telefoon behouden hun eigen zone, en de app volgt je telefoon als de zone verandert.</p></details>
+      <details><summary>Waarom vraagt het om toegang tot de agenda?</summary><p>Alleen om de agenda's te tonen en te bewerken die al op je telefoon staan, en alleen als je dat aanzet. Zonder toegang werkt Quickspan met zijn eigen agenda's.</p></details>
+      <details><summary>Op welke telefoons en tablets draait het?</summary><p>Android 8 en nieuwer: telefoons, tablets, vouwtelefoons en flip-telefoons, inclusief vensters in desktopstijl op tablets.</p></details>
+      <details><summary>Wat kan het nog niet?</summary><p>Snel toevoegen begrijpt nu 12 talen. Laat ons weten wat je mist via <a href="mailto:support@quickspan.app">support@quickspan.app</a>.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <svg class="big" viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M41.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z M66.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/><path d="M36.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M46.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M56.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M66.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z" style="fill:var(--dots)"/></svg>
+      <h2>Typ je eerste afspraak.</h2>
+      <a class="btn btn--coral" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=nl&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-nl-bottom"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .8.9 1.3 1.6.9l13-8.2c.6-.4.6-1.4 0-1.8l-13-8.2C6.9 2.5 6 3 6 3.8z" style="fill:currentColor"/></svg> Download op Google Play</a>
+    </div>
+  </section>
 </main>
 
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <p>Quickspan Calendar, gemaakt door Manuel Lorenzo.</p>
-    <nav><a href="../en/">Privacybeleid (English)</a><a href="../press/">Pers</a><a href="mailto:support@quickspan.app">support@quickspan.app</a><a href="../">English</a><a href="../inicio/" lang="es" hreflang="es">Español</a><a href="../fr/" lang="fr" hreflang="fr">Français</a><a href="../de/" lang="de" hreflang="de">Deutsch</a><a href="../it/" lang="it" hreflang="it">Italiano</a><a href="../pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../pl/" lang="pl" hreflang="pl">Polski</a><a href="../tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../id/" lang="id" hreflang="id">Indonesia</a><a href="../ja/" lang="ja" hreflang="ja">日本語</a><a href="../ko/" lang="ko" hreflang="ko">한국어</a><a href="../ru/" lang="ru" hreflang="ru">Русский</a><a href="../sv/" lang="sv" hreflang="sv">Svenska</a><a href="../cs/" lang="cs" hreflang="cs">Čeština</a><a href="../uk/" lang="uk" hreflang="uk">Українська</a><a href="../vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../th/" lang="th" hreflang="th">ไทย</a><a href="../pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../ar/" lang="ar" hreflang="ar">العربية</a><a href="../he/" lang="he" hreflang="he">עברית</a><a href="../zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
-    <p class="small">Google Play is een handelsmerk van Google LLC.</p>
+    <span>Quickspan Calendar, gemaakt door Manuel Lorenzo. Support: <a href="mailto:support@quickspan.app">support@quickspan.app</a>. Google Play is een handelsmerk van Google LLC.</span>
+    <ul>
+      <li><a href="../en/">Privacybeleid</a></li>
+      <li><a href="../press/">Perskit</a></li>
+      <li><a href="../accessibility/">Toegankelijkheid</a></li>
+      <li><a href="../" hreflang="en" lang="en">English</a></li>
+      <li><a href="../inicio/" hreflang="es" lang="es">Español</a></li>
+    </ul>
+    <nav class="langs-foot" aria-label="Languages"><a href="../fr/" lang="fr" hreflang="fr">Français</a><a href="../de/" lang="de" hreflang="de">Deutsch</a><a href="../it/" lang="it" hreflang="it">Italiano</a><a href="../pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../pl/" lang="pl" hreflang="pl">Polski</a><a href="../tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../id/" lang="id" hreflang="id">Indonesia</a><a href="../ja/" lang="ja" hreflang="ja">日本語</a><a href="../ko/" lang="ko" hreflang="ko">한국어</a><a href="../ru/" lang="ru" hreflang="ru">Русский</a><a href="../sv/" lang="sv" hreflang="sv">Svenska</a><a href="../cs/" lang="cs" hreflang="cs">Čeština</a><a href="../uk/" lang="uk" hreflang="uk">Українська</a><a href="../vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../th/" lang="th" hreflang="th">ไทย</a><a href="../pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../ar/" lang="ar" hreflang="ar">العربية</a><a href="../he/" lang="he" hreflang="he">עברית</a><a href="../zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
   </div>
 </footer>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "02f57a3dc3004200ae5a1e93ce20fa7c"}'></script>
