@@ -21,7 +21,7 @@
 /* quickspan.app home v2 (27 Oct 2026). Product-led and calm: white with sun accents in light, night with one warm glow in dark. One family (Google Sans Flex), the real 0.2.0 screens, a working quick-add demo. */
 :root {
   --bg: #FFFFFF; --bg-2: #F6F7F9; --surface: #FFFFFF; --raised: #FFFFFF;
-  --fg: #1E2A3A; --muted: #5A6575; --line: #E3E7ED; --line-2: #CDD3DC;
+  --fg: #1E2A3A; --muted: #5A6575; --line: #E3E7ED; --line-2: #CDD3DC; --field-line: #8A94A3;
   --sun: #FFC93C; --sun-soft: #FFF3CF; --sun-hl: #FFC93C; --coral: #FF5E3A; --coral-soft: #FFE1D8; --on-accent: #1E2A3A;
   --sea-soft: #D9EEF5; --leaf-soft: #DCF1E4; --violet-soft: #E9E4FB;
   --primary-bg: #1E2A3A; --primary-fg: #FFFFFF;
@@ -35,7 +35,7 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #0B0E13; --bg-2: #10141B; --surface: #141922; --raised: #1A202A;
-  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16);
+  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16); --field-line: #7C8696;
   --sun-soft: #1C1A12; --sun-hl: transparent; --coral-soft: #3A1E16;
   --sea-soft: #12303A; --leaf-soft: #15301F; --violet-soft: #251F42;
   --primary-bg: #FFC93C; --primary-fg: #1E2A3A;
@@ -45,7 +45,7 @@
   color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #0B0E13; --bg-2: #10141B; --surface: #141922; --raised: #1A202A;
-  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16);
+  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16); --field-line: #7C8696;
   --sun-soft: #1C1A12; --sun-hl: transparent; --coral-soft: #3A1E16;
   --sea-soft: #12303A; --leaf-soft: #15301F; --violet-soft: #251F42;
   --primary-bg: #FFC93C; --primary-fg: #1E2A3A;
@@ -55,7 +55,7 @@
   color-scheme: dark }
 
 html, body { overflow-x: clip; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1.0625rem/1.55 var(--font); -webkit-font-smoothing: antialiased; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
 .wrap { max-width: 1200px; margin-inline: auto; padding-left: var(--gutter); padding-right: var(--gutter-r); }
@@ -85,13 +85,15 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Nav */
 .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
-.nav .wrap { display: flex; align-items: center; gap: 28px; padding-block: 12px; }
+.nav .wrap { display: flex; align-items: center; gap: 12px 28px; padding-block: 12px; flex-wrap: wrap; }
 .mark { display: flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; }
 .mark svg { width: 30px; height: 30px; border-radius: 8px; flex: none; }
-.nav ul { display: flex; gap: 26px; list-style: none; margin: 0 0 0 auto; padding: 0; font-size: 0.95rem; }
+.nav nav { margin-inline-start: auto; }
+.nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: 0.95rem; }
 .nav ul a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
 .nav ul a:hover { color: var(--fg); }
-@media (max-width: 860px) { .nav ul { display: none; } .nav .btn { margin-left: auto; } }
+@media (max-width: 860px) { .nav nav { display: none; } .nav .btn { margin-inline-start: auto; } }
+.nav .btn { white-space: normal; text-align: center; min-width: 0; }
 
 /* Hero */
 .hero { position: relative; overflow: hidden; }
@@ -143,7 +145,7 @@ section { scroll-margin-top: 80px; }
 .ev.pop { animation: pop .55s cubic-bezier(.34, 1.56, .64, 1) both; }
 @keyframes pop { from { opacity: 0; transform: translateY(-20px) scale(.8); } to { opacity: 1; transform: none; } }
 @media (max-width: 560px) { .week { grid-template-columns: repeat(3, minmax(0, 1fr)); } .col[data-d="1"], .col[data-d="2"] { display: none; } }
-.bar { display: flex; align-items: center; gap: 8px; background: var(--bg); border-radius: var(--r-pill); padding: 5px 5px 5px 20px; box-shadow: inset 0 0 0 1.5px var(--line-2); transition: box-shadow .2s ease; }
+.bar { display: flex; align-items: center; gap: 8px; background: var(--bg); border-radius: var(--r-pill); padding: 5px; padding-inline-start: 20px; box-shadow: inset 0 0 0 1.5px var(--field-line); transition: box-shadow .2s ease; }
 .bar:focus-within { box-shadow: inset 0 0 0 2px var(--focus); }
 .bar label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .bar input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--fg); font: 450 1.05rem/1.3 var(--font); padding: 11px 0; }
@@ -169,7 +171,7 @@ section { scroll-margin-top: 80px; }
 .seg input { position: absolute; opacity: 0; pointer-events: none; }
 .seg label { padding: 9px 18px; border-radius: var(--r-pill); font-weight: 600; font-size: 0.95rem; cursor: pointer; color: var(--muted); transition: background-color .2s ease, color .2s ease; }
 .seg label:hover { color: var(--fg); }
-.seg input:checked + label { background: var(--surface); color: var(--fg); box-shadow: 0 1px 3px var(--shadow); }
+.seg input:checked + label { background: var(--surface); color: var(--fg); box-shadow: 0 1px 3px var(--shadow), inset 0 0 0 2px var(--fg); }
 .seg input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
 .screens { display: grid; justify-items: center; gap: 32px; position: relative; }
 .screens::before { content: ""; position: absolute; inset: 30% 5% -5% 5%; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
@@ -241,6 +243,10 @@ section { scroll-margin-top: 80px; }
 .foot ul { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; margin: 0; padding: 0; }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--fg); text-decoration: underline; }
+.foot span a { text-decoration: underline; text-underline-offset: 0.2em; color: var(--fg); }
+.langs-foot a { padding-block: 4px; }
+.skip { position: absolute; inset-inline-start: 8px; top: -60px; z-index: 10; background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: var(--r-pill); font-weight: 600; text-decoration: none; }
+.skip:focus { top: 8px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -281,21 +287,29 @@ body::before { display: none; }
 .doc .d { color: var(--muted); font-size: .95rem; }
 .doc hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
 .doc p { margin: 0 0 1rem; }
+/* polish after review: CJK headlines break at phrases, long links wrap, sentence-case labels */
+:lang(ja) :is(h1, h2), :lang(zh) :is(h1, h2) { word-break: auto-phrase; }
+.doc a { overflow-wrap: anywhere; }
+
+@media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
+bdi { unicode-bidi: isolate; }
+.press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the content</a>
 <header class="nav">
   <div class="wrap">
     <a class="mark" href="/" aria-label="Quickspan, home"><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M41.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z M66.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/><path d="M36.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M46.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M56.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M66.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z" style="fill:var(--dots)"/></svg> Quickspan</a>
-    <ul>
+    <nav aria-label="Site"><ul>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/press/">Press</a></li>
       <li><a href="/accessibility/">Accessibility</a></li>
-    </ul>
+    </ul></nav>
     <a class="btn btn--ghost btn--sm" href="/">Home</a>
   </div>
 </header>
-<main class="doc">
+<main class="doc" id="main">
   <div class="wrap">
 <h1>Quickspan blog</h1><ul><li><a href="/blog/0-2/">What&#x27;s new in Quickspan 0.2</a> <span class="d">2026-10-27</span></li></ul>
   </div>
@@ -303,13 +317,13 @@ body::before { display: none; }
 <footer class="foot">
   <div class="wrap">
     <span>Quickspan Calendar, made by Manuel Lorenzo. Support: <a href="mailto:support@quickspan.app">support@quickspan.app</a>. Google Play is a trademark of Google LLC.</span>
-    <ul>
+    <nav aria-label="Footer"><ul>
       <li><a href="/en/">Privacy policy</a></li>
       <li><a href="/es/">Política de privacidad</a></li>
       <li><a href="/press/">Press kit</a></li>
       <li><a href="/accessibility/">Accessibility</a></li>
       <li><a href="/accesibilidad/">Accesibilidad</a></li>
-    </ul>
+    </ul></nav>
   </div>
 </footer>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "02f57a3dc3004200ae5a1e93ce20fa7c"}'></script>

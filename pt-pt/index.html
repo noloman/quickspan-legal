@@ -58,7 +58,7 @@
 /* quickspan.app home v2 (27 Oct 2026). Product-led and calm: white with sun accents in light, night with one warm glow in dark. One family (Google Sans Flex), the real 0.2.0 screens, a working quick-add demo. */
 :root {
   --bg: #FFFFFF; --bg-2: #F6F7F9; --surface: #FFFFFF; --raised: #FFFFFF;
-  --fg: #1E2A3A; --muted: #5A6575; --line: #E3E7ED; --line-2: #CDD3DC;
+  --fg: #1E2A3A; --muted: #5A6575; --line: #E3E7ED; --line-2: #CDD3DC; --field-line: #8A94A3;
   --sun: #FFC93C; --sun-soft: #FFF3CF; --sun-hl: #FFC93C; --coral: #FF5E3A; --coral-soft: #FFE1D8; --on-accent: #1E2A3A;
   --sea-soft: #D9EEF5; --leaf-soft: #DCF1E4; --violet-soft: #E9E4FB;
   --primary-bg: #1E2A3A; --primary-fg: #FFFFFF;
@@ -72,7 +72,7 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #0B0E13; --bg-2: #10141B; --surface: #141922; --raised: #1A202A;
-  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16);
+  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16); --field-line: #7C8696;
   --sun-soft: #1C1A12; --sun-hl: transparent; --coral-soft: #3A1E16;
   --sea-soft: #12303A; --leaf-soft: #15301F; --violet-soft: #251F42;
   --primary-bg: #FFC93C; --primary-fg: #1E2A3A;
@@ -82,7 +82,7 @@
   color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #0B0E13; --bg-2: #10141B; --surface: #141922; --raised: #1A202A;
-  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16);
+  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16); --field-line: #7C8696;
   --sun-soft: #1C1A12; --sun-hl: transparent; --coral-soft: #3A1E16;
   --sea-soft: #12303A; --leaf-soft: #15301F; --violet-soft: #251F42;
   --primary-bg: #FFC93C; --primary-fg: #1E2A3A;
@@ -92,7 +92,7 @@
   color-scheme: dark }
 
 html, body { overflow-x: clip; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1.0625rem/1.55 var(--font); -webkit-font-smoothing: antialiased; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
 .wrap { max-width: 1200px; margin-inline: auto; padding-left: var(--gutter); padding-right: var(--gutter-r); }
@@ -122,13 +122,15 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Nav */
 .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
-.nav .wrap { display: flex; align-items: center; gap: 28px; padding-block: 12px; }
+.nav .wrap { display: flex; align-items: center; gap: 12px 28px; padding-block: 12px; flex-wrap: wrap; }
 .mark { display: flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; }
 .mark svg { width: 30px; height: 30px; border-radius: 8px; flex: none; }
-.nav ul { display: flex; gap: 26px; list-style: none; margin: 0 0 0 auto; padding: 0; font-size: 0.95rem; }
+.nav nav { margin-inline-start: auto; }
+.nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: 0.95rem; }
 .nav ul a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
 .nav ul a:hover { color: var(--fg); }
-@media (max-width: 860px) { .nav ul { display: none; } .nav .btn { margin-left: auto; } }
+@media (max-width: 860px) { .nav nav { display: none; } .nav .btn { margin-inline-start: auto; } }
+.nav .btn { white-space: normal; text-align: center; min-width: 0; }
 
 /* Hero */
 .hero { position: relative; overflow: hidden; }
@@ -180,7 +182,7 @@ section { scroll-margin-top: 80px; }
 .ev.pop { animation: pop .55s cubic-bezier(.34, 1.56, .64, 1) both; }
 @keyframes pop { from { opacity: 0; transform: translateY(-20px) scale(.8); } to { opacity: 1; transform: none; } }
 @media (max-width: 560px) { .week { grid-template-columns: repeat(3, minmax(0, 1fr)); } .col[data-d="1"], .col[data-d="2"] { display: none; } }
-.bar { display: flex; align-items: center; gap: 8px; background: var(--bg); border-radius: var(--r-pill); padding: 5px 5px 5px 20px; box-shadow: inset 0 0 0 1.5px var(--line-2); transition: box-shadow .2s ease; }
+.bar { display: flex; align-items: center; gap: 8px; background: var(--bg); border-radius: var(--r-pill); padding: 5px; padding-inline-start: 20px; box-shadow: inset 0 0 0 1.5px var(--field-line); transition: box-shadow .2s ease; }
 .bar:focus-within { box-shadow: inset 0 0 0 2px var(--focus); }
 .bar label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .bar input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--fg); font: 450 1.05rem/1.3 var(--font); padding: 11px 0; }
@@ -206,7 +208,7 @@ section { scroll-margin-top: 80px; }
 .seg input { position: absolute; opacity: 0; pointer-events: none; }
 .seg label { padding: 9px 18px; border-radius: var(--r-pill); font-weight: 600; font-size: 0.95rem; cursor: pointer; color: var(--muted); transition: background-color .2s ease, color .2s ease; }
 .seg label:hover { color: var(--fg); }
-.seg input:checked + label { background: var(--surface); color: var(--fg); box-shadow: 0 1px 3px var(--shadow); }
+.seg input:checked + label { background: var(--surface); color: var(--fg); box-shadow: 0 1px 3px var(--shadow), inset 0 0 0 2px var(--fg); }
 .seg input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
 .screens { display: grid; justify-items: center; gap: 32px; position: relative; }
 .screens::before { content: ""; position: absolute; inset: 30% 5% -5% 5%; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
@@ -278,6 +280,10 @@ section { scroll-margin-top: 80px; }
 .foot ul { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; margin: 0; padding: 0; }
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--fg); text-decoration: underline; }
+.foot span a { text-decoration: underline; text-underline-offset: 0.2em; color: var(--fg); }
+.langs-foot a { padding-block: 4px; }
+.skip { position: absolute; inset-inline-start: 8px; top: -60px; z-index: 10; background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: var(--r-pill); font-weight: 600; text-decoration: none; }
+.skip:focus { top: 8px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -318,19 +324,27 @@ body::before { display: none; }
 .doc .d { color: var(--muted); font-size: .95rem; }
 .doc hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
 .doc p { margin: 0 0 1rem; }
+/* polish after review: CJK headlines break at phrases, long links wrap, sentence-case labels */
+:lang(ja) :is(h1, h2), :lang(zh) :is(h1, h2) { word-break: auto-phrase; }
+.doc a { overflow-wrap: anywhere; }
+
+@media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
+bdi { unicode-bidi: isolate; }
+.press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Ir para o conteúdo</a>
 <header class="nav">
   <div class="wrap">
     <a class="mark" href="#top" aria-label="Quickspan, página inicial"><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M41.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z M66.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/><path d="M36.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M46.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M56.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M66.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z" style="fill:var(--dots)"/></svg> Quickspan</a>
-    <ul>
+    <nav aria-label="Principal"><ul>
       <li><a href="#quick-add">Adição rápida</a></li>
       <li><a href="#screens">Ecrãs</a></li>
       <li><a href="#pro">Pro</a></li>
       <li><a href="#privacy">Privacidade</a></li>
       <li><a href="#faq">Perguntas</a></li>
-    </ul>
+    </ul></nav>
     <a class="btn btn--primary btn--sm" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=pt-PT&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-pt-pt-top">Obter a app</a>
   </div>
 </header>
@@ -346,7 +360,7 @@ body::before { display: none; }
           <a class="btn btn--coral" href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=pt-PT&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dhome-pt-pt"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.8v16.4c0 .8.9 1.3 1.6.9l13-8.2c.6-.4.6-1.4 0-1.8l-13-8.2C6.9 2.5 6 3 6 3.8z" style="fill:currentColor"/></svg> Obtenha na Google Play</a>
           <a class="btn btn--ghost" href="#quick-add">Veja como funciona</a>
         </div>
-        <ul class="facts"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Sem conta</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Sem anúncios nem rastreio</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Gratuito, Pro uma só vez</li></ul>
+        <ul class="facts" role="list"><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Sem conta</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Sem anúncios nem rastreio</li><li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg> Gratuito, Pro uma só vez</li></ul>
       </div>
       <div class="visual">
         <div class="phone"><img src="../img/en-phone-quickadd.webp" width="540" height="595" alt="Quickspan num telemóvel: a frase Ginásio todas as segundas e quintas às 19:00, entendida como Todas as seg, qui às 19:00."></div>
@@ -362,7 +376,7 @@ body::before { display: none; }
         <p class="lede">Sem seletores nem formulários. Experimente: escreva um plano e prima Enter.</p>
       </div>
       <div class="demo">
-        <div class="card try" aria-label="Adição rápida numa semana de exemplo">
+        <div class="card try" role="group" aria-label="Adição rápida numa semana de exemplo">
           <div class="week">
             <div class="col today" data-d="1"><div class="col-head">ter<b>27</b></div><div class="ev sea"><span>09:30</span><b>Standup</b></div><div class="ev violet"><span>12:30</span><b>Almoço</b></div></div>
             <div class="col" data-d="2"><div class="col-head">qua<b>28</b></div><div class="ev sea"><span>09:00</span><b>Foco</b></div><div class="ev leaf"><span>16:00</span><b>Dentista</b></div></div>
@@ -370,7 +384,7 @@ body::before { display: none; }
             <div class="col" data-d="4"><div class="col-head">sex<b>30</b></div><div class="ev new" id="seed"><span>13:00</span><b>Almoço com o Sam</b></div></div>
             <div class="col" data-d="5"><div class="col-head">sáb<b>31</b></div></div>
           </div>
-          <div class="chips" id="chips" aria-hidden="true"><span class="chip">sex, 30 out</span><span class="chip time">13:00</span></div>
+          <div class="chips" id="chips"><span class="chip">sex, 30 out</span><span class="chip time">13:00</span></div>
           <p class="bar bar--static"><span class="line">Almoço com o Sam sexta às 13:00</span><span class="send" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z" style="fill:currentColor"/></svg></span></p>
           <p class="read">Adicionado <b>Almoço com o Sam</b> em <b>sex, 30 out</b> às <b>13:00</b>.</p>
         </div>
@@ -382,7 +396,7 @@ body::before { display: none; }
           </ol>
         </div>
       </div>
-      <ul class="langs" aria-label="Línguas que a adição rápida entende">
+      <ul class="langs" role="list" aria-label="Línguas que a adição rápida entende">
         <li lang="en">English</li><li lang="es">Español</li><li lang="nl">Nederlands</li><li lang="de">Deutsch</li><li lang="fr">Français</li><li lang="it">Italiano</li><li lang="pt">Português</li><li lang="ru">Русский</li><li lang="pl">Polski</li><li lang="tr">Türkçe</li><li lang="id">Bahasa Indonesia</li><li lang="ko">한국어</li><li class="voice">Ou diga em voz alta</li>
       </ul>
       <p class="note">Isto é um exemplo. A app entende as 12 línguas, escritas ou faladas, no seu telemóvel.</p>
@@ -423,13 +437,13 @@ body::before { display: none; }
   <section class="sec">
     <div class="wrap">
       <div class="center"><h2>Pequenos detalhes que fazem a diferença.</h2></div>
-      <ul class="features">
+      <ul class="features" role="list">
         <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14.3-4.9L4 8M4 4v4h4M4 13a8 8 0 0 0 14.3 4.9L20 16M20 20v-4h-4" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Os seus calendários, sem conta nova</h3><p>Os eventos do Google, Outlook, Samsung e iCloud ficam junto aos do Quickspan. Quem sincroniza é o seu telemóvel.</p></li>
         <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M12 3l-3 3M12 3l3 3M12 21l-3-3M12 21l3-3M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Arrastar e largar</h3><p>Mude um evento para outro dia, arraste a margem para alterar a duração ou deslize sobre um espaço vazio para criar um.</p></li>
         <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20a2 2 0 0 0 4 0" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Lembretes</h3><p>Um aviso antes de cada evento e um botão Participar quando há uma ligação do Meet, Zoom ou Teams.</p></li>
         <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l3 3-3 3M4 11V9a4 4 0 0 1 4-4h12M7 22l-3-3 3-3M20 13v2a4 4 0 0 1-4 4H4" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Eventos recorrentes</h3><p>Diários, dias úteis, semanais, mensais ou anuais. Altere só uma ocorrência quando os planos mudarem.</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v10H3zM7 11h.01M11 11h.01M15 11h.01M8 14h8" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Teclado e rato</h3><p>Atalhos para tudo, menus de clique direito e eventos que se arrastam entre janelas.</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a1.5 1.5 0 1 0 0 .01M5 8l7 1.5L19 8M12 9.5V14M12 14l-3 6M12 14l3 6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Pensado para a acessibilidade</h3><p>Pensado para funcionar com o TalkBack: cada evento é lido como uma frase e tudo o que se pode arrastar tem uma ação no menu. <a href="../accessibility/">O que funciona e o que ainda não (inglês)</a>.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v10H3zM7 11h.01M11 11h.01M15 11h.01M8 14h8" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Teclado e rato</h3><p>Atalhos de teclado, menus de clique direito e eventos que se arrastam entre janelas.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5a1.5 1.5 0 1 0 0 .01M5 8l7 1.5L19 8M12 9.5V14M12 14l-3 6M12 14l3 6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Pensado para funcionar com o TalkBack</h3><p>Cada evento é lido como uma frase e as ações de arrastar têm uma alternativa no menu. <a href="../accessibility/">O que funciona e o que ainda não (inglês)</a>.</p></li>
       </ul>
     </div>
   </section>
@@ -443,7 +457,7 @@ body::before { display: none; }
       <div class="plans">
         <div class="card plan">
           <div class="plan-head"><h3>Quickspan</h3><span class="price">€0</span></div>
-          <ul>
+          <ul role="list">
             <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Adição rápida escrita e por voz</span></li>
             <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Os calendários do telemóvel, sincronizados</span></li>
             <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Lembretes e eventos recorrentes</span></li>
@@ -454,7 +468,7 @@ body::before { display: none; }
         </div>
         <div class="card plan plan--pro">
           <div class="plan-head"><h3>Quickspan Pro</h3><span class="price">€4.99<small>uma só vez</small></span></div>
-          <ul>
+          <ul role="list">
             <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Temas e um modo escuro preto puro</span></li>
             <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Widgets de agenda e de mês</span></li>
             <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Vista de ano e procura de hora livre</span></li>
@@ -512,14 +526,14 @@ body::before { display: none; }
 <footer class="foot">
   <div class="wrap">
     <span>Quickspan Calendar, criado por Manuel Lorenzo. Apoio: <a href="mailto:support@quickspan.app">support@quickspan.app</a>. Google Play é uma marca comercial da Google LLC.</span>
-    <ul>
+    <nav aria-label="Rodapé"><ul>
       <li><a href="../en/">Política de privacidade</a></li>
       <li><a href="../press/">Imprensa</a></li>
       <li><a href="../accessibility/">Acessibilidade</a></li>
       <li><a href="../" hreflang="en" lang="en">English</a></li>
       <li><a href="../inicio/" hreflang="es" lang="es">Español</a></li>
-    </ul>
-    <nav class="langs-foot" aria-label="Languages"><a href="../nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../fr/" lang="fr" hreflang="fr">Français</a><a href="../de/" lang="de" hreflang="de">Deutsch</a><a href="../it/" lang="it" hreflang="it">Italiano</a><a href="../pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../pl/" lang="pl" hreflang="pl">Polski</a><a href="../tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../id/" lang="id" hreflang="id">Indonesia</a><a href="../ja/" lang="ja" hreflang="ja">日本語</a><a href="../ko/" lang="ko" hreflang="ko">한국어</a><a href="../ru/" lang="ru" hreflang="ru">Русский</a><a href="../sv/" lang="sv" hreflang="sv">Svenska</a><a href="../cs/" lang="cs" hreflang="cs">Čeština</a><a href="../uk/" lang="uk" hreflang="uk">Українська</a><a href="../vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../th/" lang="th" hreflang="th">ไทย</a><a href="../ar/" lang="ar" hreflang="ar">العربية</a><a href="../he/" lang="he" hreflang="he">עברית</a><a href="../zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
+    </ul></nav>
+    <nav class="langs-foot" aria-label="Línguas"><a href="../nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../fr/" lang="fr" hreflang="fr">Français</a><a href="../de/" lang="de" hreflang="de">Deutsch</a><a href="../it/" lang="it" hreflang="it">Italiano</a><a href="../pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../pl/" lang="pl" hreflang="pl">Polski</a><a href="../tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../id/" lang="id" hreflang="id">Indonesia</a><a href="../ja/" lang="ja" hreflang="ja">日本語</a><a href="../ko/" lang="ko" hreflang="ko">한국어</a><a href="../ru/" lang="ru" hreflang="ru">Русский</a><a href="../sv/" lang="sv" hreflang="sv">Svenska</a><a href="../cs/" lang="cs" hreflang="cs">Čeština</a><a href="../uk/" lang="uk" hreflang="uk">Українська</a><a href="../vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../th/" lang="th" hreflang="th">ไทย</a><a href="../ar/" lang="ar" hreflang="ar">العربية</a><a href="../he/" lang="he" hreflang="he">עברית</a><a href="../zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
   </div>
 </footer>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "02f57a3dc3004200ae5a1e93ce20fa7c"}'></script>
