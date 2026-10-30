@@ -313,7 +313,7 @@ bdi { unicode-bidi: isolate; }
   <div class="wrap">
 <h1 id="privacy-policy-for-quickspan-calendar">Privacy policy for
 Quickspan Calendar</h1>
-<p><strong>Last updated:</strong> 2026-10-27</p>
+<p><strong>Last updated:</strong> 2026-10-30</p>
 <p>Quickspan Calendar (“the app”) is a calendar app for Android phones,
 tablets and foldables. This policy explains what the app does with your
 information. The short version: <strong>everything stays on your device.
@@ -321,7 +321,7 @@ The app has no accounts, no servers, no analytics, no advertising and no
 tracking.</strong></p>
 <h2 id="who-is-responsible">Who is responsible</h2>
 <p>Manuel Lorenzo<br />
-support@quickspan.app</p>
+manulorenzop@gmail.com</p>
 <h2 id="what-the-app-uses">What the app uses</h2>
 <p><strong>Events you create in the app.</strong> Events, calendars and
 their colours that you create inside the app are stored in a database on
@@ -365,6 +365,44 @@ is shown. The app also listens for the phone finishing its start-up
 again after a restart, because Android clears them. Reminders are
 scheduled and shown on your device only; nothing about them is sent to
 us or to anyone else.</p>
+<p><strong>App lock (optional).</strong> If you switch on app lock in
+Settings, the app asks Android to confirm it is you with your
+fingerprint, face or screen lock before it shows your calendar
+(<code>USE_BIOMETRIC</code>, and <code>USE_FINGERPRINT</code> on older
+Android versions). The check is done by Android itself: the app only
+receives “confirmed” or “not confirmed”. Your fingerprint or face data
+never reaches the app and never leaves your phone. It is off until you
+turn it on, and nothing about it is sent to us or to anyone else.</p>
+<p><strong>Next event (optional).</strong> If you switch on “Next event”
+in Settings, the app shows a quiet notification with what is next on
+your calendar in the coming hours, with a Join button for events that
+have a call link, and on Android versions that support it a prominent
+ongoing notification shortly before an event starts
+(<code>POST_PROMOTED_NOTIFICATIONS</code>). It is built and shown on
+your device from events already on it; nothing about it is sent
+anywhere. You can turn it off in the app or in Android’s notification
+settings.</p>
+<p><strong>Calendar health (optional).</strong> To tell you when a
+calendar on your phone has stopped syncing, the app reads whether sync
+is switched on in Android (<code>READ_SYNC_SETTINGS</code>). It reads
+that setting only on your device, does not change it, and does not send
+it anywhere.</p>
+<p><strong>Task apps (optional).</strong> If you turn on tasks, the app
+asks Android for permission to access tasks in Tasks.org
+(<code>org.tasks</code>) and OpenTasks (<code>org.dmfs</code>). It reads
+your to-dos that have a date so that they appear in the calendar, and
+marks one as done when you tick it there. It never adds, changes or
+deletes your tasks otherwise. It asks only when you switch this on, and
+the tasks stay in those apps and on your phone; the app does not copy
+them elsewhere or send them anywhere.</p>
+<p><strong>Quiet mode (optional).</strong> If you use quiet mode, you
+choose which calendars it applies to, and the app asks for Do Not
+Disturb access in Android’s settings (on Android 16 and newer this page
+is called “Modes access”). It then silences the phone from 5 minutes
+before to 5 minutes after each event in those calendars, and restores
+your previous Do Not Disturb setting afterwards. You grant this access
+in Android’s settings and can withdraw it there. The app uses it only on
+your device and sends nothing anywhere.</p>
 <p><strong>Text you type in quick add.</strong> When you type something
 like “Lunch with Sam tomorrow at 1pm” the app works out the date, time,
 place and title on your device, with rules and a small language model
@@ -472,7 +510,7 @@ adds a feature that uses the internet), this policy will be updated
 first and the date above changed. A material change will be described in
 the app’s release notes.</p>
 <h2 id="contact">Contact</h2>
-<p>Questions about this policy: support@quickspan.app.</p>
+<p>Questions about this policy: manulorenzop@gmail.com.</p>
 
   </div>
 </main>
