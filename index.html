@@ -46,7 +46,7 @@
 <link rel="alternate" hreflang="zh-Hans" href="https://quickspan.app/zh-hans/">
 <link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Quickspan","alternateName":"Quickspan Calendar","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","applicationSubCategory":"Calendar","inLanguage":["en","es","nl","fr","de","it","pt","pl","tr","id","ja","ko","ru"],"url":"https://quickspan.app/","image":"https://quickspan.app/apple-touch-icon.png","screenshot":"https://quickspan.app/img/en-tablet-week.webp","description":"Calendar and planner for Android: type events the way you'd say them, in 12 languages. Built for phones, tablets and foldables. No account, no ads, no tracking.","author":{"@type":"Person","name":"Manuel Lorenzo"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"installUrl":"https://play.google.com/store/apps/details?id=app.quickspan","downloadUrl":"https://play.google.com/store/apps/details?id=app.quickspan"},{"@type":"WebSite","name":"Quickspan","url":"https://quickspan.app/","inLanguage":"en"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Quickspan","alternateName":"Quickspan Calendar","operatingSystem":"Android 8.0 or later","applicationCategory":"BusinessApplication","applicationSubCategory":"Calendar","inLanguage":["en","es","nl","de","fr","it","pt","ru","pl","tr","id","ko","ja","sv","cs","uk","vi","hi","th","ar","he","zh"],"url":"https://quickspan.app/","image":"https://quickspan.app/apple-touch-icon.png","screenshot":"https://quickspan.app/img/en-tablet-week.webp","description":"Calendar and planner for Android: type events the way you'd say them, in 12 languages. Built for phones, tablets and foldables. No account, no ads, no tracking. Pro is an optional one-time in-app purchase.","featureList":["Type or speak events and reminders in 12 languages (English, Spanish, Dutch, German, French, Italian, Portuguese, Russian, Polish, Turkish, Indonesian, Korean)","App in 23 languages","Reminders, and snooze by typing","Join button for Meet, Zoom, Teams, Webex and Jitsi calls","Week, agenda and Today side by side on tablets and foldables","Add events from the notification shade, the widget and the Share menu","Dated to-dos from Tasks.org and OpenTasks, ticked done in the app","Birthdays with ages","Next event notification","Simple mode","Calendar health","Themes (Pro, one-time purchase)","Quiet mode, school holidays and app lock (Pro)","No account, no ads, no tracking"],"isAccessibleForFree":true,"author":{"@type":"Person","name":"Manuel Lorenzo"},"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR","availability":"https://schema.org/InStock"},"installUrl":"https://play.google.com/store/apps/details?id=app.quickspan","downloadUrl":"https://play.google.com/store/apps/details?id=app.quickspan"},{"@type":"WebSite","name":"Quickspan","url":"https://quickspan.app/","inLanguage":"en"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. No ads and no subscription, and everything on this page is free to use. Quickspan Pro is an optional one-time purchase of €4.99 that adds the extras listed under Quickspan Pro."}},{"@type":"Question","name":"Which languages does quick add understand?","acceptedAnswer":{"@type":"Answer","text":"Typing and voice quick add understand 12 languages: English, Spanish, Dutch, German, French, Italian, Portuguese, Russian, Polish, Turkish, Indonesian and Korean. The app itself is in 23 languages. Voice needs Android 12 or newer with on-device speech recognition. Dates and times follow your phone's settings."}},{"@type":"Question","name":"Does it handle time zones?","acceptedAnswer":{"@type":"Answer","text":"Yes. Type “3pm London time” or pin an event to a zone in the editor, and Quickspan shows the zone next to its time. Events from your phone's calendars keep their own zone, and the app follows your phone when its zone changes."}},{"@type":"Question","name":"Why does it ask for calendar access?","acceptedAnswer":{"@type":"Answer","text":"Only to show and edit the calendars already on your phone, and only when you turn that on. Without it, Quickspan works with its own calendars."}},{"@type":"Question","name":"Which phones and tablets does it run on?","acceptedAnswer":{"@type":"Answer","text":"Android 8 and newer: phones, tablets, foldables and flip phones, including desktop-style windows on tablets."}},{"@type":"Question","name":"What doesn't it do yet?","acceptedAnswer":{"@type":"Answer","text":"Quick add understands 12 languages today. Tell us what you miss at support@quickspan.app."}}]}]}</script>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -352,7 +352,7 @@ bdi { unicode-bidi: isolate; }
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <span class="badge"><b>New in 0.2.0</b><span>Voice, reminders and 12 typing languages</span></span>
+        <span class="badge"><b>New in 0.3.0</b><span>Tasks, Next event, app lock and add from anywhere</span></span>
         <h1>The private calendar you just <span class="hl">type into.</span></h1>
         <p class="lede">Write it the way you'd say it, and it lands on your week. Right on your phone.</p>
         <div class="actions">
@@ -451,6 +451,20 @@ bdi { unicode-bidi: isolate; }
     </div>
   </section>
 
+  <section class="sec" id="more">
+    <div class="wrap">
+      <div class="center"><h2>More than a week grid.</h2><p class="lede">The small things around quick add that make a day easier to run.</p></div>
+      <ul class="features" role="list">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h3l1.5 1.5L11 5M4 12h3l1.5 1.5L11 11M4 18h3l1.5 1.5L13 16M14 7h6M14 13h6M14 19h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Tasks beside your events</h3><p>If you use Tasks.org or OpenTasks, their dated to-dos show up in your week, and you can tick them done.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 20a2 2 0 0 0 4 0" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>A Next event notification</h3><p>Keep what's coming up in your notification shade, so you don't have to open the app to check.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Simple mode</h3><p>Trim the screens down to the essentials when you want a calmer calendar.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Add from anywhere</h3><p>Create an event from the notification shade, the widget or your phone's Share menu.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11h16v9H4zM12 11V8M12 8a1.5 1.5 0 1 0 0-.01M4 15c3 2 5-2 8 0s5 2 8 0" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Birthdays with ages</h3><p>Birthdays on your calendar show how old the person turns.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 11V8a6 6 0 0 1 12 0v3M5 11h14v9H5zM12 15v2" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Pro extras</h3><p>Pro adds Quiet mode, school holidays and an app lock, with the themes. Still one purchase.</p></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="sec" id="pro">
     <div class="wrap">
       <div class="center">
@@ -531,6 +545,7 @@ bdi { unicode-bidi: isolate; }
     <span>Quickspan Calendar, made by Manuel Lorenzo. Support: <a href="mailto:support@quickspan.app">support@quickspan.app</a>. Google Play is a trademark of Google LLC.</span>
     <nav aria-label="Footer"><ul>
       <li><a href="en/">Privacy policy</a></li>
+      <li><a href="blog/">Blog</a></li>
       <li><a href="press/">Press kit</a></li>
       <li><a href="accessibility/">Accessibility</a></li>
       <li><a href="inicio/" hreflang="es" lang="es">Español</a></li>

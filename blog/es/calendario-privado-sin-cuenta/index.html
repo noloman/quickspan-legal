@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calendario privado sin cuenta: lo que Quickspan no recoge</title>
+<meta name="description" content="Un calendario privado para Android sin cuenta, sin anuncios y sin rastreo. Qué guarda Quickspan en tu móvil y qué no recoge.">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://quickspan.app/blog/es/calendario-privado-sin-cuenta/">
+<link rel="alternate" hreflang="en" href="https://quickspan.app/blog/private-calendar-app-no-account/"><link rel="alternate" hreflang="es" href="https://quickspan.app/blog/es/calendario-privado-sin-cuenta/"><link rel="alternate" hreflang="x-default" href="https://quickspan.app/blog/private-calendar-app-no-account/"><meta property="og:type" content="article"><meta property="og:site_name" content="Quickspan"><meta property="og:locale" content="es_ES"><meta property="og:title" content="Calendario privado sin cuenta: lo que Quickspan no recoge"><meta property="og:description" content="Un calendario privado para Android sin cuenta, sin anuncios y sin rastreo. Qué guarda Quickspan en tu móvil y qué no recoge."><meta property="og:url" content="https://quickspan.app/blog/es/calendario-privado-sin-cuenta/"><meta property="og:image" content="https://quickspan.app/og-es.png"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Una app de calendario privada y sin cuenta: lo que Quickspan no recoge","description":"Un calendario privado para Android sin cuenta, sin anuncios y sin rastreo. Qué guarda Quickspan en tu móvil y qué no recoge.","inLanguage":"es","datePublished":"2026-10-30","dateModified":"2026-10-30","mainEntityOfPage":"https://quickspan.app/blog/es/calendario-privado-sin-cuenta/","image":"https://quickspan.app/og-es.png","author":{"@type":"Person","name":"Manuel Lorenzo"},"publisher":{"@type":"Organization","name":"Quickspan","url":"https://quickspan.app/"}}</script>
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/google-sans-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>@font-face{font-family:'Google Sans Flex';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/google-sans-flex-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Google Sans Flex';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/google-sans-flex-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/instrument-serif-italic-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/instrument-serif-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* quickspan.app home v2 (27 Oct 2026). Product-led and calm: white with sun accents in light, night with one warm glow in dark. One family (Google Sans Flex), the real 0.2.0 screens, a working quick-add demo. */
+:root {
+  --bg: #FFFFFF; --bg-2: #F6F7F9; --surface: #FFFFFF; --raised: #FFFFFF;
+  --fg: #1E2A3A; --muted: #5A6575; --line: #E3E7ED; --line-2: #CDD3DC; --field-line: #8A94A3;
+  --sun: #FFC93C; --sun-soft: #FFF3CF; --sun-hl: #FFC93C; --coral: #FF5E3A; --coral-soft: #FFE1D8; --on-accent: #1E2A3A;
+  --sea-soft: #D9EEF5; --leaf-soft: #DCF1E4; --violet-soft: #E9E4FB;
+  --primary-bg: #1E2A3A; --primary-fg: #FFFFFF;
+  --band: #1E2A3A; --band-fg: #F3F5F8; --band-muted: #AEB8C5; --band-line: rgba(255, 255, 255, 0.12);
+  --glow: rgba(255, 201, 60, 0.22); --shadow: rgba(16, 24, 40, 0.16); --bezel: #10151C;
+  --nav-bg: rgba(255, 255, 255, 0.82); --focus: #2B45C8; --link: #2B45C8; --dots: #C9CFD8; --icon-sheet: #FFFFFF; --icon-ink: #1E2A3A;
+  --font: "Google Sans Flex", "Google Sans", ui-sans-serif, system-ui, sans-serif;
+  --serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --r-sm: 12px; --r-md: 20px; --r-lg: 28px; --r-pill: 999px;
+  --gutter: max(16px, env(safe-area-inset-left, 0px)); --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0B0E13; --bg-2: #10141B; --surface: #141922; --raised: #1A202A;
+  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16); --field-line: #7C8696;
+  --sun-soft: #1C1A12; --sun-hl: transparent; --coral-soft: #3A1E16;
+  --sea-soft: #12303A; --leaf-soft: #15301F; --violet-soft: #251F42;
+  --primary-bg: #FFC93C; --primary-fg: #1E2A3A;
+  --band: #141922; --band-fg: #F3F5F8; --band-muted: #9AA4B2; --band-line: rgba(255, 255, 255, 0.08);
+  --glow: rgba(255, 201, 60, 0.16); --shadow: rgba(0, 0, 0, 0.6); --bezel: #1F2530;
+  --nav-bg: rgba(11, 14, 19, 0.78); --focus: #FFC93C; --link: #FFD56A;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0B0E13; --bg-2: #10141B; --surface: #141922; --raised: #1A202A;
+  --fg: #F2F4F7; --muted: #9AA4B2; --line: rgba(255, 255, 255, 0.08); --line-2: rgba(255, 255, 255, 0.16); --field-line: #7C8696;
+  --sun-soft: #1C1A12; --sun-hl: transparent; --coral-soft: #3A1E16;
+  --sea-soft: #12303A; --leaf-soft: #15301F; --violet-soft: #251F42;
+  --primary-bg: #FFC93C; --primary-fg: #1E2A3A;
+  --band: #141922; --band-fg: #F3F5F8; --band-muted: #9AA4B2; --band-line: rgba(255, 255, 255, 0.08);
+  --glow: rgba(255, 201, 60, 0.16); --shadow: rgba(0, 0, 0, 0.6); --bezel: #1F2530;
+  --nav-bg: rgba(11, 14, 19, 0.78); --focus: #FFC93C; --link: #FFD56A;
+  color-scheme: dark }
+
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 1.0625rem/1.55 var(--font); -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 1200px; margin-inline: auto; padding-left: var(--gutter); padding-right: var(--gutter-r); }
+@media (min-width: 760px) { :root { --gutter: max(32px, env(safe-area-inset-left, 0px)); --gutter-r: max(32px, env(safe-area-inset-right, 0px)); } }
+h1, h2, h3 { margin: 0; letter-spacing: -0.04em; line-height: 1.03; text-wrap: balance; overflow-wrap: break-word; min-width: 0; }
+h1 { font-size: clamp(2.6rem, 5.8vw, 4.6rem); font-weight: 700; }
+h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 680; }
+h3 { font-size: 1.2rem; font-weight: 650; letter-spacing: -0.015em; line-height: 1.25; }
+p { margin: 0; }
+a { color: var(--link); text-underline-offset: 0.2em; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+img { display: block; max-width: 100%; height: auto; }
+.lede { color: var(--muted); font-size: clamp(1.08rem, 1.6vw, 1.25rem); max-width: 40ch; }
+.center { text-align: center; display: grid; justify-items: center; gap: 16px; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 0 24px; border-radius: var(--r-pill); white-space: nowrap; text-decoration: none; font: 600 1rem/1 var(--font); border: 0; cursor: pointer; transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 16px; height: 16px; flex: none; }
+.btn--primary { background: var(--primary-bg); color: var(--primary-fg); }
+.btn--coral { background: var(--coral); color: var(--on-accent); }
+.btn--ghost { color: var(--fg); background: var(--surface); box-shadow: inset 0 0 0 1px var(--line-2); }
+.btn--ghost:hover { box-shadow: inset 0 0 0 1px var(--fg); }
+.btn--sm { min-height: 42px; padding: 0 18px; font-size: 0.95rem; }
+@media (max-width: 360px) { .btn { padding: 0 16px; } }
+
+/* Nav */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--nav-bg); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; gap: 12px 28px; padding-block: 12px; flex-wrap: wrap; }
+.mark { display: flex; align-items: center; gap: 10px; color: var(--fg); text-decoration: none; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; }
+.mark svg { width: 30px; height: 30px; border-radius: 8px; flex: none; }
+.nav nav { margin-inline-start: auto; }
+.nav ul { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; font-size: 0.95rem; }
+.nav ul a { color: var(--muted); text-decoration: none; transition: color .2s ease; }
+.nav ul a:hover { color: var(--fg); }
+@media (max-width: 860px) { .nav nav { display: none; } .nav .btn { margin-inline-start: auto; } }
+.nav .btn { white-space: normal; text-align: center; min-width: 0; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; right: -10%; top: -20%; width: 900px; height: 700px; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; padding-block: clamp(36px, 6vw, 72px) 0; }
+.hero-text { display: grid; gap: 24px; padding-bottom: clamp(28px, 6vw, 80px); }
+.badge { justify-self: start; display: inline-flex; gap: 8px; align-items: center; padding: 6px 14px; border-radius: var(--r-pill); border: 1px solid var(--line-2); background: var(--surface); color: var(--muted); font-size: 0.9rem; }
+.badge b { color: var(--fg); font-weight: 650; }
+.badge b { white-space: nowrap; }
+@media (max-width: 480px) { .badge span { display: none; } }
+.hl { background: linear-gradient(transparent 58%, var(--sun-hl) 58%, var(--sun-hl) 92%, transparent 92%); padding: 0 .04em; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hl { font: italic 400 1.1em/1 var(--serif); letter-spacing: -0.02em; color: var(--sun); } }
+:root[data-theme="dark"] .hl { font: italic 400 1.1em/1 var(--serif); letter-spacing: -0.02em; color: var(--sun); }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.facts { display: flex; gap: 8px 22px; flex-wrap: wrap; color: var(--muted); font-size: 0.95rem; list-style: none; margin: 0; padding: 0; }
+.facts li { display: inline-flex; align-items: center; gap: 8px; }
+.facts svg { width: 16px; height: 16px; flex: none; }
+.visual { position: relative; align-self: end; display: grid; justify-items: center; background: var(--sun-soft); border-radius: var(--r-lg) var(--r-lg) 0 0; padding: 44px 20px 0; border: 1px solid var(--line); border-bottom: 0; }
+.phone { width: min(310px, 82%); background: var(--bezel); padding: 9px 9px 0; border-radius: 42px 42px 0 0; box-shadow: 0 30px 70px -24px var(--shadow); }
+.phone img { border-radius: 34px 34px 0 0; }
+.float { position: absolute; left: 0; top: 44%; background: var(--raised); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; box-shadow: 0 20px 44px -18px var(--shadow); display: grid; gap: 8px; font-size: 0.9rem; max-width: 230px; animation: rise .8s cubic-bezier(.22, 1, .36, 1) .5s both; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { display: inline-flex; align-items: center; border-radius: 8px; padding: 5px 9px; font-weight: 600; font-size: 0.85rem; background: var(--sun-soft); color: var(--fg); }
+.chip.time { background: var(--coral-soft); }
+.chip.in { animation: chip .35s cubic-bezier(.34, 1.56, .64, 1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes chip { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+@media (max-width: 880px) { .hero .wrap { grid-template-columns: minmax(0, 1fr); } .float { left: 8px; top: 28%; } }
+
+/* Sections */
+section { scroll-margin-top: 80px; }
+.sec { padding-block: clamp(72px, 10vw, 128px) 0; }
+.sec .wrap { display: grid; gap: 44px; }
+
+/* Quick add demo */
+.demo { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 22px; box-shadow: 0 24px 60px -40px var(--shadow); min-width: 0; }
+.try { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+.week { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.col { background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; padding: 10px 6px; display: grid; gap: 6px; align-content: start; min-height: 150px; min-width: 0; }
+.col-head { display: grid; justify-items: center; font-size: 0.85rem; color: var(--muted); padding-bottom: 4px; }
+.col-head b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: var(--fg); font-weight: 650; font-variant-numeric: tabular-nums; }
+.col.today .col-head b { background: var(--sun); color: var(--on-accent); }
+.ev { border-radius: 10px; padding: 6px 8px; font-size: 0.82rem; line-height: 1.25; min-width: 0; }
+.ev span { display: block; color: var(--muted); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.ev b { display: block; font-weight: 600; overflow-wrap: anywhere; }
+.ev.sea { background: var(--sea-soft); } .ev.leaf { background: var(--leaf-soft); } .ev.violet { background: var(--violet-soft); }
+.ev.new { background: var(--coral); color: var(--on-accent); } .ev.new span { color: var(--on-accent); }
+.ev.pop { animation: pop .55s cubic-bezier(.34, 1.56, .64, 1) both; }
+@keyframes pop { from { opacity: 0; transform: translateY(-20px) scale(.8); } to { opacity: 1; transform: none; } }
+@media (max-width: 560px) { .week { grid-template-columns: repeat(3, minmax(0, 1fr)); } .col[data-d="1"], .col[data-d="2"] { display: none; } }
+.bar { display: flex; align-items: center; gap: 8px; background: var(--bg); border-radius: var(--r-pill); padding: 5px; padding-inline-start: 20px; box-shadow: inset 0 0 0 1.5px var(--field-line); transition: box-shadow .2s ease; }
+.bar:focus-within { box-shadow: inset 0 0 0 2px var(--focus); }
+.bar label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.bar input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--fg); font: 450 1.05rem/1.3 var(--font); padding: 11px 0; }
+.bar input::placeholder { color: var(--muted); }
+.bar input:focus-visible { outline: none; }
+.send { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--coral); color: var(--on-accent); cursor: pointer; transition: transform .2s ease; }
+.send:hover { transform: scale(1.06); }
+.send svg { width: 18px; height: 18px; }
+.read { font-size: 0.9rem; color: var(--muted); min-height: 1.4em; }
+.read b { color: var(--fg); font-weight: 600; }
+.how { display: grid; gap: 22px; align-content: center; padding: 8px 4px; }
+.how ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; counter-reset: step; }
+.how li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 14px; counter-increment: step; }
+.how li::before { content: counter(step); display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--sun-soft); border: 1px solid var(--line); font-weight: 700; }
+.how p { color: var(--muted); }
+.langs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.langs li { padding: 8px 16px; border-radius: var(--r-pill); border: 1px solid var(--line-2); font-size: 0.95rem; }
+.langs li.voice { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+@media (max-width: 900px) { .demo { grid-template-columns: minmax(0, 1fr); } }
+
+/* Screens */
+.seg { display: inline-flex; gap: 4px; padding: 4px; border-radius: var(--r-pill); background: var(--bg-2); border: 1px solid var(--line); flex-wrap: wrap; justify-content: center; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label { padding: 9px 18px; border-radius: var(--r-pill); font-weight: 600; font-size: 0.95rem; cursor: pointer; color: var(--muted); transition: background-color .2s ease, color .2s ease; }
+.seg label:hover { color: var(--fg); }
+.seg input:checked + label { background: var(--surface); color: var(--fg); box-shadow: 0 1px 3px var(--shadow), inset 0 0 0 2px var(--fg); }
+.seg input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+.screens { display: grid; justify-items: center; gap: 32px; position: relative; }
+.screens::before { content: ""; position: absolute; inset: 30% 5% -5% 5%; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+.pane { display: none; position: relative; width: 100%; justify-items: center; gap: 18px; }
+.pane > p { color: var(--muted); text-align: center; max-width: 52ch; }
+.screens:has(#s-tablet:checked) .pane--tablet, .screens:has(#s-phone:checked) .pane--phone, .screens:has(#s-fold:checked) .pane--fold { display: grid; }
+.device { background: var(--bezel); padding: 10px; border-radius: 26px; box-shadow: 0 40px 80px -36px var(--shadow); width: min(1000px, 100%); }
+.device img { border-radius: 17px; }
+.device--phone { width: min(320px, 80%); border-radius: 40px; }
+.device--phone img { border-radius: 31px; }
+.device--fold { width: min(620px, 100%); }
+.only-dark { display: none !important; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .only-dark { display: block !important; } :root:not([data-theme="light"]) .only-light { display: none !important; } }
+:root[data-theme="dark"] .only-dark { display: block !important; }
+:root[data-theme="dark"] .only-light { display: none !important; }
+
+/* Features */
+.features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; list-style: none; margin: 0; padding: 0; }
+.features li { display: grid; gap: 10px; align-content: start; }
+.features .ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--bg-2); border: 1px solid var(--line); }
+.features .ico svg { width: 22px; height: 22px; }
+.features p { color: var(--muted); }
+@media (max-width: 900px) { .features { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .features { grid-template-columns: minmax(0, 1fr); } }
+
+/* Pro */
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 920px; margin-inline: auto; width: 100%; }
+.plan { display: grid; gap: 18px; align-content: start; padding: 28px; }
+.plan--pro { border-color: var(--sun); box-shadow: 0 0 0 1px var(--sun), 0 30px 70px -36px var(--glow); position: relative; }
+.plan-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.price { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
+.price small { font-size: 1rem; font-weight: 500; color: var(--muted); letter-spacing: 0; margin-left: 4px; }
+.plan ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.plan li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; align-items: start; }
+.plan li svg { width: 18px; height: 18px; margin-top: 3px; }
+.plan .btn { justify-self: start; }
+.note { color: var(--muted); text-align: center; font-size: 0.95rem; }
+@media (max-width: 760px) { .plans { grid-template-columns: minmax(0, 1fr); } }
+
+/* Privacy */
+.band { background: var(--band); color: var(--band-fg); border-radius: var(--r-lg); padding: clamp(32px, 6vw, 72px); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; border: 1px solid var(--band-line); position: relative; overflow: hidden; }
+.band::before { content: ""; position: absolute; left: -10%; bottom: -60%; width: 700px; height: 500px; background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none; }
+.band > * { position: relative; }
+.band h2 { color: var(--band-fg); }
+.band p { color: var(--band-muted); margin-top: 16px; max-width: 46ch; }
+.band a { color: var(--band-fg); }
+.band :focus-visible { outline-color: var(--sun); }
+.band ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.band li { display: flex; justify-content: space-between; gap: 16px; padding: 16px 0; border-top: 1px solid var(--band-line); font-size: 1.1rem; }
+.band li:first-child { border-top: 0; }
+.band li span:last-child { color: var(--sun); font-weight: 650; }
+@media (max-width: 880px) { .band { grid-template-columns: minmax(0, 1fr); } }
+
+/* FAQ */
+.faq { display: grid; max-width: 760px; width: 100%; margin-inline: auto; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; font-weight: 600; font-size: 1.1rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; flex: none; width: 10px; height: 10px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: translateY(-3px) rotate(45deg); transition: transform .25s ease; }
+.faq details[open] summary::after { transform: translateY(2px) rotate(225deg); }
+.faq details p { padding: 0 0 22px; color: var(--muted); max-width: 62ch; }
+
+/* Final CTA and footer */
+.cta { padding-block: clamp(80px, 12vw, 140px) clamp(48px, 8vw, 96px); }
+.cta .wrap { display: grid; justify-items: center; gap: 22px; text-align: center; }
+.cta svg.big { width: 72px; height: 72px; border-radius: 18px; box-shadow: 0 20px 40px -18px var(--shadow); }
+.foot { border-top: 1px solid var(--line); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; padding-block: 28px 40px; color: var(--muted); font-size: 0.925rem; }
+.foot ul { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; margin: 0; padding: 0; }
+.foot a { color: var(--muted); text-decoration: none; }
+.foot a:hover { color: var(--fg); text-decoration: underline; }
+.foot span a { text-decoration: underline; text-underline-offset: 0.2em; color: var(--fg); }
+.langs-foot a { padding-block: 4px; }
+.skip { position: absolute; inset-inline-start: 8px; top: -60px; z-index: 10; background: var(--fg); color: var(--bg); padding: 10px 16px; border-radius: var(--r-pill); font-weight: 600; text-decoration: none; }
+.skip:focus { top: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .float, .chip.in, .ev.pop { animation: none; }
+  .btn, .send, .nav ul a, .faq summary::after, .seg label, .bar { transition: none; }
+  .btn:hover, .send:hover { transform: none; }
+}
+
+.btn-soon { background: var(--bg-2); color: var(--muted); box-shadow: inset 0 0 0 1px var(--line-2); cursor: default; }
+.btn-soon:hover, .btn-soon:active { transform: none; }
+.langs-foot { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.hero .phone { overflow: hidden; }
+.hero .phone img { width: 100%; aspect-ratio: 540 / 595; object-fit: cover; object-position: top; }
+body::before { display: none; }
+/* translated pages: the demo is a still picture of the finished state */
+.bar--static { margin: 0; }
+.bar .line { flex: 1; min-width: 0; font: 450 1.05rem/1.3 var(--font); padding: 11px 0; overflow-wrap: anywhere; }
+.bar--static .send { cursor: default; }
+.bar--static .send:hover { transform: none; }
+.price small { margin-inline-start: 4px; margin-left: 0; }
+[dir="rtl"] .float { left: auto; right: 0; }
+/* the serif italic highlight only exists for Latin scripts */
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(:lang(ja), :lang(ko), :lang(zh), :lang(th), :lang(ar), :lang(he), :lang(hi), :lang(ru), :lang(uk)) .hl { font: 700 1em/1.2 var(--font); letter-spacing: 0; font-style: normal; } }
+/* long-form pages: privacy policy, accessibility statement, blog */
+.doc { padding-block: clamp(40px, 7vw, 88px); }
+.doc .wrap { max-width: 46rem; }
+.doc h1 { font-size: clamp(2rem, 4.6vw, 3rem); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 20px; text-wrap: balance; }
+.doc h2 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 2.4rem 0 .6rem; }
+.doc h3 { font-size: 1.15rem; margin: 1.8rem 0 .4rem; }
+.doc p, .doc li { line-height: 1.65; }
+.doc li { margin: .35rem 0; }
+.doc a { color: var(--fg); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.doc a:hover { text-decoration-thickness: 2px; }
+.doc table { border-collapse: collapse; width: 100%; font-size: .95rem; display: block; overflow-x: auto; }
+.doc th, .doc td { border: 1px solid var(--line); padding: 8px 12px; text-align: start; vertical-align: top; }
+.doc blockquote { margin: 1rem 0; padding: .2rem 1.1rem; border-inline-start: 3px solid var(--sun); color: var(--muted); }
+.doc code { font-size: .92em; background: var(--bg-2); padding: .1em .35em; border-radius: 6px; }
+.doc .d { color: var(--muted); font-size: .95rem; }
+.doc hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+.doc p { margin: 0 0 1rem; }
+/* polish after review: CJK headlines break at phrases, long links wrap, sentence-case labels */
+:lang(ja) :is(h1, h2), :lang(zh) :is(h1, h2) { word-break: auto-phrase; }
+.doc a { overflow-wrap: anywhere; }
+
+@media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
+bdi { unicode-bidi: isolate; }
+.press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="/" aria-label="Quickspan, home"><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M41.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z M66.5,28a2.5,2.5 0 0 1 2.5,2.5v6a2.5,2.5 0 0 1 -5,0v-6a2.5,2.5 0 0 1 2.5,-2.5z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/><path d="M36.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M46.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M56.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z M66.4,70a2.6,2.6 0 1 0 5.2,0a2.6,2.6 0 1 0 -5.2,0z" style="fill:var(--dots)"/></svg> Quickspan</a>
+    <nav aria-label="Site"><ul>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/press/">Press</a></li>
+      <li><a href="/accessibility/">Accessibility</a></li>
+    </ul></nav>
+    <a class="btn btn--ghost btn--sm" href="/">Home</a>
+  </div>
+</header>
+<main class="doc" id="main">
+  <div class="wrap">
+<h1>Una app de calendario privada y sin cuenta: lo que Quickspan no recoge</h1><p class="d">2026-10-30</p><p>Un calendario sabe dónde vas a estar, con quién quedas y cuándo no estás en casa. Eso lo convierte en una de las apps más personales del móvil, y es razonable preguntar qué hace con esa información. Este artículo enumera lo que Quickspan no recoge, y es igual de claro sobre lo que sí guarda.</p>
+<h2>No hay cuenta que crear</h2>
+<p>Abres Quickspan y la usas. No hay registro, ni correo que introducir, ni perfil. Sin cuenta, no tenemos nada a lo que vincular tus eventos, ni nada a lo que volver a iniciar sesión cuando cambias de móvil.</p>
+<h2>Lo que Quickspan no recoge</h2>
+<ul>
+<li><strong>Ninguna cuenta.</strong> Nada de lo que registrarse, ni en la app gratuita ni en Pro.</li>
+<li><strong>Ni anuncios ni identificador de publicidad.</strong> La app no muestra anuncios y no pide tu identificador de publicidad.</li>
+<li><strong>Ni estadísticas ni rastreadores.</strong> La app no incluye bibliotecas de analítica ni de informes de errores. No vemos qué pantallas abres ni qué escribes.</li>
+<li><strong>Ningún dato recogido.</strong> La sección Seguridad de los datos de la ficha de Google Play dice lo mismo: no se recogen datos.</li>
+</ul>
+<p>La <a href="/es/">política de privacidad</a> detalla cada uno de estos puntos, y la versión en inglés está en <a href="/en/">/en/</a>.</p>
+<h2>Lo que sí guarda, y dónde</h2>
+<p>Tus eventos, recordatorios y ajustes se guardan en una base de datos en tu móvil. No nos llegan a nosotros, porque por nuestra parte no hay ningún servidor al que enviarlos. Si activas los calendarios del teléfono, Quickspan muestra los calendarios que tu móvil ya tiene, como uno de Google o de Samsung. Esos calendarios siguen sincronizándose a través de las cuentas de tu móvil, igual que antes; Quickspan no hace la sincronización y no necesita un inicio de sesión propio.</p>
+<p>El acceso al calendario se pide para mostrar y editar esos calendarios, y lo activas tú. Sin él, Quickspan funciona con sus propios calendarios. Los recordatorios usan el permiso de notificaciones para que el aviso te llegue antes del evento.</p>
+<h2>Escribir y dictar se queda en tu móvil</h2>
+<p>La entrada rápida lee lo que escribes en el propio móvil: la fecha, la hora, la repetición y el lugar se calculan allí. El dictado usa el reconocimiento de voz del teléfono, y por eso necesita Android 12 o posterior. Cómo funciona la parte escrita lo cuenta <a href="/blog/es/escribir-eventos-calendario/">Un calendario en el que escribes</a>.</p>
+<h2>Cómo encaja Pro</h2>
+<p>Pro es una compra única y opcional de 4,99 €, gestionada por Google Play con sus propias condiciones. No hay suscripción, y comprarlo no crea una cuenta de Quickspan. Pro añade temas, Modo silencio, vacaciones escolares y bloqueo de la app, entre otras cosas. Lo básico sigue siendo gratis: tu calendario, la búsqueda, los recordatorios y la entrada rápida escrita.</p>
+<h2>Este sitio web es independiente de la app</h2>
+<p>Para ser claros: quickspan.app, el sitio que estás leyendo, cuenta las visitas con Cloudflare Web Analytics. Indica cuántas personas visitan cada página, desde qué país y con qué tipo de navegador, y según Cloudflare no usa cookies. Eso afecta al sitio web; la app no contiene ninguna analítica. La política de privacidad tiene una sección que separa ambas cosas.</p>
+<h2>Qué significa en la práctica</h2>
+<p>Una app de calendario privada debería ser fácil de comprobar, además de fácil de creer. Por eso la lista de arriba es breve y concreta, por eso la política de privacidad está escrita en lenguaje llano, y por eso la app no necesita una cuenta. Si encuentras algo que no coincide con lo que aquí se dice, escríbenos a <a href="mailto:support@quickspan.app">support@quickspan.app</a>.</p>
+<p>Si además llevas una lista de tareas, mira cómo <a href="/blog/es/tareas-en-tu-calendario/">las tareas de Tasks.org y OpenTasks aparecen junto a tus eventos</a>. También publicamos una <a href="/accesibilidad/">declaración de accesibilidad</a> honesta, con lo que aún no funciona.</p>
+<p>Quickspan es gratis en Google Play: <a href="https://play.google.com/store/apps/details?id=app.quickspan&amp;hl=es&amp;referrer=utm_source%3Dquickspan.app%26utm_medium%3Dwebsite%26utm_campaign%3Dblog-es-calendario-privado-sin-cuenta">consigue Quickspan</a>, o vuelve a la <a href="/inicio/">página de inicio</a>.</p>
+
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <span>Quickspan Calendar, made by Manuel Lorenzo. Support: <a href="mailto:support@quickspan.app">support@quickspan.app</a>. Google Play is a trademark of Google LLC.</span>
+    <nav aria-label="Footer"><ul>
+      <li><a href="/en/">Privacy policy</a></li>
+      <li><a href="/es/">Política de privacidad</a></li>
+      <li><a href="/press/">Press kit</a></li>
+      <li><a href="/accessibility/">Accessibility</a></li>
+      <li><a href="/accesibilidad/">Accesibilidad</a></li>
+    </ul></nav>
+  </div>
+</footer>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "02f57a3dc3004200ae5a1e93ce20fa7c"}'></script>
+</body>
+</html>
