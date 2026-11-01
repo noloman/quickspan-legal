@@ -372,7 +372,9 @@ bdi { unicode-bidi: isolate; }
 .visual .phone--2 img { aspect-ratio: 540 / 1200; }
 /* Equal screen frames (3-column layout only): the three cards line their app screens up at the top of one frame height. Stacked cards keep their natural height. */
 @media (min-width: 901px) {
-  .story:not(.story--2) .shot { height: 320px; max-height: none; background: #FAFAFC; } /* the app screens' own surface colour, so a short screen blends into its frame */
+  /* The frame is see-through and the screen carries its own hairline border, so a short screen (Can I make it?) simply ends and the card colour shows below it: no white strip. */
+  .story:not(.story--2) .shot { height: 320px; max-height: none; background: transparent; box-shadow: none; border-radius: 0; }
+  .story:not(.story--2) .shot img { box-sizing: border-box; border: 1px solid var(--line-2); border-radius: 16px; background: #FAFAFC; }
 }
 </style>
 </head>
