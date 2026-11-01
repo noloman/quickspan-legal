@@ -299,6 +299,13 @@ body::before { display: none; }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
 .features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
+
+/* 0.4.0 screens strip: the app's own renders, framed like the device shots. */
+.shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 0 0 56px; padding: 0; align-items: start; }
+.shots li { border-radius: 20px; overflow: hidden; background: var(--surface); box-shadow: 0 0 0 1px var(--line-2), 0 24px 48px -30px rgba(0, 0, 0, 0.35); max-height: 420px; } /* the cap crops the taller shots from the bottom on purpose */
+.shots img { display: block; width: 100%; height: auto; }
+@media (max-width: 900px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .shots { grid-template-columns: minmax(0, 1fr); } .shots li { max-height: 360px; } }
 .phero{padding:clamp(56px,9vw,104px) 0 clamp(32px,5vw,56px)}
 .phero h1{font-size:clamp(2.2rem,5.4vw,3.8rem);line-height:1.04;letter-spacing:-.035em;font-weight:700;margin:14px 0 18px;max-width:18ch;text-wrap:balance}
 .phero p{color:var(--muted);max-width:44rem;font-size:1.15rem;margin:0}

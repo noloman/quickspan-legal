@@ -332,6 +332,13 @@ body::before { display: none; }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
 .features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
+
+/* 0.4.0 screens strip: the app's own renders, framed like the device shots. */
+.shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; list-style: none; margin: 0 0 56px; padding: 0; align-items: start; }
+.shots li { border-radius: 20px; overflow: hidden; background: var(--surface); box-shadow: 0 0 0 1px var(--line-2), 0 24px 48px -30px rgba(0, 0, 0, 0.35); max-height: 420px; } /* the cap crops the taller shots from the bottom on purpose */
+.shots img { display: block; width: 100%; height: auto; }
+@media (max-width: 900px) { .shots { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .shots { grid-template-columns: minmax(0, 1fr); } .shots li { max-height: 360px; } }
 </style>
 </head>
 <body>
@@ -369,6 +376,29 @@ bdi { unicode-bidi: isolate; }
       </div>
     </div>
   </section>
+
+  <section class="sec" id="next">
+    <div class="wrap">
+      <div class="center"><h2>0.4.0 の新機能。</h2><p class="lede">よく行く場所、移動時間、自動バックアップ。すべてスマートフォン上で動き、アカウントは不要で、Quickspan は何もアップロードしません。</p></div>
+      <ul class="shots" role="list" aria-hidden="true">
+        <li><img src="../img/0.4.0-can-i-make-it.webp" width="600" height="445" alt=""></li>
+        <li><img src="../img/0.4.0-places.webp" width="520" height="607" alt=""></li>
+        <li><img src="../img/0.4.0-settings.webp" width="520" height="723" alt="" loading="lazy"></li>
+        <li><img src="../img/0.4.0-backup.webp" width="520" height="482" alt="" loading="lazy"></li>
+      </ul>
+      <ul class="features" role="list">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10zM12 12.5a2 2 0 1 0 0-.01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>よく行く場所 <small><bdi>(無料)</bdi></small></h3><p>Quickspan は自分の予定からよく行く場所を学び、「金曜 15時 歯医者」と入力すると場所を補ってくれます。場所にニックネームを付けたり、重複をまとめたり、クイック追加で提案されないよう1つ忘れさせたりできます。</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>移動時間と出発時刻 <small><bdi>(Pro)</bdi></small></h3><p>目的地までにかかる時間を覚えて、出発の時刻を知らせます。数回は無料でお試しいただけます。</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>間に合う？ <small><bdi>(Pro)</bdi></small></h3><p>クイック追加とアジェンダが、2つの予定の間隔が移動には近すぎるときに警告します。</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a2 2 0 1 0 0 .01M18 19a2 2 0 1 0 0 .01M8 5h6a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 8h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>1日をルートで <small><bdi>(Pro)</bdi></small></h3><p>アジェンダの各日の下にその日の場所を順番に表示し、Next up ウィジェットにはルートの行を表示します。</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>場所からタイムゾーン <small><bdi>(無料)</bdi></small></h3><p>別のタイムゾーンの都市や空港を場所として入力すると(「東京で」「ヒースロー空港で」)、予定が現地の正しい時刻に入ります。</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>今年訪れた場所 <small><bdi>(Pro)</bdi></small></h3><p>今年どこへ行ったかを振り返れます。場所の数、よく行った場所、新しい場所。計算はスマートフォン上で行います。</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M16 7a2 2 0 1 0 0 .01M8 17a2 2 0 1 0 0 .01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>すっきりした設定 <small><bdi>(無料)</bdi></small></h3><p>設定をページごとに分け、言語の行、ヘルプ、「すべてのデータを削除」を追加。確認後に Quickspan が端末に保存しているデータを消去します。タブレットでは2ペイン表示。</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>自動バックアップ <small><bdi>(Pro)</bdi></small></h3><p>選んだフォルダに毎週、暗号化したバックアップを作成。通知をオンにしていれば、失敗したときにお知らせします。復元は常に無料です。</p></li>
+      </ul>
+    </div>
+  </section>
+
 
   <section class="sec" id="quick-add">
     <div class="wrap">
@@ -448,23 +478,6 @@ bdi { unicode-bidi: isolate; }
       </ul>
     </div>
   </section>
-
-  <section class="sec" id="next">
-    <div class="wrap">
-      <div class="center"><h2>0.4.0 の新機能。</h2><p class="lede">よく行く場所、移動時間、自動バックアップ。すべてスマートフォン上で動き、アカウントは不要で、Quickspan は何もアップロードしません。</p></div>
-      <ul class="features" role="list">
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10zM12 12.5a2 2 0 1 0 0-.01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>よく行く場所 <small><bdi>(無料)</bdi></small></h3><p>Quickspan は自分の予定からよく行く場所を学び、「金曜 15時 歯医者」と入力すると場所を補ってくれます。場所にニックネームを付けたり、重複をまとめたり、クイック追加で提案されないよう1つ忘れさせたりできます。</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>移動時間と出発時刻 <small><bdi>(Pro)</bdi></small></h3><p>目的地までにかかる時間を覚えて、出発の時刻を知らせます。数回は無料でお試しいただけます。</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>間に合う？ <small><bdi>(Pro)</bdi></small></h3><p>クイック追加とアジェンダが、2つの予定の間隔が移動には近すぎるときに警告します。</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a2 2 0 1 0 0 .01M18 19a2 2 0 1 0 0 .01M8 5h6a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 8h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>1日をルートで <small><bdi>(Pro)</bdi></small></h3><p>アジェンダの各日の下にその日の場所を順番に表示し、Next up ウィジェットにはルートの行を表示します。</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>場所からタイムゾーン <small><bdi>(無料)</bdi></small></h3><p>別のタイムゾーンの都市や空港を場所として入力すると(「東京で」「ヒースロー空港で」)、予定が現地の正しい時刻に入ります。</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>今年訪れた場所 <small><bdi>(Pro)</bdi></small></h3><p>今年どこへ行ったかを振り返れます。場所の数、よく行った場所、新しい場所。計算はスマートフォン上で行います。</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M16 7a2 2 0 1 0 0 .01M8 17a2 2 0 1 0 0 .01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>すっきりした設定 <small><bdi>(無料)</bdi></small></h3><p>設定をページごとに分け、言語の行、ヘルプ、「すべてのデータを削除」を追加。確認後に Quickspan が端末に保存しているデータを消去します。タブレットでは2ペイン表示。</p></li>
-        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>自動バックアップ <small><bdi>(Pro)</bdi></small></h3><p>選んだフォルダに毎週、暗号化したバックアップを作成。通知をオンにしていれば、失敗したときにお知らせします。復元は常に無料です。</p></li>
-      </ul>
-    </div>
-  </section>
-
 
   <section class="sec" id="pro">
     <div class="wrap">
