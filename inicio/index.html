@@ -369,7 +369,11 @@ bdi { unicode-bidi: isolate; }
 .visual .phone--2 { margin-bottom: -40px; }
 @media (max-width: 900px) { .story, .story--2, .features--more { grid-template-columns: minmax(0, 1fr); } .visual .phone--2 { display: none; } .visual .phone { width: min(310px, 82%); } }
 .story--2 .shot { margin-top: 0; }
-.visual .phone--2 img { aspect-ratio: 540 / 1200; }</style>
+.visual .phone--2 img { aspect-ratio: 540 / 1200; }
+/* Equal screen frames (3-column layout only): the three cards line their app screens up at the top of one frame height. Stacked cards keep their natural height. */
+@media (min-width: 901px) {
+  .story:not(.story--2) .shot { height: 320px; max-height: none; }
+}</style>
 </head>
 <body>
 <a class="skip" href="#top">Saltar al contenido</a>
