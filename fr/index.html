@@ -331,6 +331,7 @@ body::before { display: none; }
 @media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+.features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -353,7 +354,7 @@ bdi { unicode-bidi: isolate; }
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <span class="badge"><b>Nouveau dans la 0.3.0</b><span>Tâches, Prochain événement, verrou d'appli et ajout depuis partout</span></span>
+        <span class="badge"><b>Nouveau dans la 0.4.0</b><span>Vos lieux, Vais-je y arriver ? et sauvegarde automatique</span></span>
         <h1>L'agenda privé où il suffit de <span class="hl">taper.</span></h1>
         <p class="lede">Écrivez-le comme vous le diriez, et c'est dans votre semaine. Directement sur votre téléphone.</p>
         <div class="actions">
@@ -447,6 +448,23 @@ bdi { unicode-bidi: isolate; }
       </ul>
     </div>
   </section>
+
+  <section class="sec" id="next">
+    <div class="wrap">
+      <div class="center"><h2>Nouveau dans la 0.4.0.</h2><p class="lede">Vos lieux, le temps de trajet et la sauvegarde automatique. Tout fonctionne sur votre téléphone, sans compte, et Quickspan n'envoie rien.</p></div>
+      <ul class="features" role="list">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10zM12 12.5a2 2 0 1 0 0-.01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Vos lieux <small><bdi>(Gratuit)</bdi></small></h3><p>Quickspan apprend les lieux où vous allez à partir de vos propres événements et renseigne le lieu quand vous tapez « dentiste vendredi 15h ». Donnez des surnoms à vos lieux, fusionnez les doublons ou oubliez-en un pour que l'ajout rapide ne le propose plus.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Temps de trajet et heure de départ <small><bdi>(Pro)</bdi></small></h3><p>Il retient le temps que vous mettez pour vous rendre quelque part et vous dit quand partir. Quelques essais sont gratuits.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Vais-je y arriver ? <small><bdi>(Pro)</bdi></small></h3><p>L'ajout rapide et votre agenda vous avertissent quand deux événements sont trop proches pour le trajet qui les sépare.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a2 2 0 1 0 0 .01M18 19a2 2 0 1 0 0 .01M8 5h6a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 8h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Votre journée en trajet <small><bdi>(Pro)</bdi></small></h3><p>Les lieux du jour dans l'ordre sous chaque jour de l'agenda, et une ligne de trajet sur le widget Prochain événement.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Fuseau horaire selon le lieu <small><bdi>(Gratuit)</bdi></small></h3><p>Tapez une ville ou un aéroport situé dans un autre fuseau horaire comme lieu (« à Tokyo », « à Heathrow ») et l'événement tombe à la bonne heure locale.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Vos lieux cette année <small><bdi>(Pro)</bdi></small></h3><p>Voyez où est passée votre année : combien de lieux, les plus fréquentés et les nouveaux. Calculé sur votre téléphone.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M16 7a2 2 0 1 0 0 .01M8 17a2 2 0 1 0 0 .01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Des Réglages mieux rangés <small><bdi>(Gratuit)</bdi></small></h3><p>Réglages en pages, une ligne Langue, l'Aide, et Supprimer toutes mes données, qui efface ce que Quickspan garde sur le téléphone après confirmation. Deux volets sur tablette.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Sauvegarde automatique <small><bdi>(Pro)</bdi></small></h3><p>Une sauvegarde chiffrée chaque semaine dans un dossier de votre choix et, si les notifications sont activées, une alerte en cas d'échec. La restauration est toujours gratuite.</p></li>
+      </ul>
+    </div>
+  </section>
+
 
   <section class="sec" id="pro">
     <div class="wrap">

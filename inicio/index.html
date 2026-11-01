@@ -330,7 +330,8 @@ body::before { display: none; }
 
 @media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
 bdi { unicode-bidi: isolate; }
-.press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }</style>
+.press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+.features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }</style>
 </head>
 <body>
 <a class="skip" href="#top">Saltar al contenido</a>
@@ -352,7 +353,7 @@ bdi { unicode-bidi: isolate; }
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <span class="badge"><b>Novedad en 0.3.0</b><span>Tareas, próximo evento, bloqueo y añadir desde cualquier app</span></span>
+        <span class="badge"><b>Nuevo en 0.4.0</b><span>Tus lugares, aviso de trayecto justo y copia de seguridad automática</span></span>
         <h1>El calendario privado en el que <span class="hl">solo escribes.</span></h1>
         <p class="lede">Escríbelo como lo dirías y cae en tu semana. Todo en tu propio móvil.</p>
         <div class="actions">
@@ -465,6 +466,21 @@ bdi { unicode-bidi: isolate; }
     </div>
   </section>
 
+  <section class="sec" id="next">
+    <div class="wrap">
+      <div class="center"><h2>Nuevo en 0.4.0.</h2><p class="lede">Tus lugares, el tiempo de viaje y la copia de seguridad automática. Todo funciona en tu móvil, sin cuenta, y Quickspan no sube nada.</p></div>
+      <ul class="features" role="list">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10zM12 12.5a2 2 0 1 0 0-.01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Tus lugares <small>(Gratis)</small></h3><p>Quickspan aprende los lugares que visitas a partir de tus propios eventos y rellena el lugar cuando escribes "dentista viernes 15h". Ponles apodos, une duplicados u olvida uno para que deje de sugerirse.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Tiempo de viaje y hora de salida <small>(Pro)</small></h3><p>Recuerda cuánto tardas en llegar y te dice cuándo salir. Puedes probarlo gratis unas cuantas veces.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Aviso de trayecto justo <small>(Pro)</small></h3><p>La escritura rápida y la agenda te avisan cuando dos eventos están demasiado juntos para el trayecto.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a2 2 0 1 0 0 .01M18 19a2 2 0 1 0 0 .01M8 5h6a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 8h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Tu día como ruta <small>(Pro)</small></h3><p>Los lugares del día en orden bajo cada día de la agenda, y una línea de ruta en el widget Lo siguiente.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Zona horaria según el lugar <small>(Gratis)</small></h3><p>Escribe como lugar una ciudad o un aeropuerto de otra zona horaria («en Tokio», «en Heathrow») y el evento queda a la hora local correcta.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Tus lugares este año <small>(Pro)</small></h3><p>Mira dónde se te fue el año: cuántos lugares, los más visitados y los nuevos. Calculado en tu móvil.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M16 7a2 2 0 1 0 0 .01M8 17a2 2 0 1 0 0 .01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Ajustes más ordenados <small>(Gratis)</small></h3><p>Ajustes por páginas, una fila de Idioma, Ayuda y Borrar todos mis datos, que elimina lo que Quickspan guarda en el móvil cuando lo confirmas. Dos paneles en tablets.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Copia de seguridad automática <small>(Pro)</small></h3><p>Una copia cifrada semanal en la carpeta que elijas, y, con las notificaciones activadas, un aviso si falla alguna. Restaurar es siempre gratis.</p></li>
+      </ul>
+    </div>
+  </section>
   <section class="sec" id="pro">
     <div class="wrap">
       <div class="center">

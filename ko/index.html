@@ -331,6 +331,7 @@ body::before { display: none; }
 @media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+.features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -353,7 +354,7 @@ bdi { unicode-bidi: isolate; }
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <span class="badge"><b>0.3.0 새 기능</b><span>할 일, 다음 일정, 앱 잠금, 어디서든 추가</span></span>
+        <span class="badge"><b>0.4.0 새 기능</b><span>내 장소, 제시간에 갈 수 있을까?, 자동 백업</span></span>
         <h1>그냥 입력하면 되는 <span class="hl">프라이빗 캘린더.</span></h1>
         <p class="lede">말하듯이 쓰면 이번 주 일정에 들어갑니다. 내 폰 안에서요.</p>
         <div class="actions">
@@ -447,6 +448,23 @@ bdi { unicode-bidi: isolate; }
       </ul>
     </div>
   </section>
+
+  <section class="sec" id="next">
+    <div class="wrap">
+      <div class="center"><h2>0.4.0 새 기능.</h2><p class="lede">내 장소, 이동 시간, 자동 백업. 모든 기능은 휴대폰에서 계정 없이 작동하며, Quickspan은 아무것도 업로드하지 않습니다.</p></div>
+      <ul class="features" role="list">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10zM12 12.5a2 2 0 1 0 0-.01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>내 장소 <small><bdi>(무료)</bdi></small></h3><p>Quickspan은 내 일정에서 자주 가는 장소를 익히고, "금요일 3시 치과"라고 입력하면 장소를 채워 줍니다. 장소에 별명을 붙이거나, 중복을 합치거나, 빠른 추가에서 더 이상 제안하지 않도록 하나를 잊게 할 수 있습니다.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>이동 시간과 출발 시각 <small><bdi>(Pro)</bdi></small></h3><p>어딘가까지 걸리는 시간을 기억해 두었다가 언제 출발해야 하는지 알려 줍니다. 몇 번은 무료로 써 볼 수 있습니다.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>제시간에 갈 수 있을까? <small><bdi>(Pro)</bdi></small></h3><p>두 일정이 그 사이 이동에 비해 너무 가까우면 빠른 추가와 일정 목록이 경고해 줍니다.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a2 2 0 1 0 0 .01M18 19a2 2 0 1 0 0 .01M8 5h6a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 8h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>하루를 경로로 <small><bdi>(Pro)</bdi></small></h3><p>일정 목록의 각 날짜 아래에 그날의 장소를 순서대로 보여 주고, Next up 위젯에는 경로 줄을 표시합니다.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>장소로 시간대 맞추기 <small><bdi>(무료)</bdi></small></h3><p>다른 시간대의 도시나 공항을 장소로 입력하면("도쿄에서", "히스로에서") 일정이 현지 시간에 맞게 들어갑니다.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>올해의 장소 <small><bdi>(Pro)</bdi></small></h3><p>올해 어디를 다녔는지 확인하세요. 장소 수, 가장 많이 간 곳, 새로 간 곳. 계산은 휴대폰에서 이루어집니다.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M16 7a2 2 0 1 0 0 .01M8 17a2 2 0 1 0 0 .01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>더 깔끔해진 설정 <small><bdi>(무료)</bdi></small></h3><p>설정을 페이지별로 나누고, 언어 항목, 도움말, "내 모든 데이터 삭제"를 추가했습니다. 확인하면 Quickspan이 휴대폰에 저장한 데이터를 지웁니다. 태블릿에서는 2단 화면.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>자동 백업 <small><bdi>(Pro)</bdi></small></h3><p>선택한 폴더에 매주 암호화된 백업을 만들고, 알림이 켜져 있으면 실패 시 알려 줍니다. 복원은 언제나 무료입니다.</p></li>
+      </ul>
+    </div>
+  </section>
+
 
   <section class="sec" id="pro">
     <div class="wrap">

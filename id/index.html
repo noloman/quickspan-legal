@@ -331,6 +331,7 @@ body::before { display: none; }
 @media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+.features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -353,7 +354,7 @@ bdi { unicode-bidi: isolate; }
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <span class="badge"><b>Baru di 0.3.0</b><span>Tugas, Acara berikutnya, kunci aplikasi, dan tambah dari mana saja</span></span>
+        <span class="badge"><b>Baru di 0.4.0</b><span>Tempat-tempatmu, Keburu nggak? dan cadangan otomatis</span></span>
         <h1>Kalender pribadi yang cukup <span class="hl">kamu ketik.</span></h1>
         <p class="lede">Tulis seperti kamu mengucapkannya, dan langsung masuk ke minggumu. Tepat di ponselmu.</p>
         <div class="actions">
@@ -447,6 +448,23 @@ bdi { unicode-bidi: isolate; }
       </ul>
     </div>
   </section>
+
+  <section class="sec" id="next">
+    <div class="wrap">
+      <div class="center"><h2>Baru di 0.4.0.</h2><p class="lede">Tempat-tempatmu, waktu perjalanan, dan cadangan otomatis. Semuanya berjalan di ponselmu, tanpa akun, dan Quickspan tidak mengunggah apa pun.</p></div>
+      <ul class="features" role="list">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10zM12 12.5a2 2 0 1 0 0-.01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Tempat-tempatmu <small><bdi>(Gratis)</bdi></small></h3><p>Quickspan mempelajari tempat yang kamu datangi dari acaramu sendiri dan mengisi tempatnya saat kamu mengetik "dokter gigi Jumat 15.00". Beri nama panggilan pada tempat, gabungkan duplikat, atau lupakan satu tempat agar tambah cepat berhenti menyarankannya.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Waktu perjalanan dan waktu berangkat <small><bdi>(Pro)</bdi></small></h3><p>Ia mengingat berapa lama kamu sampai ke suatu tempat dan memberi tahu kapan harus berangkat. Beberapa pemakaian gratis untuk dicoba.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Keburu nggak? <small><bdi>(Pro)</bdi></small></h3><p>Tambah cepat dan agendamu memberi peringatan saat dua acara terlalu berdekatan untuk perjalanan di antaranya.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a2 2 0 1 0 0 .01M18 19a2 2 0 1 0 0 .01M8 5h6a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 8h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Harimu sebagai rute <small><bdi>(Pro)</bdi></small></h3><p>Tempat-tempat hari itu berurutan di bawah setiap hari agenda, dan satu baris rute di widget Next up.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Zona waktu dari tempat <small><bdi>(Gratis)</bdi></small></h3><p>Ketik kota atau bandara di zona waktu lain sebagai tempat ("di Tokyo", "di Heathrow") dan acara mendarat di waktu lokal yang tepat.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Tempat-tempatmu tahun ini <small><bdi>(Pro)</bdi></small></h3><p>Lihat ke mana saja tahunmu pergi: berapa tempat, yang paling sering dikunjungi, dan yang baru. Dihitung di ponselmu.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M16 7a2 2 0 1 0 0 .01M8 17a2 2 0 1 0 0 .01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Pengaturan yang lebih rapi <small><bdi>(Gratis)</bdi></small></h3><p>Pengaturan dalam halaman, baris Bahasa, Bantuan, dan Hapus semua data saya, yang menghapus data Quickspan di ponsel setelah kamu konfirmasi. Dua panel di tablet.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Cadangan otomatis <small><bdi>(Pro)</bdi></small></h3><p>Cadangan terenkripsi mingguan ke folder pilihanmu dan, dengan notifikasi aktif, peringatan jika ada yang gagal. Memulihkan selalu gratis.</p></li>
+      </ul>
+    </div>
+  </section>
+
 
   <section class="sec" id="pro">
     <div class="wrap">

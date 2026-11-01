@@ -331,6 +331,7 @@ body::before { display: none; }
 @media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+.features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -353,7 +354,7 @@ bdi { unicode-bidi: isolate; }
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <span class="badge"><b>0.3.0 में नया</b><span>टास्क, अगला इवेंट, ऐप लॉक और कहीं से भी जोड़ें</span></span>
+        <span class="badge"><b>0.4.0 में नया</b><span>आपकी जगहें, क्या मैं समय पर पहुँच पाऊँगा? और अपने आप बैकअप</span></span>
         <h1>वह निजी कैलेंडर जिसमें आप बस <span class="hl">टाइप करते हैं।</span></h1>
         <p class="lede">जैसे बोलते हैं वैसे लिखें, और वह आपके हफ़्ते में आ जाता है। सीधे आपके फ़ोन पर।</p>
         <div class="actions">
@@ -447,6 +448,23 @@ bdi { unicode-bidi: isolate; }
       </ul>
     </div>
   </section>
+
+  <section class="sec" id="next">
+    <div class="wrap">
+      <div class="center"><h2>0.4.0 में नया।</h2><p class="lede">आपकी जगहें, सफ़र का समय और अपने आप बैकअप। सब कुछ आपके फ़ोन पर चलता है, बिना अकाउंट के, और Quickspan कुछ अपलोड नहीं करता।</p></div>
+      <ul class="features" role="list">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10zM12 12.5a2 2 0 1 0 0-.01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>आपकी जगहें <small><bdi>(मुफ़्त)</bdi></small></h3><p>Quickspan आपके अपने इवेंट से सीखता है कि आप कहाँ जाते हैं, और जब आप "शुक्रवार 3 बजे डेंटिस्ट" टाइप करते हैं तो जगह भर देता है। जगहों को निकनेम दें, डुप्लिकेट मिलाएँ, या किसी एक को भुलवा दें ताकि क्विक ऐड उसे सुझाना बंद कर दे।</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>सफ़र का समय और कब निकलें <small><bdi>(Pro)</bdi></small></h3><p>यह याद रखता है कि आपको कहीं पहुँचने में कितना समय लगता है और बताता है कि कब निकलना है। आज़माने के लिए कुछ बार इस्तेमाल मुफ़्त है।</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>क्या मैं समय पर पहुँच पाऊँगा? <small><bdi>(Pro)</bdi></small></h3><p>क्विक ऐड और आपका एजेंडा चेतावनी देते हैं जब दो इवेंट के बीच के सफ़र के हिसाब से वे बहुत पास-पास हों।</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a2 2 0 1 0 0 .01M18 19a2 2 0 1 0 0 .01M8 5h6a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 8h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>आपका दिन, एक रूट की तरह <small><bdi>(Pro)</bdi></small></h3><p>एजेंडा के हर दिन के नीचे उस दिन की जगहें क्रम से, और Next up विजेट पर एक रूट लाइन।</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>जगह से टाइम ज़ोन <small><bdi>(मुफ़्त)</bdi></small></h3><p>जगह के रूप में किसी दूसरे टाइम ज़ोन का शहर या हवाई अड्डा टाइप करें ("टोक्यो में", "हीथ्रो पर") और इवेंट सही स्थानीय समय पर लग जाता है।</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>इस साल आपकी जगहें <small><bdi>(Pro)</bdi></small></h3><p>देखें कि आपका साल कहाँ गया: कितनी जगहें, सबसे ज़्यादा गई हुई और नई जगहें। हिसाब आपके फ़ोन पर ही होता है।</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M16 7a2 2 0 1 0 0 .01M8 17a2 2 0 1 0 0 .01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>ज़्यादा व्यवस्थित सेटिंग्स <small><bdi>(मुफ़्त)</bdi></small></h3><p>पन्नों में बँटी सेटिंग्स, भाषा की पंक्ति, मदद, और "मेरा सारा डेटा हटाएँ", जो आपके पुष्टि करने के बाद फ़ोन पर Quickspan का रखा डेटा मिटा देता है। टैबलेट पर दो पैनल।</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>अपने आप बैकअप <small><bdi>(Pro)</bdi></small></h3><p>आपके चुने फ़ोल्डर में हर हफ़्ते एन्क्रिप्टेड बैकअप, और नोटिफ़िकेशन चालू होने पर, किसी के फ़ेल होने पर अलर्ट। रीस्टोर करना हमेशा मुफ़्त है।</p></li>
+      </ul>
+    </div>
+  </section>
+
 
   <section class="sec" id="pro">
     <div class="wrap">

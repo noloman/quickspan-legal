@@ -331,6 +331,7 @@ body::before { display: none; }
 @media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+.features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -353,7 +354,7 @@ bdi { unicode-bidi: isolate; }
   <section class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <span class="badge"><b>Mới ở 0.3.0</b><span>Công việc, Sự kiện tiếp theo, khóa ứng dụng và thêm từ mọi nơi</span></span>
+        <span class="badge"><b>Mới ở 0.4.0</b><span>Những nơi của bạn, Kịp không? và sao lưu tự động</span></span>
         <h1>Lịch riêng tư, bạn chỉ cần <span class="hl">gõ vào.</span></h1>
         <p class="lede">Viết như bạn vẫn nói, và nó vào ngay tuần của bạn. Ngay trên điện thoại.</p>
         <div class="actions">
@@ -447,6 +448,23 @@ bdi { unicode-bidi: isolate; }
       </ul>
     </div>
   </section>
+
+  <section class="sec" id="next">
+    <div class="wrap">
+      <div class="center"><h2>Mới ở 0.4.0.</h2><p class="lede">Những nơi của bạn, thời gian di chuyển và sao lưu tự động. Mọi thứ chạy trên điện thoại của bạn, không cần tài khoản, và Quickspan không tải gì lên.</p></div>
+      <ul class="features" role="list">
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.4 6-10a6 6 0 0 0-12 0c0 4.6 6 10 6 10zM12 12.5a2 2 0 1 0 0-.01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Những nơi của bạn <small><bdi>(Miễn phí)</bdi></small></h3><p>Quickspan học các nơi bạn hay đến từ chính sự kiện của bạn và điền địa điểm khi bạn gõ "nha sĩ thứ Sáu 3 giờ chiều". Đặt biệt danh cho địa điểm, gộp các mục trùng hoặc quên một nơi để thêm nhanh không gợi ý nơi đó nữa.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Thời gian di chuyển và giờ xuất phát <small><bdi>(Pro)</bdi></small></h3><p>Ứng dụng nhớ bạn đi đến một nơi mất bao lâu và báo khi nào nên xuất phát. Vài lần dùng đầu là miễn phí để thử.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Kịp không? <small><bdi>(Pro)</bdi></small></h3><p>Thêm nhanh và lịch trình của bạn sẽ cảnh báo khi hai sự kiện quá gần nhau so với quãng đường giữa chúng.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5a2 2 0 1 0 0 .01M18 19a2 2 0 1 0 0 .01M8 5h6a4 4 0 0 1 0 8h-4a4 4 0 0 0 0 8h6" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Ngày của bạn thành lộ trình <small><bdi>(Pro)</bdi></small></h3><p>Các địa điểm trong ngày theo thứ tự dưới mỗi ngày trong lịch trình, và một dòng lộ trình trên widget Next up.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Múi giờ theo địa điểm <small><bdi>(Miễn phí)</bdi></small></h3><p>Gõ một thành phố hoặc sân bay ở múi giờ khác làm địa điểm ("ở Tokyo", "ở Heathrow") và sự kiện sẽ rơi vào đúng giờ địa phương.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10M12 20V4M19 20v-7" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Những nơi của bạn trong năm nay <small><bdi>(Pro)</bdi></small></h3><p>Xem năm của bạn đã đi đâu: bao nhiêu nơi, nơi đến nhiều nhất và nơi mới. Tính toán ngay trên điện thoại của bạn.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M16 7a2 2 0 1 0 0 .01M8 17a2 2 0 1 0 0 .01" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Cài đặt gọn gàng hơn <small><bdi>(Miễn phí)</bdi></small></h3><p>Cài đặt chia thành các trang, một dòng Ngôn ngữ, Trợ giúp và Xóa toàn bộ dữ liệu của tôi, xóa những gì Quickspan lưu trên điện thoại sau khi bạn xác nhận. Hai ngăn trên máy tính bảng.</p></li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"/></svg></span><h3>Sao lưu tự động <small><bdi>(Pro)</bdi></small></h3><p>Sao lưu mã hóa hằng tuần vào thư mục bạn chọn và, khi bật thông báo, có cảnh báo nếu một bản không thành công. Khôi phục luôn miễn phí.</p></li>
+      </ul>
+    </div>
+  </section>
+
 
   <section class="sec" id="pro">
     <div class="wrap">

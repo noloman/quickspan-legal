@@ -294,6 +294,7 @@ body::before { display: none; }
 @media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+.features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -317,12 +318,16 @@ privacidad de Quickspan Calendar</h1>
 <p>Esta es una traducción de la <a href="../en/">versión en inglés</a>,
 que es la que prevalece si hay alguna diferencia.</p>
 </blockquote>
-<p><strong>Última actualización:</strong> 2026-10-30</p>
+<p><strong>Última actualización:</strong> 2026-11-01</p>
 <p>Quickspan Calendar («la app») es una app de calendario para móviles,
 tablets y plegables Android. Esta política explica qué hace la app con
-tu información. En resumen: <strong>todo se queda en tu dispositivo. La
-app no tiene cuentas, ni servidores, ni estadísticas de uso, ni
-publicidad, ni rastreo.</strong></p>
+tu información. En resumen: <strong>la app guarda todo en tu dispositivo
+y no sube nada por sí misma. No tiene cuentas, ni servidores, ni
+estadísticas de uso, ni publicidad, ni rastreo.</strong> Las cuentas o
+archivos que tú decidas usar pueden copiar parte de esos datos a otro
+sitio; las secciones «Copias de seguridad del dispositivo», «Tus propias
+copias de seguridad», «Tu reloj» y «Tus cuentas y otras apps» explican
+exactamente cuándo.</p>
 <h2 id="responsable">Responsable</h2>
 <p>Manuel Lorenzo<br />
 manulorenzop@gmail.com</p>
@@ -418,6 +423,22 @@ calendarios, y después restaura tu ajuste anterior de «No molestar».
 Este acceso lo concedes tú en los ajustes de Android y puedes retirarlo
 allí. La app lo usa solo en tu dispositivo y no envía nada a ningún
 sitio.</p>
+<p><strong>Tus lugares (versión 0.4.0 y posteriores).</strong> Quickspan
+deduce los lugares de tus propios eventos, en tu móvil, para que la
+entrada rápida pueda rellenar un lugar cuando escribes «dentista viernes
+15h». También puede recordar cuánto tardas en llegar a un lugar (tiempo
+de viaje) y lo usa para avisarte cuando dos eventos están demasiado
+juntos para el trayecto, y para mostrar tu día como ruta y tus lugares
+de este año. Todo se calcula en tu dispositivo a partir de eventos que
+ya tienes; la app no usa permiso de ubicación, ni mapa, ni conexión a
+internet. Solo se guarda lo que tú defines: apodos, tiempos de viaje y
+marcas de «olvidado». Se guardan en el archivo de ajustes de la app en
+tu móvil, que queda fuera de la copia de seguridad en la nube de Google,
+y se incluyen en un archivo de copia de Quickspan si haces uno (ver «Tus
+propias copias de seguridad»). “Olvidar” un lugar solo hace que la
+entrada rápida deje de sugerirlo: tus eventos conservan el texto del
+lugar. “Borrar todos mis datos” elimina la memoria de lugares junto con
+todo lo demás que Quickspan guarda en tu móvil.</p>
 <p><strong>Ajustes.</strong> Tus preferencias, como qué calendarios se
 ven, se guardan en tu dispositivo.</p>
 <p><strong>Contadores de uso y comentarios (enviarlos es
@@ -486,22 +507,51 @@ consultas de soporte. Pro no añade cuentas, anuncios, estadísticas ni
 seguimiento.</p>
 <h2 id="copias-de-seguridad-del-dispositivo">Copias de seguridad del
 dispositivo</h2>
-<p>Android puede incluir los datos de una app en la copia de seguridad
-que hace en tu propia cuenta de Google, si tienes la copia de seguridad
-activada. Esa copia la hace y la controla Android junto con tu cuenta de
-Google, no esta app. La app permite que se copie solo su base de datos
-de eventos, para que tus eventos vuelvan si cambias de móvil o lo
-restauras. Los ajustes de la app no se incluyen. Si no quieres esta
-copia, desactívala en los ajustes de Android (Ajustes &gt; Sistema &gt;
-Copia de seguridad) o solo para esta app.</p>
+<p>Quickspan deja sus datos fuera de la copia de seguridad que Android
+hace en tu cuenta de Google: la app le indica a Android que no incluya
+sus eventos, lugares, notas ni ajustes, así que esta app no guarda
+ninguna copia de tu calendario en la nube de Google. Por eso «Borrar
+todos mis datos» es realmente definitivo. Las copias hechas por
+versiones anteriores de la app (antes de este cambio) sí incluían la
+base de datos de eventos; Android puede conservar esa copia en tu cuenta
+de Google hasta que se sustituya o la borres en los ajustes de Android
+(Ajustes &gt; Sistema &gt; Copia de seguridad). Quickspan no puede verla
+ni borrarla.</p>
+<p>Cuando configuras un móvil nuevo directamente desde el antiguo (por
+cable o con la transferencia de móvil a móvil, sin guardar nada en la
+nube), Android puede pasar la base de datos de eventos. Para cambiar de
+móvil de cualquier otra forma, haz una copia de seguridad en un archivo
+en Quickspan (Ajustes &gt; Tus datos) y restáurala en el móvil
+nuevo.</p>
+<h2 id="tus-propias-copias-de-seguridad">Tus propias copias de
+seguridad</h2>
+<p>Si usas «Copia de seguridad en un archivo» o la copia semanal, la app
+escribe un archivo cifrado (<code>.quickspan</code>) en la carpeta que
+eliges con el selector de archivos de Android. El archivo se cifra en tu
+móvil con tu frase de contraseña y la app no lo envía a ningún sitio. Si
+la carpeta que eliges pertenece a un servicio en la nube (Google Drive,
+OneDrive, Dropbox, etc.), la app de ese servicio sube el archivo, bajo
+su propia política de privacidad. Elige una carpeta del móvil si no
+quieres eso. «Borrar todos mis datos» no borra estos archivos.</p>
+<h2 id="tu-reloj">Tu reloj</h2>
+<p>Si instalas la app de Quickspan en un reloj Wear OS, la app del móvil
+le envía tus próximos eventos (título, hora y lugar) mediante la capa de
+datos Wearable de los servicios de Google Play, que los lleva entre tus
+propios dispositivos. La app no usa internet para esto. Los servicios de
+Google Play pueden conservar el dato en el reloj hasta que se
+sustituya.</p>
 <h2 id="conservación-y-eliminación-de-tu-información">Conservación y
 eliminación de tu información</h2>
 <p>La app guarda sus datos en tu dispositivo hasta que los eliminas.
 Puedes eliminar eventos o calendarios en la app. Al desinstalar la app
-se borran su base de datos y sus ajustes. Los eventos guardados en los
-calendarios de tu móvil pertenecen a esos calendarios: elimínalos allí o
-desde la app. Como no tenemos ninguna copia de tu información, no hay
-nada que debamos borrar en ningún servidor.</p>
+se borran su base de datos y sus ajustes, pero no una copia de Google
+hecha por una versión anterior de la app (ver «Copias de seguridad del
+dispositivo»). Los eventos guardados en los calendarios de tu móvil
+pertenecen a esos calendarios: elimínalos allí o desde la app. Como no
+tenemos ninguna copia de tu información, no hay nada que debamos borrar
+en ningún servidor; las copias hechas por tus cuentas, por una carpeta
+en la nube que elegiste o por la copia de Google de una versión anterior
+las borras tú allí.</p>
 <h2 id="menores">Menores</h2>
 <p>La app no está dirigida a menores de 13 años y no recoge información
 de nadie, tampoco de menores.</p>

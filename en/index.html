@@ -294,6 +294,7 @@ body::before { display: none; }
 @media (forced-colors: active) { .btn--ghost, .btn-soon, .bar { border: 1px solid ButtonText; } .seg input:checked + label { outline: 2px solid Highlight; } }
 bdi { unicode-bidi: isolate; }
 .press .plain-note { color: var(--muted); max-width: 46ch; font-size: .9rem; margin-top: .75rem; }
+.features h3 small { font-size: .75em; font-weight: 600; color: var(--muted); letter-spacing: 0; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -313,12 +314,15 @@ bdi { unicode-bidi: isolate; }
   <div class="wrap">
 <h1 id="privacy-policy-for-quickspan-calendar">Privacy policy for
 Quickspan Calendar</h1>
-<p><strong>Last updated:</strong> 2026-10-30</p>
+<p><strong>Last updated:</strong> 2026-11-01</p>
 <p>Quickspan Calendar (“the app”) is a calendar app for Android phones,
 tablets and foldables. This policy explains what the app does with your
-information. The short version: <strong>everything stays on your device.
-The app has no accounts, no servers, no analytics, no advertising and no
-tracking.</strong></p>
+information. The short version: <strong>the app keeps everything on your
+device and uploads nothing itself. It has no accounts, no servers, no
+analytics, no advertising and no tracking.</strong> The accounts and
+files you choose to use can copy some of that data elsewhere; the
+sections “Device backups”, “Your own backup files”, “Your watch” and
+“Your accounts and other apps” say exactly when.</p>
 <h2 id="who-is-responsible">Who is responsible</h2>
 <p>Manuel Lorenzo<br />
 manulorenzop@gmail.com</p>
@@ -408,6 +412,21 @@ like “Lunch with Sam tomorrow at 1pm” the app works out the date, time,
 place and title on your device, with rules and a small language model
 that is part of the app. The text is not sent anywhere and is not stored
 except as the event you choose to save.</p>
+<p><strong>Your places (version 0.4.0 and later).</strong> Quickspan
+works out the places in your own events, on your phone, so that quick
+add can fill a place in when you type “dentist Friday 3pm”. It can also
+remember how long you take to get to a place (travel time), and it uses
+that to warn you when two events are too close for the trip between them
+and to show your day as a route and your places this year. All of this
+is worked out on your device from events you already have; the app uses
+no location permission, no map and no internet connection. Only what you
+set is stored: nicknames, travel times and “forgotten” marks. They are
+kept in the app’s settings file on your phone, which is kept out of the
+Google cloud backup, and they are included in a Quickspan backup file if
+you make one (see “Your own backup files”). “Forget” on a place only
+stops quick add suggesting it: your events keep their place text.
+“Delete all my data” removes the places memory together with everything
+else Quickspan keeps on your phone.</p>
 <p><strong>Settings.</strong> Choices such as which calendars are
 visible are kept on your device.</p>
 <p><strong>Usage counters and feedback (optional to send).</strong> The
@@ -470,22 +489,46 @@ that yes or no on your phone. Google tells the developer about purchases
 how many people bought Pro and to answer support requests. Pro does not
 add accounts, ads, analytics or tracking.</p>
 <h2 id="device-backups">Device backups</h2>
-<p>Android can include an app’s data in the device backup it makes to
-your own Google account if you have backup switched on. That backup is
-made and controlled by Android and your Google account, not by this app.
-The app allows this backup for its events database only, so that your
-events come back if you move to a new phone or restore one. The app’s
-settings are not included. If you do not want this, switch off backup in
-Android’s settings (Settings &gt; System &gt; Backup) or for this
-app.</p>
+<p>Quickspan keeps its data out of the backup Android makes to your
+Google account: the app tells Android not to include its events, places,
+notes or settings, so no copy of your calendar is stored in Google’s
+cloud by this app. Because of that, “Delete all my data” really is
+final. Backups made by earlier versions of the app (before this change)
+did include the events database; Android may keep such a copy in your
+Google account until it is replaced or you delete it in Android’s
+settings (Settings &gt; System &gt; Backup). Quickspan cannot see or
+delete it.</p>
+<p>When you set up a new phone directly from your old one (by cable or
+the phone-to-phone transfer, with nothing stored in the cloud), Android
+may carry the events database across. To move to a new phone in any
+other way, make a backup file in Quickspan (Settings &gt; Your data) and
+restore it on the new phone.</p>
+<h2 id="your-own-backup-files">Your own backup files</h2>
+<p>If you use “Back up to a file” or the weekly backup, the app writes
+an encrypted file (<code>.quickspan</code>) to the folder you pick with
+Android’s own file picker. The file is encrypted on your phone with your
+passphrase; the app does not send it anywhere. If the folder you choose
+belongs to a cloud service (Google Drive, OneDrive, Dropbox and so on),
+that service’s app uploads the file, under its own privacy policy. Pick
+a folder on the phone if you do not want that. “Delete all my data” does
+not delete these files.</p>
+<h2 id="your-watch">Your watch</h2>
+<p>If you install the Quickspan app on a Wear OS watch, the phone app
+sends it your next events (title, time and place) through Google Play
+services’ Wearable Data Layer, which carries them between your own
+devices. The app does not use the internet for this. Google Play
+services may keep the item on the watch until it is replaced.</p>
 <h2 id="keeping-and-deleting-your-information">Keeping and deleting your
 information</h2>
 <p>The app keeps its data on your device until you delete it. You can
 delete events or calendars in the app. Uninstalling the app removes the
-app’s own database and settings. Events that are stored in your phone’s
-calendars belong to those calendars; delete them there or in the app.
-Because we hold no copy of your information, there is nothing for us to
-delete on a server.</p>
+app’s own database and settings, but not a Google backup made by an
+earlier version of the app (see “Device backups”). Events that are
+stored in your phone’s calendars belong to those calendars; delete them
+there or in the app. Because we hold no copy of your information, there
+is nothing for us to delete on a server; copies made by your accounts,
+by a cloud folder you chose, or by an older version’s Google backup are
+yours to delete there.</p>
 <h2 id="children">Children</h2>
 <p>The app is not directed at children under 13 and collects nothing
 from anyone, including children.</p>
