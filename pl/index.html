@@ -372,7 +372,7 @@ bdi { unicode-bidi: isolate; }
 .visual .phone--2 img { aspect-ratio: 540 / 1200; }
 /* Equal screen frames (3-column layout only): the three cards line their app screens up at the top of one frame height. Stacked cards keep their natural height. */
 @media (min-width: 901px) {
-  .story:not(.story--2) .shot { height: 320px; max-height: none; }
+  .story:not(.story--2) .shot { height: 320px; max-height: none; background: #FAFAFC; } /* the app screens' own surface colour, so a short screen blends into its frame */
 }
 </style>
 </head>

@@ -339,7 +339,7 @@ bdi { unicode-bidi: isolate; }
 .visual .phone--2 img { aspect-ratio: 540 / 1200; }
 /* Equal screen frames (3-column layout only): the three cards line their app screens up at the top of one frame height. Stacked cards keep their natural height. */
 @media (min-width: 901px) {
-  .story:not(.story--2) .shot { height: 320px; max-height: none; }
+  .story:not(.story--2) .shot { height: 320px; max-height: none; background: #FAFAFC; } /* the app screens' own surface colour, so a short screen blends into its frame */
 }
 .phero{padding:clamp(56px,9vw,104px) 0 clamp(32px,5vw,56px)}
 .phero h1{font-size:clamp(2.2rem,5.4vw,3.8rem);line-height:1.04;letter-spacing:-.035em;font-weight:700;margin:14px 0 18px;max-width:18ch;text-wrap:balance}
