@@ -372,10 +372,13 @@ funciones en línea, el tiempo y los calendarios suscritos, están
 desactivadas hasta que las uses: el tiempo solo envía la posición de un
 lugar que tú eliges (véase «El tiempo») y un enlace de calendario que
 añades se descarga de su propio servidor (véase «Calendarios
-suscritos»).</strong> Las cuentas o archivos que tú decidas usar pueden
-copiar parte de esos datos a otro sitio; las secciones «Copias de
-seguridad del dispositivo», «Tus propias copias de seguridad», «Tu
-reloj» y «Tus cuentas y otras apps» explican exactamente cuándo.</p>
+suscritos»). Después de un cierre inesperado, la app te pregunta si
+quieres enviar un informe de fallos y solo lo envía si dices que sí
+(véase «Informes de fallos»).</strong> Las cuentas o archivos que tú
+decidas usar pueden copiar parte de esos datos a otro sitio; las
+secciones «Copias de seguridad del dispositivo», «Tus propias copias de
+seguridad», «Tu reloj» y «Tus cuentas y otras apps» explican exactamente
+cuándo.</p>
 <h2 id="responsable">Responsable</h2>
 <p>Manuel Lorenzo<br />
 support@quickspan.app</p>
@@ -525,14 +528,16 @@ teléfono, sin ninguna cuenta nuestra.</p>
 <ul>
 <li>No necesita ni crea ninguna cuenta.</li>
 <li>No envía a ningún servidor tus eventos, calendarios, texto escrito
-ni ajustes. La app tiene el permiso de internet solo por dos motivos, la
-función opcional del tiempo y los calendarios suscritos opcionales,
-ambos desactivados hasta que los uses. Con el tiempo desactivado y sin
-ningún enlace de calendario añadido, la app no hace ninguna petición por
-su cuenta.</li>
-<li>No incluye bibliotecas de estadísticas de uso, informes de errores,
-publicidad ni rastreo. Sus contadores de uso se quedan en tu dispositivo
-salvo que tú los envíes (ver arriba).</li>
+ni ajustes. La app tiene el permiso de internet solo por tres motivos,
+la función opcional del tiempo, los calendarios suscritos opcionales y
+los informes de fallos que aceptes enviar, todos desactivados hasta que
+los uses. Con el tiempo desactivado, sin ningún enlace de calendario
+añadido y sin enviar ningún informe de fallos, la app no hace ninguna
+petición por su cuenta.</li>
+<li>No incluye bibliotecas de estadísticas de uso, publicidad ni
+rastreo. Su única biblioteca de informes de fallos no envía nada salvo
+que tú lo aceptes (véase «Informes de fallos»). Sus contadores de uso se
+quedan en tu dispositivo salvo que tú los envíes (ver arriba).</li>
 <li>No comparte, vende ni alquila ninguna información.</li>
 <li>No usa los datos de tus calendarios para entrenar ningún
 modelo.</li>
@@ -610,6 +615,52 @@ copia de tus enlaces ni de los calendarios. Lo que haga el proveedor del
 calendario con las peticiones que recibe se rige por sus propios
 términos e información de privacidad.</li>
 </ul>
+<h2 id="informes-de-fallos-opcional-se-te-pregunta-antes">Informes de
+fallos (opcional, se te pregunta antes)</h2>
+<p>La app incluye Firebase Crashlytics, el servicio de informes de
+fallos de Google, para poder encontrar y corregir los cierres
+inesperados. No envía nada por su cuenta:</p>
+<ul>
+<li><strong>Cuando algo falla:</strong> si la app se cierra
+inesperadamente, o una función falla de una forma que la app detecta
+(por ejemplo, no se pudo leer la previsión del tiempo, no se pudo
+guardar un calendario suscrito, no se pudo dibujar un widget o falló una
+copia de seguridad programada; no tener conexión o que un servidor diga
+que no, no se registra), se guarda un informe solo en tu móvil.</li>
+<li><strong>La siguiente vez que abres la app tras un cierre
+inesperado,</strong> te pregunta «¿Enviar todos los informes de fallos y
+errores pendientes de este dispositivo?» con Enviar, No enviar y Enviar
+siempre. Enviar manda todo lo que está pendiente en tu móvil (el fallo y
+cualquier error guardado desde entonces), esta vez. No enviar lo borra.
+Enviar siempre lo manda, y también cada informe posterior sin preguntar.
+Si cierras la pregunta sin responder, el informe se queda en tu móvil,
+sin enviar.</li>
+<li><strong>El ajuste:</strong> Ajustes &gt; Acerca de &gt; Qué puede
+hacer Quickspan &gt; «Enviar informes de fallos automáticamente» está
+desactivado hasta que lo actives (o elijas Enviar siempre), y puedes
+desactivarlo cuando quieras.</li>
+<li><strong>Qué contiene un informe:</strong> los detalles técnicos del
+error (el seguimiento de pila, sin los mensajes de error, que la app
+elimina), el modelo y el fabricante del dispositivo, las versiones de
+Android y de la app, datos técnicos como la memoria y el almacenamiento
+libres, la orientación y si el móvil está rooteado, la hora y un
+identificador de instalación aleatorio que solo sirve para agrupar
+informes (con el envío automático activado, también un identificador de
+instalación de Firebase). Nunca contiene tus eventos, los nombres de tus
+calendarios, el texto que escribes, enlaces de calendario, nombres de
+cuentas ni lugares, ni ningún identificador de publicidad.</li>
+<li><strong>Quién lo recibe:</strong> Google, como Firebase Crashlytics,
+trata el informe por encargo nuestro según las <a
+href="https://firebase.google.com/support/privacy">condiciones e
+información de privacidad de Firebase</a>. Crashlytics conserva los
+informes de fallos 90 días. No se vende nada ni se usa para publicidad.
+Para pedirnos que borremos informes que enviaste, escribe a
+support@quickspan.app; como no hay cuenta, dinos más o menos cuándo
+ocurrió el fallo.</li>
+<li><strong>La base legal</strong> es tu consentimiento (artículo 6.1.a
+del RGPD), que das para cada informe o para todos, y que puedes retirar
+en Ajustes.</li>
+</ul>
 <h2 id="tus-cuentas-y-otras-apps">Tus cuentas y otras apps</h2>
 <p>Los calendarios que pertenecen a una cuenta de tu móvil (por ejemplo,
 una cuenta de Google u otro servicio de calendario configurado mediante
@@ -682,8 +733,9 @@ en la nube que elegiste o por la copia de Google de una versión anterior
 las borras tú allí.</p>
 <h2 id="menores">Menores</h2>
 <p>La app no está dirigida a menores de 13 años y no recoge información
-de nadie, tampoco de menores, salvo la consulta opcional del tiempo
-descrita arriba.</p>
+de nadie, tampoco de menores, salvo la consulta opcional del tiempo, las
+descargas de enlaces de calendario y los informes de fallos descritos
+arriba.</p>
 <h2 id="este-sitio-web-quickspan.app">Este sitio web
 (quickspan.app)</h2>
 <p>La app y este sitio web son cosas distintas. El sitio cuenta las

@@ -367,10 +367,12 @@ servers of its own, no analytics, no advertising and no tracking. Its
 two online features, weather and subscribed calendars, are off until you
 use them: weather sends only the position of one place you choose (see
 “Weather”), and a calendar link you add is downloaded from its own
-server (see “Subscribed calendars”).</strong> The accounts and files you
-choose to use can copy some of that data elsewhere; the sections “Device
-backups”, “Your own backup files”, “Your watch” and “Your accounts and
-other apps” say exactly when.</p>
+server (see “Subscribed calendars”). After a crash, the app asks whether
+to send a crash report, and sends one only if you say yes (see “Crash
+reports”).</strong> The accounts and files you choose to use can copy
+some of that data elsewhere; the sections “Device backups”, “Your own
+backup files”, “Your watch” and “Your accounts and other apps” say
+exactly when.</p>
 <h2 id="who-is-responsible">Who is responsible</h2>
 <p>Manuel Lorenzo<br />
 support@quickspan.app</p>
@@ -510,12 +512,14 @@ Store app on that phone, with no account of ours.</p>
 <ul>
 <li>It does not require or create an account.</li>
 <li>It does not send your events, calendars, typed text or settings to
-any server. The app has the internet permission for two reasons only,
-the optional weather feature and optional subscribed calendars, both off
-until you use them. With weather off and no calendar link added, the app
-makes no request of its own.</li>
-<li>It has no analytics, crash-reporting, advertising or tracking
-libraries. Its usage counters stay on your device unless you send them
+any server. The app has the internet permission for three reasons only,
+the optional weather feature, optional subscribed calendars and crash
+reports you agree to send, all off until you use them. With weather off,
+no calendar link added and no crash report sent, the app makes no
+request of its own.</li>
+<li>It has no analytics, advertising or tracking libraries. Its one
+crash-reporting library sends nothing unless you agree (see “Crash
+reports”). Its usage counters stay on your device unless you send them
 yourself (see above).</li>
 <li>It does not share, sell or rent any information.</li>
 <li>It does not use your calendar data to train any model.</li>
@@ -590,6 +594,48 @@ your links or of the calendars. What the calendar’s provider does with
 the requests it receives is governed by its own terms and privacy
 information.</li>
 </ul>
+<h2 id="crash-reports-optional-you-are-asked-first">Crash reports
+(optional, you are asked first)</h2>
+<p>The app contains Firebase Crashlytics, Google’s crash-reporting
+service, so that crashes can be found and fixed. It sends nothing on its
+own:</p>
+<ul>
+<li><strong>When something goes wrong:</strong> if the app crashes, or a
+feature fails in a way the app catches (for example a forecast that
+could not be read, a subscribed calendar that could not be saved, a
+widget that could not be drawn or a scheduled backup that failed; being
+offline or a server saying no is not recorded), a report is saved on
+your phone only.</li>
+<li><strong>The next time you open the app after a crash,</strong> it
+asks: “Send all waiting crash and error reports from this device?” with
+Send, Don’t send and Always send. Send sends everything waiting on the
+phone (the crash and any failures saved since), this once. Don’t send
+deletes it. Always send sends it and every later report without asking.
+If you close the question without answering, the report stays on your
+phone, unsent.</li>
+<li><strong>The setting:</strong> Settings &gt; About &gt; What
+Quickspan can do &gt; “Send crash reports automatically” is off until
+you turn it on (or choose Always send), and you can turn it off at any
+time.</li>
+<li><strong>What a report holds:</strong> the technical details of the
+error (the stack trace, with error messages removed by the app), the
+device model and maker, the Android and app versions, technical state
+such as free memory and storage, orientation and whether the phone is
+rooted, the time, and a random installation ID that only groups reports
+(with automatic sending on, also a Firebase installation ID). It never
+holds your events, calendar names, typed text, calendar links, account
+names or places, and no advertising ID.</li>
+<li><strong>Who receives it:</strong> Google, as Firebase Crashlytics,
+processes the report for us under the <a
+href="https://firebase.google.com/support/privacy">Firebase terms and
+privacy information</a>. Crashlytics keeps crash reports for 90 days.
+Nothing is sold or used for advertising. To ask us to delete reports you
+sent, write to support@quickspan.app; as there is no account, tell us
+roughly when the crash happened.</li>
+<li><strong>Our legal basis</strong> is your consent (Article 6(1)(a)
+GDPR), which you give for each report or for all of them, and can
+withdraw in Settings.</li>
+</ul>
 <h2 id="your-accounts-and-other-apps">Your accounts and other apps</h2>
 <p>Calendars that belong to an account on your phone (for example a
 Google account, or another calendar service you set up through a sync
@@ -655,9 +701,9 @@ by a cloud folder you chose, or by an older version’s Google backup are
 yours to delete there.</p>
 <h2 id="children">Children</h2>
 <p>The app is not directed at children under 13 and collects nothing
-from anyone, including children, except the optional weather lookup and
-calendar link downloads described above (and for those, only what their
-servers see as described).</p>
+from anyone, including children, except the optional weather lookup,
+calendar link downloads and crash reports described above (and for
+those, only what is described there).</p>
 <h2 id="this-website-quickspan.app">This website (quickspan.app)</h2>
 <p>The app and this website are separate. The website counts visits with
 Cloudflare Web Analytics, a privacy-focused service. In aggregate, it
