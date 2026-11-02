@@ -362,19 +362,23 @@ privacidad de Quickspan Calendar</h1>
 <p>Esta es una traducción de la <a href="../en/">versión en inglés</a>,
 que es la que prevalece si hay alguna diferencia.</p>
 </blockquote>
-<p><strong>Última actualización:</strong> 2026-11-01</p>
+<p><strong>Última actualización:</strong> 2026-11-02</p>
 <p>Quickspan Calendar («la app») es una app de calendario para móviles,
 tablets y plegables Android. Esta política explica qué hace la app con
-tu información. En resumen: <strong>la app guarda todo en tu dispositivo
-y no sube nada por sí misma. No tiene cuentas, ni servidores, ni
-estadísticas de uso, ni publicidad, ni rastreo.</strong> Las cuentas o
-archivos que tú decidas usar pueden copiar parte de esos datos a otro
-sitio; las secciones «Copias de seguridad del dispositivo», «Tus propias
-copias de seguridad», «Tu reloj» y «Tus cuentas y otras apps» explican
-exactamente cuándo.</p>
+tu información. En resumen: <strong>la app guarda tus eventos y ajustes
+en tu dispositivo y nunca los sube. No tiene cuentas, ni servidores
+propios, ni estadísticas de uso, ni publicidad, ni rastreo. Sus dos
+funciones en línea, el tiempo y los calendarios suscritos, están
+desactivadas hasta que las uses: el tiempo solo envía la posición de un
+lugar que tú eliges (véase «El tiempo») y un enlace de calendario que
+añades se descarga de su propio servidor (véase «Calendarios
+suscritos»).</strong> Las cuentas o archivos que tú decidas usar pueden
+copiar parte de esos datos a otro sitio; las secciones «Copias de
+seguridad del dispositivo», «Tus propias copias de seguridad», «Tu
+reloj» y «Tus cuentas y otras apps» explican exactamente cuándo.</p>
 <h2 id="responsable">Responsable</h2>
 <p>Manuel Lorenzo<br />
-manulorenzop@gmail.com</p>
+support@quickspan.app</p>
 <h2 id="qué-usa-la-app">Qué usa la app</h2>
 <p><strong>Los eventos que creas en la app.</strong> Los eventos, los
 calendarios y sus colores que creas dentro de la app se guardan en una
@@ -424,7 +428,11 @@ primera vez que eliges un recordatorio; si lo rechazas, los eventos
 funcionan igual y no se muestra ningún recordatorio. La app también
 escucha que el teléfono termine de arrancar
 (<code>RECEIVE_BOOT_COMPLETED</code>) solo para volver a programar tus
-recordatorios tras un reinicio, porque Android los borra. Los
+recordatorios tras un reinicio, porque Android los borra. Para que un
+recordatorio llegue a su hora exacta, la app usa las alarmas exactas de
+Android (<code>USE_EXACT_ALARM</code> en Android 13 y posteriores,
+<code>SCHEDULE_EXACT_ALARM</code> en Android 12); si las alarmas exactas
+están desactivadas, el recordatorio puede llegar unos minutos tarde. Los
 recordatorios se programan y se muestran únicamente en tu dispositivo;
 nada sobre ellos se envía a nosotros ni a nadie más.</p>
 <p><strong>Bloqueo de la app (opcional).</strong> Si activas el bloqueo
@@ -516,15 +524,91 @@ teléfono, sin ninguna cuenta nuestra.</p>
 <h2 id="qué-no-hace-la-app">Qué no hace la app</h2>
 <ul>
 <li>No necesita ni crea ninguna cuenta.</li>
-<li>No se conecta a internet para sus propios fines: la app no pide el
-permiso de internet y no contiene código que envíe tus datos a un
-servidor.</li>
+<li>No envía a ningún servidor tus eventos, calendarios, texto escrito
+ni ajustes. La app tiene el permiso de internet solo por dos motivos, la
+función opcional del tiempo y los calendarios suscritos opcionales,
+ambos desactivados hasta que los uses. Con el tiempo desactivado y sin
+ningún enlace de calendario añadido, la app no hace ninguna petición por
+su cuenta.</li>
 <li>No incluye bibliotecas de estadísticas de uso, informes de errores,
 publicidad ni rastreo. Sus contadores de uso se quedan en tu dispositivo
 salvo que tú los envíes (ver arriba).</li>
 <li>No comparte, vende ni alquila ninguna información.</li>
 <li>No usa los datos de tus calendarios para entrenar ningún
 modelo.</li>
+</ul>
+<h2 id="el-tiempo-opcional-desactivado-por-defecto">El tiempo (opcional,
+desactivado por defecto)</h2>
+<p>El tiempo y los calendarios suscritos son las únicas funciones en las
+que la app usa internet para sus propios fines. No se pide nada hasta
+que activas «Mostrar el tiempo» en Ajustes y confirmas el cuadro de
+diálogo que lo explica. Eliges un lugar; la app pide entonces a MET
+Norway (el Instituto Meteorológico de Noruega, <code>api.met.no</code>)
+la previsión de ese lugar, aproximadamente cada tres horas. Lo activas o
+desactivas en Ajustes &gt; Calendario &gt; Tiempo.</p>
+<ul>
+<li><strong>Qué se envía:</strong> la posición del lugar que elegiste,
+redondeada a 5 km aproximadamente. Nada más sobre ti: ni cuenta, ni
+identificador del dispositivo o de publicidad, ni eventos, ni datos del
+calendario, ni GPS, ni uso del permiso de ubicación de tu móvil.</li>
+<li><strong>Qué ve MET Norway:</strong> como cualquier sitio web, la
+dirección IP de tu móvil y las partes habituales de una petición web. La
+app envía el mismo nombre de app fijo en cada petición. La petición
+viaja por HTTPS.</li>
+<li><strong>Encontrar el lugar:</strong> cuando escribes una ciudad, la
+búsqueda usa el buscador de lugares de tu propio móvil (el Geocoder de
+Android), que en la mayoría de los móviles ofrecen los servicios de
+Google Play con la política de privacidad de Google. La app no envía tu
+búsqueda a MET Norway ni a nosotros.</li>
+<li><strong>En tu móvil:</strong> la última previsión y el lugar elegido
+se guardan en tu dispositivo para que el tiempo siga viéndose sin
+conexión. Al desactivar el tiempo (Ajustes &gt; Calendario &gt; Tiempo)
+se detienen todas las peticiones y se borra la previsión guardada, pero
+el lugar elegido se conserva en tu móvil para la próxima vez que lo
+actives. Al cambiar de lugar se borra la previsión guardada.</li>
+<li><strong>Gratis y Pro:</strong> la app gratuita muestra 3 días de
+previsión y Pro muestra 7. Ambas envían el mismo tipo de petición.</li>
+<li><strong>Nosotros:</strong> Quickspan no tiene servidor y no guarda
+copia de tu lugar ni de la previsión. Lo que MET Norway hace con las
+peticiones que recibe se rige por sus propios términos y su información
+de privacidad.</li>
+<li><strong>Crédito:</strong> los datos de la previsión son de MET
+Norway y tienen licencia CC BY 4.0.</li>
+</ul>
+<h2
+id="calendarios-suscritos-opcional-no-pasa-nada-hasta-que-añades-un-enlace">Calendarios
+suscritos (opcional, no pasa nada hasta que añades un enlace)</h2>
+<p>En Ajustes &gt; Calendario &gt; Calendarios suscritos puedes seguir
+un calendario que alguien comparte como enlace <code>.ics</code> o
+<code>webcal://</code>. No se pide nada hasta que has leído el texto de
+una sola vez que lo explica y has añadido un enlace. Solo se aceptan
+enlaces seguros (<code>https://</code>, o <code>webcal://</code>, que es
+la misma dirección por HTTPS).</p>
+<ul>
+<li><strong>Qué se envía:</strong> una petición del enlace que pegaste,
+al servidor de ese enlace. La petición lleva el nombre de la app
+(<code>Quickspan https://quickspan.app</code>) y, en las comprobaciones
+posteriores, las cabeceras habituales de «¿ha cambiado?». Ninguna
+cuenta, ningún identificador del dispositivo ni de publicidad, ningún
+evento ni dato de tu calendario.</li>
+<li><strong>Qué ve el servidor:</strong> como cualquier sitio web, la
+dirección IP de tu móvil y las partes habituales de una petición web, y
+que usas Quickspan. Si el enlace redirige (hasta cinco veces, siempre
+por HTTPS), el servidor al que redirige ve lo mismo. Nosotros no
+elegimos esos servidores ni recibimos nada de ellos.</li>
+<li><strong>Cuándo:</strong> al añadir el enlace, al abrir la app (como
+máximo cada seis horas por enlace) y al tocar «Actualizar ahora». Nada
+se ejecuta en segundo plano con la app cerrada.</li>
+<li><strong>En tu móvil:</strong> la última copia correcta de cada
+calendario, el enlace y el nombre y el color que le diste se guardan en
+tu dispositivo para que sus eventos se vean sin conexión. Quitar un
+calendario en Ajustes borra su copia; desinstalar lo elimina todo. Estos
+eventos son de solo lectura en Quickspan y nunca se escriben en el
+calendario de tu móvil.</li>
+<li><strong>Nosotros:</strong> Quickspan no tiene servidor y no guarda
+copia de tus enlaces ni de los calendarios. Lo que haga el proveedor del
+calendario con las peticiones que recibe se rige por sus propios
+términos e información de privacidad.</li>
 </ul>
 <h2 id="tus-cuentas-y-otras-apps">Tus cuentas y otras apps</h2>
 <p>Los calendarios que pertenecen a una cuenta de tu móvil (por ejemplo,
@@ -542,7 +626,7 @@ datos de acceso de tu cuenta.</p>
 <p>Quickspan Pro es una compra única y opcional que se hace a través de
 Google Play. Google Play gestiona todo el pago, con sus propias
 condiciones y su política de privacidad: nosotros nunca vemos tu tarjeta
-ni tus datos de pago, y la app no pide el permiso de internet para
+ni tus datos de pago, y la app no usa su propio acceso a internet para
 venderlo. La app solo pregunta a Google Play, en tu móvil, si Pro está
 desbloqueado y guarda ese sí o no en tu móvil. Google informa al
 desarrollador de las compras (un número de pedido y el importe) en Play
@@ -598,7 +682,8 @@ en la nube que elegiste o por la copia de Google de una versión anterior
 las borras tú allí.</p>
 <h2 id="menores">Menores</h2>
 <p>La app no está dirigida a menores de 13 años y no recoge información
-de nadie, tampoco de menores.</p>
+de nadie, tampoco de menores, salvo la consulta opcional del tiempo
+descrita arriba.</p>
 <h2 id="este-sitio-web-quickspan.app">Este sitio web
 (quickspan.app)</h2>
 <p>La app y este sitio web son cosas distintas. El sitio cuenta las
@@ -616,13 +701,36 @@ sitio resulta útil (artículo 6.1.f del RGPD). Esta página de la política
 no carga la analítica. Si prefieres que no se cuente tu visita, bloquea
 <code>static.cloudflareinsights.com</code> en tu navegador o bloqueador
 de contenido; el sitio funciona igual sin ella.</p>
+<p><strong>Lista de espera de escritorio.</strong> La página
+quickspan.app/desktop te permite apuntarte a la lista de espera de
+Quickspan para escritorio enviándonos un correo. Esa página no carga
+analítica ni scripts. Guardamos tu dirección y tu mensaje en nuestro
+buzón de soporte, alojado en el servicio de correo de nuestra dirección
+de soporte, y los usamos solo para escribirte sobre la beta y el
+lanzamiento de la versión de escritorio (por ejemplo, el precio de
+lanzamiento para la lista de espera). Cuando salga la app de escritorio,
+borramos la lista. Nuestra base legal es tu consentimiento (artículo
+6.1.a del RGPD), que das al enviar el correo y puedes retirar en
+cualquier momento respondiendo o escribiendo a support@quickspan.app;
+entonces borramos tu dirección. Nunca la compartimos ni la vendemos.</p>
+<p><strong>Comprar Pro en escritorio.</strong> Cuando Quickspan para
+escritorio Pro salga a la venta, se venderá a través de un comerciante
+registrado (Paddle.com o Stripe), que gestiona el pago, las facturas y
+los impuestos con su propia política de privacidad; nunca vemos los
+datos de tu tarjeta. El comerciante nos comunica tu nombre, correo,
+país, número de pedido e importe, para enviarte la clave de licencia,
+reenviarla si la pierdes, gestionar reembolsos y guardar los registros
+que exige la ley fiscal (7 años en los Países Bajos). Nuestra base legal
+es el contrato que celebras al comprar (artículo 6.1.b del RGPD) y
+nuestras obligaciones legales (artículo 6.1.c). La clave se comprueba en
+tu ordenador, sin conexión; la app de escritorio nunca nos la envía.</p>
 <h2 id="cambios-en-esta-política">Cambios en esta política</h2>
 <p>Si algún día la app cambia lo que hace con la información (por
-ejemplo, si añade una función que usa internet), esta política se
+ejemplo, si añade otra función que usa internet), esta política se
 actualizará antes y se cambiará la fecha de arriba. Los cambios
 importantes se explicarán en las notas de la versión de la app.</p>
 <h2 id="contacto">Contacto</h2>
-<p>Si tienes preguntas sobre esta política: manulorenzop@gmail.com.</p>
+<p>Si tienes preguntas sobre esta política: support@quickspan.app.</p>
 
   </div>
 </main>
@@ -632,6 +740,8 @@ importantes se explicarán en las notas de la versión de la app.</p>
     <nav aria-label="Footer"><ul>
       <li><a href="/en/">Privacy policy</a></li>
       <li><a href="/es/">Política de privacidad</a></li>
+      <li><a href="/terms/">Terms and refunds</a></li>
+      <li><a href="/terminos/">Condiciones</a></li>
       <li><a href="/press/">Press kit</a></li>
       <li><a href="/accessibility/">Accessibility</a></li>
       <li><a href="/accesibilidad/">Accesibilidad</a></li>

@@ -358,18 +358,22 @@ bdi { unicode-bidi: isolate; }
   <div class="wrap">
 <h1 id="privacy-policy-for-quickspan-calendar">Privacy policy for
 Quickspan Calendar</h1>
-<p><strong>Last updated:</strong> 2026-11-01</p>
+<p><strong>Last updated:</strong> 2026-11-02</p>
 <p>Quickspan Calendar (“the app”) is a calendar app for Android phones,
 tablets and foldables. This policy explains what the app does with your
-information. The short version: <strong>the app keeps everything on your
-device and uploads nothing itself. It has no accounts, no servers, no
-analytics, no advertising and no tracking.</strong> The accounts and
-files you choose to use can copy some of that data elsewhere; the
-sections “Device backups”, “Your own backup files”, “Your watch” and
-“Your accounts and other apps” say exactly when.</p>
+information. The short version: <strong>the app keeps your events and
+settings on your device and never uploads them. It has no accounts, no
+servers of its own, no analytics, no advertising and no tracking. Its
+two online features, weather and subscribed calendars, are off until you
+use them: weather sends only the position of one place you choose (see
+“Weather”), and a calendar link you add is downloaded from its own
+server (see “Subscribed calendars”).</strong> The accounts and files you
+choose to use can copy some of that data elsewhere; the sections “Device
+backups”, “Your own backup files”, “Your watch” and “Your accounts and
+other apps” say exactly when.</p>
 <h2 id="who-is-responsible">Who is responsible</h2>
 <p>Manuel Lorenzo<br />
-manulorenzop@gmail.com</p>
+support@quickspan.app</p>
 <h2 id="what-the-app-uses">What the app uses</h2>
 <p><strong>Events you create in the app.</strong> Events, calendars and
 their colours that you create inside the app are stored in a database on
@@ -410,7 +414,11 @@ show notifications (<code>POST_NOTIFICATIONS</code>) the first time you
 choose a reminder; if you refuse, events work as before and no reminder
 is shown. The app also listens for the phone finishing its start-up
 (<code>RECEIVE_BOOT_COMPLETED</code>) only to schedule your reminders
-again after a restart, because Android clears them. Reminders are
+again after a restart, because Android clears them. So that a reminder
+comes on the minute, the app uses Android’s exact alarms
+(<code>USE_EXACT_ALARM</code> on Android 13 and newer,
+<code>SCHEDULE_EXACT_ALARM</code> on Android 12); if exact alarms are
+switched off, the reminder can come a few minutes late. Reminders are
 scheduled and shown on your device only; nothing about them is sent to
 us or to anyone else.</p>
 <p><strong>App lock (optional).</strong> If you switch on app lock in
@@ -501,14 +509,86 @@ Store app on that phone, with no account of ours.</p>
 <h2 id="what-the-app-does-not-do">What the app does not do</h2>
 <ul>
 <li>It does not require or create an account.</li>
-<li>It does not connect to the internet for its own purposes: the app
-does not ask for the internet permission and contains no code that sends
-your data to a server.</li>
+<li>It does not send your events, calendars, typed text or settings to
+any server. The app has the internet permission for two reasons only,
+the optional weather feature and optional subscribed calendars, both off
+until you use them. With weather off and no calendar link added, the app
+makes no request of its own.</li>
 <li>It has no analytics, crash-reporting, advertising or tracking
 libraries. Its usage counters stay on your device unless you send them
 yourself (see above).</li>
 <li>It does not share, sell or rent any information.</li>
 <li>It does not use your calendar data to train any model.</li>
+</ul>
+<h2 id="weather-optional-off-by-default">Weather (optional, off by
+default)</h2>
+<p>Weather and subscribed calendars are the only features in which the
+app uses the internet for its own purposes. Nothing is requested until
+you switch on “Show weather” in Settings and confirm the dialog that
+explains it. You choose one place; the app then asks MET Norway (the
+Norwegian Meteorological Institute, <code>api.met.no</code>) for that
+place’s forecast, about every three hours. You switch it on or off in
+Settings &gt; Calendar &gt; Weather.</p>
+<ul>
+<li><strong>What is sent:</strong> the position of the place you chose,
+rounded to about 5 km. Nothing else about you: no account, no device or
+advertising identifier, no events, no calendar data, no GPS and no use
+of your phone’s location permission.</li>
+<li><strong>What MET Norway sees:</strong> like any website, your
+phone’s IP address and the standard parts of a web request. The app
+sends the same fixed app name in every request. The request travels over
+HTTPS.</li>
+<li><strong>Finding the place:</strong> when you type a town, the search
+uses your phone’s own place search (the Android Geocoder), which on most
+phones is served by Google Play services under Google’s privacy policy.
+The app does not send your search to MET Norway or to us.</li>
+<li><strong>On your phone:</strong> the last forecast and the chosen
+place are kept on your device so the weather still shows without a
+connection. Switching weather off (Settings &gt; Calendar &gt; Weather)
+stops all requests and deletes the stored forecast, but keeps the chosen
+place on your phone for next time you switch it on. Changing the place
+clears the stored forecast.</li>
+<li><strong>Free and Pro:</strong> the free app shows 3 days of forecast
+and Pro shows 7. Both send the same kind of request.</li>
+<li><strong>Us:</strong> Quickspan has no server and keeps no copy of
+your place or of the forecast. What MET Norway does with the requests it
+receives is governed by its own terms and privacy information.</li>
+<li><strong>Credit:</strong> the forecast data is from MET Norway and is
+licensed under CC BY 4.0.</li>
+</ul>
+<h2
+id="subscribed-calendars-optional-nothing-happens-until-you-add-a-link">Subscribed
+calendars (optional, nothing happens until you add a link)</h2>
+<p>Settings &gt; Calendar &gt; Subscribed calendars lets you follow a
+calendar that someone shares as an <code>.ics</code> or
+<code>webcal://</code> link. Nothing is requested until you have read
+the one-time text that explains it and added a link. Only secure
+(<code>https://</code>, or <code>webcal://</code> which is the same
+address over HTTPS) links are accepted.</p>
+<ul>
+<li><strong>What is sent:</strong> a request for the link you pasted, to
+the server in that link. The request carries the app name
+(<code>Quickspan https://quickspan.app</code>) and, on later checks, the
+standard “has it changed” headers. No account, no device or advertising
+identifier, no events and no calendar data of yours.</li>
+<li><strong>What the server sees:</strong> like any website, your
+phone’s IP address and the standard parts of a web request, and that you
+use Quickspan. If the link redirects (up to five times, always over
+HTTPS), the server it redirects to sees the same. We do not choose these
+servers and do not receive anything from them.</li>
+<li><strong>When:</strong> when you add the link, when you open the app
+(at most about every six hours for each link), and when you tap “Refresh
+now”. Nothing runs in the background while the app is closed.</li>
+<li><strong>On your phone:</strong> the last good copy of each calendar,
+the link, and the name and colour you gave it are kept on your device so
+its events show without a connection. Removing a calendar in Settings
+deletes its copy; uninstalling removes everything. These events are
+read-only in Quickspan and are never written to your phone’s
+calendar.</li>
+<li><strong>Us:</strong> Quickspan has no server and keeps no copy of
+your links or of the calendars. What the calendar’s provider does with
+the requests it receives is governed by its own terms and privacy
+information.</li>
 </ul>
 <h2 id="your-accounts-and-other-apps">Your accounts and other apps</h2>
 <p>Calendars that belong to an account on your phone (for example a
@@ -526,12 +606,12 @@ purchase)</h2>
 <p>Quickspan Pro is an optional one-time purchase made through Google
 Play. The payment is handled entirely by Google Play, under Google’s
 terms and privacy policy: we never see your card or payment details, and
-the app does not ask for the internet permission to sell it. The app
-only asks Google Play on your phone whether Pro is unlocked and keeps
-that yes or no on your phone. Google tells the developer about purchases
-(an order number and amount) in the Play Console, which we use to see
-how many people bought Pro and to answer support requests. Pro does not
-add accounts, ads, analytics or tracking.</p>
+the app does not use its own internet access to sell it. The app only
+asks Google Play on your phone whether Pro is unlocked and keeps that
+yes or no on your phone. Google tells the developer about purchases (an
+order number and amount) in the Play Console, which we use to see how
+many people bought Pro and to answer support requests. Pro does not add
+accounts, ads, analytics or tracking.</p>
 <h2 id="device-backups">Device backups</h2>
 <p>Quickspan keeps its data out of the backup Android makes to your
 Google account: the app tells Android not to include its events, places,
@@ -575,7 +655,9 @@ by a cloud folder you chose, or by an older version’s Google backup are
 yours to delete there.</p>
 <h2 id="children">Children</h2>
 <p>The app is not directed at children under 13 and collects nothing
-from anyone, including children.</p>
+from anyone, including children, except the optional weather lookup and
+calendar link downloads described above (and for those, only what their
+servers see as described).</p>
 <h2 id="this-website-quickspan.app">This website (quickspan.app)</h2>
 <p>The app and this website are separate. The website counts visits with
 Cloudflare Web Analytics, a privacy-focused service. In aggregate, it
@@ -591,13 +673,35 @@ useful (Article 6(1)(f) GDPR). This policy page does not load the
 analytics. If you would rather not be counted, block
 <code>static.cloudflareinsights.com</code> in your browser or content
 blocker; the site works the same without it.</p>
+<p><strong>Desktop waitlist.</strong> The page quickspan.app/desktop
+lets you join the waitlist for Quickspan for desktop by sending us an
+email. That page loads no analytics and no scripts. We keep your email
+address and message in our support mailbox, hosted by the email service
+behind our support address, and use them only to write to you about the
+desktop beta and release (for example the waitlist launch price). When
+the desktop app is released we delete the list. Our legal basis is your
+consent (Article 6(1)(a) GDPR), which you give by sending the email and
+can withdraw at any time by replying or writing to
+support@quickspan.app; we then delete your address. We never share or
+sell it.</p>
+<p><strong>Buying Pro on desktop.</strong> When Quickspan for desktop
+Pro goes on sale, it is sold through a merchant of record (Paddle.com or
+Stripe), which handles the checkout, payment, invoices and tax under its
+own privacy policy; we never see your card details. The merchant shares
+with us your name, email address, country, order number and amount, so
+that we can email your licence key, reissue it if you lose it, handle
+refunds and keep the records tax law requires (7 years in the
+Netherlands). Our legal basis is the contract you enter by buying
+(Article 6(1)(b) GDPR) and our legal obligations (Article 6(1)(c)). The
+licence key is checked on your computer, offline; the desktop app never
+sends it to us.</p>
 <h2 id="changes-to-this-policy">Changes to this policy</h2>
 <p>If the app ever changes what it does with information (for example,
-adds a feature that uses the internet), this policy will be updated
-first and the date above changed. A material change will be described in
-the app’s release notes.</p>
+adds another feature that uses the internet), this policy will be
+updated first and the date above changed. A material change will be
+described in the app’s release notes.</p>
 <h2 id="contact">Contact</h2>
-<p>Questions about this policy: manulorenzop@gmail.com.</p>
+<p>Questions about this policy: support@quickspan.app.</p>
 
   </div>
 </main>
@@ -607,6 +711,8 @@ the app’s release notes.</p>
     <nav aria-label="Footer"><ul>
       <li><a href="/en/">Privacy policy</a></li>
       <li><a href="/es/">Política de privacidad</a></li>
+      <li><a href="/terms/">Terms and refunds</a></li>
+      <li><a href="/terminos/">Condiciones</a></li>
       <li><a href="/press/">Press kit</a></li>
       <li><a href="/accessibility/">Accessibility</a></li>
       <li><a href="/accesibilidad/">Accesibilidad</a></li>
