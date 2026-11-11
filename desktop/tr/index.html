@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
-<title>Quickspan masaüstü için: bekleme listesine katılın</title>
-<meta name="description" content="Sadece yazarak kullandığınız özel takvim, yakında Windows ve Mac&#x27;te. Hesap yok, reklam yok, izleme yok. Tek seferlik ödeme. E-postayla bekleme listesine katılın.">
+<title>Windows için Quickspan: sadece yazdığınız, gizliliğinizi koruyan takvim</title>
+<meta name="description" content="“Yarın 13’te Sam ile öğle yemeği” yazın, takviminizde. Google, Outlook ve iCloud tek bir haftada, her uygulamadan hızlı ekleme, hesap yok, reklam yok, izleme yok. Microsoft Store’da ücretsiz; Pro tek seferlik.">
 <link rel="canonical" href="https://quickspan.app/desktop/tr/">
 <link rel="alternate" hreflang="en" href="https://quickspan.app/desktop/">
 <link rel="alternate" hreflang="es" href="https://quickspan.app/desktop/es/">
@@ -34,8 +34,8 @@
 <link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/desktop/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/desktop/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Quickspan masaüstü için: bekleme listesine katılın">
-<meta property="og:description" content="Sadece yazarak kullandığınız özel takvim, yakında Windows ve Mac&#x27;te. Hesap yok, reklam yok, izleme yok. Tek seferlik ödeme. E-postayla bekleme listesine katılın.">
+<meta property="og:title" content="Windows için Quickspan: sadece yazdığınız, gizliliğinizi koruyan takvim">
+<meta property="og:description" content="“Yarın 13’te Sam ile öğle yemeği” yazın, takviminizde. Google, Outlook ve iCloud tek bir haftada, her uygulamadan hızlı ekleme, hesap yok, reklam yok, izleme yok. Microsoft Store’da ücretsiz; Pro tek seferlik.">
 <meta property="og:url" content="https://quickspan.app/desktop/tr/">
 <meta property="og:image" content="https://quickspan.app/og.png">
 <link rel="icon" href="../../icon.svg" type="image/svg+xml">
@@ -366,26 +366,37 @@ bdi { unicode-bidi: isolate; }
 }
 
 .dk{padding-block:clamp(36px,7vw,88px) clamp(28px,5vw,56px)}
-.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center}
 .dk .kicker{margin:0 0 14px}
 .dk h1{font-size:clamp(2.2rem,5.2vw,3.6rem);letter-spacing:-.035em;line-height:1.05;margin:0 0 18px;text-wrap:balance}
 .dk ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
 .dk li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
 .dk li svg{width:20px;height:20px;margin-top:3px;color:var(--coral)}
-.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+.dk .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.dk .sys{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);overflow:hidden}
 .shot svg{width:64px;height:64px;border-radius:16px;margin:0 auto 14px;display:block}
-.join{background:var(--bg-2);border-block:1px solid var(--line)}
-.join .wrap{padding-block:clamp(36px,6vw,64px);display:grid;gap:16px;justify-items:start}
-.join .wrap>*,.priv .wrap>*{max-width:62ch}
-.join h2,.priv h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
-.join p,.priv p{margin:0;color:var(--muted)}
-.join .wl-price{color:var(--fg);font-weight:600;font-size:1.08rem}
-.join .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.join .addr{font-size:.95rem}
-.join .addr a{color:var(--fg)}
-.priv .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.sec .center{text-align:center;display:grid;gap:12px;justify-items:center}
+.sec .center h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.03em;margin:0}
+.sec .center .lede{max-width:52ch}
+.kbd{font:600 .85em var(--mono,ui-monospace,monospace);background:var(--bg-2);border:1px solid var(--line-2);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:860px;width:100%;margin-inline:auto}
+.plan{padding:28px;display:grid;gap:18px;align-content:start}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.plan-head h3{margin:0;font-size:1.2rem}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plan li{display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:start}
+.plan li svg{width:16px;height:16px;margin-top:4px}
+.plan--pro{box-shadow:inset 0 0 0 2px var(--coral)}
+.note{color:var(--muted);font-size:.94rem;text-align:center;max-width:62ch;margin-inline:auto}
+.priv .wrap,.phone .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.priv .wrap>*,.phone .wrap>*{max-width:62ch}
+.priv h2,.phone h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
+.priv p,.phone p{margin:0;color:var(--muted)}
+.priv{background:var(--bg-2);border-block:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 .foot .langs{display:flex;flex-wrap:wrap;gap:6px 16px}
-@media (max-width:820px){.dk .wrap{grid-template-columns:1fr}}
+@media (max-width:820px){.dk .wrap,.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -393,41 +404,97 @@ bdi { unicode-bidi: isolate; }
 <section class="dk">
   <div class="wrap">
     <div>
-      <p class="kicker">Yakında Windows ve Mac&#x27;te</p>
-      <h1>Sadece yazarak kullandığınız <span class="hl">özel takvim,</span> şimdi bilgisayarınızda.</h1>
-      <p class="lede">“Yarın 13:00 Sam&#x27;le öğle yemeği” yazın, takviminizde. Quickspan Android&#x27;deki hızlı ekleme, bu kez büyük ekranda ve gerçek bir klavyeyle.</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Etkinlikleri söylediğiniz gibi yazın (12 dili).</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Çevrimdışı çalışır. Etkinlikleriniz bilgisayarınızda ya da zaten kullandığınız Google veya Outlook takviminde kalır; iCloud planlanıyor.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Hesap yok, reklam yok, izleme yok.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Kullanımı ücretsiz. Pro tek seferlik bir satın alımdır, abonelik değil.</span></li>
+      <p class="kicker">Yakında Microsoft Store’da</p>
+      <h1>Sadece <span class="hl">yazdığınız,</span> gizliliğinizi koruyan takvim, şimdi PC’nizde.</h1>
+      <p class="lede">Planlarınızı söyleyeceğiniz gibi yazın, takviminizde olsun; hepsi bilgisayarınızda çözümlenir. Google, Outlook ve iCloud takvimleriniz de eşitlenir.</p>
+      <ul role="list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Etkinlikleri söyleyeceğiniz gibi yazın; Quickspan 12 dili anlar ve Enter’a basmadan önce canlı önizleme gösterir.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Herhangi bir uygulamada Ctrl+Üst Karakter+Boşluk’a basın ve uygulamadan çıkmadan etkinlik ekleyin.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Google Calendar, Microsoft 365, Outlook.com, iCloud ve CalDAV takvimleri tek bir haftada. Çevrimdışı çalışır.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Hesap yok, reklam yok, izleme yok. Kendi etkinlikleriniz PC’nizde düz bir .ics dosyası.</span></li>
       </ul>
+      <div class="actions"><span class="btn btn-soon">Yakında Microsoft Store’da</span><a class="btn btn--ghost" href="#buy">Pro neler ekliyor</a></div>
+      <p class="sys">Ücretsiz. Windows 10 (sürüm 1809) veya üzeri, 64 bit. Mac daha sonra.</p>
     </div>
-    <!-- Screenshot placeholder: swap for the M0 window captures (light and dark, a real <img alt>) once the Mac check has run. -->
-    <div class="shot">
-      <div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>Ekran görüntüleri ilk sürümle gelecek.</p></div>
-    </div>
+    <div class="shot"><div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>Ekran görüntüleri ilk Windows sürümüyle gelecek.</p></div></div>
   </div>
 </section>
-<section class="join" id="join">
+<section class="sec" id="features">
   <div class="wrap">
-    <h2>Bekleme listesine katılın</h2>
-    <p>Bize bir e-posta gönderin. Size yalnızca masaüstü betası ve sürümü hakkında, lansman fiyatı dahil, yazacağız; sonra listeyi sileceğiz.</p>
-    <p class="wl-price">Pro için tek seferlik 14,99 € planlanıyor; bekleme listesindekiler için 9,99 € lansman fiyatı var.</p>
-    <div class="actions"><a class="btn btn--coral" href="mailto:support@quickspan.app?subject=Quickspan%20masa%C3%BCst%C3%BC%20bekleme%20listesi&amp;body=L%C3%BCtfen%20beni%20Quickspan%20masa%C3%BCst%C3%BC%20bekleme%20listesine%20ekleyin.%0D%0A%0D%0AWindows%20veya%20Mac%20%28iste%C4%9Fe%20ba%C4%9Fl%C4%B1%29%3A%20">E-postayla katıl</a></div>
-    <p class="addr">Ya da şu adrese yazın: <a href="mailto:support@quickspan.app?subject=Quickspan%20masa%C3%BCst%C3%BC%20bekleme%20listesi&amp;body=L%C3%BCtfen%20beni%20Quickspan%20masa%C3%BCst%C3%BC%20bekleme%20listesine%20ekleyin.%0D%0A%0D%0AWindows%20veya%20Mac%20%28iste%C4%9Fe%20ba%C4%9Fl%C4%B1%29%3A%20">support@quickspan.app</a></p>
+    <div class="center">
+      <h2>Bir takvimin yapması gereken her şey, yapmaması gereken hiçbir şey.</h2>
+      <p class="lede">Gerçek bir klavye için yapıldı: yazın, Enter’a basın, devam edin.</p>
+    </div>
+    <ul class="features features--more" role="list">
+      <li><h3>Yazın, takviminizde</h3><p>“Her Pzt ve Per 19’da spor salonu” ya da “Perşembe 16’da Noord’da diş hekimi”: tarih, saat, tekrar ve yer siz yazarken belirginleşir, bir satır da tam olarak neyin kaydedileceğini gösterir.</p></li>
+      <li><h3>Her yerden ekleyin</h3><p>Ctrl+Üst Karakter+Boşluk, ne yapıyorsanız onun üstünde küçük bir panel açar. Etkinliği yazın, Enter’a basın, işinize dönün.</p></li>
+      <li><h3>Takvimleriniz, hepsi tek haftada</h3><p>Google ve Microsoft tarayıcınızla oturum açar; iCloud, Fastmail ve Nextcloud uygulama parolasıyla. Yeni etkinlikler seçtiğiniz takvime gider; düzenlemeler geri eşitlenir.</p></li>
+      <li><h3>Çevrimdışı çalışır</h3><p>Bağlantı yokken yapılan bir değişiklik, yeniden çevrimiçi olduğunuzda gönderilir; yazdığınız hiçbir şey kaybolmaz.</p></li>
+      <li><h3>Yetişen hatırlatıcılar</h3><p>“15 dakika sonra” ile etkinliğin saatini ve yerini gösteren, ertelenebilen Windows bildirimleri. Tepsi simgesi, pencere kapalıyken bile bir sonraki etkinliğinizi gösterir.</p></li>
+      <li><h3>Hafta, ay ve ajanda</h3><p>Sık yaptığınız her şey için klavye kısayolları, her değişiklik için geri alma, .ics içe ve dışa aktarma.</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="buy">
+  <div class="wrap">
+    <div class="center">
+      <h2>Kullanımı ücretsiz. Pro, tek seferlik.</h2>
+      <p class="lede">Takvim ücretsiz. Pro, abonelik olmadan, kalıcı tek bir satın alma.</p>
+    </div>
+    <div class="plans">
+      <div class="card plan">
+        <div class="plan-head"><h3>Quickspan</h3><span class="price">€0</span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Canlı önizlemeli yazarak hızlı ekleme</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Google, Outlook, iCloud ve CalDAV eşitleme</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Hafta, ay ve ajanda görünümleri</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Hatırlatıcılar, tepsi ve oturum açılışında başlatma</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Her uygulamadan hızlı ekleme, denemek için beş kez</span></li>
+        </ul>
+        <span class="btn btn--sm btn-soon">Yakında Microsoft Store’da</span>
+      </div>
+      <div class="card plan plan--pro">
+        <div class="plan-head"><h3>Quickspan Pro</h3><span class="price">€4.99<small>tek seferlik</small></span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Her uygulamadan hızlı ekleme, sınırsız</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>.ics içe aktarma</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Pro’ya sonradan gelen her özellik</span></li>
+        </ul>
+        <span class="btn btn-soon">Pro, sürümle birlikte satışa çıkıyor</span>
+        <p class="sys">Bir kez ödeyin; lisans anahtarınız e-postayla gelir. Uygulamaya yapıştırın, Pro Quickspan kullandığınız her PC’de açılır.</p>
+      </div>
+    </div>
+    <p class="note">Store üzerinden değil, bu siteden satılır; böylece tüm bedel uygulamaya gider. 14 gün içinde iade, soru sorulmaz.</p>
+  </div>
+</section>
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="center"><h2>Sorular</h2></div>
+    <div class="faq">
+      <details><summary>Hesap gerekli mi?</summary><p>Hayır. Quickspan’in hesabı yoktur, kaydolacak bir şey de yoktur. Kendi etkinlikleriniz PC’nizde standart bir .ics dosyasında durur; Google, Microsoft ve iCloud takvimleriniz kendi hesaplarıyla oturum açar ve oldukları yerde kalır.</p></details>
+      <details><summary>Yazdıklarım bilgisayarımdan çıkıyor mu?</summary><p>Hayır. Yazdıklarınız PC’nizde çözümlenir. Bize hiçbir şey gönderilmez, analitik yoktur.</p></details>
+      <details><summary>Pro neyi açıyor?</summary><p>İlk beş etkinlikten sonra her uygulamadan hızlı ekleme ve .ics içe aktarma. Geri kalan her şey ücretsiz; Pro’ya sonradan eklenen özellikler de dahil.</p></details>
+      <details><summary>Abonelik mi?</summary><p>Hayır. Pro tek ödemedir, kalıcıdır. Anahtar, Quickspan kullandığınız her PC’de çalışır.</p></details>
+      <details><summary>Mac sürümü var mı?</summary><p>Henüz yok. Önce Windows; Mac sürümü ardından gelecek. Android uygulaması Google Play’de.</p></details>
+    </div>
   </div>
 </section>
 <section class="priv">
   <div class="wrap">
-    <h2>E-postanız, başka hiçbir şey</h2>
-    <p>Bu sayfa betik çalıştırmaz, çerez bırakmaz ve ziyaretleri saymaz. E-postanız yalnızca bize ulaşır ve onu yalnızca masaüstü betası ve sürümü hakkında size yazmak için kullanırız. Masaüstü uygulaması çıktığında listeyi sileriz. Bülten yok, hiçbir zaman paylaşmaz ya da satmayız. Daha erken ayrılmak için bize yanıt verin ya da “beni sil” yazın.</p>
+    <h2>Tasarımı gereği gizli</h2>
+    <p>Quickspan hesabı yok, reklam yok, analitik yok, izleme yok. Parolalar düz bir dosyaya değil, Windows’un kendi kimlik bilgisi korumasına gider. Bu sayfa betik çalıştırmaz ve çerez bırakmaz.</p>
+  </div>
+</section>
+<section class="phone">
+  <div class="wrap">
+    <h2>Telefonunuzda Quickspan</h2>
+    <p>Aynı hızlı ekleme Android’de de var; widget’lar, görevler ve doğum günleriyle. Masaüstü uygulaması ve telefon uygulaması ayrı satın alınır. <a href="../../tr/">Android için Quickspan</a></p>
   </div>
 </section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <span><a href="../../tr/">Quickspan Android</a> · <a href="../../en/">Gizlilik politikası</a> · <a href="../../terms/">Koşullar ve iadeler</a></span>
+    <span><a href="../../tr/">Android için Quickspan</a> · <a href="../../en/">Gizlilik politikası</a> · <a href="../../terms/">Koşullar ve iadeler</a> · <a href="mailto:support@quickspan.app?subject=Windows%20i%C3%A7in%20Quickspan">Destek</a></span>
     <nav class="langs" aria-label="Diğer diller"><a href="../../desktop/" lang="en" hreflang="en">English</a><a href="../../desktop/es/" lang="es" hreflang="es">Español</a><a href="../../desktop/nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../../desktop/fr/" lang="fr" hreflang="fr">Français</a><a href="../../desktop/de/" lang="de" hreflang="de">Deutsch</a><a href="../../desktop/it/" lang="it" hreflang="it">Italiano</a><a href="../../desktop/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../../desktop/pl/" lang="pl" hreflang="pl">Polski</a><a href="../../desktop/id/" lang="id" hreflang="id">Indonesia</a><a href="../../desktop/ja/" lang="ja" hreflang="ja">日本語</a><a href="../../desktop/ko/" lang="ko" hreflang="ko">한국어</a><a href="../../desktop/ru/" lang="ru" hreflang="ru">Русский</a><a href="../../desktop/sv/" lang="sv" hreflang="sv">Svenska</a><a href="../../desktop/cs/" lang="cs" hreflang="cs">Čeština</a><a href="../../desktop/uk/" lang="uk" hreflang="uk">Українська</a><a href="../../desktop/vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../../desktop/hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../../desktop/th/" lang="th" hreflang="th">ไทย</a><a href="../../desktop/pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../../desktop/ar/" lang="ar" hreflang="ar">العربية</a><a href="../../desktop/he/" lang="he" hreflang="he">עברית</a><a href="../../desktop/zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../../desktop/zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
   </div>
 </footer>

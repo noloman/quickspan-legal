@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
-<title>Quickspan สำหรับเดสก์ท็อป: เข้าร่วมรายชื่อรอ</title>
-<meta name="description" content="ปฏิทินส่วนตัวที่แค่พิมพ์ก็ใช้ได้ กำลังจะมาบน Windows และ Mac ไม่ต้องมีบัญชี ไม่มีโฆษณา ไม่มีการติดตาม จ่ายครั้งเดียว เข้าร่วมรายชื่อรอทางอีเมล">
+<title>Quickspan สำหรับ Windows: ปฏิทินส่วนตัวที่แค่พิมพ์ก็พอ</title>
+<meta name="description" content="พิมพ์ “กินข้าวเที่ยงกับ Sam พรุ่งนี้บ่ายโมง” แล้วมันก็อยู่ในปฏิทินของคุณ Google, Outlook และ iCloud ในสัปดาห์เดียว เพิ่มด่วนจากแอปไหนก็ได้ ไม่ต้องมีบัญชี ไม่มีโฆษณา ไม่ติดตาม ฟรีบน Microsoft Store; Pro จ่ายครั้งเดียว">
 <link rel="canonical" href="https://quickspan.app/desktop/th/">
 <link rel="alternate" hreflang="en" href="https://quickspan.app/desktop/">
 <link rel="alternate" hreflang="es" href="https://quickspan.app/desktop/es/">
@@ -34,8 +34,8 @@
 <link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/desktop/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/desktop/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Quickspan สำหรับเดสก์ท็อป: เข้าร่วมรายชื่อรอ">
-<meta property="og:description" content="ปฏิทินส่วนตัวที่แค่พิมพ์ก็ใช้ได้ กำลังจะมาบน Windows และ Mac ไม่ต้องมีบัญชี ไม่มีโฆษณา ไม่มีการติดตาม จ่ายครั้งเดียว เข้าร่วมรายชื่อรอทางอีเมล">
+<meta property="og:title" content="Quickspan สำหรับ Windows: ปฏิทินส่วนตัวที่แค่พิมพ์ก็พอ">
+<meta property="og:description" content="พิมพ์ “กินข้าวเที่ยงกับ Sam พรุ่งนี้บ่ายโมง” แล้วมันก็อยู่ในปฏิทินของคุณ Google, Outlook และ iCloud ในสัปดาห์เดียว เพิ่มด่วนจากแอปไหนก็ได้ ไม่ต้องมีบัญชี ไม่มีโฆษณา ไม่ติดตาม ฟรีบน Microsoft Store; Pro จ่ายครั้งเดียว">
 <meta property="og:url" content="https://quickspan.app/desktop/th/">
 <meta property="og:image" content="https://quickspan.app/og.png">
 <link rel="icon" href="../../icon.svg" type="image/svg+xml">
@@ -366,26 +366,37 @@ bdi { unicode-bidi: isolate; }
 }
 
 .dk{padding-block:clamp(36px,7vw,88px) clamp(28px,5vw,56px)}
-.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center}
 .dk .kicker{margin:0 0 14px}
 .dk h1{font-size:clamp(2.2rem,5.2vw,3.6rem);letter-spacing:-.035em;line-height:1.05;margin:0 0 18px;text-wrap:balance}
 .dk ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
 .dk li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
 .dk li svg{width:20px;height:20px;margin-top:3px;color:var(--coral)}
-.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+.dk .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.dk .sys{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);overflow:hidden}
 .shot svg{width:64px;height:64px;border-radius:16px;margin:0 auto 14px;display:block}
-.join{background:var(--bg-2);border-block:1px solid var(--line)}
-.join .wrap{padding-block:clamp(36px,6vw,64px);display:grid;gap:16px;justify-items:start}
-.join .wrap>*,.priv .wrap>*{max-width:62ch}
-.join h2,.priv h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
-.join p,.priv p{margin:0;color:var(--muted)}
-.join .wl-price{color:var(--fg);font-weight:600;font-size:1.08rem}
-.join .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.join .addr{font-size:.95rem}
-.join .addr a{color:var(--fg)}
-.priv .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.sec .center{text-align:center;display:grid;gap:12px;justify-items:center}
+.sec .center h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.03em;margin:0}
+.sec .center .lede{max-width:52ch}
+.kbd{font:600 .85em var(--mono,ui-monospace,monospace);background:var(--bg-2);border:1px solid var(--line-2);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:860px;width:100%;margin-inline:auto}
+.plan{padding:28px;display:grid;gap:18px;align-content:start}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.plan-head h3{margin:0;font-size:1.2rem}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plan li{display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:start}
+.plan li svg{width:16px;height:16px;margin-top:4px}
+.plan--pro{box-shadow:inset 0 0 0 2px var(--coral)}
+.note{color:var(--muted);font-size:.94rem;text-align:center;max-width:62ch;margin-inline:auto}
+.priv .wrap,.phone .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.priv .wrap>*,.phone .wrap>*{max-width:62ch}
+.priv h2,.phone h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
+.priv p,.phone p{margin:0;color:var(--muted)}
+.priv{background:var(--bg-2);border-block:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 .foot .langs{display:flex;flex-wrap:wrap;gap:6px 16px}
-@media (max-width:820px){.dk .wrap{grid-template-columns:1fr}}
+@media (max-width:820px){.dk .wrap,.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -393,41 +404,97 @@ bdi { unicode-bidi: isolate; }
 <section class="dk">
   <div class="wrap">
     <div>
-      <p class="kicker">เร็ว ๆ นี้บน Windows และ Mac</p>
-      <h1>ปฏิทินส่วนตัวที่คุณแค่<span class="hl">พิมพ์ลงไป</span>ตอนนี้บนคอมพิวเตอร์ของคุณ</h1>
-      <p class="lede">พิมพ์ “Lunch with Sam tomorrow 1pm” แล้วนัดก็เข้าปฏิทิน การเพิ่มนัดแบบเร็วเหมือน Quickspan สำหรับ Android บนจอใหญ่และคีย์บอร์ดจริง</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>พิมพ์นัดหมายแบบที่คุณพูด ใน12 ภาษา</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>ใช้งานออฟไลน์ได้ นัดหมายของคุณอยู่ในคอมพิวเตอร์ หรือในปฏิทิน Google หรือ Outlook ที่คุณใช้อยู่แล้ว และมีแผนรองรับ iCloud</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>ไม่ต้องมีบัญชี ไม่มีโฆษณา ไม่มีการติดตาม</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>ใช้ฟรี Pro ซื้อครั้งเดียว ไม่ใช่การสมัครสมาชิก</span></li>
+      <p class="kicker">เร็วๆ นี้บน Microsoft Store</p>
+      <h1>ปฏิทินส่วนตัวที่แค่<span class="hl">พิมพ์</span>ก็พอ ตอนนี้มาอยู่บน PC ของคุณแล้ว</h1>
+      <p class="lede">เขียนแผนของคุณแบบเดียวกับที่คุณพูด แล้วมันก็อยู่ในปฏิทิน โดยประมวลผลบนคอมพิวเตอร์ของคุณเอง ปฏิทิน Google, Outlook และ iCloud ของคุณซิงค์เข้ามาด้วย</p>
+      <ul role="list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>พิมพ์กิจกรรมแบบเดียวกับที่คุณพูด ใน 12 ภาษา พร้อมตัวอย่างแบบสดก่อนกด Enter</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>กด Ctrl+Shift+Space ในแอปไหนก็ได้ แล้วเพิ่มกิจกรรมโดยไม่ต้องออกจากแอปนั้น</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>ปฏิทิน Google Calendar, Microsoft 365, Outlook.com, iCloud และ CalDAV ในสัปดาห์เดียว ใช้งานออฟไลน์ได้</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>ไม่ต้องมีบัญชี ไม่มีโฆษณา ไม่ติดตาม กิจกรรมของคุณเองเป็นไฟล์ .ics ธรรมดาบน PC ของคุณ</span></li>
       </ul>
+      <div class="actions"><span class="btn btn-soon">เร็วๆ นี้บน Microsoft Store</span><a class="btn btn--ghost" href="#buy">ดูว่า Pro เพิ่มอะไร</a></div>
+      <p class="sys">ฟรี Windows 10 (เวอร์ชัน 1809) ขึ้นไป แบบ 64 บิต Mac ตามมาทีหลัง</p>
     </div>
-    <!-- Screenshot placeholder: swap for the M0 window captures (light and dark, a real <img alt>) once the Mac check has run. -->
-    <div class="shot">
-      <div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>ภาพหน้าจอจะมาพร้อมบิลด์แรก</p></div>
-    </div>
+    <div class="shot"><div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>ภาพหน้าจอจะมาพร้อมบิลด์ Windows แรก</p></div></div>
   </div>
 </section>
-<section class="join" id="join">
+<section class="sec" id="features">
   <div class="wrap">
-    <h2>เข้าร่วมรายชื่อรอ</h2>
-    <p>ส่งอีเมลหาเราหนึ่งฉบับ เราจะเขียนถึงคุณเฉพาะเรื่องเบต้าและรุ่นจริงของเดสก์ท็อป รวมถึงราคาเปิดตัว แล้วลบรายชื่อทิ้ง</p>
-    <p class="wl-price">Pro วางแผนไว้ที่ €14.99 ครั้งเดียว และมีราคาเปิดตัว €9.99 สำหรับคนที่อยู่ในรายชื่อรอ</p>
-    <div class="actions"><a class="btn btn--coral" href="mailto:support@quickspan.app?subject=%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B8%AD%20Quickspan%20%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%94%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B8%97%E0%B9%87%E0%B8%AD%E0%B8%9B&amp;body=%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B9%83%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B8%AD%20Quickspan%20%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%94%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B8%97%E0%B9%87%E0%B8%AD%E0%B8%9B%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%0D%0A%0D%0AWindows%20%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%20Mac%20%28%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%9A%29%3A%20">เข้าร่วมทางอีเมล</a></div>
-    <p class="addr">หรือเขียนมาที่ <a href="mailto:support@quickspan.app?subject=%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B8%AD%20Quickspan%20%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%94%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B8%97%E0%B9%87%E0%B8%AD%E0%B8%9B&amp;body=%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%9E%E0%B8%B4%E0%B9%88%E0%B8%A1%E0%B8%89%E0%B8%B1%E0%B8%99%E0%B9%83%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B8%AD%20Quickspan%20%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%94%E0%B8%AA%E0%B8%81%E0%B9%8C%E0%B8%97%E0%B9%87%E0%B8%AD%E0%B8%9B%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2%0D%0A%0D%0AWindows%20%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%20Mac%20%28%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B8%9A%29%3A%20">support@quickspan.app</a></p>
+    <div class="center">
+      <h2>ทุกอย่างที่ปฏิทินควรทำ และไม่มีสิ่งที่ไม่ควรทำ</h2>
+      <p class="lede">สร้างมาเพื่อคีย์บอร์ดจริงๆ: พิมพ์ กด Enter แล้วทำงานต่อ</p>
+    </div>
+    <ul class="features features--more" role="list">
+      <li><h3>พิมพ์แล้วอยู่ในปฏิทินเลย</h3><p>“ยิมทุกวันจันทร์และพฤหัสหนึ่งทุ่ม” หรือ “หมอฟันวันพฤหัสบ่ายสี่ที่ Noord”: วันที่ เวลา การทำซ้ำ และสถานที่จะสว่างขึ้นขณะที่คุณพิมพ์ และมีบรรทัดหนึ่งบอกชัดว่าจะบันทึกอะไร</p></li>
+      <li><h3>เพิ่มได้จากทุกที่</h3><p>Ctrl+Shift+Space เปิดแผงเล็กๆ ทับสิ่งที่คุณกำลังทำอยู่ พิมพ์กิจกรรม กด Enter แล้วคุณก็กลับไปทำงานต่อ</p></li>
+      <li><h3>ปฏิทินของคุณ รวมอยู่ในสัปดาห์เดียว</h3><p>Google และ Microsoft ลงชื่อเข้าใช้ผ่านเบราว์เซอร์ของคุณ ส่วน iCloud, Fastmail และ Nextcloud ใช้รหัสผ่านสำหรับแอป กิจกรรมใหม่ไปอยู่ในปฏิทินที่คุณเลือก การแก้ไขซิงค์กลับไป</p></li>
+      <li><h3>ใช้งานออฟไลน์ได้</h3><p>การเปลี่ยนแปลงที่ทำตอนไม่มีการเชื่อมต่อจะถูกส่งเมื่อคุณกลับมาออนไลน์ และสิ่งที่คุณพิมพ์จะไม่หายไป</p></li>
+      <li><h3>การแจ้งเตือนที่ตามทัน</h3><p>การแจ้งเตือนของ Windows พร้อม “ในอีก 15 นาที” เวลาและสถานที่ของกิจกรรม และเลื่อนเตือนได้ ไอคอนในเทรย์แสดงกิจกรรมถัดไปของคุณ แม้ปิดหน้าต่างอยู่</p></li>
+      <li><h3>สัปดาห์ เดือน และกำหนดการ</h3><p>แป้นพิมพ์ลัดสำหรับทุกอย่างที่คุณทำบ่อย เลิกทำได้ทุกการเปลี่ยนแปลง และนำเข้า/ส่งออก .ics</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="buy">
+  <div class="wrap">
+    <div class="center">
+      <h2>ใช้ฟรี Pro จ่ายครั้งเดียว</h2>
+      <p class="lede">ปฏิทินใช้ฟรี Pro ซื้อครั้งเดียวใช้ได้ตลอด ไม่มีสมัครสมาชิกรายเดือน</p>
+    </div>
+    <div class="plans">
+      <div class="card plan">
+        <div class="plan-head"><h3>Quickspan</h3><span class="price">€0</span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>เพิ่มด่วนด้วยการพิมพ์ พร้อมตัวอย่างแบบสด</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>ซิงค์ Google, Outlook, iCloud และ CalDAV</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>มุมมองสัปดาห์ เดือน และกำหนดการ</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>การแจ้งเตือน เทรย์ และเปิดอัตโนมัติเมื่อเข้าสู่ระบบ</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>เพิ่มด่วนจากแอปไหนก็ได้ ทดลองได้ห้าครั้ง</span></li>
+        </ul>
+        <span class="btn btn--sm btn-soon">เร็วๆ นี้บน Microsoft Store</span>
+      </div>
+      <div class="card plan plan--pro">
+        <div class="plan-head"><h3>Quickspan Pro</h3><span class="price">€4.99<small>ครั้งเดียว</small></span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>เพิ่มด่วนจากแอปไหนก็ได้ ไม่จำกัด</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>นำเข้า .ics</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>ทุกฟีเจอร์ที่จะมาถึง Pro ในภายหลัง</span></li>
+        </ul>
+        <span class="btn btn-soon">Pro เริ่มวางขายพร้อมการเปิดตัว</span>
+        <p class="sys">จ่ายครั้งเดียว คีย์ใบอนุญาตจะส่งไปทางอีเมล วางลงในแอป แล้ว Pro จะปลดล็อกบนทุก PC ที่คุณใช้ Quickspan</p>
+      </div>
+    </div>
+    <p class="note">ขายบนเว็บไซต์นี้ ไม่ผ่าน Store เงินเต็มจำนวนจึงไปถึงแอป คืนเงินภายใน 14 วัน ไม่ถามเหตุผล</p>
+  </div>
+</section>
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="center"><h2>คำถาม</h2></div>
+    <div class="faq">
+      <details><summary>ต้องมีบัญชีไหม</summary><p>ไม่ต้อง Quickspan ไม่มีบัญชีและไม่มีอะไรให้สมัคร กิจกรรมของคุณเองอยู่ในไฟล์ .ics มาตรฐานบน PC ของคุณ ส่วนปฏิทิน Google, Microsoft และ iCloud ลงชื่อเข้าใช้ด้วยบัญชีของตัวเองและอยู่ที่เดิม</p></details>
+      <details><summary>สิ่งที่ฉันพิมพ์ออกไปจากคอมพิวเตอร์ไหม</summary><p>ไม่ สิ่งที่คุณพิมพ์ประมวลผลบน PC ของคุณ ไม่มีอะไรส่งมาหาเรา และไม่มีการเก็บสถิติ</p></details>
+      <details><summary>Pro ปลดล็อกอะไร</summary><p>เพิ่มด่วนจากแอปไหนก็ได้หลังจากห้ากิจกรรมแรก และนำเข้า .ics อย่างอื่นฟรีทั้งหมด และฟีเจอร์ที่เพิ่มเข้า Pro ในภายหลังก็รวมอยู่ด้วย</p></details>
+      <details><summary>เป็นการสมัครสมาชิกไหม</summary><p>ไม่ Pro จ่ายครั้งเดียว ใช้ได้ตลอด คีย์ใช้ได้บนทุก PC ที่คุณใช้ Quickspan</p></details>
+      <details><summary>มีเวอร์ชัน Mac ไหม</summary><p>ยังไม่มี Windows มาก่อน แล้วบิลด์ Mac จะตามมา แอป Android อยู่บน Google Play</p></details>
+    </div>
   </div>
 </section>
 <section class="priv">
   <div class="wrap">
-    <h2>อีเมลของคุณ และไม่มีอะไรอื่น</h2>
-    <p>หน้านี้ไม่รันสคริปต์ ไม่ตั้งค่าคุกกี้ และไม่นับการเข้าชม อีเมลของคุณส่งถึงเราเท่านั้น และเราใช้เพื่อเขียนถึงคุณเรื่องเบต้าและรุ่นจริงของเดสก์ท็อปเท่านั้น เมื่อแอปเดสก์ท็อปออกแล้ว เราจะลบรายชื่อทิ้ง ไม่มีจดหมายข่าว และเราไม่แชร์หรือขายอีเมลของคุณ หากต้องการออกก่อน ให้ตอบกลับเรา หรือเขียนว่า “ลบฉันออก”</p>
+    <h2>ส่วนตัวตั้งแต่การออกแบบ</h2>
+    <p>ไม่มีบัญชี Quickspan ไม่มีโฆษณา ไม่มีการเก็บสถิติ ไม่ติดตาม รหัสผ่านเก็บในระบบป้องกันข้อมูลประจำตัวของ Windows เอง ไม่เคยอยู่ในไฟล์ธรรมดา หน้านี้ไม่รันสคริปต์และไม่ตั้งคุกกี้</p>
+  </div>
+</section>
+<section class="phone">
+  <div class="wrap">
+    <h2>Quickspan บนโทรศัพท์ของคุณ</h2>
+    <p>การเพิ่มด่วนแบบเดียวกันมีบน Android พร้อมวิดเจ็ต งาน และวันเกิด แอปเดสก์ท็อปและแอปโทรศัพท์ซื้อแยกกัน <a href="../../th/">Quickspan สำหรับ Android</a></p>
   </div>
 </section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <span><a href="../../th/">Quickspan สำหรับ Android</a> · <a href="../../en/">นโยบายความเป็นส่วนตัว</a> · <a href="../../terms/">ข้อกำหนดและการคืนเงิน</a></span>
+    <span><a href="../../th/">Quickspan สำหรับ Android</a> · <a href="../../en/">นโยบายความเป็นส่วนตัว</a> · <a href="../../terms/">ข้อกำหนดและการคืนเงิน</a> · <a href="mailto:support@quickspan.app?subject=Quickspan%20%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%20Windows">ฝ่ายสนับสนุน</a></span>
     <nav class="langs" aria-label="ภาษาอื่น"><a href="../../desktop/" lang="en" hreflang="en">English</a><a href="../../desktop/es/" lang="es" hreflang="es">Español</a><a href="../../desktop/nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../../desktop/fr/" lang="fr" hreflang="fr">Français</a><a href="../../desktop/de/" lang="de" hreflang="de">Deutsch</a><a href="../../desktop/it/" lang="it" hreflang="it">Italiano</a><a href="../../desktop/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../../desktop/pl/" lang="pl" hreflang="pl">Polski</a><a href="../../desktop/tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../../desktop/id/" lang="id" hreflang="id">Indonesia</a><a href="../../desktop/ja/" lang="ja" hreflang="ja">日本語</a><a href="../../desktop/ko/" lang="ko" hreflang="ko">한국어</a><a href="../../desktop/ru/" lang="ru" hreflang="ru">Русский</a><a href="../../desktop/sv/" lang="sv" hreflang="sv">Svenska</a><a href="../../desktop/cs/" lang="cs" hreflang="cs">Čeština</a><a href="../../desktop/uk/" lang="uk" hreflang="uk">Українська</a><a href="../../desktop/vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../../desktop/hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../../desktop/pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../../desktop/ar/" lang="ar" hreflang="ar">العربية</a><a href="../../desktop/he/" lang="he" hreflang="he">עברית</a><a href="../../desktop/zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../../desktop/zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
   </div>
 </footer>

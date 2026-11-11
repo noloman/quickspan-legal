@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
-<title>Quickspan per desktop: iscriviti alla lista d&#x27;attesa</title>
-<meta name="description" content="Il calendario privato in cui ti basta scrivere, in arrivo su Windows e Mac. Nessun account, nessuna pubblicità, nessun tracciamento. Si paga una volta sola. Iscriviti alla lista d&#x27;attesa via e-mail.">
+<title>Quickspan per Windows: il calendario privato in cui basta scrivere</title>
+<meta name="description" content="Scrivi «Pranzo con Sam domani alle 13» ed è già nel tuo calendario. Google, Outlook e iCloud in una sola settimana, aggiunta rapida da qualsiasi app, senza account, senza pubblicità, senza tracciamento. Gratis sul Microsoft Store; Pro una volta sola.">
 <link rel="canonical" href="https://quickspan.app/desktop/it/">
 <link rel="alternate" hreflang="en" href="https://quickspan.app/desktop/">
 <link rel="alternate" hreflang="es" href="https://quickspan.app/desktop/es/">
@@ -34,8 +34,8 @@
 <link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/desktop/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/desktop/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Quickspan per desktop: iscriviti alla lista d&#x27;attesa">
-<meta property="og:description" content="Il calendario privato in cui ti basta scrivere, in arrivo su Windows e Mac. Nessun account, nessuna pubblicità, nessun tracciamento. Si paga una volta sola. Iscriviti alla lista d&#x27;attesa via e-mail.">
+<meta property="og:title" content="Quickspan per Windows: il calendario privato in cui basta scrivere">
+<meta property="og:description" content="Scrivi «Pranzo con Sam domani alle 13» ed è già nel tuo calendario. Google, Outlook e iCloud in una sola settimana, aggiunta rapida da qualsiasi app, senza account, senza pubblicità, senza tracciamento. Gratis sul Microsoft Store; Pro una volta sola.">
 <meta property="og:url" content="https://quickspan.app/desktop/it/">
 <meta property="og:image" content="https://quickspan.app/og.png">
 <link rel="icon" href="../../icon.svg" type="image/svg+xml">
@@ -366,26 +366,37 @@ bdi { unicode-bidi: isolate; }
 }
 
 .dk{padding-block:clamp(36px,7vw,88px) clamp(28px,5vw,56px)}
-.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center}
 .dk .kicker{margin:0 0 14px}
 .dk h1{font-size:clamp(2.2rem,5.2vw,3.6rem);letter-spacing:-.035em;line-height:1.05;margin:0 0 18px;text-wrap:balance}
 .dk ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
 .dk li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
 .dk li svg{width:20px;height:20px;margin-top:3px;color:var(--coral)}
-.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+.dk .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.dk .sys{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);overflow:hidden}
 .shot svg{width:64px;height:64px;border-radius:16px;margin:0 auto 14px;display:block}
-.join{background:var(--bg-2);border-block:1px solid var(--line)}
-.join .wrap{padding-block:clamp(36px,6vw,64px);display:grid;gap:16px;justify-items:start}
-.join .wrap>*,.priv .wrap>*{max-width:62ch}
-.join h2,.priv h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
-.join p,.priv p{margin:0;color:var(--muted)}
-.join .wl-price{color:var(--fg);font-weight:600;font-size:1.08rem}
-.join .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.join .addr{font-size:.95rem}
-.join .addr a{color:var(--fg)}
-.priv .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.sec .center{text-align:center;display:grid;gap:12px;justify-items:center}
+.sec .center h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.03em;margin:0}
+.sec .center .lede{max-width:52ch}
+.kbd{font:600 .85em var(--mono,ui-monospace,monospace);background:var(--bg-2);border:1px solid var(--line-2);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:860px;width:100%;margin-inline:auto}
+.plan{padding:28px;display:grid;gap:18px;align-content:start}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.plan-head h3{margin:0;font-size:1.2rem}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plan li{display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:start}
+.plan li svg{width:16px;height:16px;margin-top:4px}
+.plan--pro{box-shadow:inset 0 0 0 2px var(--coral)}
+.note{color:var(--muted);font-size:.94rem;text-align:center;max-width:62ch;margin-inline:auto}
+.priv .wrap,.phone .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.priv .wrap>*,.phone .wrap>*{max-width:62ch}
+.priv h2,.phone h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
+.priv p,.phone p{margin:0;color:var(--muted)}
+.priv{background:var(--bg-2);border-block:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 .foot .langs{display:flex;flex-wrap:wrap;gap:6px 16px}
-@media (max-width:820px){.dk .wrap{grid-template-columns:1fr}}
+@media (max-width:820px){.dk .wrap,.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -393,41 +404,97 @@ bdi { unicode-bidi: isolate; }
 <section class="dk">
   <div class="wrap">
     <div>
-      <p class="kicker">In arrivo su Windows e Mac</p>
-      <h1>Il calendario privato in cui ti basta <span class="hl">scrivere,</span> ora sul tuo computer.</h1>
-      <p class="lede">Scrivi “Pranzo con Sam domani alle 13” ed è nel tuo calendario. Lo stesso inserimento rapido di Quickspan per Android, su uno schermo grande e con una vera tastiera.</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Scrivi gli eventi come li diresti, in 12 lingue.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Funziona offline. I tuoi eventi restano sul tuo computer, o nel calendario Google o Outlook che usi già; iCloud è previsto.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Nessun account, nessuna pubblicità, nessun tracciamento.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Gratis da usare. Pro è un acquisto una tantum, non un abbonamento.</span></li>
+      <p class="kicker">In arrivo sul Microsoft Store</p>
+      <h1>Il calendario privato in cui basta <span class="hl">scrivere,</span> ora sul tuo PC.</h1>
+      <p class="lede">Scrivi i tuoi impegni come li diresti e sono nel tuo calendario, interpretati sul tuo computer. I tuoi calendari Google, Outlook e iCloud si sincronizzano.</p>
+      <ul role="list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Scrivi gli eventi come li diresti, in 12 lingue, con un’anteprima in tempo reale prima di premere Invio.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Premi Ctrl+Maiusc+Spazio in qualsiasi app e aggiungi un evento senza uscirne.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Google Calendar, Microsoft 365, Outlook.com, iCloud e CalDAV in una sola settimana. Funziona offline.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Senza account, senza pubblicità, senza tracciamento. I tuoi eventi sono un semplice file .ics sul tuo PC.</span></li>
       </ul>
+      <div class="actions"><span class="btn btn-soon">Presto sul Microsoft Store</span><a class="btn btn--ghost" href="#buy">Scopri cosa aggiunge Pro</a></div>
+      <p class="sys">Gratis. Windows 10 (versione 1809) o successivo, 64 bit. Mac più avanti.</p>
     </div>
-    <!-- Screenshot placeholder: swap for the M0 window captures (light and dark, a real <img alt>) once the Mac check has run. -->
-    <div class="shot">
-      <div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>Gli screenshot arriveranno con la prima build.</p></div>
-    </div>
+    <div class="shot"><div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>Gli screenshot arrivano con la prima build per Windows.</p></div></div>
   </div>
 </section>
-<section class="join" id="join">
+<section class="sec" id="features">
   <div class="wrap">
-    <h2>Iscriviti alla lista d&#x27;attesa</h2>
-    <p>Mandaci una e-mail. Ti scriveremo solo per la beta e il rilascio della versione desktop, compreso il prezzo di lancio, e poi cancelleremo la lista.</p>
-    <p class="wl-price">Pro è previsto a 14,99 € una volta sola, con un prezzo di lancio di 9,99 € per chi è in lista d&#x27;attesa.</p>
-    <div class="actions"><a class="btn btn--coral" href="mailto:support@quickspan.app?subject=Lista%20d%27attesa%20di%20Quickspan%20per%20desktop&amp;body=Vi%20chiedo%20di%20aggiungermi%20alla%20lista%20d%27attesa%20di%20Quickspan%20per%20desktop.%0D%0A%0D%0AWindows%20o%20Mac%20%28facoltativo%29%3A%20">Iscriviti via e-mail</a></div>
-    <p class="addr">Oppure scrivi a <a href="mailto:support@quickspan.app?subject=Lista%20d%27attesa%20di%20Quickspan%20per%20desktop&amp;body=Vi%20chiedo%20di%20aggiungermi%20alla%20lista%20d%27attesa%20di%20Quickspan%20per%20desktop.%0D%0A%0D%0AWindows%20o%20Mac%20%28facoltativo%29%3A%20">support@quickspan.app</a></p>
+    <div class="center">
+      <h2>Tutto ciò che un calendario dovrebbe fare, niente di ciò che non dovrebbe.</h2>
+      <p class="lede">Fatto per una vera tastiera: scrivi, premi Invio, vai avanti.</p>
+    </div>
+    <ul class="features features--more" role="list">
+      <li><h3>Scrivilo ed è nel tuo calendario</h3><p>«Palestra ogni lun e gio alle 19» o «Dentista giovedì alle 16 a Noord»: data, ora, ripetizione e luogo si accendono mentre scrivi, e una riga mostra esattamente cosa verrà salvato.</p></li>
+      <li><h3>Aggiungi da ovunque</h3><p>Ctrl+Maiusc+Spazio apre un piccolo pannello sopra quello che stai facendo. Scrivi l’evento, premi Invio e sei di nuovo al tuo lavoro.</p></li>
+      <li><h3>I tuoi calendari, tutti in una settimana</h3><p>Google e Microsoft accedono con il tuo browser; iCloud, Fastmail e Nextcloud con una password per app. I nuovi eventi vanno nel calendario che scegli; le modifiche si sincronizzano indietro.</p></li>
+      <li><h3>Funziona offline</h3><p>Una modifica fatta senza connessione viene inviata quando torni online, e niente di ciò che hai scritto va perso.</p></li>
+      <li><h3>Promemoria che stanno al passo</h3><p>Notifiche di Windows con «Tra 15 minuti», l’ora e il luogo dell’evento, e la posticipazione. L’icona nell’area di notifica mostra il prossimo evento, anche con la finestra chiusa.</p></li>
+      <li><h3>Settimana, mese e agenda</h3><p>Scorciatoie da tastiera per tutto ciò che fai spesso, annulla per ogni modifica, e importazione ed esportazione .ics.</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="buy">
+  <div class="wrap">
+    <div class="center">
+      <h2>Gratis da usare. Pro, una volta sola.</h2>
+      <p class="lede">Il calendario è gratis. Pro è un solo acquisto per sempre, senza abbonamento.</p>
+    </div>
+    <div class="plans">
+      <div class="card plan">
+        <div class="plan-head"><h3>Quickspan</h3><span class="price">€0</span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Aggiunta rapida scrivendo, con anteprima</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Sincronizzazione con Google, Outlook, iCloud e CalDAV</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Viste settimana, mese e agenda</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Promemoria, area di notifica e avvio all’accesso</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Aggiunta rapida da qualsiasi app, cinque volte per provare</span></li>
+        </ul>
+        <span class="btn btn--sm btn-soon">Presto sul Microsoft Store</span>
+      </div>
+      <div class="card plan plan--pro">
+        <div class="plan-head"><h3>Quickspan Pro</h3><span class="price">€4.99<small>una tantum</small></span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Aggiunta rapida da qualsiasi app, senza limiti</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Importazione .ics</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Tutte le funzioni che arriveranno in Pro più avanti</span></li>
+        </ul>
+        <span class="btn btn-soon">Pro sarà in vendita con il rilascio</span>
+        <p class="sys">Paghi una volta; la chiave di licenza arriva via e-mail. Incollala nell’app e Pro è sbloccato su ogni PC in cui usi Quickspan.</p>
+      </div>
+    </div>
+    <p class="note">Venduto su questo sito, non tramite lo Store, così il prezzo intero va all’app. Rimborso entro 14 giorni, senza domande.</p>
+  </div>
+</section>
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="center"><h2>Domande</h2></div>
+    <div class="faq">
+      <details><summary>Serve un account?</summary><p>No. Quickspan non ha account e non c’è niente a cui registrarsi. I tuoi eventi vivono in un file .ics standard sul tuo PC; i tuoi calendari Google, Microsoft e iCloud accedono con i loro account e restano dove sono.</p></details>
+      <details><summary>Quello che scrivo esce dal mio computer?</summary><p>No. Quello che scrivi viene interpretato sul tuo PC. Non ci viene inviato nulla e non ci sono statistiche.</p></details>
+      <details><summary>Cosa sblocca Pro?</summary><p>L’aggiunta rapida da qualsiasi app oltre i primi cinque eventi, e l’importazione .ics. Tutto il resto è gratis, e le funzioni aggiunte a Pro più avanti sono incluse.</p></details>
+      <details><summary>È un abbonamento?</summary><p>No. Pro è un solo pagamento, per sempre. La chiave funziona su ogni PC in cui usi Quickspan.</p></details>
+      <details><summary>C’è una versione per Mac?</summary><p>Non ancora. Prima Windows; poi arriva una build per Mac. L’app per Android è su Google Play.</p></details>
+    </div>
   </div>
 </section>
 <section class="priv">
   <div class="wrap">
-    <h2>La tua e-mail, e nient&#x27;altro</h2>
-    <p>Questa pagina non esegue script, non imposta cookie e non conta le visite. La tua e-mail arriva solo a noi e la usiamo soltanto per scriverti della beta e del rilascio della versione desktop. Quando l&#x27;app desktop sarà uscita, cancelliamo la lista. Nessuna newsletter, e non la condividiamo né la vendiamo mai. Per uscire prima, rispondici o scrivi “rimuovimi”.</p>
+    <h2>Privato fin dal progetto</h2>
+    <p>Nessun account Quickspan, niente pubblicità, niente statistiche, niente tracciamento. Le password vanno nella protezione delle credenziali di Windows, mai in un file in chiaro. Questa pagina non esegue script e non imposta cookie.</p>
+  </div>
+</section>
+<section class="phone">
+  <div class="wrap">
+    <h2>Quickspan sul tuo telefono</h2>
+    <p>La stessa aggiunta rapida è su Android, con widget, attività e compleanni. L’app desktop e quella per telefono si acquistano separatamente. <a href="../../it/">Quickspan per Android</a></p>
   </div>
 </section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <span><a href="../../it/">Quickspan per Android</a> · <a href="../../en/">Informativa sulla privacy</a> · <a href="../../terms/">Termini e rimborsi</a></span>
+    <span><a href="../../it/">Quickspan per Android</a> · <a href="../../en/">Informativa sulla privacy</a> · <a href="../../terms/">Termini e rimborsi</a> · <a href="mailto:support@quickspan.app?subject=Quickspan%20per%20Windows">Assistenza</a></span>
     <nav class="langs" aria-label="Altre lingue"><a href="../../desktop/" lang="en" hreflang="en">English</a><a href="../../desktop/es/" lang="es" hreflang="es">Español</a><a href="../../desktop/nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../../desktop/fr/" lang="fr" hreflang="fr">Français</a><a href="../../desktop/de/" lang="de" hreflang="de">Deutsch</a><a href="../../desktop/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../../desktop/pl/" lang="pl" hreflang="pl">Polski</a><a href="../../desktop/tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../../desktop/id/" lang="id" hreflang="id">Indonesia</a><a href="../../desktop/ja/" lang="ja" hreflang="ja">日本語</a><a href="../../desktop/ko/" lang="ko" hreflang="ko">한국어</a><a href="../../desktop/ru/" lang="ru" hreflang="ru">Русский</a><a href="../../desktop/sv/" lang="sv" hreflang="sv">Svenska</a><a href="../../desktop/cs/" lang="cs" hreflang="cs">Čeština</a><a href="../../desktop/uk/" lang="uk" hreflang="uk">Українська</a><a href="../../desktop/vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../../desktop/hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../../desktop/th/" lang="th" hreflang="th">ไทย</a><a href="../../desktop/pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../../desktop/ar/" lang="ar" hreflang="ar">العربية</a><a href="../../desktop/he/" lang="he" hreflang="he">עברית</a><a href="../../desktop/zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../../desktop/zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
   </div>
 </footer>

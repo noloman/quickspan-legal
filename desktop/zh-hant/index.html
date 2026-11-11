@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-hant">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
-<title>Quickspan 桌面版：加入候補名單</title>
-<meta name="description" content="打字就能用的私密行事曆，即將登陸 Windows 和 Mac。不用帳號，沒有廣告，不做追蹤。一次買斷。透過電子郵件加入候補名單。">
+<title>Windows 版 Quickspan：打字就能用的私密行事曆</title>
+<meta name="description" content="輸入「明天下午 1 點和 Sam 吃午餐」，它就進了你的行事曆。Google、Outlook 和 iCloud 合在一週裡，從任何應用程式快速新增，不用帳號、沒有廣告、不追蹤。Microsoft Store 免費下載；Pro 一次買斷。">
 <link rel="canonical" href="https://quickspan.app/desktop/zh-hant/">
 <link rel="alternate" hreflang="en" href="https://quickspan.app/desktop/">
 <link rel="alternate" hreflang="es" href="https://quickspan.app/desktop/es/">
@@ -34,8 +34,8 @@
 <link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/desktop/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/desktop/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Quickspan 桌面版：加入候補名單">
-<meta property="og:description" content="打字就能用的私密行事曆，即將登陸 Windows 和 Mac。不用帳號，沒有廣告，不做追蹤。一次買斷。透過電子郵件加入候補名單。">
+<meta property="og:title" content="Windows 版 Quickspan：打字就能用的私密行事曆">
+<meta property="og:description" content="輸入「明天下午 1 點和 Sam 吃午餐」，它就進了你的行事曆。Google、Outlook 和 iCloud 合在一週裡，從任何應用程式快速新增，不用帳號、沒有廣告、不追蹤。Microsoft Store 免費下載；Pro 一次買斷。">
 <meta property="og:url" content="https://quickspan.app/desktop/zh-hant/">
 <meta property="og:image" content="https://quickspan.app/og.png">
 <link rel="icon" href="../../icon.svg" type="image/svg+xml">
@@ -366,26 +366,37 @@ bdi { unicode-bidi: isolate; }
 }
 
 .dk{padding-block:clamp(36px,7vw,88px) clamp(28px,5vw,56px)}
-.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center}
 .dk .kicker{margin:0 0 14px}
 .dk h1{font-size:clamp(2.2rem,5.2vw,3.6rem);letter-spacing:-.035em;line-height:1.05;margin:0 0 18px;text-wrap:balance}
 .dk ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
 .dk li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
 .dk li svg{width:20px;height:20px;margin-top:3px;color:var(--coral)}
-.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+.dk .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.dk .sys{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);overflow:hidden}
 .shot svg{width:64px;height:64px;border-radius:16px;margin:0 auto 14px;display:block}
-.join{background:var(--bg-2);border-block:1px solid var(--line)}
-.join .wrap{padding-block:clamp(36px,6vw,64px);display:grid;gap:16px;justify-items:start}
-.join .wrap>*,.priv .wrap>*{max-width:62ch}
-.join h2,.priv h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
-.join p,.priv p{margin:0;color:var(--muted)}
-.join .wl-price{color:var(--fg);font-weight:600;font-size:1.08rem}
-.join .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.join .addr{font-size:.95rem}
-.join .addr a{color:var(--fg)}
-.priv .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.sec .center{text-align:center;display:grid;gap:12px;justify-items:center}
+.sec .center h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.03em;margin:0}
+.sec .center .lede{max-width:52ch}
+.kbd{font:600 .85em var(--mono,ui-monospace,monospace);background:var(--bg-2);border:1px solid var(--line-2);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:860px;width:100%;margin-inline:auto}
+.plan{padding:28px;display:grid;gap:18px;align-content:start}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.plan-head h3{margin:0;font-size:1.2rem}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plan li{display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:start}
+.plan li svg{width:16px;height:16px;margin-top:4px}
+.plan--pro{box-shadow:inset 0 0 0 2px var(--coral)}
+.note{color:var(--muted);font-size:.94rem;text-align:center;max-width:62ch;margin-inline:auto}
+.priv .wrap,.phone .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.priv .wrap>*,.phone .wrap>*{max-width:62ch}
+.priv h2,.phone h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
+.priv p,.phone p{margin:0;color:var(--muted)}
+.priv{background:var(--bg-2);border-block:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 .foot .langs{display:flex;flex-wrap:wrap;gap:6px 16px}
-@media (max-width:820px){.dk .wrap{grid-template-columns:1fr}}
+@media (max-width:820px){.dk .wrap,.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -393,41 +404,97 @@ bdi { unicode-bidi: isolate; }
 <section class="dk">
   <div class="wrap">
     <div>
-      <p class="kicker">即將登陸 Windows 和 Mac</p>
-      <h1>這款私密行事曆，<span class="hl">打字就行，</span>現在來到你的電腦上。</h1>
-      <p class="lede">輸入「Lunch with Sam tomorrow 1pm」，它就出現在你的行事曆裡。和 Android 版 Quickspan 一樣的快速新增，換成大螢幕和真正的鍵盤。</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>想怎麼說就怎麼輸入行程，用12 種語言。</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>離線可用。你的行程保存在你的電腦上，或你已經在用的 Google 或 Outlook 行事曆裡，iCloud 已在規劃中。</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>不用帳號，沒有廣告，不做追蹤。</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>免費使用。Pro 是一次性買斷，不是訂閱。</span></li>
+      <p class="kicker">即將登陸 Microsoft Store</p>
+      <h1>只要<span class="hl">打字</span>的私密行事曆，現在也在你的 PC 上。</h1>
+      <p class="lede">像說話一樣寫下計畫，它們就進了行事曆，解析全在你的電腦上完成。你的 Google、Outlook 和 iCloud 行事曆也會同步進來。</p>
+      <ul role="list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>像說話一樣輸入行程，支援12 種語言，按下 Enter 前有即時預覽。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>在任何應用程式裡按 Ctrl+Shift+空白鍵，不離開它就能新增行程。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Google Calendar、Microsoft 365、Outlook.com、iCloud 和 CalDAV 行事曆合在一週裡。離線也能用。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>不用帳號、沒有廣告、不追蹤。你自己的行程就是 PC 上的一個普通 .ics 檔案。</span></li>
       </ul>
+      <div class="actions"><span class="btn btn-soon">即將登陸 Microsoft Store</span><a class="btn btn--ghost" href="#buy">看看 Pro 多了什麼</a></div>
+      <p class="sys">免費。Windows 10（版本 1809）或更新版本，64 位元。Mac 版稍後。</p>
     </div>
-    <!-- Screenshot placeholder: swap for the M0 window captures (light and dark, a real <img alt>) once the Mac check has run. -->
-    <div class="shot">
-      <div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>螢幕截圖將隨第一個版本一起提供。</p></div>
-    </div>
+    <div class="shot"><div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>螢幕截圖將隨第一個 Windows 版本一起發布。</p></div></div>
   </div>
 </section>
-<section class="join" id="join">
+<section class="sec" id="features">
   <div class="wrap">
-    <h2>加入候補名單</h2>
-    <p>寄一封電子郵件給我們。我們只會就桌面版測試版和正式版聯絡你，包括上市價，之後就刪除名單。</p>
-    <p class="wl-price">Pro 預計一次性收費 €14.99，候補名單上的使用者可享 €9.99 的上市價。</p>
-    <div class="actions"><a class="btn btn--coral" href="mailto:support@quickspan.app?subject=Quickspan%20%E6%A1%8C%E9%9D%A2%E7%89%88%E5%80%99%E8%A3%9C%E5%90%8D%E5%96%AE&amp;body=%E8%AB%8B%E6%8A%8A%E6%88%91%E5%8A%A0%E5%85%A5%20Quickspan%20%E6%A1%8C%E9%9D%A2%E7%89%88%E5%80%99%E8%A3%9C%E5%90%8D%E5%96%AE%E3%80%82%0D%0A%0D%0AWindows%20%E6%88%96%20Mac%EF%BC%88%E9%81%B8%E5%A1%AB%EF%BC%89%EF%BC%9A">以電子郵件加入</a></div>
-    <p class="addr">或者寫信到 <a href="mailto:support@quickspan.app?subject=Quickspan%20%E6%A1%8C%E9%9D%A2%E7%89%88%E5%80%99%E8%A3%9C%E5%90%8D%E5%96%AE&amp;body=%E8%AB%8B%E6%8A%8A%E6%88%91%E5%8A%A0%E5%85%A5%20Quickspan%20%E6%A1%8C%E9%9D%A2%E7%89%88%E5%80%99%E8%A3%9C%E5%90%8D%E5%96%AE%E3%80%82%0D%0A%0D%0AWindows%20%E6%88%96%20Mac%EF%BC%88%E9%81%B8%E5%A1%AB%EF%BC%89%EF%BC%9A">support@quickspan.app</a></p>
+    <div class="center">
+      <h2>行事曆該做的都有，不該做的都沒有。</h2>
+      <p class="lede">為真正的鍵盤而打造：輸入，按 Enter，繼續做事。</p>
+    </div>
+    <ul class="features features--more" role="list">
+      <li><h3>打下來，就在行事曆裡</h3><p>「每週一和週四晚上 7 點健身」或「週四下午 4 點在 Noord 看牙醫」：邊輸入，日期、時間、重複和地點邊亮起，一行文字準確顯示將要儲存的內容。</p></li>
+      <li><h3>從任何地方新增</h3><p>Ctrl+Shift+空白鍵會在你正在做的事情上方開啟一個小面板。輸入行程，按 Enter，就回到原處。</p></li>
+      <li><h3>你的行事曆，全在一週裡</h3><p>Google 和 Microsoft 用瀏覽器登入；iCloud、Fastmail 和 Nextcloud 用應用程式專用密碼。新行程進入你選擇的行事曆；修改會同步回去。</p></li>
+      <li><h3>離線也能用</h3><p>沒有網路時做的變更會在你重新上線後送出，輸入的內容一個都不會丟。</p></li>
+      <li><h3>跟得上的提醒</h3><p>Windows 通知顯示「15 分鐘後」以及行程的時間和地點，可以稍後提醒。系統匣圖示顯示你的下一個行程，視窗關著也一樣。</p></li>
+      <li><h3>週、月和行程列表</h3><p>常用操作都有鍵盤快速鍵，每次變更都能復原，支援 .ics 匯入和匯出。</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="buy">
+  <div class="wrap">
+    <div class="center">
+      <h2>免費使用。Pro，一次買斷。</h2>
+      <p class="lede">行事曆免費。Pro 一次購買永久使用，沒有訂閱。</p>
+    </div>
+    <div class="plans">
+      <div class="card plan">
+        <div class="plan-head"><h3>Quickspan</h3><span class="price">€0</span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>帶即時預覽的打字快速新增</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>同步 Google、Outlook、iCloud 和 CalDAV</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>週、月和行程列表檢視</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>提醒、系統匣和登入時啟動</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>從任何應用程式快速新增，可試用五次</span></li>
+        </ul>
+        <span class="btn btn--sm btn-soon">即將登陸 Microsoft Store</span>
+      </div>
+      <div class="card plan plan--pro">
+        <div class="plan-head"><h3>Quickspan Pro</h3><span class="price">€4.99<small>一次性</small></span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>從任何應用程式快速新增，不限次數</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>.ics 匯入</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>今後加入 Pro 的所有功能</span></li>
+        </ul>
+        <span class="btn btn-soon">Pro 隨正式發布開賣</span>
+        <p class="sys">付一次錢，授權金鑰透過電子郵件寄給你。貼到應用程式裡，你用 Quickspan 的每台 PC 上都會解鎖 Pro。</p>
+      </div>
+    </div>
+    <p class="note">在本站販售，不經過 Store，所以全部款項都歸應用程式。14 天退款，不問原因。</p>
+  </div>
+</section>
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="center"><h2>常見問題</h2></div>
+    <div class="faq">
+      <details><summary>需要帳號嗎？</summary><p>不需要。Quickspan 沒有帳號，也沒有任何需要註冊的東西。你自己的行程存在 PC 上的標準 .ics 檔案裡；你的 Google、Microsoft 和 iCloud 行事曆用它們各自的帳號登入，留在原處。</p></details>
+      <details><summary>我輸入的內容會離開我的電腦嗎？</summary><p>不會。你輸入的內容在 PC 上解析。不會向我們傳送任何東西，也沒有分析統計。</p></details>
+      <details><summary>Pro 解鎖什麼？</summary><p>前五筆之後繼續從任何應用程式快速新增，以及 .ics 匯入。其他一切免費，今後加入 Pro 的功能也包含在內。</p></details>
+      <details><summary>是訂閱嗎？</summary><p>不是。Pro 只付一次，永久有效。金鑰在你用 Quickspan 的每台 PC 上都能用。</p></details>
+      <details><summary>有 Mac 版嗎？</summary><p>還沒有。先出 Windows 版，Mac 版隨後。Android 應用程式在 Google Play 上。</p></details>
+    </div>
   </div>
 </section>
 <section class="priv">
   <div class="wrap">
-    <h2>只要你的電子郵件，別無其他</h2>
-    <p>本頁面不執行指令碼，不設定 Cookie，也不統計造訪。你的電子郵件只會寄給我們，我們只用它來聯絡你桌面版測試版和正式版的事。桌面應用程式發布後，我們會刪除名單。沒有電子報，也絕不分享或出售。想提前退出，直接回覆我們，或寫上「請刪除我」。</p>
+    <h2>從設計上就私密</h2>
+    <p>沒有 Quickspan 帳號、沒有廣告、沒有分析、不追蹤。密碼交給 Windows 內建的認證保護，絕不寫進明文檔案。本頁面不執行指令碼，也不設定 Cookie。</p>
+  </div>
+</section>
+<section class="phone">
+  <div class="wrap">
+    <h2>手機上的 Quickspan</h2>
+    <p>同樣的快速新增也在 Android 上，還有小工具、工作和生日。桌面應用程式和手機應用程式分別購買。 <a href="../../zh-hant/">Android 版 Quickspan</a></p>
   </div>
 </section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <span><a href="../../zh-hant/">Android 版 Quickspan</a> · <a href="../../en/">隱私權政策</a> · <a href="../../terms/">條款與退款</a></span>
+    <span><a href="../../zh-hant/">Android 版 Quickspan</a> · <a href="../../en/">隱私權政策</a> · <a href="../../terms/">條款與退款</a> · <a href="mailto:support@quickspan.app?subject=Windows%20%E7%89%88%20Quickspan">支援</a></span>
     <nav class="langs" aria-label="其他語言"><a href="../../desktop/" lang="en" hreflang="en">English</a><a href="../../desktop/es/" lang="es" hreflang="es">Español</a><a href="../../desktop/nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../../desktop/fr/" lang="fr" hreflang="fr">Français</a><a href="../../desktop/de/" lang="de" hreflang="de">Deutsch</a><a href="../../desktop/it/" lang="it" hreflang="it">Italiano</a><a href="../../desktop/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../../desktop/pl/" lang="pl" hreflang="pl">Polski</a><a href="../../desktop/tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../../desktop/id/" lang="id" hreflang="id">Indonesia</a><a href="../../desktop/ja/" lang="ja" hreflang="ja">日本語</a><a href="../../desktop/ko/" lang="ko" hreflang="ko">한국어</a><a href="../../desktop/ru/" lang="ru" hreflang="ru">Русский</a><a href="../../desktop/sv/" lang="sv" hreflang="sv">Svenska</a><a href="../../desktop/cs/" lang="cs" hreflang="cs">Čeština</a><a href="../../desktop/uk/" lang="uk" hreflang="uk">Українська</a><a href="../../desktop/vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../../desktop/hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../../desktop/th/" lang="th" hreflang="th">ไทย</a><a href="../../desktop/pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../../desktop/ar/" lang="ar" hreflang="ar">العربية</a><a href="../../desktop/he/" lang="he" hreflang="he">עברית</a><a href="../../desktop/zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a></nav>
   </div>
 </footer>

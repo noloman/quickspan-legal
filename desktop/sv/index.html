@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
-<title>Quickspan för dator: ställ dig i kön</title>
-<meta name="description" content="Den privata kalendern du bara skriver i, snart till Windows och Mac. Inget konto, inga annonser, ingen spårning. Du betalar en gång. Anmäl dig till väntelistan med e-post.">
+<title>Quickspan för Windows: den privata kalendern du bara skriver i</title>
+<meta name="description" content="Skriv ”Lunch med Sam i morgon kl. 13” så ligger det i din kalender. Google, Outlook och iCloud i en vecka, snabbinmatning från vilken app som helst, inget konto, inga annonser, ingen spårning. Gratis i Microsoft Store; Pro en gång.">
 <link rel="canonical" href="https://quickspan.app/desktop/sv/">
 <link rel="alternate" hreflang="en" href="https://quickspan.app/desktop/">
 <link rel="alternate" hreflang="es" href="https://quickspan.app/desktop/es/">
@@ -34,8 +34,8 @@
 <link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/desktop/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/desktop/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Quickspan för dator: ställ dig i kön">
-<meta property="og:description" content="Den privata kalendern du bara skriver i, snart till Windows och Mac. Inget konto, inga annonser, ingen spårning. Du betalar en gång. Anmäl dig till väntelistan med e-post.">
+<meta property="og:title" content="Quickspan för Windows: den privata kalendern du bara skriver i">
+<meta property="og:description" content="Skriv ”Lunch med Sam i morgon kl. 13” så ligger det i din kalender. Google, Outlook och iCloud i en vecka, snabbinmatning från vilken app som helst, inget konto, inga annonser, ingen spårning. Gratis i Microsoft Store; Pro en gång.">
 <meta property="og:url" content="https://quickspan.app/desktop/sv/">
 <meta property="og:image" content="https://quickspan.app/og.png">
 <link rel="icon" href="../../icon.svg" type="image/svg+xml">
@@ -366,26 +366,37 @@ bdi { unicode-bidi: isolate; }
 }
 
 .dk{padding-block:clamp(36px,7vw,88px) clamp(28px,5vw,56px)}
-.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center}
 .dk .kicker{margin:0 0 14px}
 .dk h1{font-size:clamp(2.2rem,5.2vw,3.6rem);letter-spacing:-.035em;line-height:1.05;margin:0 0 18px;text-wrap:balance}
 .dk ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
 .dk li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
 .dk li svg{width:20px;height:20px;margin-top:3px;color:var(--coral)}
-.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+.dk .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.dk .sys{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);overflow:hidden}
 .shot svg{width:64px;height:64px;border-radius:16px;margin:0 auto 14px;display:block}
-.join{background:var(--bg-2);border-block:1px solid var(--line)}
-.join .wrap{padding-block:clamp(36px,6vw,64px);display:grid;gap:16px;justify-items:start}
-.join .wrap>*,.priv .wrap>*{max-width:62ch}
-.join h2,.priv h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
-.join p,.priv p{margin:0;color:var(--muted)}
-.join .wl-price{color:var(--fg);font-weight:600;font-size:1.08rem}
-.join .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.join .addr{font-size:.95rem}
-.join .addr a{color:var(--fg)}
-.priv .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.sec .center{text-align:center;display:grid;gap:12px;justify-items:center}
+.sec .center h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.03em;margin:0}
+.sec .center .lede{max-width:52ch}
+.kbd{font:600 .85em var(--mono,ui-monospace,monospace);background:var(--bg-2);border:1px solid var(--line-2);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:860px;width:100%;margin-inline:auto}
+.plan{padding:28px;display:grid;gap:18px;align-content:start}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.plan-head h3{margin:0;font-size:1.2rem}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plan li{display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:start}
+.plan li svg{width:16px;height:16px;margin-top:4px}
+.plan--pro{box-shadow:inset 0 0 0 2px var(--coral)}
+.note{color:var(--muted);font-size:.94rem;text-align:center;max-width:62ch;margin-inline:auto}
+.priv .wrap,.phone .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.priv .wrap>*,.phone .wrap>*{max-width:62ch}
+.priv h2,.phone h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
+.priv p,.phone p{margin:0;color:var(--muted)}
+.priv{background:var(--bg-2);border-block:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 .foot .langs{display:flex;flex-wrap:wrap;gap:6px 16px}
-@media (max-width:820px){.dk .wrap{grid-template-columns:1fr}}
+@media (max-width:820px){.dk .wrap,.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -393,41 +404,97 @@ bdi { unicode-bidi: isolate; }
 <section class="dk">
   <div class="wrap">
     <div>
-      <p class="kicker">Kommer snart till Windows och Mac</p>
-      <h1>Den privata kalendern du bara <span class="hl">skriver i,</span> nu på din dator.</h1>
-      <p class="lede">Skriv “Lunch with Sam tomorrow 1pm” så ligger den i kalendern. Samma snabba inmatning som i Quickspan för Android, fast på en stor skärm och med riktigt tangentbord.</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Skriv in händelser som du skulle säga dem, på 12 språk.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Fungerar offline. Dina händelser stannar på din dator, eller i den Google- eller Outlook-kalender du redan använder, med iCloud planerat.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Inget konto, inga annonser, ingen spårning.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Gratis att använda. Pro är ett engångsköp, inte en prenumeration.</span></li>
+      <p class="kicker">Kommer till Microsoft Store</p>
+      <h1>Den privata kalendern du bara <span class="hl">skriver i,</span> nu på din PC.</h1>
+      <p class="lede">Skriv dina planer som du skulle säga dem så hamnar de i kalendern, tolkade på din dator. Dina Google-, Outlook- och iCloud-kalendrar synkas in.</p>
+      <ul role="list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Skriv händelser som du skulle säga dem, på 12 språk, med en förhandsvisning innan du trycker på Retur.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Tryck Ctrl+Skift+Blanksteg i vilken app som helst och lägg till en händelse utan att lämna den.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Google Calendar, Microsoft 365, Outlook.com, iCloud och CalDAV-kalendrar i en vecka. Fungerar offline.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Inget konto, inga annonser, ingen spårning. Dina egna händelser är en vanlig .ics-fil på din PC.</span></li>
       </ul>
+      <div class="actions"><span class="btn btn-soon">Kommer snart till Microsoft Store</span><a class="btn btn--ghost" href="#buy">Se vad Pro ger</a></div>
+      <p class="sys">Gratis. Windows 10 (version 1809) eller senare, 64-bitars. Mac senare.</p>
     </div>
-    <!-- Screenshot placeholder: swap for the M0 window captures (light and dark, a real <img alt>) once the Mac check has run. -->
-    <div class="shot">
-      <div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>Skärmbilder kommer med den första versionen.</p></div>
-    </div>
+    <div class="shot"><div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>Skärmbilder kommer med den första Windows-versionen.</p></div></div>
   </div>
 </section>
-<section class="join" id="join">
+<section class="sec" id="features">
   <div class="wrap">
-    <h2>Gå med i väntelistan</h2>
-    <p>Skicka ett mejl till oss. Vi skriver till dig bara om betan och lanseringen för dator, inklusive lanseringspriset, och raderar sedan listan.</p>
-    <p class="wl-price">Pro planeras kosta 14,99 € en gång, med ett lanseringspris på 9,99 € för den som står på väntelistan.</p>
-    <div class="actions"><a class="btn btn--coral" href="mailto:support@quickspan.app?subject=V%C3%A4ntelista%20f%C3%B6r%20Quickspan%20f%C3%B6r%20dator&amp;body=L%C3%A4gg%20g%C3%A4rna%20till%20mig%20p%C3%A5%20v%C3%A4ntelistan%20f%C3%B6r%20Quickspan%20f%C3%B6r%20dator.%0D%0A%0D%0AWindows%20eller%20Mac%20%28valfritt%29%3A%20">Anmäl dig via e-post</a></div>
-    <p class="addr">Eller skriv till <a href="mailto:support@quickspan.app?subject=V%C3%A4ntelista%20f%C3%B6r%20Quickspan%20f%C3%B6r%20dator&amp;body=L%C3%A4gg%20g%C3%A4rna%20till%20mig%20p%C3%A5%20v%C3%A4ntelistan%20f%C3%B6r%20Quickspan%20f%C3%B6r%20dator.%0D%0A%0D%0AWindows%20eller%20Mac%20%28valfritt%29%3A%20">support@quickspan.app</a></p>
+    <div class="center">
+      <h2>Allt en kalender ska göra, inget den inte ska.</h2>
+      <p class="lede">Byggd för ett riktigt tangentbord: skriv, tryck Retur, fortsätt.</p>
+    </div>
+    <ul class="features features--more" role="list">
+      <li><h3>Skriv det, så ligger det i kalendern</h3><p>”Gym varje mån och tors kl. 19” eller ”Tandläkare torsdag kl. 16 på Noord”: datum, tid, upprepning och plats tänds medan du skriver, och en rad visar exakt vad som sparas.</p></li>
+      <li><h3>Lägg till varifrån som helst</h3><p>Ctrl+Skift+Blanksteg öppnar en liten panel ovanpå det du håller på med. Skriv händelsen, tryck Retur, så är du tillbaka.</p></li>
+      <li><h3>Dina kalendrar, alla i en vecka</h3><p>Google och Microsoft loggar in med din webbläsare; iCloud, Fastmail och Nextcloud med ett applösenord. Nya händelser hamnar i den kalender du väljer; ändringar synkas tillbaka.</p></li>
+      <li><h3>Fungerar offline</h3><p>En ändring gjord utan uppkoppling skickas när du är online igen, och inget du skrev går förlorat.</p></li>
+      <li><h3>Påminnelser som hänger med</h3><p>Windows-aviseringar med ”Om 15 minuter”, händelsens tid och plats, och snooze. Ikonen i meddelandefältet visar din nästa händelse, även när fönstret är stängt.</p></li>
+      <li><h3>Vecka, månad och agenda</h3><p>Kortkommandon för allt du gör ofta, ångra för varje ändring, och .ics-import och -export.</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="buy">
+  <div class="wrap">
+    <div class="center">
+      <h2>Gratis att använda. Pro, en gång.</h2>
+      <p class="lede">Kalendern är gratis. Pro är ett köp för alltid, utan prenumeration.</p>
+    </div>
+    <div class="plans">
+      <div class="card plan">
+        <div class="plan-head"><h3>Quickspan</h3><span class="price">€0</span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Skriven snabbinmatning med förhandsvisning</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Synk med Google, Outlook, iCloud och CalDAV</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Vecko-, månads- och agendavy</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Påminnelser, meddelandefältet och start vid inloggning</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Snabbinmatning från vilken app som helst, fem gånger att prova</span></li>
+        </ul>
+        <span class="btn btn--sm btn-soon">Kommer snart till Microsoft Store</span>
+      </div>
+      <div class="card plan plan--pro">
+        <div class="plan-head"><h3>Quickspan Pro</h3><span class="price">€4.99<small>en gång</small></span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Snabbinmatning från vilken app som helst, utan gräns</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>.ics-import</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Varje funktion som kommer till Pro senare</span></li>
+        </ul>
+        <span class="btn btn-soon">Pro säljs från och med lanseringen</span>
+        <p class="sys">Betala en gång; din licensnyckel kommer med e-post. Klistra in den i appen så är Pro upplåst på varje PC du använder Quickspan på.</p>
+      </div>
+    </div>
+    <p class="note">Säljs på den här sidan, inte via Store, så hela priset går till appen. 14 dagars återbetalning, inga frågor.</p>
+  </div>
+</section>
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="center"><h2>Frågor</h2></div>
+    <div class="faq">
+      <details><summary>Behöver jag ett konto?</summary><p>Nej. Quickspan har inget konto och inget att registrera sig för. Dina egna händelser ligger i en vanlig .ics-fil på din PC; dina Google-, Microsoft- och iCloud-kalendrar loggar in med sina egna konton och stannar där de är.</p></details>
+      <details><summary>Lämnar det jag skriver min dator?</summary><p>Nej. Det du skriver tolkas på din PC. Inget skickas till oss, och det finns ingen analys.</p></details>
+      <details><summary>Vad låser Pro upp?</summary><p>Snabbinmatning från vilken app som helst utöver de första fem händelserna, och .ics-import. Allt annat är gratis, och funktioner som läggs till i Pro senare ingår.</p></details>
+      <details><summary>Är det en prenumeration?</summary><p>Nej. Pro är en betalning, för alltid. Nyckeln fungerar på varje PC du använder Quickspan på.</p></details>
+      <details><summary>Finns det en Mac-version?</summary><p>Inte än. Windows kommer först; en Mac-version följer. Android-appen finns på Google Play.</p></details>
+    </div>
   </div>
 </section>
 <section class="priv">
   <div class="wrap">
-    <h2>Din e-postadress, inget annat</h2>
-    <p>Den här sidan kör inga skript, sätter inga cookies och räknar inga besök. Din e-postadress går bara till oss, och vi använder den bara för att skriva till dig om betan och lanseringen för dator. När appen för dator är ute raderar vi listan. Inget nyhetsbrev, och vi delar eller säljer den aldrig. Vill du lämna listan tidigare, svara oss eller skriv “ta bort mig”.</p>
+    <h2>Privat från grunden</h2>
+    <p>Inget Quickspan-konto, inga annonser, ingen analys, ingen spårning. Lösenord går till Windows eget skydd för autentiseringsuppgifter, aldrig till en vanlig fil. Den här sidan kör inga skript och sätter inga kakor.</p>
+  </div>
+</section>
+<section class="phone">
+  <div class="wrap">
+    <h2>Quickspan i din telefon</h2>
+    <p>Samma snabbinmatning finns på Android, med widgetar, uppgifter och födelsedagar. Datorappen och telefonappen köps separat. <a href="../../sv/">Quickspan för Android</a></p>
   </div>
 </section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <span><a href="../../sv/">Quickspan för Android</a> · <a href="../../en/">Integritetspolicy</a> · <a href="../../terms/">Villkor och återbetalning</a></span>
+    <span><a href="../../sv/">Quickspan för Android</a> · <a href="../../en/">Integritetspolicy</a> · <a href="../../terms/">Villkor och återbetalning</a> · <a href="mailto:support@quickspan.app?subject=Quickspan%20f%C3%B6r%20Windows">Support</a></span>
     <nav class="langs" aria-label="Andra språk"><a href="../../desktop/" lang="en" hreflang="en">English</a><a href="../../desktop/es/" lang="es" hreflang="es">Español</a><a href="../../desktop/nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../../desktop/fr/" lang="fr" hreflang="fr">Français</a><a href="../../desktop/de/" lang="de" hreflang="de">Deutsch</a><a href="../../desktop/it/" lang="it" hreflang="it">Italiano</a><a href="../../desktop/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../../desktop/pl/" lang="pl" hreflang="pl">Polski</a><a href="../../desktop/tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../../desktop/id/" lang="id" hreflang="id">Indonesia</a><a href="../../desktop/ja/" lang="ja" hreflang="ja">日本語</a><a href="../../desktop/ko/" lang="ko" hreflang="ko">한국어</a><a href="../../desktop/ru/" lang="ru" hreflang="ru">Русский</a><a href="../../desktop/cs/" lang="cs" hreflang="cs">Čeština</a><a href="../../desktop/uk/" lang="uk" hreflang="uk">Українська</a><a href="../../desktop/vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../../desktop/hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../../desktop/th/" lang="th" hreflang="th">ไทย</a><a href="../../desktop/pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../../desktop/ar/" lang="ar" hreflang="ar">العربية</a><a href="../../desktop/he/" lang="he" hreflang="he">עברית</a><a href="../../desktop/zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../../desktop/zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
   </div>
 </footer>

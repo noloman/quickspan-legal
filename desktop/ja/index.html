@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0B0E13" media="(prefers-color-scheme: dark)">
-<title>Quickspan デスクトップ版：ウェイトリストに参加</title>
-<meta name="description" content="入力するだけのプライベートなカレンダーが、WindowsとMacに登場予定です。アカウント不要、広告なし、トラッキングなし。支払いは一度きり。メールでウェイトリストに参加できます。">
+<title>Windows 版 Quickspan：入力するだけのプライベートなカレンダー</title>
+<meta name="description" content="「明日13時にSamとランチ」と入力すれば、そのままカレンダーに。Google、Outlook、iCloud を1つの週に、どのアプリからでもクイック追加、アカウント不要、広告なし、トラッキングなし。Microsoft Store で無料、Pro は買い切り。">
 <link rel="canonical" href="https://quickspan.app/desktop/ja/">
 <link rel="alternate" hreflang="en" href="https://quickspan.app/desktop/">
 <link rel="alternate" hreflang="es" href="https://quickspan.app/desktop/es/">
@@ -34,8 +34,8 @@
 <link rel="alternate" hreflang="zh-Hant" href="https://quickspan.app/desktop/zh-hant/">
 <link rel="alternate" hreflang="x-default" href="https://quickspan.app/desktop/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Quickspan デスクトップ版：ウェイトリストに参加">
-<meta property="og:description" content="入力するだけのプライベートなカレンダーが、WindowsとMacに登場予定です。アカウント不要、広告なし、トラッキングなし。支払いは一度きり。メールでウェイトリストに参加できます。">
+<meta property="og:title" content="Windows 版 Quickspan：入力するだけのプライベートなカレンダー">
+<meta property="og:description" content="「明日13時にSamとランチ」と入力すれば、そのままカレンダーに。Google、Outlook、iCloud を1つの週に、どのアプリからでもクイック追加、アカウント不要、広告なし、トラッキングなし。Microsoft Store で無料、Pro は買い切り。">
 <meta property="og:url" content="https://quickspan.app/desktop/ja/">
 <meta property="og:image" content="https://quickspan.app/og.png">
 <link rel="icon" href="../../icon.svg" type="image/svg+xml">
@@ -366,26 +366,37 @@ bdi { unicode-bidi: isolate; }
 }
 
 .dk{padding-block:clamp(36px,7vw,88px) clamp(28px,5vw,56px)}
-.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.dk .wrap{display:grid;gap:clamp(28px,5vw,56px);grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center}
 .dk .kicker{margin:0 0 14px}
 .dk h1{font-size:clamp(2.2rem,5.2vw,3.6rem);letter-spacing:-.035em;line-height:1.05;margin:0 0 18px;text-wrap:balance}
 .dk ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
 .dk li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
 .dk li svg{width:20px;height:20px;margin-top:3px;color:var(--coral)}
-.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted)}
+.dk .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.dk .sys{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.shot{aspect-ratio:16/10;border-radius:var(--r-lg);background:var(--bg-2);box-shadow:inset 0 0 0 1px var(--line-2);display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);overflow:hidden}
 .shot svg{width:64px;height:64px;border-radius:16px;margin:0 auto 14px;display:block}
-.join{background:var(--bg-2);border-block:1px solid var(--line)}
-.join .wrap{padding-block:clamp(36px,6vw,64px);display:grid;gap:16px;justify-items:start}
-.join .wrap>*,.priv .wrap>*{max-width:62ch}
-.join h2,.priv h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
-.join p,.priv p{margin:0;color:var(--muted)}
-.join .wl-price{color:var(--fg);font-weight:600;font-size:1.08rem}
-.join .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.join .addr{font-size:.95rem}
-.join .addr a{color:var(--fg)}
-.priv .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.sec .center{text-align:center;display:grid;gap:12px;justify-items:center}
+.sec .center h2{font-size:clamp(1.7rem,3.6vw,2.4rem);letter-spacing:-.03em;margin:0}
+.sec .center .lede{max-width:52ch}
+.kbd{font:600 .85em var(--mono,ui-monospace,monospace);background:var(--bg-2);border:1px solid var(--line-2);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:860px;width:100%;margin-inline:auto}
+.plan{padding:28px;display:grid;gap:18px;align-content:start}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.plan-head h3{margin:0;font-size:1.2rem}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.plan li{display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:start}
+.plan li svg{width:16px;height:16px;margin-top:4px}
+.plan--pro{box-shadow:inset 0 0 0 2px var(--coral)}
+.note{color:var(--muted);font-size:.94rem;text-align:center;max-width:62ch;margin-inline:auto}
+.priv .wrap,.phone .wrap{padding-block:clamp(32px,5vw,56px);display:grid;gap:12px}
+.priv .wrap>*,.phone .wrap>*{max-width:62ch}
+.priv h2,.phone h2{font-size:clamp(1.6rem,3.4vw,2.2rem);letter-spacing:-.025em;margin:0}
+.priv p,.phone p{margin:0;color:var(--muted)}
+.priv{background:var(--bg-2);border-block:1px solid var(--line);margin-top:clamp(56px,8vw,96px)}
 .foot .langs{display:flex;flex-wrap:wrap;gap:6px 16px}
-@media (max-width:820px){.dk .wrap{grid-template-columns:1fr}}
+@media (max-width:820px){.dk .wrap,.plans{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -393,41 +404,97 @@ bdi { unicode-bidi: isolate; }
 <section class="dk">
   <div class="wrap">
     <div>
-      <p class="kicker">WindowsとMacに登場予定</p>
-      <h1><span class="hl">入力するだけの、</span>プライベートなカレンダーが、パソコンで。</h1>
-      <p class="lede">「Lunch with Sam tomorrow 1pm」と入力すれば、もうカレンダーに入っています。Quickspan for Androidと同じクイック追加を、大きな画面と本物のキーボードで。</p>
-      <ul>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>予定は、話すとおりに、12言語で入力できます。</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>オフラインで使えます。予定はお使いのパソコン内、またはすでに使っているGoogleかOutlookのカレンダーに保存されます。iCloudは予定しています。</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>アカウント不要、広告なし、トラッキングなし。</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>無料で使えます。Proは買い切りで、サブスクリプションではありません。</span></li>
+      <p class="kicker">まもなく Microsoft Store に登場</p>
+      <h1>あとは<span class="hl">入力するだけ</span>のプライベートなカレンダーが、PC に。</h1>
+      <p class="lede">予定を話し言葉のまま書けば、そのままカレンダーに。解析はあなたのコンピューター上で行われます。Google、Outlook、iCloud のカレンダーも同期されます。</p>
+      <ul role="list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>予定を話すように12言語で入力。Enter を押す前にライブプレビューで確認できます。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>どのアプリでも Ctrl+Shift+Space を押せば、そのアプリを離れずに予定を追加できます。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Google Calendar、Microsoft 365、Outlook.com、iCloud、CalDAV のカレンダーを1つの週に。オフラインでも動きます。</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>アカウント不要、広告なし、トラッキングなし。自分の予定は PC 上のただの .ics ファイルです。</span></li>
       </ul>
+      <div class="actions"><span class="btn btn-soon">まもなく Microsoft Store に登場</span><a class="btn btn--ghost" href="#buy">Pro で増えること</a></div>
+      <p class="sys">無料。Windows 10（バージョン 1809）以降、64 ビット。Mac は後日。</p>
     </div>
-    <!-- Screenshot placeholder: swap for the M0 window captures (light and dark, a real <img alt>) once the Mac check has run. -->
-    <div class="shot">
-      <div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>スクリーンショットは最初のビルドとともに公開します。</p></div>
-    </div>
+    <div class="shot"><div><svg viewBox="18 18 72 72" aria-hidden="true"><rect width="108" height="108" style="fill:var(--sun)"/><path d="M37,33h34a8,8 0 0 1 8,8v30a8,8 0 0 1 -8,8h-34a8,8 0 0 1 -8,-8v-30a8,8 0 0 1 8,-8z" style="fill:var(--icon-sheet)"/><path d="M37,33h34a8,8 0 0 1 8,8v5h-50v-5a8,8 0 0 1 8,-8z" style="fill:var(--icon-ink)"/><path d="M39.5,54h29a4.5,4.5 0 0 1 0,9h-29a4.5,4.5 0 0 1 0,-9z" style="fill:var(--coral)"/></svg><p>スクリーンショットは最初の Windows ビルドと一緒に公開します。</p></div></div>
   </div>
 </section>
-<section class="join" id="join">
+<section class="sec" id="features">
   <div class="wrap">
-    <h2>ウェイトリストに参加</h2>
-    <p>メールを1通お送りください。ご連絡するのはデスクトップ版のベータ版と正式版についてのみで、ローンチ価格のお知らせも含みます。その後、リストは削除します。</p>
-    <p class="wl-price">Proは一度きり€14.99を予定しています。ウェイトリストの方には、ローンチ価格€9.99でご提供します。</p>
-    <div class="actions"><a class="btn btn--coral" href="mailto:support@quickspan.app?subject=Quickspan%20%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E7%89%88%20%E3%82%A6%E3%82%A7%E3%82%A4%E3%83%88%E3%83%AA%E3%82%B9%E3%83%88&amp;body=Quickspan%20%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E7%89%88%E3%81%AE%E3%82%A6%E3%82%A7%E3%82%A4%E3%83%88%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AB%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0D%0A%0D%0AWindows%E3%81%BE%E3%81%9F%E3%81%AFMac%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A">メールで参加</a></div>
-    <p class="addr">メールの宛先： <a href="mailto:support@quickspan.app?subject=Quickspan%20%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E7%89%88%20%E3%82%A6%E3%82%A7%E3%82%A4%E3%83%88%E3%83%AA%E3%82%B9%E3%83%88&amp;body=Quickspan%20%E3%83%87%E3%82%B9%E3%82%AF%E3%83%88%E3%83%83%E3%83%97%E7%89%88%E3%81%AE%E3%82%A6%E3%82%A7%E3%82%A4%E3%83%88%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AB%E8%BF%BD%E5%8A%A0%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82%0D%0A%0D%0AWindows%E3%81%BE%E3%81%9F%E3%81%AFMac%EF%BC%88%E4%BB%BB%E6%84%8F%EF%BC%89%EF%BC%9A">support@quickspan.app</a></p>
+    <div class="center">
+      <h2>カレンダーがやるべきことはすべて、やるべきでないことは何も。</h2>
+      <p class="lede">本物のキーボードのために：入力して、Enter を押して、作業に戻る。</p>
+    </div>
+    <ul class="features features--more" role="list">
+      <li><h3>入力すれば、カレンダーに</h3><p>「毎週月・木 19時にジム」や「木曜 16時に Noord で歯医者」：入力中に日付、時刻、繰り返し、場所が光り、保存される内容が1行で正確に表示されます。</p></li>
+      <li><h3>どこからでも追加</h3><p>Ctrl+Shift+Space で、作業中の画面の上に小さなパネルが開きます。予定を入力して Enter を押せば、元の作業に戻れます。</p></li>
+      <li><h3>すべてのカレンダーを1つの週に</h3><p>Google と Microsoft はブラウザーでサインイン、iCloud、Fastmail、Nextcloud はアプリパスワードで。新しい予定は選んだカレンダーに入り、編集は同期して戻ります。</p></li>
+      <li><h3>オフラインでも動く</h3><p>接続のないときの変更はオンラインに戻ったときに送信され、入力した内容は失われません。</p></li>
+      <li><h3>遅れないリマインダー</h3><p>「15分後」と予定の時刻と場所を示す Windows の通知、スヌーズ付き。トレイアイコンは、ウィンドウを閉じていても次の予定を表示します。</p></li>
+      <li><h3>週、月、アジェンダ</h3><p>よく使う操作にはすべてキーボードショートカット、すべての変更に元に戻す、.ics のインポートとエクスポート。</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="buy">
+  <div class="wrap">
+    <div class="center">
+      <h2>無料で使える。Pro は買い切り。</h2>
+      <p class="lede">カレンダーは無料です。Pro は一度の購入で永久に使え、サブスクリプションはありません。</p>
+    </div>
+    <div class="plans">
+      <div class="card plan">
+        <div class="plan-head"><h3>Quickspan</h3><span class="price">€0</span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>ライブプレビュー付きの入力によるクイック追加</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>Google、Outlook、iCloud、CalDAV との同期</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>週、月、アジェンダ表示</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>リマインダー、トレイ、ログイン時の起動</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>どのアプリからでもクイック追加、お試しで5回</span></li>
+        </ul>
+        <span class="btn btn--sm btn-soon">まもなく Microsoft Store に登場</span>
+      </div>
+      <div class="card plan plan--pro">
+        <div class="plan-head"><h3>Quickspan Pro</h3><span class="price">€4.99<small>買い切り</small></span></div>
+        <ul role="list">
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>どのアプリからでもクイック追加、回数無制限</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>.ics のインポート</span></li>
+          <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" style="fill:none;stroke:var(--coral);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"/></svg><span>今後 Pro に加わるすべての機能</span></li>
+        </ul>
+        <span class="btn btn-soon">Pro はリリースと同時に発売</span>
+        <p class="sys">支払いは一度だけ。ライセンスキーがメールで届きます。アプリに貼り付ければ、Quickspan を使うすべての PC で Pro が有効になります。</p>
+      </div>
+    </div>
+    <p class="note">Store ではなくこのサイトで販売しているので、代金はそのままアプリに届きます。14日間返金、理由は問いません。</p>
+  </div>
+</section>
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="center"><h2>よくある質問</h2></div>
+    <div class="faq">
+      <details><summary>アカウントは必要ですか？</summary><p>いいえ。Quickspan にアカウントはなく、登録するものもありません。自分の予定は PC 上の標準的な .ics ファイルに保存され、Google、Microsoft、iCloud のカレンダーはそれぞれのアカウントでサインインし、元の場所に残ります。</p></details>
+      <details><summary>入力した内容はコンピューターの外に出ますか？</summary><p>いいえ。入力内容は PC 上で解析されます。私たちに送られるものはなく、アナリティクスもありません。</p></details>
+      <details><summary>Pro で何が使えるようになりますか？</summary><p>最初の5件を超えてどのアプリからでもクイック追加できることと、.ics のインポートです。それ以外はすべて無料で、今後 Pro に加わる機能も含まれます。</p></details>
+      <details><summary>サブスクリプションですか？</summary><p>いいえ。Pro は一度の支払いで永久に使えます。キーは Quickspan を使うすべての PC で有効です。</p></details>
+      <details><summary>Mac 版はありますか？</summary><p>まだありません。まず Windows、その後に Mac ビルドが続きます。Android アプリは Google Play にあります。</p></details>
+    </div>
   </div>
 </section>
 <section class="priv">
   <div class="wrap">
-    <h2>メールアドレスだけ</h2>
-    <p>このページはスクリプトを実行せず、Cookieも設定せず、訪問数も数えません。メールアドレスは私たちにだけ届き、デスクトップ版のベータ版と正式版についてご連絡するためだけに使います。デスクトップアプリの公開後、リストを削除します。ニュースレターはなく、共有や販売も一切しません。途中でやめたいときは、返信するか「削除してください」とお書きください。</p>
+    <h2>設計からプライベート</h2>
+    <p>Quickspan のアカウントなし、広告なし、アナリティクスなし、トラッキングなし。パスワードは Windows 自身の資格情報保護に保存され、平文のファイルには入りません。このページはスクリプトを実行せず、Cookie も設定しません。</p>
+  </div>
+</section>
+<section class="phone">
+  <div class="wrap">
+    <h2>スマホでも Quickspan</h2>
+    <p>同じクイック追加が Android にもあり、ウィジェット、タスク、誕生日に対応しています。デスクトップアプリとスマホアプリは別々に購入します。 <a href="../../ja/">Android 版 Quickspan</a></p>
   </div>
 </section>
 </main>
 <footer class="foot">
   <div class="wrap">
-    <span><a href="../../ja/">Quickspan for Android</a> · <a href="../../en/">プライバシーポリシー</a> · <a href="../../terms/">利用規約と返金</a></span>
+    <span><a href="../../ja/">Android 版 Quickspan</a> · <a href="../../en/">プライバシーポリシー</a> · <a href="../../terms/">利用規約と返金</a> · <a href="mailto:support@quickspan.app?subject=Windows%20%E7%89%88%20Quickspan">サポート</a></span>
     <nav class="langs" aria-label="他の言語"><a href="../../desktop/" lang="en" hreflang="en">English</a><a href="../../desktop/es/" lang="es" hreflang="es">Español</a><a href="../../desktop/nl/" lang="nl" hreflang="nl">Nederlands</a><a href="../../desktop/fr/" lang="fr" hreflang="fr">Français</a><a href="../../desktop/de/" lang="de" hreflang="de">Deutsch</a><a href="../../desktop/it/" lang="it" hreflang="it">Italiano</a><a href="../../desktop/pt/" lang="pt-BR" hreflang="pt-BR">Português</a><a href="../../desktop/pl/" lang="pl" hreflang="pl">Polski</a><a href="../../desktop/tr/" lang="tr" hreflang="tr">Türkçe</a><a href="../../desktop/id/" lang="id" hreflang="id">Indonesia</a><a href="../../desktop/ko/" lang="ko" hreflang="ko">한국어</a><a href="../../desktop/ru/" lang="ru" hreflang="ru">Русский</a><a href="../../desktop/sv/" lang="sv" hreflang="sv">Svenska</a><a href="../../desktop/cs/" lang="cs" hreflang="cs">Čeština</a><a href="../../desktop/uk/" lang="uk" hreflang="uk">Українська</a><a href="../../desktop/vi/" lang="vi" hreflang="vi">Tiếng Việt</a><a href="../../desktop/hi/" lang="hi" hreflang="hi">हिन्दी</a><a href="../../desktop/th/" lang="th" hreflang="th">ไทย</a><a href="../../desktop/pt-pt/" lang="pt-PT" hreflang="pt-PT">Português (Portugal)</a><a href="../../desktop/ar/" lang="ar" hreflang="ar">العربية</a><a href="../../desktop/he/" lang="he" hreflang="he">עברית</a><a href="../../desktop/zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../../desktop/zh-hant/" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a></nav>
   </div>
 </footer>
