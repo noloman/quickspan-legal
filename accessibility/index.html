@@ -359,6 +359,8 @@ bdi { unicode-bidi: isolate; }
 <h1>Accessibility statement: Quickspan</h1>
 <p>Last updated: <strong>27 October 2026</strong>. App version:
 <strong>0.2.0</strong>.</p>
+<p>This statement covers the <strong>Android app</strong>, except the
+section “Quickspan for desktop (Windows)” near the end.</p>
 <p>We want Quickspan to work for as many people as possible, including
 people who use a screen reader, a keyboard or a switch, people who need
 large text or strong contrast, and people who cannot drag or pinch. We
@@ -524,6 +526,42 @@ tested with Voice Access. If you can help, please write to us.</li>
 <li><strong>Calendars from your phone.</strong> Calendars from your
 Google, Exchange or other accounts are shown by Quickspan, but their
 names and colours come from those accounts.</li>
+</ul>
+<h2 id="quickspan-for-desktop-windows">Quickspan for desktop
+(Windows)</h2>
+<p>This section says where the Windows app stands so that nobody has to
+guess. It was added on 18 November 2026 and describes version 1.0.</p>
+<ul>
+<li><strong>Screen readers do not work yet.</strong> We tested the
+Windows app in a virtual machine with Windows UI Automation, which is
+what Narrator reads. It sees the window and one empty area, but none of
+the buttons, the week grid or the quick-entry field, and the tray menu
+shows as one block with no items. The desktop toolkit we use only
+reaches Windows screen readers through Java Access Bridge, which version
+1.0 does not include. Java Access Bridge does not help Narrator, so
+Narrator will still not work after 1.0.1. We have not tested NVDA or
+JAWS. We plan to try adding Java Access Bridge in version 1.0.1 for NVDA
+and JAWS; if it does not work in the Store package, it moves to a later
+version. If you use a screen reader, please use the Android app for
+now.</li>
+<li><strong>Keyboard.</strong> The app has keyboard shortcuts: F1 shows
+them, Ctrl+K moves to the quick-add bar, and Ctrl+Shift+Space opens a
+small quick-add panel over any app (five free uses, then Pro; it is off
+when another app already holds that key). We have not tested the app
+with the keyboard alone. In our screen-reader test, the Down key did not
+highlight any line of the tray menu.</li>
+<li><strong>Text size.</strong> The app reads the Text size slider once,
+when it starts: Settings &gt; Accessibility on Windows 11, Settings &gt;
+Ease of Access &gt; Display &gt; “Make text bigger” on Windows 10.
+Change the slider and restart the app to see it.</li>
+<li><strong>Light and dark.</strong> The app follows the Windows light
+or dark setting. We have not yet checked a switch while the app is
+running.</li>
+<li><strong>Not tested by people.</strong> No people with disabilities
+have tested the desktop app, and we have had no outside audit.</li>
+<li><strong>Tell us about a problem.</strong> Write to
+<strong>support@quickspan.app</strong> and say your Windows version and
+which tools you use.</li>
 </ul>
 <h2 id="tell-us-about-a-problem">Tell us about a problem</h2>
 <p>If something does not work for you, or you need Quickspan in another

@@ -359,6 +359,8 @@ bdi { unicode-bidi: isolate; }
 <h1>Declaración de accesibilidad: Quickspan</h1>
 <p>Última actualización: <strong>27 de octubre de 2026</strong>. Versión
 de la app: <strong>0.2.0</strong>.</p>
+<p>Esta declaración cubre la <strong>app de Android</strong>, salvo la
+sección «Quickspan para escritorio (Windows)» hacia el final.</p>
 <p>Queremos que Quickspan funcione para el mayor número de personas
 posible: quien usa lector de pantalla, teclado o pulsadores, quien
 necesita texto grande o más contraste, y quien no puede arrastrar ni
@@ -540,6 +542,47 @@ no hemos probado con Voice Access. Si puedes ayudarnos, escríbenos.</li>
 <li><strong>Calendarios del teléfono.</strong> Quickspan muestra los
 calendarios de tus cuentas de Google, Exchange u otras, pero sus nombres
 y colores vienen de esas cuentas.</li>
+</ul>
+<h2 id="quickspan-para-escritorio-windows">Quickspan para escritorio
+(Windows)</h2>
+<p>Esta sección cuenta cómo está la app de Windows, para que nadie tenga
+que adivinarlo. Se añadió el 18 de noviembre de 2026 y describe la
+versión 1.0.</p>
+<ul>
+<li><strong>Los lectores de pantalla aún no funcionan.</strong> Probamos
+la app de Windows en una máquina virtual con Windows UI Automation, que
+es lo que lee Narrador. Ve la ventana y un área vacía, pero no ve
+ninguno de los botones, ni la cuadrícula de la semana ni el campo de
+entrada rápida, y el menú de la bandeja aparece como un bloque sin
+elementos. La biblioteca de escritorio que usamos solo llega a los
+lectores de pantalla de Windows mediante Java Access Bridge, que la
+versión 1.0 no incluye. Java Access Bridge no sirve para Narrador, así
+que Narrador seguirá sin funcionar después de la 1.0.1. No hemos probado
+NVDA ni JAWS. Pensamos intentar añadir Java Access Bridge en la versión
+1.0.1 para NVDA y JAWS; si no funciona en el paquete de la Store, pasa a
+una versión posterior. Si usas un lector de pantalla, usa por ahora la
+app de Android.</li>
+<li><strong>Teclado.</strong> La app tiene atajos de teclado: F1 los
+muestra, Ctrl+K pasa a la barra de añadir rápido y Ctrl+Mayús+Espacio
+abre un pequeño panel de añadir rápido sobre cualquier app (cinco usos
+gratis, luego Pro; no está activo si otra app ya usa esa tecla). No
+hemos probado la app solo con el teclado. En nuestra prueba con lector
+de pantalla, la tecla Abajo no resaltó ninguna línea del menú de la
+bandeja.</li>
+<li><strong>Tamaño del texto.</strong> La app lee el control de tamaño
+del texto una vez, al iniciarse: Configuración &gt; Accesibilidad &gt;
+«Tamaño del texto» en Windows 11, Configuración &gt; Accesibilidad &gt;
+Pantalla &gt; «Agrandar el texto» en Windows 10. Cambia el control y
+reinicia la app para verlo.</li>
+<li><strong>Claro y oscuro.</strong> La app sigue el ajuste claro u
+oscuro de Windows. Aún no hemos comprobado un cambio mientras la app se
+ejecuta.</li>
+<li><strong>Sin pruebas con personas.</strong> Ninguna persona con
+discapacidad ha probado la app de escritorio y no ha pasado una
+auditoría externa.</li>
+<li><strong>Avísanos de un problema.</strong> Escribe a
+<strong>support@quickspan.app</strong> e indica tu versión de Windows y
+qué herramientas usas.</li>
 </ul>
 <h2 id="avísanos-de-un-problema">Avísanos de un problema</h2>
 <p>Si algo no te funciona, o necesitas Quickspan de otra manera, escribe
