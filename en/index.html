@@ -361,18 +361,20 @@ Quickspan Calendar</h1>
 <p><strong>Last updated:</strong> 2026-11-11</p>
 <p>Quickspan Calendar (“the app”) is a calendar app for Android phones,
 tablets and foldables. This policy explains what the app does with your
-information. The short version: <strong>the app keeps your events and
-settings on your device and never uploads them. It has no accounts, no
-servers of its own, no analytics, no advertising and no tracking. Its
-two online features, weather and subscribed calendars, are off until you
-use them: weather sends only the position of one place you choose (see
-“Weather”), and a calendar link you add is downloaded from its own
-server (see “Subscribed calendars”). After a crash, the app asks whether
-to send a crash report, and sends one only if you say yes (see “Crash
-reports”).</strong> The accounts and files you choose to use can copy
-some of that data elsewhere; the sections “Device backups”, “Your own
-backup files”, “Your watch” and “Your accounts and other apps” say
-exactly when.</p>
+information. It also covers Quickspan for desktop, the Windows app,
+which works differently with the calendar accounts you connect: its own
+section, “Quickspan for desktop (Windows)”, says what it does. The short
+version: <strong>the app keeps your events and settings on your device
+and never uploads them. It has no accounts, no servers of its own, no
+analytics, no advertising and no tracking. Its two online features,
+weather and subscribed calendars, are off until you use them: weather
+sends only the position of one place you choose (see “Weather”), and a
+calendar link you add is downloaded from its own server (see “Subscribed
+calendars”). After a crash, the app asks whether to send a crash report,
+and sends one only if you say yes (see “Crash reports”).</strong> The
+accounts and files you choose to use can copy some of that data
+elsewhere; the sections “Device backups”, “Your own backup files”, “Your
+watch” and “Your accounts and other apps” say exactly when.</p>
 <h2 id="who-is-responsible">Who is responsible</h2>
 <p>Manuel Lorenzo<br />
 support@quickspan.app<br />
@@ -575,10 +577,16 @@ turn it on from the “Search places online” row under the location field,
 or in Settings &gt; Calendar &gt; Your places, and you confirm a dialog
 that explains it. From then on, the text you type as a location (from
 three characters, once you pause typing) is passed to your phone’s own
-place search (the Android Geocoder), which shows the places it finds. On
-most phones that search is served by Google Play services, under
-Google’s privacy policy. Quickspan makes no request of its own for this,
-and the text does not go to us.</li>
+place search (the Android Geocoder), which shows the places it finds. In
+quick add, the same applies to the place you type in the sentence (for
+example “kapsalon ege” in “hairdresser today 13.30 at kapsalon ege”):
+only that place, not the rest of the sentence, and only when it is not
+one of your own places. With the setting off, quick add can offer “Find
+this place online”, which opens the same dialog first. Calls, links,
+rooms and coordinates are never sent. On most phones that search is
+served by Google Play services, under Google’s privacy policy. Quickspan
+makes no request of its own for this, and the text does not go to
+us.</li>
 <li><strong>What is not sent:</strong> your events, their titles or
 notes, your account, and where you are. The app does not use GPS or your
 phone’s location permission for this.</li>
@@ -735,6 +743,75 @@ yours to delete there.</p>
 from anyone, including children, except the optional weather lookup,
 calendar link downloads and crash reports described above (and for
 those, only what is described there).</p>
+<h2 id="quickspan-for-desktop-windows">Quickspan for desktop
+(Windows)</h2>
+<p>Quickspan for desktop is a separate app for Windows computers. It
+works like the phone app: no account of ours, no servers of its own, no
+analytics, no advertising and no tracking, and quick add works out what
+you type on your computer. It has no crash reports, weather or place
+search.</p>
+<p><strong>Your own events.</strong> Events you create in Quickspan’s
+own calendar are kept as a standard iCalendar file
+(<code>calendar.ics</code>) in the app’s folder in your Windows user
+profile (<code>%APPDATA%\Quickspan</code>), with its settings. They are
+not sent anywhere. Uninstalling the app can delete this folder (on
+Windows 11 it normally stays, so a reinstall finds your events), so
+export your calendar first if you want to keep it; if the folder is
+still there after uninstalling, delete it to remove everything the app
+kept, including the account copies, sign-ins and licence below.</p>
+<p><strong>Calendar accounts (optional).</strong> You can connect Google
+Calendar, Microsoft 365 or Outlook.com, and calendars that use CalDAV
+(such as iCloud, Fastmail or Nextcloud). For Google and Microsoft you
+sign in in your web browser, on Google’s or Microsoft’s own page; the
+app never sees that password. For CalDAV you enter your password for
+that server (for iCloud, an app-specific password). The app then talks
+directly to that provider over an encrypted connection: it lists your
+calendars, shows their events, and creates, changes or deletes the
+events you create, change or delete in the app. So that it works
+offline, it keeps on your computer, in the app’s folder, a copy of the
+events of those calendars, the calendars’ names and colours, your
+account’s email address (for CalDAV, the user name and server address)
+and changes still waiting to be sent. Sign-in tokens and passwords are
+protected by Windows for your Windows user only (DPAPI), never kept in a
+plain file. None of this goes to us or to anyone other than the provider
+you connected, which handles it under its own privacy policy. Signing
+out of a Google or Microsoft account, or removing a CalDAV account, in
+the app deletes its copy, its token or password, and its changes not yet
+sent. That does not withdraw the app’s access at the provider: do that
+in your Google Account (myaccount.google.com/connections) or Microsoft
+account (account.microsoft.com, the apps that can access your data; for
+a work or school account, myapps.microsoft.com or your
+organisation).</p>
+<p><strong>Google user data.</strong> When you connect a Google account,
+the app asks Google for two permissions: to see the list of your
+calendars (<code>calendar.calendarlist.readonly</code>) and to see,
+create, change and delete the events in your calendars
+(<code>calendar.events</code>). It uses them only to show your Google
+calendars and events in Quickspan (in its views, reminders and tray) and
+to make the changes you make in the app, on your computer. It does not
+send Google user data to us or to anyone else, does not use it for
+advertising, does not sell it, and does not use it to develop, improve
+or train AI or machine-learning models; nobody reads it. Quickspan’s use
+and transfer to any other app of information received from Google APIs
+will adhere to the <a
+href="https://developers.google.com/terms/api-services-user-data-policy">Google
+API Services User Data Policy</a>, including the Limited Use
+requirements. You can disconnect at any time with Sign out in
+Quickspan’s Calendar accounts, and withdraw the app’s access in your
+Google Account (myaccount.google.com/connections).</p>
+<p><strong>Reminders.</strong> Reminders are scheduled on your computer
+and shown as Windows notifications. The app starts with Windows, hidden
+in the tray, so that reminders come while its window is closed; you can
+turn that off in Windows Settings &gt; Apps &gt; Startup.</p>
+<p><strong>Pro.</strong> Pro is bought on our website (see “Buying Pro
+on desktop” below). The licence key you enter contains the email address
+and order number of the purchase; it is checked on your computer,
+offline, and kept in the app’s folder, and the app never sends it to
+us.</p>
+<p><strong>Internet.</strong> The desktop app connects only to the
+calendar providers you connect, and opens our website in your browser
+when you choose Buy Pro or Privacy policy. The Microsoft Store installs
+and updates it under Microsoft’s privacy policy.</p>
 <h2 id="this-website-quickspan.app">This website (quickspan.app)</h2>
 <p>The app and this website are separate. The website counts visits with
 Cloudflare Web Analytics, a privacy-focused service. In aggregate, it
@@ -752,11 +829,11 @@ analytics. If you would rather not be counted, block
 blocker; the site works the same without it.</p>
 <p><strong>Desktop waitlist.</strong> The page quickspan.app/desktop
 lets you join the waitlist for Quickspan for desktop by sending us an
-email. That page loads no analytics and no scripts. We keep your email
-address and message in our support mailbox, hosted by the email service
-behind our support address, and use them only to write to you about the
-desktop beta and release (for example the waitlist launch price). When
-the desktop app is released we delete the list. Our legal basis is your
+email. That page loads no analytics. We keep your email address and
+message in our support mailbox, hosted by the email service behind our
+support address, and use them only to write to you about the desktop
+beta and release (for example the waitlist launch price). When the
+desktop app is released we delete the list. Our legal basis is your
 consent (Article 6(1)(a) GDPR), which you give by sending the email and
 can withdraw at any time by replying or writing to
 support@quickspan.app; we then delete your address. We never share or
@@ -766,12 +843,38 @@ Pro goes on sale, it is sold through a merchant of record (Paddle.com or
 Stripe), which handles the checkout, payment, invoices and tax under its
 own privacy policy; we never see your card details. The merchant shares
 with us your name, email address, country, order number and amount, so
-that we can email your licence key, reissue it if you lose it, handle
+that we can give you your licence key, reissue it if you lose it, handle
 refunds and keep the records tax law requires (7 years in the
 Netherlands). Our legal basis is the contract you enter by buying
-(Article 6(1)(b) GDPR) and our legal obligations (Article 6(1)(c)). The
-licence key is checked on your computer, offline; the desktop app never
-sends it to us.</p>
+(Article 6(1)(b) GDPR) and our legal obligations (Article 6(1)(c)). Once
+Pro is on sale, the page quickspan.app/desktop loads Paddle’s checkout
+script (from cdn.paddle.com) when you press Buy Pro, or when a Paddle
+payment link brings you there; from then on Paddle receives what any
+website you visit receives (your IP address and browser), under Paddle’s
+privacy policy. Your licence key is made by our small signing service on
+Cloudflare Workers. Paddle sends it your customer record when you enter
+your email address in the checkout (email address, name and Paddle’s
+customer id), and the completed order (order number, items, amounts, and
+the payment card summary Paddle shows on receipts: card type, last four
+digits, expiry and cardholder name). The service keeps your email
+address, the customer id, the order number and date, and your licence
+key (which contains your email address), so that the purchase page can
+show your key again; it discards the rest. Paddle sends the customer
+record as soon as an email address is entered in the checkout, so if no
+purchase follows, the service deletes that address after 7 days; the
+order and the key are deleted after 7 years, with the tax records. When
+the checkout completes, the page asks the service for your key, sending
+the order number and the email address you typed in the checkout, and
+shows the key; the page also keeps that email address in your browser’s
+local storage, so that the page’s address brings the key back later.
+Anyone with that address can see the key and the email address in it, so
+keep it as private as the key. Cloudflare may keep short-lived logs of
+the requests the service receives, including that address. We send no
+email ourselves: Paddle sends your receipt. Cloudflare processes this
+only for us, to deliver your key; it is a US company, and transfers rely
+on the EU-US Data Privacy Framework or the European Commission’s
+standard contractual clauses. The licence key is checked on your
+computer, offline; the desktop app never sends it to us.</p>
 <h2 id="changes-to-this-policy">Changes to this policy</h2>
 <p>If the app ever changes what it does with information (for example,
 adds another feature that uses the internet), this policy will be

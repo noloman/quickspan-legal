@@ -365,10 +365,13 @@ que es la que prevalece si hay alguna diferencia.</p>
 <p><strong>Última actualización:</strong> 2026-11-11</p>
 <p>Quickspan Calendar («la app») es una app de calendario para móviles,
 tablets y plegables Android. Esta política explica qué hace la app con
-tu información. En resumen: <strong>la app guarda tus eventos y ajustes
-en tu dispositivo y nunca los sube. No tiene cuentas, ni servidores
-propios, ni estadísticas de uso, ni publicidad, ni rastreo. Sus dos
-funciones en línea, el tiempo y los calendarios suscritos, están
+tu información. También cubre Quickspan para escritorio, la app de
+Windows, que funciona de otra manera con las cuentas de calendario que
+conectas: su propia sección, «Quickspan para escritorio (Windows)»,
+explica qué hace. En resumen: <strong>la app guarda tus eventos y
+ajustes en tu dispositivo y nunca los sube. No tiene cuentas, ni
+servidores propios, ni estadísticas de uso, ni publicidad, ni rastreo.
+Sus dos funciones en línea, el tiempo y los calendarios suscritos, están
 desactivadas hasta que las uses: el tiempo solo envía la posición de un
 lugar que tú eliges (véase «El tiempo») y un enlace de calendario que
 añades se descarga de su propio servidor (véase «Calendarios
@@ -596,8 +599,14 @@ Tus lugares, y confirmando un diálogo que lo explica. A partir de
 entonces, el texto que escribes como ubicación (desde tres caracteres,
 cuando dejas de escribir) se pasa al buscador de lugares de tu propio
 móvil (el Geocoder de Android), que muestra los lugares que encuentra.
-En la mayoría de los móviles ese buscador lo ofrecen los servicios de
-Google Play, bajo la política de privacidad de Google. Quickspan no hace
+En la entrada rápida pasa lo mismo con el lugar que escribes en la frase
+(por ejemplo «kapsalon ege» en «peluquería hoy 13.30 en kapsalon ege»):
+solo ese lugar, no el resto de la frase, y solo si no es uno de tus
+propios lugares. Con el ajuste desactivado, la entrada rápida puede
+ofrecer «Buscar este lugar en internet», que antes abre el mismo
+diálogo. Nunca se envían llamadas, enlaces, salas ni coordenadas. En la
+mayoría de los móviles ese buscador lo ofrecen los servicios de Google
+Play, bajo la política de privacidad de Google. Quickspan no hace
 ninguna petición propia para esto, y el texto no nos llega a
 nosotros.</li>
 <li><strong>Qué no se envía:</strong> tus eventos, sus títulos o notas,
@@ -769,6 +778,83 @@ las borras tú allí.</p>
 de nadie, tampoco de menores, salvo la consulta opcional del tiempo, las
 descargas de enlaces de calendario y los informes de fallos descritos
 arriba.</p>
+<h2 id="quickspan-para-escritorio-windows">Quickspan para escritorio
+(Windows)</h2>
+<p>Quickspan para escritorio es una app aparte para ordenadores con
+Windows. Funciona como la app del móvil: sin cuenta nuestra, sin
+servidores propios, sin analítica, sin publicidad y sin seguimiento, y
+la entrada rápida interpreta lo que escribes en tu ordenador. No tiene
+informes de fallos, tiempo ni búsqueda de lugares.</p>
+<p><strong>Tus propios eventos.</strong> Los eventos que creas en el
+calendario propio de Quickspan se guardan como un archivo iCalendar
+estándar (<code>calendar.ics</code>) en la carpeta de la app dentro de
+tu perfil de usuario de Windows (<code>%APPDATA%\Quickspan</code>),
+junto con sus ajustes. No se envían a ninguna parte. Desinstalar la app
+puede borrar esta carpeta (en Windows 11 normalmente se queda, para que
+una reinstalación encuentre tus eventos), así que exporta tu calendario
+antes si quieres conservarlo; si la carpeta sigue ahí después de
+desinstalar, bórrala para eliminar todo lo que guardó la app, incluidas
+las copias de las cuentas, los inicios de sesión y la licencia que se
+describen abajo.</p>
+<p><strong>Cuentas de calendario (opcional).</strong> Puedes conectar
+Google Calendar, Microsoft 365 u Outlook.com, y calendarios que usan
+CalDAV (como iCloud, Fastmail o Nextcloud). Con Google y Microsoft
+inicias sesión en tu navegador, en la propia página de Google o de
+Microsoft; la app nunca ve esa contraseña. Con CalDAV introduces tu
+contraseña de ese servidor (para iCloud, una contraseña específica para
+apps). Después la app se comunica directamente con ese proveedor
+mediante una conexión cifrada: muestra tus calendarios y sus eventos, y
+crea, cambia o borra los eventos que creas, cambias o borras en la app.
+Para funcionar sin conexión, guarda en tu ordenador, en la carpeta de la
+app, una copia de los eventos de esos calendarios, los nombres y colores
+de los calendarios, el correo de tu cuenta (con CalDAV, el nombre de
+usuario y la dirección del servidor) y los cambios pendientes de enviar.
+Los tokens de inicio de sesión y las contraseñas los protege Windows
+solo para tu usuario de Windows (DPAPI); nunca se guardan en un archivo
+sin proteger. Nada de esto nos llega a nosotros ni a nadie más que al
+proveedor que conectaste, que lo trata con su propia política de
+privacidad. Al cerrar la sesión de una cuenta de Google o Microsoft, o
+al quitar una cuenta CalDAV, en la app se borran su copia, su token o
+contraseña y sus cambios aún no enviados. Eso no retira el acceso de la
+app en el proveedor: hazlo en tu cuenta de Google
+(myaccount.google.com/connections) o de Microsoft
+(account.microsoft.com, las apps que pueden acceder a tus datos; para
+una cuenta profesional o educativa, myapps.microsoft.com o tu
+organización).</p>
+<p><strong>Datos de usuario de Google.</strong> Cuando conectas una
+cuenta de Google, la app pide a Google dos permisos: ver la lista de tus
+calendarios (<code>calendar.calendarlist.readonly</code>) y ver, crear,
+cambiar y borrar los eventos de tus calendarios
+(<code>calendar.events</code>). Los usa solo para mostrar tus
+calendarios y eventos de Google en Quickspan (en sus vistas,
+recordatorios y bandeja) y para aplicar los cambios que haces en la app,
+en tu ordenador. No envía datos de usuario de Google a nosotros ni a
+nadie más, no los usa para publicidad, no los vende y no los usa para
+desarrollar, mejorar ni entrenar modelos de IA o de aprendizaje
+automático; nadie los lee. El uso y la transferencia a cualquier otra
+app que haga Quickspan de la información recibida de las API de Google
+cumplirán la <a
+href="https://developers.google.com/terms/api-services-user-data-policy">Política
+de datos de usuario de los servicios de API de Google</a>, incluidos los
+requisitos de uso limitado. Puedes desconectarla cuando quieras con
+Cerrar sesión en las cuentas de calendario de Quickspan, y retirar el
+acceso de la app en tu cuenta de Google
+(myaccount.google.com/connections).</p>
+<p><strong>Recordatorios.</strong> Los recordatorios se programan en tu
+ordenador y se muestran como notificaciones de Windows. La app se inicia
+con Windows, oculta en la bandeja, para que los recordatorios lleguen
+con su ventana cerrada; puedes desactivarlo en Configuración de Windows
+&gt; Aplicaciones &gt; Inicio.</p>
+<p><strong>Pro.</strong> Pro se compra en nuestra web (consulta «Comprar
+Pro en escritorio» más abajo). La clave de licencia que introduces
+contiene el correo y el número de pedido de la compra; se comprueba en
+tu ordenador, sin conexión, y se guarda en la carpeta de la app, y la
+app nunca nos la envía.</p>
+<p><strong>Internet.</strong> La app de escritorio solo se conecta a los
+proveedores de calendario que conectas, y abre nuestra web en tu
+navegador cuando eliges Comprar Pro o Política de privacidad. Microsoft
+Store la instala y la actualiza con la política de privacidad de
+Microsoft.</p>
 <h2 id="este-sitio-web-quickspan.app">Este sitio web
 (quickspan.app)</h2>
 <p>La app y este sitio web son cosas distintas. El sitio cuenta las
@@ -789,9 +875,9 @@ de contenido; el sitio funciona igual sin ella.</p>
 <p><strong>Lista de espera de escritorio.</strong> La página
 quickspan.app/desktop te permite apuntarte a la lista de espera de
 Quickspan para escritorio enviándonos un correo. Esa página no carga
-analítica ni scripts. Guardamos tu dirección y tu mensaje en nuestro
-buzón de soporte, alojado en el servicio de correo de nuestra dirección
-de soporte, y los usamos solo para escribirte sobre la beta y el
+analítica. Guardamos tu dirección y tu mensaje en nuestro buzón de
+soporte, alojado en el servicio de correo de nuestra dirección de
+soporte, y los usamos solo para escribirte sobre la beta y el
 lanzamiento de la versión de escritorio (por ejemplo, el precio de
 lanzamiento para la lista de espera). Cuando salga la app de escritorio,
 borramos la lista. Nuestra base legal es tu consentimiento (artículo
@@ -803,12 +889,41 @@ escritorio Pro salga a la venta, se venderá a través de un comerciante
 registrado (Paddle.com o Stripe), que gestiona el pago, las facturas y
 los impuestos con su propia política de privacidad; nunca vemos los
 datos de tu tarjeta. El comerciante nos comunica tu nombre, correo,
-país, número de pedido e importe, para enviarte la clave de licencia,
-reenviarla si la pierdes, gestionar reembolsos y guardar los registros
-que exige la ley fiscal (7 años en los Países Bajos). Nuestra base legal
-es el contrato que celebras al comprar (artículo 6.1.b del RGPD) y
-nuestras obligaciones legales (artículo 6.1.c). La clave se comprueba en
-tu ordenador, sin conexión; la app de escritorio nunca nos la envía.</p>
+país, número de pedido e importe, para darte la clave de licencia,
+volver a dártela si la pierdes, gestionar reembolsos y guardar los
+registros que exige la ley fiscal (7 años en los Países Bajos). Nuestra
+base legal es el contrato que celebras al comprar (artículo 6.1.b del
+RGPD) y nuestras obligaciones legales (artículo 6.1.c). Cuando Pro esté
+a la venta, la página quickspan.app/desktop carga el script de pago de
+Paddle (desde cdn.paddle.com) al pulsar Comprar Pro, o cuando llegas
+desde un enlace de pago de Paddle; desde ese momento Paddle recibe lo
+que recibe cualquier web que visitas (tu dirección IP y tu navegador),
+con la política de privacidad de Paddle. Tu clave de licencia la crea
+nuestro pequeño servicio de firma en Cloudflare Workers. Paddle le envía
+tu ficha de cliente cuando escribes tu correo en el pago (correo, nombre
+e identificador de cliente de Paddle) y el pedido completado (número de
+pedido, artículos, importes y el resumen de la tarjeta que Paddle
+muestra en los recibos: tipo de tarjeta, últimos cuatro dígitos,
+caducidad y titular). El servicio guarda tu correo, el identificador de
+cliente, el número y la fecha del pedido y tu clave de licencia (que
+contiene tu correo), para que la página de compra pueda volver a
+mostrarte la clave; descarta el resto. Paddle envía la ficha de cliente
+en cuanto se escribe un correo en el pago, así que, si no llega a haber
+compra, el servicio borra ese correo a los 7 días; el pedido y la clave
+se borran a los 7 años, con los registros fiscales. Al completarse el
+pago, la página pide tu clave al servicio, enviando el número de pedido
+y el correo que escribiste en el pago, y muestra la clave; la página
+también guarda ese correo en el almacenamiento local de tu navegador,
+para que la dirección de la página recupere la clave más tarde. Quien
+tenga esa dirección puede ver la clave y el correo que contiene, así que
+guárdala con el mismo cuidado que la clave. Cloudflare puede guardar
+registros breves de las peticiones que recibe el servicio, incluida esa
+dirección. Nosotros no enviamos ningún correo: el recibo te lo envía
+Paddle. Cloudflare trata estos datos solo por encargo nuestro, para
+entregarte la clave; es una empresa de EE. UU., y las transferencias se
+basan en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas
+contractuales tipo de la Comisión Europea. La clave se comprueba en tu
+ordenador, sin conexión; la app de escritorio nunca nos la envía.</p>
 <h2 id="cambios-en-esta-política">Cambios en esta política</h2>
 <p>Si algún día la app cambia lo que hace con la información (por
 ejemplo, si añade otra función que usa internet), esta política se
